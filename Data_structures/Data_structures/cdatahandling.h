@@ -14,8 +14,24 @@ using namespace std;
  */
 class cDataHandling
 {
+/********** PUBLIC: BEGINNING **********/
 public:
+    /*
+     *
+     */
     cDataHandling();
+
+    /*
+     *
+     */
+    void mMainMenu();
+
+    /*
+     *
+     */
+    void mMenuDynamicOneDimensionTable();
+
+/********** PUBLIC: END **********/
 };
 
 #endif // CDATAHANDLING_H

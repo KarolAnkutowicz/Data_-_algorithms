@@ -8,9 +8,12 @@
 
 using namespace std;
 
+/********** PUBLIC: BEGINNING **********/
+
 cDynamicOneDimensionTable::cDynamicOneDimensionTable()
 {
 }
+/********** PUBLIC: END **********/
 
 /* cdynamiconedimensiontable.cpp */
 /********** END_OF_FILE **********/

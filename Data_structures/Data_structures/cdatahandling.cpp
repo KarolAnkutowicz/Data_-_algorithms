@@ -8,9 +8,13 @@
 
 using namespace std;
 
+/********** PUBLIC: BEGINNING **********/
+
 cDataHandling::cDataHandling()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* cdatahandling.cpp */
 /********** END_OF_FILE **********/
