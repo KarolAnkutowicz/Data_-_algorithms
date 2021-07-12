@@ -10,24 +10,38 @@
 using namespace std;
 
 /*
- *
+ * cDataHandling - klasa modelujaca obsluge zaimplementowanych
+ * struktur danych.
  */
 class cDataHandling
 {
 /********** PUBLIC: BEGINNING **********/
 public:
     /*
-     *
+     * cDataHandling() - konstruktor wywolywany bez parametrow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - utworzenie obiektu klasy cDataHandling.
      */
     cDataHandling();
 
     /*
-     *
+     * void mMainMenu() - menu glowne obslugi.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
      */
     void mMainMenu();
 
     /*
-     *
+     * void mMenuDynamicOneDimensionTable() - menu obslugujace
+     * dynamiczna tabele jednowymiarowa.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
      */
     void mMenuDynamicOneDimensionTable();
 
