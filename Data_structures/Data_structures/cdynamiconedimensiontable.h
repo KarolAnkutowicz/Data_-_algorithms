@@ -92,7 +92,10 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    typeData getElement(typeLoop aIndex);
+    inline typeData getElement(typeLoop aIndex)
+    {
+        return tabElements[aIndex];
+    }
 
     /*
      * typeLoop getLenthtTable() - metoda zwracajaca dlugosc tablicy
@@ -101,7 +104,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
      */
-    typeLoop getLenthtTable();
+    inline typeLoop getLenthtTable()
+    {
+        return vLengthTable;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -111,7 +117,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -121,7 +130,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    typeData getMinElement();
+    inline typeData getMinElement()
+    {
+        return vMinElement;
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -131,7 +143,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    typeData getMaxElement();
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
+    }
 
 
 
@@ -172,7 +187,8 @@ public:
      * - brak.
      */
     void mPrintTable();
-    /********** PUBLIC: END **********/
+
+/********** PUBLIC: END **********/
 };
 
 #endif // CDYNAMICONEDIMENSIONTABLE_H
