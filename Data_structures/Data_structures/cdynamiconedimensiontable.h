@@ -8,6 +8,7 @@
 #define CDYNAMICONEDIMENSIONTABLE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 
 using namespace std;
 

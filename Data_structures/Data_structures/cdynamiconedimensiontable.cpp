@@ -55,7 +55,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
  */
 cDynamicOneDimensionTable::~cDynamicOneDimensionTable()
 {
-    delete []tabElements;
+    delete []tabElements; // zwalnianie zasobow przydzielanych dynamicznie
 }
 
 
@@ -73,7 +73,12 @@ void cDynamicOneDimensionTable::mDrawElements()
  */
 void cDynamicOneDimensionTable::mFindMinElement()
 {
-
+    vMinElement = tabElements[0]; // ustanowienie poczatkowej wartosci najmniejszej
+    for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+    {
+        if (tabElements[i] < vMinElement) // sprawdzenie czy kolejny element nie jest mniejszy
+            vMinElement = tabElements[i]; // jesli tak to ustanawiamy nowa wartosc najmniejsza
+    }
 }
 
 /*
@@ -81,7 +86,12 @@ void cDynamicOneDimensionTable::mFindMinElement()
  */
 void cDynamicOneDimensionTable::mFindMaxElement()
 {
-
+    vMaxElement = tabElements[0]; // ustanowienie poczatkowej wartosci najwiejszej
+    for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+    {
+        if (tabElements[i] > vMinElement) // sprawdzenie czy kolejny element nie jest wiekszy
+            vMaxElement = tabElements[i]; // jesli tak to ustanawiamy nowa wartosc najwiejsza
+    }
 }
 
 /*
@@ -89,7 +99,8 @@ void cDynamicOneDimensionTable::mFindMaxElement()
  */
 void cDynamicOneDimensionTable::mPrintTable()
 {
-
+    for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+        cout << tabElements[i] << " "; // wypisanie kolejnego elementu
 }
 
 /********** PUBLIC: END **********/
