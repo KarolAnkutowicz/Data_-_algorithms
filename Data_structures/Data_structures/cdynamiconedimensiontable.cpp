@@ -50,6 +50,14 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
 }
 
+/*
+ * ~cDynamicOneDimensionTable()
+ */
+cDynamicOneDimensionTable::~cDynamicOneDimensionTable()
+{
+    delete []tabElements;
+}
+
 
 
 /*

@@ -82,6 +82,14 @@ public:
      */
     cDynamicOneDimensionTable(typeLoop aLengthTable, typeData aDrawingRange);
 
+    /*
+     * ~cDynamicOneDimensionTable() - destruktor klasy DynamicOneDimensionTable.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cDynamicOneDimensionTable();
 
 
     /*
