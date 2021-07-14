@@ -199,6 +199,16 @@ public:
      */
     void mPrintTable();
 
+    /*
+     * void mPrintResults() - metoda wypisujaca rezultaty
+     * wskazywanie i wyznaczania wlasnosci tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintResults();
+
 /********** PUBLIC: END **********/
 };
 

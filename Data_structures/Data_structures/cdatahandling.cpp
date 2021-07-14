@@ -23,13 +23,13 @@ cDataHandling::cDataHandling()
  */
 void cDataHandling::mMainMenu()
 {
-    cout << "Wybierz opcje:" << endl
-         << "(0) - dynamiczna tablica jednowymiarowa" << endl;
-    cin >> vOption;
-    switch(vOption)
+    cout << endl << "Wybierz opcje:" << endl // menu glowne
+         << "(0) - dynamiczna tablica jednowymiarowa" << endl; // opcja dla dynamicznej tablicy jednowymiarowej
+    cin >> vOption; // wczytanie opcji
+    switch(vOption) // wybor opcji
     {
-    case 0 : mMenuDynamicOneDimensionTable(); break;
-    default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break;
+        case 0 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
+        default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
     }
 }
 
@@ -38,14 +38,14 @@ void cDataHandling::mMainMenu()
  */
 void cDataHandling::mMenuDynamicOneDimensionTable()
 {
-    typeLoop vLengthTable;
-    typeData vDrawingRange;
-    cout << "Okresl parametry tablicy:" << endl
+    typeLoop vLengthTable; // zmienna okreslajaca dlugosc tablicy
+    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
          << "    Liczba elementow: ";
-    cin >> vLengthTable;
+    cin >> vLengthTable; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange;
-    cDynamicOneDimensionTable D(vLengthTable, vDrawingRange);
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); // utworzenie obiektu
 }
 
 

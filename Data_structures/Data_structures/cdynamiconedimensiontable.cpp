@@ -21,6 +21,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable()
     tabElements[0] = vDrawingRange; // przypisanie wartosci jej jedynego elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
+    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -35,6 +36,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
         tabElements[i] = vDrawingRange; // przypisanie wartosci elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
+    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -48,6 +50,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
     mDrawElements(); // wylosowanie wartosci elementow tablicy
     mFindMinElement(); // znalezienie najmniejszego elementu w tablicy
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
+    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -104,6 +107,17 @@ void cDynamicOneDimensionTable::mPrintTable()
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         cout << tabElements[i] << " "; // wypisanie kolejnego elementu
 }
+
+/*
+ * void mPrintResults()
+ */
+void cDynamicOneDimensionTable::mPrintResults()
+{
+    cout << "    Liczba elementow tablicy: " << getLenthtTable() << endl // wypisanie liczby elementow
+         << "    Wartosc najmniejsza: " << getMinElement() << endl // wypisanie najmniejszej wartosci
+         << "    Wartosc najwieksza: " << getMaxElement() << endl; // wypisanie nawiekszej wartosci
+}
+
 
 /********** PUBLIC: END **********/
 
