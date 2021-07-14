@@ -10,12 +10,14 @@
 using namespace std;
 
 /*
- *
+ * int typeData - zdefiniowany synonim typu, glownie
+ * do losowania liczb w sgtrukturach danych.
  */
 typedef int typeData;
 
 /*
- *
+ * unsigned short typeLoop - zdefiniowany synonim typu,
+ * glownie do stosowanie w petlach.
  */
 typedef unsigned short typeLoop;
 

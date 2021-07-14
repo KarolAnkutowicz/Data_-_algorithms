@@ -7,6 +7,10 @@
 #ifndef CDATAHANDLING_H
 #define CDATAHANDLING_H
 
+#include "cdynamiconedimensiontable.h"
+#include "constantsandtypes.h"
+#include <iostream>
+
 using namespace std;
 
 /*
@@ -17,6 +21,12 @@ class cDataHandling
 {
 /********** PUBLIC: BEGINNING **********/
 public:
+    /*
+     * typeLoop vOption - zmienna wykorzystywanie do sterowania
+     * w menu glownych oraz w menu dla poszczegolnych struktur.
+     */
+    typeLoop vOption;
+
     /*
      * cDataHandling() - konstruktor wywolywany bez parametrow.
      * PRE:
