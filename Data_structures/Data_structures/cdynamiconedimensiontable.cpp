@@ -21,6 +21,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable()
     tabElements[0] = vDrawingRange; // przypisanie wartosci jej jedynego elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
+    mPrintTable(); // wypisanie zawartosci tablicy
     mPrintResults(); // wypisanie rezultatow
 }
 
@@ -36,6 +37,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
         tabElements[i] = vDrawingRange; // przypisanie wartosci elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
+    mPrintTable(); // wypisanie zawartosci tablicy
     mPrintResults(); // wypisanie rezultatow
 }
 
@@ -50,6 +52,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
     mDrawElements(); // wylosowanie wartosci elementow tablicy
     mFindMinElement(); // znalezienie najmniejszego elementu w tablicy
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
+    mPrintTable(); // wypisanie zawartosci tablicy
     mPrintResults(); // wypisanie rezultatow
 }
 
@@ -94,7 +97,7 @@ void cDynamicOneDimensionTable::mFindMaxElement()
     vMaxElement = tabElements[0]; // ustanowienie poczatkowej wartosci najwiejszej
     for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
     {
-        if (tabElements[i] > vMinElement) // sprawdzenie czy kolejny element nie jest wiekszy
+        if (tabElements[i] > vMaxElement) // sprawdzenie czy kolejny element nie jest wiekszy
             vMaxElement = tabElements[i]; // jesli tak to ustanawiamy nowa wartosc najwiejsza
     }
 }
@@ -104,8 +107,10 @@ void cDynamicOneDimensionTable::mFindMaxElement()
  */
 void cDynamicOneDimensionTable::mPrintTable()
 {
+    cout << "    Zawartosc tablicy: ";
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         cout << tabElements[i] << " "; // wypisanie kolejnego elementu
+    cout << endl;
 }
 
 /*

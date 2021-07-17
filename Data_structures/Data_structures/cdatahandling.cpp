@@ -15,7 +15,7 @@ using namespace std;
  */
 cDataHandling::cDataHandling()
 {
-    mMainMenu();
+    mMainMenu(); // wywolanie menu glownego
 }
 
 /*
