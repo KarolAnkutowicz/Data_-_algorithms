@@ -15,7 +15,8 @@
 using namespace std;
 
 /*
- *
+ * cDynamicOneDimensionTable - klasa modelujaca jednowymiarowa
+ * tablice elementow oraz mozliwe operacje na niej.
  */
 class cDynamicOneDimensionTable
 {
