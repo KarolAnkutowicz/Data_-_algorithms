@@ -112,6 +112,92 @@ public:
 
 
 
+    /*
+     * typeData getElement(typeLoop aColumns, typeLoop aRows) -
+     * metoda zwracajaca wskazany element tablicy.
+     * PRE:
+     * - podanie kolumny (typ: typeLoop);
+     * - podanie wiersza (typ: typeLoop);
+     * POST:
+     * - zwrocenie wartosci elementu (typ: typeData).
+     */
+    inline typeData getElement(typeLoop aColumns, typeLoop aRows)
+    {
+        return tabElements[aRows * vColumns + aColumns];
+    }
+
+    /*
+     * typeLoop getColumns() - metoda zwracajaca liczbe kolumn
+     * tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
+     */
+    inline typeLoop getColumns()
+    {
+        return vColumns;
+    }
+
+    /*
+     * typeLoop getRows() - metoda zwracajaca liczbe wierszy
+     * tablicy
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
+     */
+    inline typeLoop getRows()
+    {
+        return vRows;
+    }
+
+    /*
+     * typeData getDrawingRange() - metoda zwracajaca maksymalny
+     * zakres losowania elementow tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
+     */
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
+
+    /*
+     * typeData getMinElement() - metoda zwracajaca najmniejszy
+     * element tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vMinElement(typ: typeData).
+     */
+    inline typeData getMinElement()
+    {
+        return vMinElement;
+    }
+
+    /*
+     * typeData getMaxElement() - metoda zwracajaca najwiekszy
+     * element tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vMaxElement(typ: typeData).
+     */
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
+    }
+
+
+
+
+
+
+
+
 
 
 /********** PUBLIC: END **********/
