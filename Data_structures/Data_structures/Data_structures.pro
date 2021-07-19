@@ -18,10 +18,12 @@ TEMPLATE = app
 SOURCES += main.cpp \
     cdatahandling.cpp \
     cdynamiconedimensiontable.cpp \
-    cdynamictwodimensiontable.cpp
+    cdynamictwodimensiontable.cpp \
+    cstacktemplate.cpp
 
 HEADERS += \
     cdatahandling.h \
     cdynamiconedimensiontable.h \
     constantsandtypes.h \
-    cdynamictwodimensiontable.h
+    cdynamictwodimensiontable.h \
+    cstacktemplate.h
