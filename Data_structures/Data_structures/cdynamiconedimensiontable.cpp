@@ -73,7 +73,7 @@ void cDynamicOneDimensionTable::mDrawElements()
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
-        tabElements[i] = rand() % vDrawingRange; // wylosowanie i przypisanie liczby
+        tabElements[i] = rand() % vDrawingRange; // wylosowanie i przypisanie wartosci
 }
 
 /*
@@ -110,7 +110,7 @@ void cDynamicOneDimensionTable::mPrintTable()
     cout << "    Zawartosc tablicy: ";
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         cout << tabElements[i] << " "; // wypisanie kolejnego elementu
-    cout << endl;
+    cout << endl; // przejscie do nowej linii
 }
 
 /*
