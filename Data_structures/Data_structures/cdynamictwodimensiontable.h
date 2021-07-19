@@ -193,12 +193,53 @@ public:
 
 
 
+    /*
+     * void mDrawElements() - metoda losujaca elementy tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mDrawElements();
 
+    /*
+     * void mFindMinElement() - metoda znajdujaca najmniejszy
+     * element tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMinElement();
 
+    /*
+     * void mFindMaxElement() - metoda znajdujaca najwiekszy
+     * element tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMaxElement();
 
+    /*
+     * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintTable();
 
-
-
+    /*
+     * void mPrintResults() - metoda wypisujaca rezultaty
+     * wskazywanie i wyznaczania wlasnosci tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintResults();
 
 /********** PUBLIC: END **********/
 };
