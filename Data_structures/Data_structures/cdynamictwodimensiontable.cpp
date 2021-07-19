@@ -107,7 +107,7 @@ void cDynamicTwoDimensionTable::mFindMinElement()
     {
         for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
         {
-            if (tabElements[i] < vMinElement) // sprawdzenie czy kolejny element nie jest mniejszy
+            if (tabElements[i * vColumns + j] < vMinElement) // sprawdzenie czy kolejny element nie jest mniejszy
                 vMinElement = tabElements[i * vColumns + j]; // jesli tak to ustanawiamy nowa wartosc najmniejsza
         }
     }
@@ -123,7 +123,7 @@ void cDynamicTwoDimensionTable::mFindMaxElement()
     {
         for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
         {
-            if (tabElements[i] > vMaxElement) // sprawdzenie czy kolejny element nie jest wiekszy
+            if (tabElements[i * vColumns + j] > vMaxElement) // sprawdzenie czy kolejny element nie jest wiekszy
                 vMaxElement = tabElements[i * vColumns + j]; // jesli tak to ustanawiamy nowa wartosc najwieksza
         }
     }
@@ -134,7 +134,7 @@ void cDynamicTwoDimensionTable::mFindMaxElement()
  */
 void cDynamicTwoDimensionTable::mPrintTable()
 {
-    cout << "    Zawartosc tablicy: ";
+    cout << "    Zawartosc tablicy: " << endl;
     for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
     {
         for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach

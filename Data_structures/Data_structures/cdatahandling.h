@@ -8,6 +8,7 @@
 #define CDATAHANDLING_H
 
 #include "cdynamiconedimensiontable.h"
+#include "cdynamictwodimensiontable.h"
 #include "constantsandtypes.h"
 #include <iostream>
 
@@ -54,6 +55,16 @@ public:
      * - brak.
      */
     void mMenuDynamicOneDimensionTable();
+
+    /*
+     * void mMenuDynamicTwoDimensionTable() - menu obslugujace
+     * dynamiczna tabele dwuwymiarowa.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuDynamicTwoDimensionTable();
 
 /********** PUBLIC: END **********/
 };

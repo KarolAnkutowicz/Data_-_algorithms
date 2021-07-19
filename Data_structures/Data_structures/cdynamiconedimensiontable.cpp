@@ -107,7 +107,7 @@ void cDynamicOneDimensionTable::mFindMaxElement()
  */
 void cDynamicOneDimensionTable::mPrintTable()
 {
-    cout << "    Zawartosc tablicy: ";
+    cout << "    Zawartosc tablicy: " << endl;
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         cout << tabElements[i] << " "; // wypisanie kolejnego elementu
     cout << endl; // przejscie do nowej linii
