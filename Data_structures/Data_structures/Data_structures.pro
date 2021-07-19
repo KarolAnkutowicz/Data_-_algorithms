@@ -19,11 +19,13 @@ SOURCES += main.cpp \
     cdatahandling.cpp \
     cdynamiconedimensiontable.cpp \
     cdynamictwodimensiontable.cpp \
-    cstacktemplate.cpp
+    cstacktemplate.cpp \
+    cstackmy.cpp
 
 HEADERS += \
     cdatahandling.h \
     cdynamiconedimensiontable.h \
     constantsandtypes.h \
     cdynamictwodimensiontable.h \
-    cstacktemplate.h
+    cstacktemplate.h \
+    cstackmy.h
