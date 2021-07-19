@@ -55,7 +55,64 @@ class cDynamicTwoDimensionTable
 
 /********** PUBLIC: BEGINNING **********/
 public:
+    /*
+     * cDynamicTwoDimensionTable() - konstruktor wywolywany
+     * bez argumentow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - utworzenie obiektu klasy cDynamicOneDimensionTable.
+     */
     cDynamicTwoDimensionTable();
+
+    /*
+     * cDynamicTwoDimensionTable(typeLoop aColumn) - konstruktor
+     * wywolywany z jednym argumentem - liczba kolumn.
+     * PRE:
+     * - podanie liczby kolumn (typ: typeLoop);
+     * POST:
+     * - utworzenie obiektu klasy cDynamicOneDimensionTable.
+     */
+    cDynamicTwoDimensionTable(typeLoop aColumn);
+
+    /*
+     * cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop aRows) -
+     * konstruktor wywolywany z dwoma argumentami - liczba kolumn
+     * oraz liczba wierszy.
+     * PRE:
+     * - podanie liczby kolumn (typ: typeLoop);
+     * - podanie liczby wierszy (typ: typeLoop);
+     * POST:
+     * - utworzenie obiektu klasy cDynamicOneDimensionTable.
+     */
+    cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop aRows);
+
+    /*
+     * cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop aRows, typeData aDrawingRange) -
+     * konstruktor wywolywany z trzema argumentami - liczba kolumn
+     * oraz liczba wierszy oraz maksymalna wartoscia jaka mozemy
+     * wylosowac wypelniajac tablice losowymi elementami.
+     * PRE:
+     * - podanie liczby kolumn (typ: typeLoop);
+     * - podanie liczby wierszy (typ: typeLoop);
+     * - podanie zakresu elementow (typ: typeData);
+     * POST:
+     * - utworzenie obiektu klasy cDynamicOneDimensionTable.
+     */
+    cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop aRows, typeData aDrawingRange);
+
+    /*
+     * ~cDynamicTwoDimensionTable() - destruktor klasy DynamicTwoDimensionTable.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cDynamicTwoDimensionTable();
+
+
+
+
 
 /********** PUBLIC: END **********/
 };

@@ -55,7 +55,7 @@ public:
 
     /*
      * cDynamicOneDimensionTable() - konstruktor wywolywany
-     * bez parametrow.
+     * bez argumentow.
      * PRE:
      * - brak;
      * POST:
@@ -65,7 +65,7 @@ public:
 
     /*
      * cDynamicOneDimensionTable(typeLoop aLengthTable) - konstruktor
-     * wywolywany z jednym parametrem - dlugoscia tablicy.
+     * wywolywany z jednym argumentem - dlugoscia tablicy.
      * PRE:
      * - podanie dlugosci tablicy (typ: typeLoop);
      * POST:
@@ -75,7 +75,7 @@ public:
 
     /*
      * cDynamicOneDimensionTable(typeLoop aLengthTable, typeData aDrawingRange) -
-     * konstruktor wywolywany z dwoma parametrami - dlugoscia
+     * konstruktor wywolywany z dwoma argumentami - dlugoscia
      * tablicy oraz maksymalna wartoscia jaka mozemy wylosowac
      * wypelniajac tablice losowymi elementami.
      * PRE:
