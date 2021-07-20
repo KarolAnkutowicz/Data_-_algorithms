@@ -22,12 +22,6 @@ class cStackTemplate
 /********** PRIVATE: BEGINNING **********/
 
     /*
-     * typeLoop vStackSize - zmienna przechowujaca
-     * rozmiar stosu.
-     */
-    typeLoop vStackSize;
-
-    /*
      * stack <typeData> StackTemplate - stos
      * przechowujacy elementy typu typeData.
      */
@@ -38,12 +32,6 @@ class cStackTemplate
      * elemenwtow stosu.
      */
     typeData vDrawingRange;
-
-    /*
-     * bool vStackIsEmpty - zmienna logiczna
-     * okreslajaca czy stos jest pusty.
-     */
-    bool vStackIsEmpty;
 
 /********** PRIVATE: END **********/
 
@@ -107,7 +95,7 @@ public:
      */
     inline typeLoop getStackSize()
     {
-        return vStackSize;
+        return StackTemplate.size();
     }
 
     /*
@@ -133,7 +121,7 @@ public:
      */
     inline bool getStackIsEmpty()
     {
-        return vStackIsEmpty;
+        return StackTemplate.empty();
     }
 
 
