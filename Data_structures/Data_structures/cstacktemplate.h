@@ -8,6 +8,7 @@
 #define CSTACKTEMPLATE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 #include <stack>
 
 using namespace std;
@@ -104,7 +105,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vStackSize (typ: typeLoop).
      */
-    typeLoop getStackSize();
+    inline typeLoop getStackSize()
+    {
+        return vStackSize;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca
@@ -114,7 +118,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange (typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * void getStackIsEmpty() - metoda zwracajaca
@@ -124,7 +131,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vStackIsEmpty (typ: bool).
      */
-    bool getStackIsEmpty();
+    inline bool getStackIsEmpty()
+    {
+        return vStackIsEmpty;
+    }
 
 
 
@@ -136,7 +146,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeData aElement);
+    inline void mAddElement(typeData aElement)
+    {
+        StackTemplate.push(aElement);
+    }
 
     /*
      * bool mRemoveElement() - metoda usuwajaca element
@@ -158,7 +171,10 @@ public:
      * POST:
      * - brak.
      */
-    void mPrintElement();
+    inline void mPrintElement()
+    {
+        cout << StackTemplate.top() << endl;
+    }
 
     /*
      * void mPrintAllElements() - metoda wypisujaca
