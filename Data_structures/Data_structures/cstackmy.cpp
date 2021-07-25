@@ -73,7 +73,10 @@ cStackMy::~cStackMy()
  */
 typeData cStackMy::getElement()
 {
-
+    if (!vIsEmpty) // sprawdzamy czy stos nie jest pusty
+        return StackMy[vSize - 1]; // przypisujemy wartosc ze szczytu stosu
+    else // jesli stos jest pusty
+        return  NULL; // nie mamy nic do zwrocenia
 }
 
 
@@ -83,7 +86,19 @@ typeData cStackMy::getElement()
  */
 void cStackMy::mAddElement(typeData aElement)
 {
-
+    typeData *StackAux; // deklaracja pomocniczej tablicy
+    vSize++; // zwiejsza sie rozmiar stosu
+    StackAux = new typeData[vSize]; // okreslamy rozmiar tablicy pomocniczej
+    for (typeLoop i = 0; i < (vSize - 1); i++) // przechodzimy przez wszystkie elementy w aktualnej tablicy
+        StackAux[i] = StackMy[i]; // kopiujemy element
+    delete []StackMy; // zwalniamy zasoby przydzielane dynamicznie
+    StackMy = new typeData[vSize]; // tworzymy nowa tablice elementow
+    for (typeLoop i = 0; i < (vSize - 1); i++) // przechodzimy przez wszystkie elementy za wyjatkiem tego ze szczytu stosu
+        StackMy[i] = StackAux[i]; // kopiujemy element
+    delete []StackAux; // zwalniamy zasoby przydzielane dynamicznie
+    StackMy[vSize - 1] = aElement; // dopisujemy element na szczyt stosu
+    if (vIsEmpty) // sprawdzamy czy wczesniej stos byl oznaczony jako pusty
+        vIsEmpty = false; // stos nie jest juz oznaczony jako pusty
 }
 
 /*
@@ -91,7 +106,22 @@ void cStackMy::mAddElement(typeData aElement)
  */
 bool cStackMy::mRemoveElement()
 {
-
+    if (!vIsEmpty) // sprawdzamy czy stos nie jest pusty
+    {
+        typeData *StackAux; // deklaracja pomocniczej tablicy
+        vSize--; // zmniejsza sie rozmiar stosu
+        StackAux = new typeData[vSize]; // okreslamy rozmiar tablicy pomocniczej
+        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy za wyjatkiem tego ze szczytu
+            StackAux[i] = StackMy[i]; // kopiujemy element
+        delete []StackMy; // zwalniamy zasoby przydzielane dynamicznie
+        StackMy = new typeData[vSize]; // tworzymy nowa tablice elementow
+        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy za wyjatkiem tego ze szczytu stosu
+             StackMy[i] = StackAux[i]; // kopiujemy element
+        delete []StackAux; // zwalniamy zasoby przydzielane dynamicznie
+        return true; // zwracamy informacje, ze usunelismy element
+    }
+    else // jesli stos jest pusty
+        return false; // zwracamy informacje, ze nic nie usunelismy
 }
 
 
