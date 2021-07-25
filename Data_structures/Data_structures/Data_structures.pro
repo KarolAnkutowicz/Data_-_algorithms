@@ -32,4 +32,5 @@ HEADERS += \
     cstacktemplate.h \
     cstackmy.h \
     clisttemplate.h \
-    clistmy.h
+    clistmy.h \
+    cvectoronedimension.h
