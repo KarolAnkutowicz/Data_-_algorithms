@@ -7,6 +7,7 @@
 #ifndef CLISTTEMPLATE_H
 #define CLISTTEMPLATE_H
 
+#include "constantsandtypes.h"
 #include <list>
 
 using namespace std;
@@ -18,6 +19,18 @@ using namespace std;
 class cListTemplate
 {
 /********** PRIVATE: BEGINNING **********/
+
+    /*
+     * list <typeData> ListTemplate - lista przechowujaca
+     * elementy typu typeData.
+     */
+    list <typeData> ListTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow stosu.
+     */
+    typeData vDrawingRange;
 
 /********** PRIVATE: END **********/
 
