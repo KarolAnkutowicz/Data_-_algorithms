@@ -68,7 +68,7 @@ public:
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * - podanie zakresu losowania wartosci elementow
-     * (typL typeData);
+     * (typ: typeData);
      * POST:
      * - utworzenie obiektu typu cStackTemplate.
      */
@@ -85,10 +85,10 @@ public:
      * POST:
      * - zwrocenie elementu ze stosu (typ: typeData).
      */
-    inline typeData getElement();
+    typeData getElement();
 
     /*
-     * void getStackSize() - metoda zwracajaca
+     * typeLoop getStackSize() - metoda zwracajaca
      * rozmiar stosu.
      * PRE:
      * - brak;
@@ -114,7 +114,7 @@ public:
     }
 
     /*
-     * void getStackIsEmpty() - metoda zwracajaca
+     * bool getStackIsEmpty() - metoda zwracajaca
      * informacje czy stos jest pusty.
      * PRE:
      * - brak;
