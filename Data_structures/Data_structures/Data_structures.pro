@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     cstackmy.cpp \
     clisttemplate.cpp \
     clistmy.cpp \
-    cvectortwodimension.cpp
+    cvectortwodimension.cpp \
+    cqueuetemplate.cpp
 
 HEADERS += \
     cdatahandling.h \
@@ -35,4 +36,5 @@ HEADERS += \
     clisttemplate.h \
     clistmy.h \
     cvectoronedimension.h \
-    cvectortwodimension.h
+    cvectortwodimension.h \
+    cqueuetemplate.h
