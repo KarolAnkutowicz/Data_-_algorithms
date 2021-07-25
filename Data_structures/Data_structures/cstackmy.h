@@ -7,6 +7,11 @@
 #ifndef CSTACKMY_H
 #define CSTACKMY_H
 
+#include "constantsandtypes.h"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
 using namespace std;
 
 /*
@@ -16,6 +21,23 @@ using namespace std;
 class cStackMy
 {
 /********** PRIVATE: BEGINNING **********/
+
+    /*
+     * typeData *StackMy - tablica przechowujaca elementy
+     * stosu typu typeData.
+     */
+    typeData *StackMy;
+
+    /*
+     *  typeLoop vSize - zmienna przechowujaca rozmiar stosu.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - zakres losowania elementow
+     * stosu.
+     */
+    typeData vDrawingRange;
 
 /********** PRIVATE: END **********/
 

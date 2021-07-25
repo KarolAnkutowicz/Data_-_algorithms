@@ -31,7 +31,7 @@ class cStackTemplate
 
     /*
      * typeData vDrawingRange - zakres losowania
-     * elemenwtow stosu.
+     * elementow stosu.
      */
     typeData vDrawingRange;
 
