@@ -104,7 +104,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vStackSize (typ: typeLoop).
      */
-    typeLoop getStackSize();
+    inline typeLoop getStackSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca
@@ -124,7 +127,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vStackIsEmpty (typ: bool).
      */
-    bool getStackIsEmpty();
+    inline bool getStackIsEmpty()
+    {
+        return vIsEmpty;
+    }
 
 
 
