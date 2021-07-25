@@ -37,11 +37,14 @@ cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
 
 
 /*
- * void getElement()
+ * typeData getElement()
  */
 typeData cStackTemplate::getElement()
 {
-    return 0;
+    if (!StackTemplate.empty()) // sprawdzamy czy stos nie jest pusty
+        return StackTemplate.top(); // zwracamy element ze szczytu
+    else // jesli stos jest pusty
+        return NULL; // nie mamy nic do zwrocenia
 }
 
 
@@ -51,7 +54,13 @@ typeData cStackTemplate::getElement()
  */
 bool cStackTemplate::mRemoveElement()
 {
-    return false;
+    if (!StackTemplate.empty()) // sprawdzamy czy stos nie jest pusty
+    {
+        StackTemplate.pop(); // usuwamy element
+        return true; // zwracamy wartosc logiczna
+    }
+    else // jesli stos jest pusty
+        return false; // zwracamy wartosc logiczna
 }
 
 
@@ -61,7 +70,11 @@ bool cStackTemplate::mRemoveElement()
  */
 void cStackTemplate::mPrintAllElements()
 {
-
+    while (!StackTemplate.empty())
+    {
+        cout << StackTemplate.top(); // wypisujemy element ze szczytu stosu
+        mRemoveElement(); // usuwamy element dajac dostep do kolejnego
+    }
 }
 
 /********** PUBLIC: END **********/

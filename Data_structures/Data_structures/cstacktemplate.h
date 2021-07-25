@@ -75,7 +75,7 @@ public:
 
 
     /*
-     * void getElement() - metoda zwracajaca
+     * typeData getElement() - metoda zwracajaca
      * element ze szczytu stosu (o ile stos
      * nie jest pusty!).
      * PRE:
@@ -83,7 +83,7 @@ public:
      * POST:
      * - zwrocenie elementu ze stosu (typ: typeData).
      */
-    typeData getElement();
+    inline typeData getElement();
 
     /*
      * void getStackSize() - metoda zwracajaca
