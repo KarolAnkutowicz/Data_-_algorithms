@@ -83,6 +83,16 @@ public:
      */
     cStackMy(typeLoop aSize, typeData aDrawingRange);
 
+    /*
+     * ~cStackMy() - destruktor klasy cStackMy zwalniajacy
+     * zasoby przydzielane dynamicznie
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    ~cStackMy();
+
 
 
     /*
@@ -117,7 +127,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange (typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getStackIsEmpty() - metoda zwracajaca
