@@ -101,7 +101,7 @@ bool cListTemplate::mRemoveElementFromEnd()
 void cListTemplate::mPrintFirstElement()
 {
     if (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
-        cout << ListTemplate.front(); // jesli nie to wypisujemy pierwszy element
+        cout << ListTemplate.front() << endl; // jesli nie to wypisujemy pierwszy element
     else // jesli jest pusta
         cout << "    Lista jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
 }
@@ -112,7 +112,7 @@ void cListTemplate::mPrintFirstElement()
 void cListTemplate::mPrintLastElement()
 {
     if (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
-        cout << ListTemplate.back(); // jesli nie jest to wypisujemy ostatni element
+        cout << ListTemplate.back() << endl; // jesli nie jest to wypisujemy ostatni element
     else // jesli jest pusta
         cout << "    Lista jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
 }

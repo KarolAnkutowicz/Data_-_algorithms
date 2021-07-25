@@ -9,6 +9,7 @@
 
 #include "cdynamiconedimensiontable.h"
 #include "cdynamictwodimensiontable.h"
+#include "clisttemplate.h"
 #include "constantsandtypes.h"
 #include "cstackmy.h"
 #include "cstacktemplate.h"
@@ -99,6 +100,16 @@ public:
      * - brak.
      */
     void mMenuStackMy();
+
+    /*
+     * void mMenuListTemplate() - menu obslugujace liste dzialajaca
+     * z wykorzystaniem szablony <lisy>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuListTemplate();
 
 /********** PUBLIC: END **********/
 };
