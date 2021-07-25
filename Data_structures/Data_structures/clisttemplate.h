@@ -8,6 +8,7 @@
 #define CLISTTEMPLATE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 #include <list>
 
 using namespace std;
@@ -121,7 +122,7 @@ public:
     }
 
     /*
-     * bool getListIsEmpty() - metodo zawracajaca
+     * bool getListIsEmpty() - metoda zawracajaca
      * informacje o tym czy lista jest pusta.
      * PRE:
      * - brak;
