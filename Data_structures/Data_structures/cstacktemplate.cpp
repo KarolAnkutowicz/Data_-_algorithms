@@ -15,6 +15,7 @@ using namespace std;
  */
 cStackTemplate::cStackTemplate()
 {
+    mPrintAllElements(); // wypisujemy zawartosc stosu
 }
 
 /*
@@ -24,6 +25,7 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
 {
     for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
         mAddElement(0); // dodanie nowego elementu
+    mPrintAllElements(); // wypisujemy zawartosc stosu
 }
 
 /*
@@ -34,6 +36,7 @@ cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
         StackTemplate.push(rand() % aDrawingRange); // dodanie nowego wylosowanego elementu
+    mPrintAllElements(); // wypisujemy zawartosc stosu
 }
 
 
@@ -72,10 +75,16 @@ bool cStackTemplate::mRemoveElement()
  */
 void cStackTemplate::mPrintAllElements()
 {
-    while (!StackTemplate.empty())
+    if (StackTemplate.empty())
+        cout << "    Stos jest pusty!" << endl; // wypisujemy elementy az do ostatniego
+    else
     {
-        cout << StackTemplate.top(); // wypisujemy element ze szczytu stosu
-        mRemoveElement(); // usuwamy element dajac dostep do kolejnego
+        cout << "    Zawartosc stosu:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
+        while (!StackTemplate.empty())
+        {
+            mPrintElement(); // wypisujemy element ze szczytu stosu
+            mRemoveElement(); // usuwamy element dajac dostep do kolejnego
+        }
     }
 }
 

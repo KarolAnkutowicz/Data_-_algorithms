@@ -10,6 +10,7 @@
 #include "cdynamiconedimensiontable.h"
 #include "cdynamictwodimensiontable.h"
 #include "constantsandtypes.h"
+#include "cstacktemplate.h"
 #include <iostream>
 
 using namespace std;
@@ -36,6 +37,17 @@ public:
      * - utworzenie obiektu klasy cDataHandling.
      */
     cDataHandling();
+
+
+
+    /*
+     * void mPrintMenu() - metoda wyswietlajaca menu glowne programu.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintMainMenu();
 
     /*
      * void mMainMenu() - menu glowne obslugi.
@@ -65,6 +77,16 @@ public:
      * - brak.
      */
     void mMenuDynamicTwoDimensionTable();
+
+    /*
+     * void mMenuStackTemplate() - menu obslugujace stos dzialajacy
+     * na podstawie szablonu <stack>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStackTemplate();
 
 /********** PUBLIC: END **********/
 };
