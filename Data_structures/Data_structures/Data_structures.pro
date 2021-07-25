@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     cdynamiconedimensiontable.cpp \
     cdynamictwodimensiontable.cpp \
     cstacktemplate.cpp \
-    cstackmy.cpp
+    cstackmy.cpp \
+    clisttemplate.cpp
 
 HEADERS += \
     cdatahandling.h \
@@ -28,4 +29,5 @@ HEADERS += \
     constantsandtypes.h \
     cdynamictwodimensiontable.h \
     cstacktemplate.h \
-    cstackmy.h
+    cstackmy.h \
+    clisttemplate.h
