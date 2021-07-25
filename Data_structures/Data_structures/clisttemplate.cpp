@@ -15,6 +15,7 @@ using namespace std;
  */
 cListTemplate::cListTemplate()
 {
+    mPrintAllElements(); // wypisywanie zawartosci listy
 }
 
 /*
@@ -22,7 +23,9 @@ cListTemplate::cListTemplate()
  */
 cListTemplate::cListTemplate(typeLoop aSize)
 {
-
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElementToEnd(0); // dodanie nowego elementu
+    mPrintAllElements(); // wypisywanie zawartosci listy
 }
 
 /*
@@ -30,7 +33,10 @@ cListTemplate::cListTemplate(typeLoop aSize)
  */
 cListTemplate::cListTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElementToEnd(rand() % aDrawingRange); // dodanie nowego elementu
+    mPrintAllElements(); // wypisywanie zawartosci listy
 }
 
 
@@ -116,7 +122,17 @@ void cListTemplate::mPrintLastElement()
  */
 void cListTemplate::mPrintAllElements()
 {
-
+    if (ListTemplate.empty()) // sprawdzamy czy lista jest pusta
+        cout << "    Lista jest pusta" << endl; // wypisujemy komunikat o tej sytuacji
+    else // jesli lista nie jest pusta
+    {
+        cout << "    Zawartosc Listy:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
+        while (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
+        {
+            mPrintFirstElement(); // wypisujemy element z poczatku listy
+            mRemoveElementFromBegin(); // usuwamy element dajac dostep do kolejnego
+        }
+    }
 }
 
 /********** PUBLIC: END **********/

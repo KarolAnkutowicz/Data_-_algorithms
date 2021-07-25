@@ -23,7 +23,7 @@ cStackTemplate::cStackTemplate()
  */
 cStackTemplate::cStackTemplate(typeLoop aSize)
 {
-    for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
         mAddElement(0); // dodanie nowego elementu
     mPrintAllElements(); // wypisujemy zawartosc stosu
 }
@@ -34,8 +34,8 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
 cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
-        StackTemplate.push(rand() % aDrawingRange); // dodanie nowego wylosowanego elementu
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
+        mAddElement(rand() % aDrawingRange); // dodanie nowego wylosowanego elementu
     mPrintAllElements(); // wypisujemy zawartosc stosu
 }
 
@@ -91,8 +91,8 @@ void cStackTemplate::mPrintElement()
  */
 void cStackTemplate::mPrintAllElements()
 {
-    if (StackTemplate.empty())
-        cout << "    Stos jest pusty!" << endl; // wypisujemy elementy az do ostatniego
+    if (StackTemplate.empty()) // sprawdzamy czy stos jest pusty
+        cout << "    Stos jest pusty!" << endl; // jesli tak to wypisujemy komunikat o tej sytuacji
     else
     {
         cout << "    Zawartosc stosu:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
