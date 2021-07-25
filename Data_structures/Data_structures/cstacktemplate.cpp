@@ -15,7 +15,6 @@ using namespace std;
  */
 cStackTemplate::cStackTemplate()
 {
-
 }
 
 /*
@@ -23,7 +22,8 @@ cStackTemplate::cStackTemplate()
  */
 cStackTemplate::cStackTemplate(typeLoop aSize)
 {
-
+    for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
+        mAddElement(0); // dodanie nowego elementu
 }
 
 /*
@@ -31,7 +31,9 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
  */
 cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeData i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
+        StackTemplate.push(rand() % aDrawingRange); // dodanie nowego wylosowanego elementu
 }
 
 
