@@ -1,20 +1,20 @@
 /********** BEGIN_OF_FILE **********/
 /*
  * author: Karol Ankutowicz
- * file: cqueuemy.h
+ * file: cheapbinary.cpp
  */
 
-#include "cqueuemy.h"
+#include "cheapbinary.h"
 
 using namespace std;
 
 /********** PUBLIC: BEGIN **********/
 
-cQueueMy::cQueueMy()
+cHeapBinary::cHeapBinary()
 {
 }
 
 /********** PUBLIC: END **********/
 
-/* cqueuemy.h */
+/* cheapbinary.cpp */
 /********** END_OF_FILE **********/

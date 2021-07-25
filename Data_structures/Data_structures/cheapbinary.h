@@ -1,21 +1,21 @@
 /********** BEGIN_OF_FILE **********/
 /*
  * author: Karol Ankutowicz
- * file: cqueuemy.h
+ * file: cheapbinary.h
  */
 
-#ifndef CQUEUEMY_H
-#define CQUEUEMY_H
+#ifndef CHEAPBINARY_H
+#define CHEAPBINARY_H
 
 #include "constantsandtypes.h"
 
 using namespace std;
 
 /*
- * class cQueueMy - klasa modelujaca kolejke
- * bez wykorzystania szablonu <queue>.
+ * class cHeapBinary - klasa modelujaca
+ * kopiec binarny.
  */
-class cQueueMy
+class cHeapBinary
 {
 /********** PRIVATE: BEGIN **********/
 
@@ -23,12 +23,12 @@ class cQueueMy
 
 /********** PUBLIC: BEGIN **********/
 public:
-    cQueueMy();
+    cHeapBinary();
 
 /********** PUBLIC: END **********/
 };
 
-#endif // CQUEUEMY_H
+#endif // CHEAPBINARY_H
 
-/* cqueuemy.h */
+/* cheapbinary.h */
 /********** END_OF_FILE **********/
