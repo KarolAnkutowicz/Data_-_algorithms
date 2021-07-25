@@ -27,10 +27,16 @@ void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
          << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
-         << "(2) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-         << "(3) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
-         << "(4) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
-         << "(5) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
+         //<< "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+         << "(3) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
+         //<< "(4) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+         << "(5) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
+         << "(6) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
+         << "(7) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
+         //<< "(8) - lista bez wykorzystanie szablonu <list>" << endl // opcja dla listy  bez wykorzystania <list>
+         //<< "(9) - kolejka z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
+         //<< "(10) - kolejka bez wykorzystanis szablonu <queue<" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
+         //<< "(11) - kopiec binarny" << endl // opcja dla kopca binarnego
          << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
 }
 
@@ -47,10 +53,16 @@ void cDataHandling::mMainMenu()
         {
             case 0 : break; // wybor zakonczenia dzialana programu
             case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-            case 2 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-            case 3 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
-            case 4 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
-            case 5 : mMenuListTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <list>
+            //case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+            case 3 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+            //case 4 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+            case 5 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
+            case 6 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
+            case 7 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+            //case 8 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            //case 9 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+            //case 10 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
+            //case 11 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
             default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
@@ -77,6 +89,14 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
 }
 
 /*
+ * void mMenuVectorOneDimension()
+ */
+void cDataHandling::mMenuVectorOneDimension()
+{
+    //
+}
+
+/*
  * void mMenuDynamicTwoDimensionTable()
  */
 void cDataHandling::mMenuDynamicTwoDimensionTable()
@@ -91,6 +111,14 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicTwoDimensionTable D(vColumns, vRows, vDrawingRange); // utworzenie obiektu
+}
+
+/*
+ * void mMenuVectorTwoDimension()
+ */
+void cDataHandling::mMenuVectorTwoDimension()
+{
+    //
 }
 
 /*
@@ -138,6 +166,37 @@ void cDataHandling::mMenuListTemplate()
     cListTemplate L(vElements, vDrawingRange); // utworzenie obiektu
 }
 
+/*
+ * void mMenuListMy()
+ */
+void cDataHandling::mMenuListMy()
+{
+    //
+}
+
+/*
+ * void mMenuQueueTemplate()
+ */
+void cDataHandling::mMenuQueueTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuQueueMy()
+ */
+void cDataHandling::mMenuQueueMy()
+{
+    //
+}
+
+/*
+ * void mMenuHeapBinary()
+ */
+void cDataHandling::mMenuHeapBinary()
+{
+    //
+}
 
 /********** PUBLIC: END **********/
 
