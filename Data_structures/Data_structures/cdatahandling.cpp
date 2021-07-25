@@ -29,6 +29,7 @@ void cDataHandling::mPrintMainMenu()
          << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
          << "(2) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
          << "(3) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
+         << "(4) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
          << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
 }
 
@@ -47,7 +48,13 @@ void cDataHandling::mMainMenu()
             case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
             case 2 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
             case 3 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
+            case 4 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
+        }
+        if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
+        {
+            cout << "    Nacisnij dowolny klawisz..." << endl; // chwilowe "wstrzymanie" wyswietlonych wynikow
+            getch(); // wymuszenie nacisniecia dowolnego klawisza
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
 }
@@ -99,6 +106,20 @@ void cDataHandling::mMenuStackTemplate()
     cStackTemplate S(vElements, vDrawingRange); // utworzenie obiektu
 }
 
+/*
+ * void mMenuStackMy()
+ */
+void cDataHandling::mMenuStackMy()
+{
+    typeLoop vElements; // zmienna okreslajaca liczbe elementow stosu
+    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vElements; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStackMy S(vElements, vDrawingRange); // utworzenie obiektu
+}
 
 
 /********** PUBLIC: END **********/

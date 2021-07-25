@@ -10,7 +10,9 @@
 #include "cdynamiconedimensiontable.h"
 #include "cdynamictwodimensiontable.h"
 #include "constantsandtypes.h"
+#include "cstackmy.h"
 #include "cstacktemplate.h"
+#include <conio.h>
 #include <iostream>
 
 using namespace std;
@@ -87,6 +89,16 @@ public:
      * - brak.
      */
     void mMenuStackTemplate();
+
+    /*
+     * void mMenuStackMy() - menu obslugujace stos dzialajacy
+     * bez wykorzystania szablonu <stack>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStackMy();
 
 /********** PUBLIC: END **********/
 };
