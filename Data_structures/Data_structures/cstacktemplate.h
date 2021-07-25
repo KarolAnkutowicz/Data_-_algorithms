@@ -161,10 +161,7 @@ public:
      * POST:
      * - brak.
      */
-    inline void mPrintElement()
-    {
-        cout << StackTemplate.top() << endl;
-    }
+    void mPrintElement();
 
     /*
      * void mPrintAllElements() - metoda wypisujaca

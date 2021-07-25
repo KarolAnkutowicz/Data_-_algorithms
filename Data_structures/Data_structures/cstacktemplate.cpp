@@ -71,6 +71,22 @@ bool cStackTemplate::mRemoveElement()
 
 
 /*
+ * void mPrintElement() - metoda wypisujaca element
+ * ze szczytu stosu (o ile stos nie jest pusty!).
+ * PRE:
+ * - brak;
+ * POST:
+ * - brak.
+ */
+void cStackTemplate::mPrintElement()
+{
+    if (!StackTemplate.empty()) // sprawdzamy czy stos nie jest pusty
+        cout << StackTemplate.top() << endl; //  jesli nie ejst to wypisujemy element ze szczytu
+    else //  jesli jest pusty
+        cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
+}
+
+/*
  * void mPrintAllElements()
  */
 void cStackTemplate::mPrintAllElements()
