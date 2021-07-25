@@ -101,7 +101,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru listy (typ: typeLoop).
      */
-    typeLoop getListSize();
+    inline typeLoop getListSize()
+    {
+        return ListTemplate.size();
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -112,7 +115,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getListIsEmpty() - metodo zawracajaca
@@ -123,7 +129,10 @@ public:
      * - zwrocenie informacji o tym czy lista jest pusta
      * (typ: bool).
      */
-    bool getListIsEmpty();
+    inline bool getListIsEmpty()
+    {
+        return ListTemplate.empty();
+    }
 
 
 
@@ -135,7 +144,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElementToBegin(typeData aElement);
+    inline void mAddElementToBegin(typeData aElement)
+    {
+        ListTemplate.push_front(aElement);
+    }
 
     /*
      * void mAddElementToEnd(typeData aElement) - metoda
@@ -145,7 +157,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElementToEnd(typeData aElement);
+    inline void mAddElementToEnd(typeData aElement)
+    {
+        ListTemplate.push_back(aElement);
+    }
 
     /*
      * bool mRemoveElementFromBegin() - metoda usuwajaca
