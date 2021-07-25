@@ -62,7 +62,7 @@ public:
     void mMainMenu();
 
     /*
-     * void mMenuDynamicOneDimensionTable() - menu obslugujace
+     * void mMenuDynamicOneDimensionTable() - menu obslugujaca
      * dynamiczna tabele jednowymiarowa.
      * PRE:
      * - brak;
@@ -70,6 +70,17 @@ public:
      * - brak.
      */
     void mMenuDynamicOneDimensionTable();
+
+    /*
+     * void mMenuVectorOneDimension() - metoda obslugujaca
+     * dynamiczna tabele jednowymiarowa wykorzystujaca
+     * szablon <vector>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuVectorOneDimension();
 
     /*
      * void mMenuDynamicTwoDimensionTable() - menu obslugujace
@@ -80,6 +91,17 @@ public:
      * - brak.
      */
     void mMenuDynamicTwoDimensionTable();
+
+    /*
+     * void mMenuVectorTwoDimension() - metoda obslugujaca
+     * dynamiczna tabele dwuwymiarowa wykorzystujaca
+     * szablon <vector>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuVectorTwoDimension();
 
     /*
      * void mMenuStackTemplate() - menu obslugujace stos dzialajacy
@@ -103,13 +125,53 @@ public:
 
     /*
      * void mMenuListTemplate() - menu obslugujace liste dzialajaca
-     * z wykorzystaniem szablony <lisy>.
+     * z wykorzystaniem szablonu <lisy>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
     void mMenuListTemplate();
+
+    /*
+     * void mMenuListMy() - menu obslugujace liste dzialajaca
+     * bez wykorzystania szablony <list>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuListMy();
+
+    /*
+     * void mMenuQueueTemplate() - menu obslugujace kolejke
+     * dzialajaca z wykorzystaniem szablonu <queue>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuQueueTemplate();
+
+    /*
+     * void mMenuQueueMy() - menu obslugujace kolejke
+     * dzialajaca bez wykorzystania szablonu <queue>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuQueueMy();
+
+    /*
+     * void mMenuHeapBinary() - metoda obslugujaca kopiec
+     * binarny.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuHeapBinary();
 
 /********** PUBLIC: END **********/
 };
