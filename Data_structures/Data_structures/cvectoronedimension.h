@@ -37,7 +37,147 @@ class cVectorOneDimension
 
 /********** PUBLIC: BEGIN **********/
 public:
+    /*
+     * cVectorOneDimension() - konstruktor wywolywany
+     * bez argumentow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - utworzenie obiektu klasy cVectorOneDimension.
+     */
     cVectorOneDimension();
+
+    /*
+     * cVectorOneDimension(typeLoop aSize) - konstruktor
+     * wywolywany z jednym argumentem - liczba elementow
+     * jakie mamy umiescic w wektorze.
+     * PRE:
+     * - podanie liczby elementow (typ: typeLoop);
+     * POST:
+     * - utworzenie obiektu klasy cVectorOneDimension.
+     */
+    cVectorOneDimension(typeLoop aSize);
+
+    /*
+     * cVectorOneDimension(typeLoop aSize, typeData aDrawingRange) -
+     * konstruktor wywolywany z dwoma argumentami - liczba
+     * elementow jakie mamy umiescic w wektorze oraz zakres
+     * losowanie elementow wektora.
+     * PRE:
+     * - podanie liczby elementow (typ: typeLoop);
+     * - podanie zakresu losowania elementow (typData);
+     * POST:
+     * - utworzenie obiektu klasy cVectorOneDimension.
+     */
+    cVectorOneDimension(typeLoop aSize, typeData aDrawingRange);
+
+
+
+    /*
+     * typeData getElement() - metoda zwracajaca ostatni
+     * element wektora.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie ostatniego elementu wektora (typ: typeData).
+     */
+    typeData getElement();
+
+    /*
+     * typeData getElement(aIndex) - metoda zwracajaca wskazany
+     * element wektora (o ile wskazany indeks istnieje!).
+     * PRE:
+     * - podanie numeru indeksu (typ: typeLoop);
+     * POST:
+     * - zwrocenie wskazanego elementu wektora (typ: typeData).
+     */
+    typeData getElement(typeLoop aIndex);
+
+    /*
+     * typeLoop getVectorSize() - metoda zwracajaca rozmiar
+     * wektora.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie rozmiaru wektora (typ: typeLoop).
+     */
+    typeLoop getVectorSize();
+
+    /*
+     * typeData getDrawingRange() - metoda zwracaja
+     * zakres losowania elementow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vDrawingRange
+     * (typ: typeData).
+     */
+    typeData getDrawingRange();
+
+    /*
+     * bool getStackIsEmpty() - zwrocenie informacji o tym
+     * czy wektor jest pusty.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie informacji o tym czy wektor jest pusty
+     * (typ: bool).
+     */
+    bool getStackIsEmpty();
+
+
+
+    /*
+     * void mAddElement(typeData aElement) - metoda dodajaca
+     * nowy element na koniec wektora.
+     * PRE:
+     * - podanie wartosci elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void mAddElement(typeData aElement);
+
+    /*
+     * bool mRemoveElement() - metoda usuwajaca ostatni element
+     * wektora (o ile wektor nie jest pusty!).
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    bool mRemoveElement();
+
+
+
+    /*
+     * void mPrintElement() - metoda wypisujaca ostatni element
+     * wektora (o ile wektor nie jest pusty!).
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintElement();
+
+    /*
+     * void mPrintElement(typeLoop aIndex) - metoda wypisujaca
+     * wskazany element wektora (o ile wskazany indeks istnieje!).
+     * PRE:
+     * - podanie numeru indeksu (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mPrintElement(typeLoop aIndex);
+
+    /*
+     * void mPrintAllElements() - wypisanie calej zawartosci
+     * wektora (o ile wektor nie jest pusty!).
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintAllElements();
 
 /********** PUBLIC: END **********/
 };
