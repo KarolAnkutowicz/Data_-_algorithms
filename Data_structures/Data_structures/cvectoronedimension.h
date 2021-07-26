@@ -75,7 +75,7 @@ public:
 
     /*
      * typeData getElement() - metoda zwracajaca ostatni
-     * element wektora.
+     * element wektora (o ile wektor nie jest pusty!).
      * PRE:
      * - brak;
      * POST:
@@ -101,7 +101,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru wektora (typ: typeLoop).
      */
-    typeLoop getVectorSize();
+    inline typeLoop getVectorSize()
+    {
+        return VectorElements.size();
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracaja
@@ -112,7 +115,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getStackIsEmpty() - zwrocenie informacji o tym
@@ -123,7 +129,10 @@ public:
      * - zwrocenie informacji o tym czy wektor jest pusty
      * (typ: bool).
      */
-    bool getStackIsEmpty();
+    inline bool getStackIsEmpty()
+    {
+        return VectorElements.empty();
+    }
 
 
 
@@ -135,7 +144,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeData aElement);
+    inline void mAddElement(typeData aElement)
+    {
+        VectorElements.push_back(aElement);
+    }
 
     /*
      * bool mRemoveElement() - metoda usuwajaca ostatni element
