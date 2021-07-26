@@ -15,7 +15,7 @@ using namespace std;
  */
 cVectorOneDimension::cVectorOneDimension()
 {
-
+    mPrintAllElements(); // wypisanie zawartosci wektora
 }
 
 /*
@@ -23,7 +23,9 @@ cVectorOneDimension::cVectorOneDimension()
  */
 cVectorOneDimension::cVectorOneDimension(typeLoop aSize)
 {
-
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
+        mAddElement(0); // dodanie nowego elementu
+    mPrintAllElements(); // wypisanie zawartosci wektora
 }
 
 /*
@@ -31,7 +33,10 @@ cVectorOneDimension::cVectorOneDimension(typeLoop aSize)
  */
 cVectorOneDimension::cVectorOneDimension(typeLoop aSize, typeData aDrawingRange)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
+        mAddElement(rand() % aDrawingRange); // dodanie nowego elementu
+    mPrintAllElements(); // wypisanie zawartosci wektora
 }
 
 
