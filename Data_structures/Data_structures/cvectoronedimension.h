@@ -21,6 +21,18 @@ class cVectorOneDimension
 {
 /********** PRIVATE: BEGIN **********/
 
+    /*
+     * vector <typeData> VectorElements - wektor
+     * przechowujacy elementy typu TypeData.
+     */
+    vector <typeData> VectorElements;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow wektora.
+     */
+    typeData vDrawingRange;
+
 /********** PRIVATE: END **********/
 
 /********** PUBLIC: BEGIN **********/
