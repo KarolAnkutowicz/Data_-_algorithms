@@ -27,7 +27,7 @@ void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
          << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
-         //<< "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+         << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
          << "(3) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
          //<< "(4) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
          << "(5) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
@@ -53,7 +53,7 @@ void cDataHandling::mMainMenu()
         {
             case 0 : break; // wybor zakonczenia dzialana programu
             case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-            //case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
             case 3 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
             //case 4 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
             case 5 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
@@ -79,7 +79,7 @@ void cDataHandling::mMainMenu()
 void cDataHandling::mMenuDynamicOneDimensionTable()
 {
     typeLoop vLengthTable; // zmienna okreslajaca dlugosc tablicy
-    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
          << "    Liczba elementow: ";
     cin >> vLengthTable; // wczytanie liczby elementow
@@ -93,7 +93,14 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
  */
 void cDataHandling::mMenuVectorOneDimension()
 {
-    //
+    typeLoop vLengthVector; // zmienna okreslajaca liczbe elementow wektora
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry wektora:" << endl // wczytywanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vLengthVector; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...: ";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
 }
 
 /*
@@ -102,7 +109,7 @@ void cDataHandling::mMenuVectorOneDimension()
 void cDataHandling::mMenuDynamicTwoDimensionTable()
 {
     typeLoop vColumns, vRows; // zmienne okreslajace wymiary tablicy
-    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
          << "    Liczba kolumn: ";
     cin >> vColumns; // wczytanie liczby kolumn
@@ -127,7 +134,7 @@ void cDataHandling::mMenuVectorTwoDimension()
 void cDataHandling::mMenuStackTemplate()
 {
     typeLoop vElements; // zmienna okreslajaca liczbe elementow stosu
-    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry stosu" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
     cin >> vElements; // wczytanie liczby elementow
@@ -142,7 +149,7 @@ void cDataHandling::mMenuStackTemplate()
 void cDataHandling::mMenuStackMy()
 {
     typeLoop vElements; // zmienna okreslajaca liczbe elementow stosu
-    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry stosu" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
     cin >> vElements; // wczytanie liczby elementow
@@ -157,7 +164,7 @@ void cDataHandling::mMenuStackMy()
 void cDataHandling::mMenuListTemplate()
 {
     typeLoop vElements; // zmienna okreslajaca liczbe elementow listy
-    typeData vDrawingRange; // zmienna okreslajaca zakres elementow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry listy" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
     cin >> vElements; // wczytanie liczby elementow

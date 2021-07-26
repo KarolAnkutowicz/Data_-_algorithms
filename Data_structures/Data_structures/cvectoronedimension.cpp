@@ -107,7 +107,7 @@ void cVectorOneDimension::mPrintElement(typeLoop aIndex)
         if (aIndex >= VectorElements.size()) // sprawdzamy czy nie wychodzimy poza zakres wektora
             cout << "    Brak elementu o wskazanym indeksie!" << endl;
         else // miescimy sie w zakresie wektora
-            cout << VectorElements.operator [](aIndex); // wypisujemy wskazany element
+            cout << VectorElements.operator [](aIndex) << endl; // wypisujemy wskazany element
     }
     else // wektor jest pusty
         cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
@@ -121,7 +121,7 @@ void cVectorOneDimension::mPrintAllElements()
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
         for (typeLoop i = 0; i < VectorElements.size(); i++) // przechodzimhy przez wszystkie elementy wektora
-            cout << VectorElements.operator [](i); // wypisujemy wskazany element
+            cout << VectorElements.operator [](i) << endl; // wypisujemy wskazany element
     }
     else // wektor jest pusty
         cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji

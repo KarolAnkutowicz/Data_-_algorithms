@@ -13,6 +13,7 @@
 #include "constantsandtypes.h"
 #include "cstackmy.h"
 #include "cstacktemplate.h"
+#include "cvectoronedimension.h"
 #include <conio.h>
 #include <iostream>
 
