@@ -20,6 +20,18 @@ class cQueueTemplate
 {
 /********** PRIVATE: BEGIN **********/
 
+    /*
+     * queue <typeData> QueueTemplate - kolejka
+     * elementow typu typeData.
+     */
+    queue <typeData> QueueTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow kolejki.
+     */
+    typeData vDrawingRange;
+
 /********** PRIVATE: END **********/
 
 /********** PUBLIC: BEGIN **********/
