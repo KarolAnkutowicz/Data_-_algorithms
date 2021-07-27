@@ -73,7 +73,7 @@ public:
 
     /*
      * typeData getFirstElement() - metoda zwracajaca
-     * pierwszy element z kolejki.
+     * pierwszy element z kolejki (o ile kolejka nie jest pusta!).
      * PRE:
      * - brak;
      * POST:
@@ -84,7 +84,7 @@ public:
 
     /*
      * typeData getLastElement() - metoda zwracajaca
-     * ostatni element z kolejki.
+     * ostatni element z kolejki (o ile kolejka nie jest pusta!).
      * PRE:
      * - brak;
      * POST:
@@ -100,7 +100,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru kolejki (typ: typeLoop).
      */
-    typeLoop getQueueSize();
+    inline typeLoop getQueueSize()
+    {
+        return QueueTemplate.size();
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -111,7 +114,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getListQueueIsEmpty() - metoda zawracajaca
@@ -122,7 +128,10 @@ public:
      * - zwrocenie informacji o tym czy lista jest pusta
      * (typ: bool).
      */
-    bool getQueueIsEmpty();
+    inline bool getQueueIsEmpty()
+    {
+        return QueueTemplate.empty();
+    }
 
 
 
@@ -134,7 +143,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeData aElement);
+    inline void mAddElement(typeData aElement)
+    {
+        QueueTemplate.push(aElement);
+    }
 
     /*
      * bool mRemoveElement() - metoda usuwajaca
