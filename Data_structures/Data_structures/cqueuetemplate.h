@@ -8,6 +8,7 @@
 #define CQUEUETEMPLATE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 #include <queue>
 
 using namespace std;
