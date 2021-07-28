@@ -15,7 +15,7 @@ using namespace std;
  */
 cQueueTemplate::cQueueTemplate()
 {
-
+    mPrintAllElements(); // wypisanie zawartosci kolejki
 }
 
 /*
@@ -23,7 +23,9 @@ cQueueTemplate::cQueueTemplate()
  */
 cQueueTemplate::cQueueTemplate(typeLoop aSize)
 {
-
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElement(0); // dodanie nowego elementu
+    mPrintAllElements(); // wypisanie zawartosci kolejki
 }
 
 /*
@@ -31,7 +33,10 @@ cQueueTemplate::cQueueTemplate(typeLoop aSize)
  */
 cQueueTemplate::cQueueTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElement(rand() % aDrawingRange);
+    mPrintAllElements(); // wypisanie zawartosci kolejki
 }
 
 

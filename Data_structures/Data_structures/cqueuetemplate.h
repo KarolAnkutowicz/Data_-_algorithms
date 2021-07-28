@@ -8,6 +8,8 @@
 #define CQUEUETEMPLATE_H
 
 #include "constantsandtypes.h"
+#include "cstdlib"
+#include "ctime"
 #include <iostream>
 #include <queue>
 
