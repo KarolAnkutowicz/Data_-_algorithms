@@ -11,6 +11,7 @@
 #include "cdynamictwodimensiontable.h"
 #include "clisttemplate.h"
 #include "constantsandtypes.h"
+#include "cqueuetemplate.h"
 #include "cstackmy.h"
 #include "cstacktemplate.h"
 #include "cvectoronedimension.h"

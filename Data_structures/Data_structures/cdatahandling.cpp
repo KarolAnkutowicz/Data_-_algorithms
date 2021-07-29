@@ -34,7 +34,7 @@ void cDataHandling::mPrintMainMenu()
          << "(6) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
          << "(7) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
          //<< "(8) - lista bez wykorzystanie szablonu <list>" << endl // opcja dla listy  bez wykorzystania <list>
-         //<< "(9) - kolejka z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
+         << "(9) - kolejka z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(10) - kolejka bez wykorzystanis szablonu <queue<" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
          //<< "(11) - kopiec binarny" << endl // opcja dla kopca binarnego
          << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
@@ -60,7 +60,7 @@ void cDataHandling::mMainMenu()
             case 6 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             case 7 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
             //case 8 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-            //case 9 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+            case 9 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 10 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
             //case 11 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
             default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
@@ -186,7 +186,14 @@ void cDataHandling::mMenuListMy()
  */
 void cDataHandling::mMenuQueueTemplate()
 {
-    //
+    typeLoop vElements; // zmienna okreslajaca liczbe elementow kolejki
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry kolejki" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vElements; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cQueueTemplate Q(vElements, vDrawingRange); // utworzenie obiektu
 }
 
 /*
