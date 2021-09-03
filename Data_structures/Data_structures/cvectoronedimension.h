@@ -124,7 +124,7 @@ public:
     }
 
     /*
-     * bool getStackIsEmpty() - zwrocenie informacji o tym
+     * bool getVectorIsEmpty() - zwrocenie informacji o tym
      * czy wektor jest pusty.
      * PRE:
      * - brak;
@@ -132,7 +132,7 @@ public:
      * - zwrocenie informacji o tym czy wektor jest pusty
      * (typ: bool).
      */
-    inline bool getStackIsEmpty()
+    inline bool getVectorIsEmpty()
     {
         return VectorElements.empty();
     }
