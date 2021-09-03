@@ -87,8 +87,8 @@ public:
     typeData getElement();
 
     /*
-     * typeData getElement(aIndex) - metoda zwracajaca wskazany
-     * element wektora (o ile wskazany indeks istnieje!).
+     * typeData getElement(typeLoop aIndex) - metoda zwracajaca
+     * wskazany element wektora (o ile wskazany indeks istnieje!).
      * PRE:
      * - podanie numeru indeksu (typ: typeLoop);
      * POST:

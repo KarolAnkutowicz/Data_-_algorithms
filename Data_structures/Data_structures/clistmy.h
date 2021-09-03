@@ -52,7 +52,7 @@ public:
      * PRE:
      * - brak;
      * POST:
-     * - tworzenie obiektu klasy cListTemplate.
+     * - tworzenie obiektu klasy cListMy.
      */
     cListMy();
 
@@ -63,7 +63,7 @@ public:
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * POST:
-     * - tworzenie obiektu klasy cListTemplate.
+     * - tworzenie obiektu klasy cListMy.
      */
     cListMy(typeLoop aSize);
 
@@ -77,7 +77,7 @@ public:
      * - podanie maksymalnego zakresu losowania elementow
      * (typ: typeData);
      * POST:
-     * - tworzenie obiektu klasy cListTemplate.
+     * - tworzenie obiektu klasy cListMy.
      */
     cListMy(typeLoop aSize, typeData aDrawingRange);
 

@@ -52,30 +52,30 @@ public:
      * PRE:
      * - brak;
      * POST:
-     * - tworzenie obiektu klasy cQueueTemplate.
+     * - tworzenie obiektu klasy cQueueMy.
      */
     cQueueMy();
 
     /*
-     * cQueueTemplate() - konstruktor wywolywany z jednym
+     * cQueueMy() - konstruktor wywolywany z jednym
      * argumentem - liczba elementow jakie mamy dodac
      * do kolejki.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * POST:
-     * - tworzenie obiektu klasy cQueueTemplate.
+     * - tworzenie obiektu klasy cQueueMy.
      */
     cQueueMy(typeLoop aSize);
 
     /*
-     * cQueueTemplate() - konstruktor wywolywany z dwoma
+     * cQueueMy() - konstruktor wywolywany z dwoma
      * argumentami - liczba elementow jakie mamy dodac
      * do kolejki oraz zakresem z jakiego mamy te elementy
      * losowac.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * POST:
-     * - tworzenie obiektu klasy cQueueTemplate.
+     * - tworzenie obiektu klasy cQueueMy.
      */
     cQueueMy(typeLoop aSize, typeData aDrawingRange);
 
