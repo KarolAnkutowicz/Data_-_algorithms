@@ -185,10 +185,7 @@ public:
      * POST:
      * - brak.
      */
-    inline void mAddElement(typeData aElement)
-    {
-        VectorElements.push_back(aElement);
-    }
+    void mAddElement(typeData aElement);
 
     /*
      * bool mRemoveElement() - metoda usuwajaca ostatni element

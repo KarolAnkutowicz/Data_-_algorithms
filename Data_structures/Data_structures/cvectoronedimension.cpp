@@ -71,6 +71,16 @@ typeData cVectorOneDimension::getElement(typeLoop aIndex)
 
 
 /*
+ * void mAddElement(typeData aElement)
+ */
+void cVectorOneDimension::mAddElement(typeData aElement)
+{
+    VectorElements.push_back(aElement);
+    mFindMaximum(); // aktualizujemy maximum
+    mFindMinimum(); // aktualizujemy minimum
+}
+
+/*
  * bool mRemoveElement()
  */
 bool cVectorOneDimension::mRemoveElement()
@@ -78,6 +88,8 @@ bool cVectorOneDimension::mRemoveElement()
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
         VectorElements.pop_back(); // usuwamy ostatni element
+        mFindMaximum(); // aktualizujemy maximum
+        mFindMinimum(); // aktualizujemy minimum
         return true; // zwracamy informacje o tym, ze usunelismy element
     }
     else // wektor jest pusty
@@ -91,7 +103,17 @@ bool cVectorOneDimension::mRemoveElement()
  */
 void cVectorOneDimension::mFindMaximum()
 {
-
+    if (VectorElements.empty() == true) // sprawdzenie czy tablica jest pusta
+        vMaximum = NULL; // jesli tak to nie ma wartosci najwiekszej
+    else // jesli tablica nie jest pusta
+    {
+        vMaximum = VectorElements.front(); // ustanawiamy wartosc poczatkowa maximum
+        for (typeLoop i = 1; i < VectorElements.size(); i++) // przechodzimy po wszystkich kolejnych elementach
+        {
+            if (VectorElements[i] > vMaximum) // jesli nowy element jest wiekszy od biezacego maximum...
+                vMaximum = VectorElements[i]; // ...to staje sie on nowym maximum
+        }
+    }
 }
 
 /*
@@ -99,7 +121,17 @@ void cVectorOneDimension::mFindMaximum()
  */
 void cVectorOneDimension::mFindMinimum()
 {
-
+    if (VectorElements.empty() == true) // sprawdzenie czy tablica jest pusta
+        vMinimum = NULL; // jesli tak to nie ma wartosci najwiekszej
+    else // jesli tablica nie jest pusta
+    {
+        vMinimum = VectorElements.front(); // ustanawiamy wartosc poczatkowa minimum
+        for (typeLoop i = 1; i < VectorElements.size(); i++) // przechodzimy po wszystkich kolejnych elementach
+        {
+            if (VectorElements[i] < vMinimum) // jesli nowy element jest mniejszy od biezacego minimum...
+                vMinimum = VectorElements[i]; // ...to staje sie on nowym minimum
+        }
+    }
 }
 
 

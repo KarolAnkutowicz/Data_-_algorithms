@@ -103,16 +103,18 @@ void cDataHandling::mMenuVectorOneDimension()
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
     cout << "    Podaj nowy element: ";
-    cin >> vElement;
-    V.mAddElement(vElement);
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    V.mAddElement(vElement); // dodanie nowego elementu
     cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement;
-    V.mAddElement(vElement);
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    V.mAddElement(vElement); // dodanie nowego elementu
     cout << "    Usuwamy ostatni element..." << endl;
-    V.mRemoveElement();
+    V.mRemoveElement(); // usuwanie ostatniego elementu
     cout << "    Zawartosc tablicy: " << endl;
-    V.mPrintAllElements();
-    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl;
+    V.mPrintAllElements(); // wypisanie zawartosci tablicy
+    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl // wypisanie rozmiaru tablicy
+         << "    Maximum: " << V.getMaximum() << endl // wypisanie maximum tablicy
+         << "    Minimum: " << V.getMinimum() << endl; // wypisanie minimum tablicy
 }
 
 /*
