@@ -87,6 +87,24 @@ bool cVectorOneDimension::mRemoveElement()
 
 
 /*
+ * void mFindMaximum()
+ */
+void cVectorOneDimension::mFindMaximum()
+{
+
+}
+
+/*
+ * void mFindMinimum()
+ */
+void cVectorOneDimension::mFindMinimum()
+{
+
+}
+
+
+
+/*
  * void mPrintElement()
  */
 void cVectorOneDimension::mPrintElement()

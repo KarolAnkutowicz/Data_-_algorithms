@@ -112,7 +112,7 @@ void cDataHandling::mMenuVectorOneDimension()
     V.mRemoveElement();
     cout << "    Zawartosc tablicy: " << endl;
     V.mPrintAllElements();
-    cout << endl << "    Liczba elementow: " << V.getVectorSize();
+    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl;
 }
 
 /*

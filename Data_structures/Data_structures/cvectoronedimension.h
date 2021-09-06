@@ -36,6 +36,18 @@ class cVectorOneDimension
      */
     typeData vDrawingRange;
 
+    /*
+     * typeData vMaximum - pole przechowujace
+     * najwieksza wartosc tablicy.
+     */
+    typeData vMaximum;
+
+    /*
+     * typeData vMinimum - pole przechowujaca
+     * najmniejsza wartosc tablicy.
+     */
+    typeData vMinimum;
+
 /********** PRIVATE: END **********/
 
 /********** PUBLIC: BEGIN **********/
@@ -137,6 +149,32 @@ public:
         return VectorElements.empty();
     }
 
+    /*
+     * typeData getMaximum() - metoda zwracajaca
+     * najwieksza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosc pola vMaximum (typ: typeData).
+     */
+    inline typeData getMaximum()
+    {
+        return vMaximum;
+    }
+
+    /*
+     * typeData getMinimum() - metoda zwracajaca
+     * najmniejsza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosc pola vMinimum (typ: typeData).
+     */
+    inline typeData getMinimum()
+    {
+        return vMinimum;
+    }
+
 
 
     /*
@@ -161,6 +199,28 @@ public:
      * - brak.
      */
     bool mRemoveElement();
+
+
+
+    /*
+     * void mFindMaximum() - metoda znajdujaca
+     * najwieksza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMaximum();
+
+    /*
+     * void mFindMinimum() - metoda znajdujaca
+     * najmniejsza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMinimum();
 
 
 
