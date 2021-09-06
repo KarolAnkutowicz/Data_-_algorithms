@@ -63,6 +63,8 @@ public:
      */
     void mMainMenu();
 
+
+
     /*
      * void mMenuDynamicOneDimensionTable() - menu obslugujaca
      * dynamiczna tabele jednowymiarowa.
@@ -75,7 +77,7 @@ public:
 
     /*
      * void mMenuVectorOneDimension() - metoda obslugujaca
-     * dynamiczna tabele jednowymiarowa wykorzystujaca
+     * dynamiczna tablice jednowymiarowa wykorzystujaca
      * szablon <vector>.
      * PRE:
      * - brak;

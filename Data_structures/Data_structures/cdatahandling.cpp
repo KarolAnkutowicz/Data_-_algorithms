@@ -95,12 +95,24 @@ void cDataHandling::mMenuVectorOneDimension()
 {
     typeLoop vLengthVector; // zmienna okreslajaca liczbe elementow wektora
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
     cout << "Okresl parametry wektora:" << endl // wczytywanie parametrow
          << "    Liczba elementow: ";
     cin >> vLengthVector; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
+    cout << "    Podaj nowy element: ";
+    cin >> vElement;
+    V.mAddElement(vElement);
+    cout << "    Podaj jeszcze jeden nowy element: ";
+    cin >> vElement;
+    V.mAddElement(vElement);
+    cout << "    Usuwamy ostatni element..." << endl;
+    V.mRemoveElement();
+    cout << "    Zawartosc tablicy: " << endl;
+    V.mPrintAllElements();
+    cout << endl << "    Liczba elementow: " << V.getVectorSize();
 }
 
 /*
