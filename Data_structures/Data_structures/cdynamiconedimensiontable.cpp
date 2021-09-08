@@ -22,7 +22,6 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable()
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
     mPrintTable(); // wypisanie zawartosci tablicy
-    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -38,7 +37,6 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
     mPrintTable(); // wypisanie zawartosci tablicy
-    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -53,7 +51,6 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
     mFindMinElement(); // znalezienie najmniejszego elementu w tablicy
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
     mPrintTable(); // wypisanie zawartosci tablicy
-    mPrintResults(); // wypisanie rezultatow
 }
 
 /*
@@ -62,6 +59,50 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
 cDynamicOneDimensionTable::~cDynamicOneDimensionTable()
 {
     delete []tabElements; // zwalnianie zasobow przydzielanych dynamicznie
+}
+
+
+
+/*
+ * typeData getElement()
+ */
+typeData cDynamicOneDimensionTable::getElement()
+{
+
+}
+
+/*
+ * typeData getElement(typeLoop aIndex)
+ */
+typeData cDynamicOneDimensionTable::getElement(typeLoop aIndex)
+{
+
+}
+
+/*
+ * bool getTableIsEmpty()
+ */
+bool cDynamicOneDimensionTable::getTableIsEmpty()
+{
+
+}
+
+
+
+/*
+ * void mAddElement(typeData aElement)
+ */
+void cDynamicOneDimensionTable::mAddElement(typeData aElement)
+{
+
+}
+
+/*
+ * bool mRemoveElement()
+ */
+bool cDynamicOneDimensionTable::mRemoveElement()
+{
+
 }
 
 
@@ -102,6 +143,24 @@ void cDynamicOneDimensionTable::mFindMaxElement()
     }
 }
 
+
+
+/*
+ * void mPrintElement()
+ */
+void cDynamicOneDimensionTable::mPrintElement()
+{
+
+}
+
+/*
+ * void mPrintElement(typeLoop aIndex)
+ */
+void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
+{
+
+}
+
 /*
  * void mPrintTable()
  */
@@ -112,17 +171,6 @@ void cDynamicOneDimensionTable::mPrintTable()
         cout << tabElements[i] << " "; // wypisanie kolejnego elementu
     cout << endl; // przejscie do nowej linii
 }
-
-/*
- * void mPrintResults()
- */
-void cDynamicOneDimensionTable::mPrintResults()
-{
-    cout << "    Liczba elementow tablicy: " << getLenthtTable() << endl // wypisanie liczby elementow
-         << "    Wartosc najmniejsza: " << getMinElement() << endl // wypisanie najmniejszej wartosci
-         << "    Wartosc najwieksza: " << getMaxElement() << endl; // wypisanie nawiekszej wartosci
-}
-
 
 /********** PUBLIC: END **********/
 

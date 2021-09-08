@@ -37,16 +37,16 @@ class cVectorOneDimension
     typeData vDrawingRange;
 
     /*
-     * typeData vMaximum - pole przechowujace
-     * najwieksza wartosc tablicy.
-     */
-    typeData vMaximum;
-
-    /*
-     * typeData vMinimum - pole przechowujaca
+     * typeData vMinElement - pole przechowujaca
      * najmniejsza wartosc tablicy.
      */
-    typeData vMinimum;
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - pole przechowujace
+     * najwieksza wartosc tablicy.
+     */
+    typeData vMaxElement;
 
 /********** PRIVATE: END **********/
 
@@ -122,20 +122,6 @@ public:
     }
 
     /*
-     * typeData getDrawingRange() - metoda zwracaja
-     * zakres losowania elementow.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie wartosci pola vDrawingRange
-     * (typ: typeData).
-     */
-    inline typeData getDrawingRange()
-    {
-        return vDrawingRange;
-    }
-
-    /*
      * bool getVectorIsEmpty() - zwrocenie informacji o tym
      * czy wektor jest pusty.
      * PRE:
@@ -150,29 +136,43 @@ public:
     }
 
     /*
-     * typeData getMaximum() - metoda zwracajaca
-     * najwieksza wartosc w tablicy.
+     * typeData getDrawingRange() - metoda zwracaja
+     * zakres losowania elementow.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosc pola vMaximum (typ: typeData).
+     * - zwrocenie wartosci pola vDrawingRange
+     * (typ: typeData).
      */
-    inline typeData getMaximum()
+    inline typeData getDrawingRange()
     {
-        return vMaximum;
+        return vDrawingRange;
     }
 
     /*
-     * typeData getMinimum() - metoda zwracajaca
+     * typeData getMinElement() - metoda zwracajaca
      * najmniejsza wartosc w tablicy.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosc pola vMinimum (typ: typeData).
+     * - zwrocenie wartosc pola vMinElement (typ: typeData).
      */
-    inline typeData getMinimum()
+    inline typeData getMinElement()
     {
-        return vMinimum;
+        return vMinElement;
+    }
+
+    /*
+     * typeData getMaxElement() - metoda zwracajaca
+     * najwieksza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosc pola vMaxElement (typ: typeData).
+     */
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
     }
 
 
@@ -200,24 +200,33 @@ public:
 
 
     /*
-     * void mFindMaximum() - metoda znajdujaca
-     * najwieksza wartosc w tablicy.
+     * void mDrawElements() - metoda losujaca elementy wektora.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mFindMaximum();
+    void mDrawElements();
 
     /*
-     * void mFindMinimum() - metoda znajdujaca
+     * void mFindMinElement() - metoda znajdujaca
      * najmniejsza wartosc w tablicy.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mFindMinimum();
+    void mFindMinElement();
+
+    /*
+     * void mFindMaxElement() - metoda znajdujaca
+     * najwieksza wartosc w tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMaxElement();
 
 
 

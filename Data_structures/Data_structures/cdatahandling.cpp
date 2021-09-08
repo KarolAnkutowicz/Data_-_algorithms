@@ -113,8 +113,8 @@ void cDataHandling::mMenuVectorOneDimension()
     cout << "    Zawartosc tablicy: " << endl;
     V.mPrintAllElements(); // wypisanie zawartosci tablicy
     cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl // wypisanie rozmiaru tablicy
-         << "    Maximum: " << V.getMaximum() << endl // wypisanie maximum tablicy
-         << "    Minimum: " << V.getMinimum() << endl; // wypisanie minimum tablicy
+         << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum tablicy
+         << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum tablicy
 }
 
 /*

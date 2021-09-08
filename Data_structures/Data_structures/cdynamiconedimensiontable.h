@@ -33,6 +33,12 @@ class cDynamicOneDimensionTable
     typeLoop vLengthTable;
 
     /*
+     * bool vTableIsEmpty - pole okreslajace czy tablica
+     * jest pusta.
+     */
+    bool vTableIsEmpty;
+
+    /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
@@ -96,6 +102,17 @@ public:
     ~cDynamicOneDimensionTable();
 
 
+
+    /*
+     * typeData getElement() - metoda zwracajaca
+     * ostatni element tablicy.
+     * PRE:
+     * - podanie indeksu (typ: typeLoop);
+     * POST:
+     * - zwrocenie wartosci elementu (typ: typeData).
+     */
+    typeData getElement();
+
     /*
      * typeData getElement(typeLoop aIndex) - metoda zwracajaca
      * wskazany element tablicy.
@@ -104,10 +121,7 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    inline typeData getElement(typeLoop aIndex)
-    {
-        return tabElements[aIndex];
-    }
+    typeData getElement(typeLoop aIndex);
 
     /*
      * typeLoop getLenthtTable() - metoda zwracajaca dlugosc tablicy
@@ -120,6 +134,16 @@ public:
     {
         return vLengthTable;
     }
+
+    /*
+     * bool getTableIsEmpty() - metoda zwracajaca informacje
+     * o tym czy tablica jest pusta.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vTableIsEmpty(typ: typeData).
+     */
+    bool getTableIsEmpty();
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -163,6 +187,28 @@ public:
 
 
     /*
+     * void mAddElement(typeData aElement) - metoda dodajaca
+     * nowy element na koniec tablicy.
+     * PRE:
+     * - podanie wartosci elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void mAddElement(typeData aElement);
+
+    /*
+     * bool mRemoveElement() - metoda usuwajaca ostatni element
+     * tablicy (o ile tablica nie jest pusta!).
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    bool mRemoveElement();
+
+
+
+    /*
      * void mDrawElements() - metoda losujaca elementy tablicy.
      * PRE:
      * - brak;
@@ -191,6 +237,28 @@ public:
      */
     void mFindMaxElement();
 
+
+
+    /*
+     * void mPrintElement() - metoda wypisujaca ostatni element
+     * tablicy (o ile tablica nie jest pusta!).
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mPrintElement();
+
+    /*
+     * void mPrintElement(typeLoop aIndex) - metoda wypisujaca
+     * wskazany element tablicy (o ile wskazany indeks istnieje!).
+     * PRE:
+     * - podanie numeru indeksu (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mPrintElement(typeLoop aIndex);
+
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
      * PRE:
@@ -199,16 +267,6 @@ public:
      * - brak.
      */
     void mPrintTable();
-
-    /*
-     * void mPrintResults() - metoda wypisujaca rezultaty
-     * wskazywanie i wyznaczania wlasnosci tablicy.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mPrintResults();
 
 /********** PUBLIC: END **********/
 };
