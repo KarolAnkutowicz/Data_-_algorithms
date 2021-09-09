@@ -78,14 +78,28 @@ void cDataHandling::mMainMenu()
  */
 void cDataHandling::mMenuDynamicOneDimensionTable()
 {
-    typeLoop vLengthTable; // zmienna okreslajaca dlugosc tablicy
+    typeLoop vLengthTable; // zmienna okreslajaca liczbe elementow tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
     cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
          << "    Liczba elementow: ";
     cin >> vLengthTable; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); // utworzenie obiektu
+    cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); //utworzenie obiektu
+    cout << "    Podaj nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy ostatni element..." << endl;
+    D.mRemoveElement(); // usuwanie ostatniego elementu
+    cout << "    Zawartosc tablicy: " << endl;
+    D.mPrintTable(); // wypisanie zawartosci tablicy
+    cout << endl << "    Liczba elementow: " << D.getLenthtTable() << endl // wypisanie rozmiaru tablicy
+         << "    Minimum: " << D.getMinElement() << endl // wypisanie minimum tablicy
+         << "    Maximum: " << D.getMaxElement() << endl; // wypisanie maximum tablicy
 }
 
 /*
@@ -110,11 +124,11 @@ void cDataHandling::mMenuVectorOneDimension()
     V.mAddElement(vElement); // dodanie nowego elementu
     cout << "    Usuwamy ostatni element..." << endl;
     V.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << "    Zawartosc tablicy: " << endl;
-    V.mPrintAllElements(); // wypisanie zawartosci tablicy
-    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl // wypisanie rozmiaru tablicy
-         << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum tablicy
-         << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum tablicy
+    cout << "    Zawartosc wektora: " << endl;
+    V.mPrintAllElements(); // wypisanie zawartosci wektora
+    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl // wypisanie rozmiaru wektora
+         << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora
+         << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora
 }
 
 /*

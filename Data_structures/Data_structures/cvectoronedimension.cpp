@@ -179,7 +179,6 @@ void cVectorOneDimension::mPrintAllElements()
 {
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
-        cout << "    Zawartosc wektora:" << endl;
         for (typeLoop i = 0; i < VectorElements.size(); i++) // przechodzimhy przez wszystkie elementy wektora
             cout << VectorElements.operator [](i) << " "; // wypisujemy wskazany element
         cout << endl; // przejscie do nowej linii
