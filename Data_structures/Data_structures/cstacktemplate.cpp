@@ -23,9 +23,9 @@ cStackTemplate::cStackTemplate()
  */
 cStackTemplate::cStackTemplate(typeLoop aSize)
 {
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
     for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
         mAddElement(0); // dodanie nowego elementu
-    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
 }
 
 /*
@@ -33,8 +33,8 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
  */
 cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-    mDrawElements(aSize); // wywolanie metody losujacej elementy
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 
@@ -89,7 +89,7 @@ void cStackTemplate::mDrawElements(typeLoop aSize)
 void cStackTemplate::mPrintElement()
 {
     if (!StackTemplate.empty()) // sprawdzamy czy stos nie jest pusty
-        cout << StackTemplate.top() << endl; //  jesli nie ejst to wypisujemy element ze szczytu
+        cout << StackTemplate.top() << " "; //  jesli nie jest to wypisujemy element ze szczytu
     else //  jesli jest pusty
         cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
 }
@@ -103,7 +103,6 @@ void cStackTemplate::mPrintAllElements()
         cout << "    Stos jest pusty!" << endl; // jesli tak to wypisujemy komunikat o tej sytuacji
     else
     {
-        cout << "    Zawartosc stosu:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
         while (!StackTemplate.empty())
         {
             mPrintElement(); // wypisujemy element ze szczytu stosu

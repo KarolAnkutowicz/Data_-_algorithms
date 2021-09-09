@@ -161,14 +161,27 @@ void cDataHandling::mMenuVectorTwoDimension()
  */
 void cDataHandling::mMenuStackTemplate()
 {
-    typeLoop vElements; // zmienna okreslajaca liczbe elementow stosu
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
     cout << "Okresl parametry stosu" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
-    cin >> vElements; // wczytanie liczby elementow
+    cin >> vSize; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cStackTemplate S(vElements, vDrawingRange); // utworzenie obiektu
+    cStackTemplate S(vSize, vDrawingRange); // utworzenie obiektu
+    cout << "    Podaj nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy ostatni element..." << endl;
+    S.mRemoveElement(); // usuwanie ostatniego elementu
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+    cout << "    Zawartosc stosu: " << endl;
+    S.mPrintAllElements(); // wypisanie zawartosci wektora
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
 }
 
 /*
