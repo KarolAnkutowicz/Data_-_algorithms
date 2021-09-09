@@ -110,6 +110,22 @@ using namespace std;
 
 }*/
 
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+/*void cListMy::mDrawElements(typeLoop aSize)
+{
+
+}*/
+
+/*
+ * void mCheckListIsEmpty()
+ */
+/*void cListMy::mCheckListIsEmpty()
+{
+
+}*/
+
 
 
 /*
