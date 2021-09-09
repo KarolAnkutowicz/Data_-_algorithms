@@ -34,9 +34,7 @@ cVectorOneDimension::cVectorOneDimension(typeLoop aSize)
 cVectorOneDimension::cVectorOneDimension(typeLoop aSize, typeData aDrawingRange)
 {
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
-    srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
-        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 
@@ -99,10 +97,13 @@ bool cVectorOneDimension::mRemoveElement()
 
 
 /*
- * void mDrawElements()
+ * void mDrawElements(typeLoop aSize)
  */
-void cVectorOneDimension::mDrawElements()
+void cVectorOneDimension::mDrawElements(typeLoop aSize)
 {
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
 
 }
 
@@ -178,8 +179,10 @@ void cVectorOneDimension::mPrintAllElements()
 {
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
+        cout << "    Zawartosc wektora:" << endl;
         for (typeLoop i = 0; i < VectorElements.size(); i++) // przechodzimhy przez wszystkie elementy wektora
-            cout << VectorElements.operator [](i) << endl; // wypisujemy wskazany element
+            cout << VectorElements.operator [](i) << " "; // wypisujemy wskazany element
+        cout << endl; // przejscie do nowej linii
     }
     else // wektor jest pusty
         cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji

@@ -200,13 +200,14 @@ public:
 
 
     /*
-     * void mDrawElements() - metoda losujaca elementy wektora.
+     * void mDrawElements(typeLoop aSize) - metoda
+     * losujaca elementy wektora.
      * PRE:
-     * - brak;
+     * - podanie liczby elementow (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mDrawElements();
+    void mDrawElements(typeLoop aSize);
 
     /*
      * void mFindMinElement() - metoda znajdujaca

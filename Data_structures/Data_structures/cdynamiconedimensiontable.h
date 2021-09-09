@@ -143,7 +143,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vTableIsEmpty(typ: typeData).
      */
-    bool getTableIsEmpty();
+    inline bool getTableIsEmpty()
+    {
+        return vTableIsEmpty;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -216,6 +219,16 @@ public:
      * - brak.
      */
     void mDrawElements();
+
+    /*
+     * void mCheckTableIsEmpty() - metoda sprawdzajaca
+     * czy tablica jest pusta.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mCheckTableIsEmpty();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy

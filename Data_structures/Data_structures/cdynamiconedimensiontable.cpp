@@ -16,12 +16,12 @@ using namespace std;
 cDynamicOneDimensionTable::cDynamicOneDimensionTable()
 {
     vLengthTable = 1; // ustanowienie dlugosci tablicy
+    mCheckTableIsEmpty(); // wywolujemy metode sprawdzajaca czy tablica jest pusta
     tabElements = new typeData[vLengthTable]; // utworzenie nowej tablicy
     vDrawingRange = 0; // ustanowienie maksymalnej wartosci w tablicy
     tabElements[0] = vDrawingRange; // przypisanie wartosci jej jedynego elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
-    mPrintTable(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -30,13 +30,13 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable()
 cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
 {
     vLengthTable = aLengthTable; // ustanowienie dlugosci tablicy
+    mCheckTableIsEmpty(); // wywolujemy metode sprawdzajaca czy tablica jest pusta
     tabElements = new typeData[aLengthTable]; // utworzenie nowej tablicy
     vDrawingRange = 0; // ustanowienie maksymalnej wartosci w tablicy
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         tabElements[i] = vDrawingRange; // przypisanie wartosci elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
-    mPrintTable(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -45,12 +45,12 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
 cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, typeData aDrawingRange)
 {
     vLengthTable = aLengthTable; // ustanowienie dlugosci tablicy
+    mCheckTableIsEmpty(); // wywolujemy metode sprawdzajaca czy tablica jest pusta
     tabElements = new typeData[aLengthTable]; // utworzenie nowej tablicy
     vDrawingRange = aDrawingRange; // ustanowienie maksymalnej wartosci w tablicy
     mDrawElements(); // wylosowanie wartosci elementow tablicy
     mFindMinElement(); // znalezienie najmniejszego elementu w tablicy
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
-    mPrintTable(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -68,6 +68,10 @@ cDynamicOneDimensionTable::~cDynamicOneDimensionTable()
  */
 typeData cDynamicOneDimensionTable::getElement()
 {
+    if (!vTableIsEmpty) // sprawdzamy czy wektor nie jest pusty
+        return tabElements[vLengthTable - 1]; // jesli nie to zwracamy ostatni element
+    else // wektor jest pusty
+        return NULL; // jesli tak to nie mamy co zwracac
 
 }
 
@@ -76,14 +80,15 @@ typeData cDynamicOneDimensionTable::getElement()
  */
 typeData cDynamicOneDimensionTable::getElement(typeLoop aIndex)
 {
-
-}
-
-/*
- * bool getTableIsEmpty()
- */
-bool cDynamicOneDimensionTable::getTableIsEmpty()
-{
+    if (!vTableIsEmpty) // sprawdzamy czy wektor nie jest pusty
+    {
+        if (aIndex >= vLengthTable) // sprawdzamy czy nie wychodzimy poza zakres wektora
+            return NULL; // jesli tak to nie mamy co zwracac
+        else // indeks miesci sie w zakresie wektora
+            return tabElements[aIndex]; // zwracamy odpowiednia wartosc
+    }
+    else // jesli jest
+        return NULL; // nie mamy co zwracac
 
 }
 
@@ -94,7 +99,18 @@ bool cDynamicOneDimensionTable::getTableIsEmpty()
  */
 void cDynamicOneDimensionTable::mAddElement(typeData aElement)
 {
-
+    vLengthTable++; // zwiekszamy rozmiar tablicy
+    typeData *tabElementsAux; // deklarujemy wskaznik do tablicy pomocniczej
+    tabElementsAux = new typeData[vLengthTable]; // tworzymy nowa tablice pomocnicza
+    for (typeLoop i = 0; i < (vLengthTable - 2); i++) // przechodziy po wszystkich elementach tablicy elementow
+        tabElementsAux[i] = tabElements[i]; // kopiujemy elementy do tablicy pomocniczej
+    tabElements[vLengthTable - 1] = aElement; // skopiowanie dodatkowego elementu
+    delete [] tabElements; // zwolnienie zasobow przydzielanych dynamicznie
+    tabElements = new typeData[vLengthTable]; // utworzenie nowej tablicy elementow
+    for (typeLoop i = 0; i < (vLengthTable - 1); i++) // przejscie po wszystkich elementach tablicy
+        tabElements[i] = tabElementsAux[i]; // skopiowanie kolejnych elementow
+    delete []tabElementsAux; // zwalnianie zasobow przydzielanych dynamicznie
+    mCheckTableIsEmpty(); // wywolanie sprawdzenia czy tablica jest pusta
 }
 
 /*
@@ -102,7 +118,25 @@ void cDynamicOneDimensionTable::mAddElement(typeData aElement)
  */
 bool cDynamicOneDimensionTable::mRemoveElement()
 {
-
+    if (vTableIsEmpty == true) // sprawdzamy czy tablica jest pusta
+    {
+        return false; // jesli tak to nie mamhy co usuwac
+    }
+    else // jesli tablica nie jest pusta
+    {
+        vLengthTable--; // zmniejszamy rozmiar tablicy
+        typeData *tabElementsAux; // deklarujemy wskaznik do tablicy pomocniczej
+        tabElementsAux = new typeData[vLengthTable]; // tworzymy nowa tablice pomocnicza
+        for (typeLoop i = 0; i < (vLengthTable - 1); i++) // przechodziy po wszystkich elementach tablicy elementow
+            tabElementsAux[i] = tabElements[i]; // kopiujemy elementy do tablicy pomocniczej
+        delete [] tabElements; // zwolnienie zasobow przydzielanych dynamicznie
+        tabElements = new typeData[vLengthTable]; // utworzenie nowej tablicy elementow
+        for (typeLoop i = 0; i < (vLengthTable - 1); i++) // przejscie po wszystkich elementach tablicy
+            tabElements[i] = tabElementsAux[i]; // skopiowanie kolejnych elementow
+        delete []tabElementsAux; // zwalnianie zasobow przydzielanych dynamicznie
+        mCheckTableIsEmpty(); // wywolanie sprawdzenia czy tablica jest pusta
+        return true;
+    }
 }
 
 
@@ -115,6 +149,17 @@ void cDynamicOneDimensionTable::mDrawElements()
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         tabElements[i] = rand() % vDrawingRange; // wylosowanie i przypisanie wartosci
+}
+
+/*
+ * void mCheckTableIsEmpty()
+ */
+void cDynamicOneDimensionTable::mCheckTableIsEmpty()
+{
+    if (vLengthTable == 0) // sprawdzamy czy sa jakiekolwiek elementy w tablicy
+        vTableIsEmpty = true; // jesli nie to tablica jest pusta
+    else //  w przeciwnym przypadku
+        vTableIsEmpty = false; // tablica nie jest pusta
 }
 
 /*
@@ -150,7 +195,10 @@ void cDynamicOneDimensionTable::mFindMaxElement()
  */
 void cDynamicOneDimensionTable::mPrintElement()
 {
-
+    if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
+        cout << tabElements[vLengthTable - 1] << endl; // wypisujemy ostatni element
+    else // Tablica jest pusta
+        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -158,7 +206,15 @@ void cDynamicOneDimensionTable::mPrintElement()
  */
 void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
 {
-
+    if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
+    {
+        if (aIndex >= vLengthTable) // sprawdzamy czy nie wychodzimy poza zakres tablicy
+            cout << "    Brak elementu o wskazanym indeksie!" << endl;
+        else // miescimy sie w zakresie tablicy
+            cout << tabElements[aIndex] << endl; // wypisujemy wskazany element
+    }
+    else // tablica jest pusta
+        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -166,10 +222,15 @@ void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
  */
 void cDynamicOneDimensionTable::mPrintTable()
 {
-    cout << "    Zawartosc tablicy: " << endl;
-    for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
-        cout << tabElements[i] << " "; // wypisanie kolejnego elementu
-    cout << endl; // przejscie do nowej linii
+    if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
+    {
+        cout << "    Zawartosc tablicy: " << endl;
+        for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+            cout << tabElements[i] << " "; // wypisanie kolejnego elementu
+        cout << endl; // przejscie do nowej linii
+    }
+    else // tablica jest pusta
+        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/
