@@ -29,12 +29,12 @@ cStackMy::cStackMy(typeLoop aSize)
     StackMy = new typeData[aSize]; // nowa tablica elementow
     vSize = aSize; // nadanie rozmiaru stosu
     vDrawingRange = 0; // ustanawiamy zerowy zakres wartosci elementow
-    if (aSize != 0) // sprawdzamhy czy odkladamy na stos niezerowa liczbe elementow
+    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
+    if (getStackIsEmpty() == false) // sprawdzamhy czy odkladamy na stos niezerowa liczbe elementow
     {
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
             StackMy[i] = 0; // ustanawiamy wartosc elementu
     }
-    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
 }
 
 /*
@@ -45,9 +45,9 @@ cStackMy::cStackMy(typeLoop aSize, typeData aDrawingRange)
     StackMy = new typeData[aSize]; // nowa tablica elementow
     vSize = aSize; // nadanie rozmiaru stosu
     vDrawingRange = aDrawingRange; // ustanawiamy zakres wartosci elementow
-    if (aSize != 0) // sprawdzamy czy odkladamy na stos niezerowa liczbe elementow
-        mDrawElements(aSize); // wywolanie metody losujacej elementy
     mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
+    if (getStackIsEmpty() == false) // sprawdzamy czy odkladamy na stos niezerowa liczbe elementow
+        mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 /*
@@ -145,7 +145,7 @@ void cStackMy::mCheckStackIsEmpty()
 void cStackMy::mPrintElement()
 {
     if (getStackIsEmpty() == false) // sprawdzamy czy stos nie jest pusty
-        cout << StackMy[vSize - 1] << endl; // jesli nie jest to wypisujemy element ze szczytu stosu
+        cout << StackMy[vSize - 1] << " "; // jesli nie jest to wypisujemy element ze szczytu stosu
     else // jesli stos jest pusty
         cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
 }
@@ -155,11 +155,10 @@ void cStackMy::mPrintElement()
  */
 void cStackMy::mPrintAllElements()
 {
-    if (getStackIsEmpty() == false)
+    if (getStackIsEmpty() == true)
         cout << "    Stos jest pusty!" << endl; // wypisujemy elementy az do ostatniego
     else
     {
-        cout << "    Zawartosc stosu:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
         while (getStackIsEmpty() == false)
         {
             mPrintElement(); // wypisujemy element ze szczytu stosu
