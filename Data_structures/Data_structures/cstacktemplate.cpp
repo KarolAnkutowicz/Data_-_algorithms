@@ -68,6 +68,14 @@ bool cStackTemplate::mRemoveElement()
         return false; // zwracamy wartosc logiczna
 }
 
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cStackTemplate::mDrawElements(typeLoop aSize)
+{
+
+}
+
 
 
 /*

@@ -151,6 +151,16 @@ public:
      */
     bool mRemoveElement();
 
+    /*
+     * void mDrawElements(typeLoop aSize) - metoda losujaca
+     * wartosci umieszczane na stosie.
+     * PRE:
+     * - podanie liczby losowanych elementow (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mDrawElements(typeLoop aSize);
+
 
 
     /*

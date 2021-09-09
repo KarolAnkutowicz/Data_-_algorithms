@@ -132,6 +132,22 @@ bool cStackMy::mRemoveElement()
         return false; // zwracamy informacje, ze nic nie usunelismy
 }
 
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cStackMy::mDrawElements(typeLoop aSize)
+{
+
+}
+
+/*
+ * void mCheckStackIsEmpty()
+ */
+void cStackMy::mCheckStackIsEmpty()
+{
+
+}
+
 
 
 /*
