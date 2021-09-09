@@ -15,7 +15,7 @@ using namespace std;
  */
 cListTemplate::cListTemplate()
 {
-    mPrintAllElements(); // wypisywanie zawartosci listy
+    vDrawingRange = 0; // usranowienie zakresu losowania elementow
 }
 
 /*
@@ -23,9 +23,9 @@ cListTemplate::cListTemplate()
  */
 cListTemplate::cListTemplate(typeLoop aSize)
 {
+    vDrawingRange = 0; // usranowienie zakresu losowania elementow
     for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
         mAddElementToEnd(0); // dodanie nowego elementu
-    mPrintAllElements(); // wypisywanie zawartosci listy
 }
 
 /*
@@ -33,10 +33,8 @@ cListTemplate::cListTemplate(typeLoop aSize)
  */
 cListTemplate::cListTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-    srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
-        mAddElementToEnd(rand() % aDrawingRange); // dodanie nowego elementu
-    mPrintAllElements(); // wypisywanie zawartosci listy
+    vDrawingRange = aDrawingRange; // usranowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 
@@ -91,6 +89,16 @@ bool cListTemplate::mRemoveElementFromEnd()
     }
     else // jesli jest pusta
         return false; // zwracamy wartosc logiczna
+}
+
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cListTemplate::mDrawElements(typeLoop aSize)
+{
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElementToEnd(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
