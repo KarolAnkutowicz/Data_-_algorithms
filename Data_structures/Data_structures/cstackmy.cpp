@@ -16,10 +16,9 @@ using namespace std;
 cStackMy::cStackMy()
 {
     StackMy = new typeData[0]; // nowa tablica elementow
-    vSize = 0; // brak elementow
-    vIsEmpty = true; // stos pusty
+    vSize = 1; // brak elementow
     vDrawingRange = 0; // zerowy zakres wartosci elementow
-    mPrintAllElements(); // wypisujemy zawartosc stosu
+    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
 }
 
 /*
@@ -29,16 +28,13 @@ cStackMy::cStackMy(typeLoop aSize)
 {
     StackMy = new typeData[aSize]; // nowa tablica elementow
     vSize = aSize; // nadanie rozmiaru stosu
-    if (aSize == 0) // sprawdzamy czy nie podalismy rozmiaru zerowego
-        vIsEmpty = true; // stos jest pusty
-    else // w przeciwnym przypadku
+    vDrawingRange = 0; // ustanawiamy zerowy zakres wartosci elementow
+    if (aSize != 0) // sprawdzamhy czy odkladamy na stos niezerowa liczbe elementow
     {
-        vIsEmpty = false; // stos nie jest pusty
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
             StackMy[i] = 0; // ustanawiamy wartosc elementu
     }
-    vDrawingRange = 0; // zerowy zakres wartosci elementow
-    mPrintAllElements(); // wypisujemy zawartosc stosu
+    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
 }
 
 /*
@@ -48,20 +44,10 @@ cStackMy::cStackMy(typeLoop aSize, typeData aDrawingRange)
 {
     StackMy = new typeData[aSize]; // nowa tablica elementow
     vSize = aSize; // nadanie rozmiaru stosu
-    if (vSize == 0) // sprawdzamy czy nie podalismy rozmiaru zerowego
-        vIsEmpty = true; // stos jest pusty
-    else // w przeciwnym przypadku
-    {
-        vIsEmpty = false; // stos nie jest pusty
-        srand(time_t(NULL)); // ustanowienie wartosci losowej
-        vDrawingRange = aDrawingRange; // ustanawiamy zakres wartosci elementow
-        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
-            StackMy[i] = rand() % vDrawingRange; // ustanawiamy wartosc elementu
-    }
-    //mPrintAllElements(); // wypisujemy zawartosc stosu
-    cout << "vSize = " << vSize << endl;
-    for (typeLoop i = 0; i < vSize; i++)
-        cout << StackMy[i] << endl;
+    vDrawingRange = aDrawingRange; // ustanawiamy zakres wartosci elementow
+    if (aSize != 0) // sprawdzamy czy odkladamy na stos niezerowa liczbe elementow
+        mDrawElements(aSize); // wywolanie metody losujacej elementy
+    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
 }
 
 /*
@@ -103,8 +89,7 @@ void cStackMy::mAddElement(typeData aElement)
         StackMy[i] = StackAux[i]; // kopiujemy element
     delete []StackAux; // zwalniamy zasoby przydzielane dynamicznie
     StackMy[vSize - 1] = aElement; // dopisujemy element na szczyt stosu
-    if (vIsEmpty) // sprawdzamy czy wczesniej stos byl oznaczony jako pusty
-        vIsEmpty = false; // stos nie jest juz oznaczony jako pusty
+    mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
 }
 
 /*
@@ -112,7 +97,7 @@ void cStackMy::mAddElement(typeData aElement)
  */
 bool cStackMy::mRemoveElement()
 {
-    if (!vIsEmpty) // sprawdzamy czy stos nie jest pusty
+    if (getStackIsEmpty() == false) // sprawdzamy czy stos nie jest pusty
     {
         typeData *StackAux; // deklaracja pomocniczej tablicy
         vSize--; // zmniejsza sie rozmiar stosu
@@ -124,8 +109,7 @@ bool cStackMy::mRemoveElement()
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy za wyjatkiem tego ze szczytu stosu
              StackMy[i] = StackAux[i]; // kopiujemy element
         delete []StackAux; // zwalniamy zasoby przydzielane dynamicznie
-        if (vSize == 0) // sprawdzamy czy nie wyczyscilismy stosu
-            vIsEmpty = true; // jesli tak to oznaczmy go jako pusty
+        mCheckStackIsEmpty(); // wywolanie metody sprawdzajacej czy stos jest pusty
         return true; // zwracamy informacje, ze usunelismy element
     }
     else // jesli stos jest pusty
@@ -137,7 +121,9 @@ bool cStackMy::mRemoveElement()
  */
 void cStackMy::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie wartosci losowej
+    for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
+        StackMy[i] = rand() % vDrawingRange; // ustanawiamy wartosc elementu
 }
 
 /*
@@ -145,7 +131,10 @@ void cStackMy::mDrawElements(typeLoop aSize)
  */
 void cStackMy::mCheckStackIsEmpty()
 {
-
+    if (vSize == 0) // sprawdzamy czy mamy cokolwiek na stosie
+        vIsEmpty = true; // jesli nic to oznaczamy go jako pusty
+    else // w przeciwnym przypadku
+        vIsEmpty = false; // oznaczamy jako niepusty
 }
 
 
@@ -155,7 +144,7 @@ void cStackMy::mCheckStackIsEmpty()
  */
 void cStackMy::mPrintElement()
 {
-    if (!vIsEmpty) // sprawdzamy czy stos nie jest pusty
+    if (getStackIsEmpty() == false) // sprawdzamy czy stos nie jest pusty
         cout << StackMy[vSize - 1] << endl; // jesli nie jest to wypisujemy element ze szczytu stosu
     else // jesli stos jest pusty
         cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
@@ -166,12 +155,12 @@ void cStackMy::mPrintElement()
  */
 void cStackMy::mPrintAllElements()
 {
-    if (!vIsEmpty)
+    if (getStackIsEmpty() == false)
         cout << "    Stos jest pusty!" << endl; // wypisujemy elementy az do ostatniego
     else
     {
         cout << "    Zawartosc stosu:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
-        while (!vIsEmpty)
+        while (getStackIsEmpty() == false)
         {
             mPrintElement(); // wypisujemy element ze szczytu stosu
             mRemoveElement(); // usuwamy element dajac dostep do kolejnego

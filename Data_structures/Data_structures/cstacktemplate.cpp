@@ -15,7 +15,7 @@ using namespace std;
  */
 cStackTemplate::cStackTemplate()
 {
-    mPrintAllElements(); // wypisujemy zawartosc stosu
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
 }
 
 /*
@@ -25,7 +25,7 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
 {
     for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
         mAddElement(0); // dodanie nowego elementu
-    mPrintAllElements(); // wypisujemy zawartosc stosu
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
 }
 
 /*
@@ -33,10 +33,8 @@ cStackTemplate::cStackTemplate(typeLoop aSize)
  */
 cStackTemplate::cStackTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-    srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
-        mAddElement(rand() % aDrawingRange); // dodanie nowego wylosowanego elementu
-    mPrintAllElements(); // wypisujemy zawartosc stosu
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
 }
 
 
@@ -73,7 +71,9 @@ bool cStackTemplate::mRemoveElement()
  */
 void cStackTemplate::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementiw
+        mAddElement(rand() % vDrawingRange); // dodanie nowego wylosowanego elementu
 }
 
 
