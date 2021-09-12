@@ -19,4 +19,5 @@ SOURCES += main.cpp \
     ctable.cpp
 
 HEADERS += \
-    ctable.h
+    ctable.h \
+    constantsandtypes.h

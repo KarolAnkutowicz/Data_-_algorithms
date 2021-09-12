@@ -8,6 +8,8 @@
 #ifndef CTABLE_H
 #define CTABLE_H
 
+#include "constantsandtypes.h"
+
 using namespace std;
 
 /*
