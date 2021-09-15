@@ -94,11 +94,65 @@ public:
     /*
      * ~cTable() - destruktor klasy cTable.
      * PRE:
-     * brak;
+     * - brak;
      * POST:
      * - zwalnianie zasobow przydzielanych dynamicznie.
      */
     ~cTable();
+
+
+
+    /*
+     * int getElement(int aSeries, int aColumn) - metoda
+     * zwracajaca wskazany element tablicy.
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * - podanie numeru elementu w serii (typ: int);
+     * POST:
+     * - zwrocenie wskazanego elementu (typ: int).
+     */
+    int getElement(int aSeries, int aColumn);
+
+    /*
+     * int getSeries() - metoda zwracajaca liczbe serii.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vSeries (typ: int).
+     */
+    int getSeries();
+
+    /*
+     * int getLength() - metoda zwracajaca dlugosc serii.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vLength (typ: int).
+     */
+    int getLength();
+
+    /*
+     * int getDrawingRange() - metoda zwracajaca wartosc
+     * zakresu losowania liczb.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vDrawingRange (typ: int).
+     */
+    int getDrawingRange();
+
+    /*
+     * void setElement(int aSeries, int aColumn, int aValue) -
+     * metoda ustanawiajaca wartosc wskazanego elementu.
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * - podanie numeru elementu w serii (typ: int);
+     * - podanie wartosci (typ: int);
+     * POST:
+     * - brak.
+     */
+    void setElement(int aSeries, int aColumn, int aValue);
+
 
 
     /*
