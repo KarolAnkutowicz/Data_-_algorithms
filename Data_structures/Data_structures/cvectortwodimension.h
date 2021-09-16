@@ -33,6 +33,18 @@ class cVectorTwoDimension
      */
     typeData vDrawingRange;
 
+    /*
+     * typeData vMinElement - pole przechowujaca
+     * najmniejsza wartosc w wektorze wektorow.
+     */
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - pole przechowujace
+     * najwieksza wartosc w wektorze wektorow.
+     */
+    typeData vMaxElement;
+
 /********** PRIVATE: END **********/
 
 /********** PUBLIC: BEGIN **********/
@@ -133,18 +145,104 @@ public:
      */
     typeLoop getDrawingRange();
 
+    /*
+     *
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vMinElement (typ: typeData).
+     */
+    typeData getMinElement();
+
+    /*
+     *
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vMaxElement (typ: typeData).
+     */
+    typeData getMaxElement();
+
+
+
+    /*
+     * void mAddElement(typeLoop aRows,typeData aElement) -
+     * metoda dopisujaca element do wskazanego wektora.
+     * PRE:
+     * - podanie wspolrzednej wektora (typ: typeLoop);
+     * - podanie wartosci elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void mAddElement(typeLoop aRows,typeData aElement);
+
+    /*
+     * bool mRemoveElement(typeLoop aRows) - metoda
+     * usuwajaca element z konca wskazanego wektora
+     * (o ile wektor nie jest pusty!).
+     * PRE:
+     * - podanie wspolrzednej wektora (typ: typeLoop);
+     * POST:
+     * - zwrocenie informacji o tym, ze usuniecie elementu
+     * sie powiodlo (typ: bool).
+     */
+    bool mRemoveElement(typeLoop aRows);
+
+
+
+    /*
+     * void mDrawElements(typeLoop aRows, typeLoop aColumns) -
+     * metoda losujaca elementy wektora wektorow
+     * o podanych rozmiarach.
+     * PRE:
+     * - podanie liczby wektorow (typ: typeLoop);
+     * - podanie liczby kolumn (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mDrawElements(typeLoop aRows, typeLoop aColumns);
+
+    /*
+     * void mFindMinElement() - metoda znajdujaca
+     * najmniejszy element w strukturze.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMinElement();
+
+    /*
+     * void mFindMaxElement() - metoda znajdujaca
+     * najwiekszy element w strukturze.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mFindMaxElement();
+
 
 
     /*
      * void mPrintElement(typeLoop aRows, typeLoop aColumns) -
      * metoda wypisujaca wskazany element.
      * PRE:
-     * - podanie numeru wiersza (typ: typeLoop);
+     * - podanie numeru wektora (typ: typeLoop);
      * - podanie numeru kolumny (typ: typeLoop);
      * POST:
      * - brak.
      */
     void mPrintElement(typeLoop aRows, typeLoop aColumns);
+
+    /* void mPrintVector(typeLoop aRows) - metoda
+     * wyswietlajaca zawartosc wskazanego wektora.
+     * PRE:
+     * - podanie numeru wektora (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mPrintVector(typeLoop aRows);
 
     /*
      * void mPrintAllElements() - metoda wypisujaca

@@ -193,7 +193,8 @@ public:
      * PRE:
      * - brak;
      * POST:
-     * - brak.
+     * - zwrocenie informacji o tym czy usuniecie elementu
+     * sie powiodlo (typ: bool).
      */
     bool mRemoveElement();
 
