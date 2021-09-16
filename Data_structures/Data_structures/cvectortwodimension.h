@@ -111,7 +111,10 @@ public:
      * - zwrocenie wartosci wskazanego elementu
      * (typ: typeData).
      */
-    typeData getElement(typeLoop aRows, typeLoop aColumns);
+    inline typeData getElement(typeLoop aRows, typeLoop aColumns)
+    {
+        return VectorElements[aRows][aColumns];
+    }
 
     /*
      * typeLoop getRows() - metoda zwracajaca liczbe

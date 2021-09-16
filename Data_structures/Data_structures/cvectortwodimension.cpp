@@ -47,16 +47,6 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns, type
 
 
 /*
- * typeData getElement(typeLoop aRows, typeLoop aColumns)
- */
-typeData cVectorTwoDimension::getElement(typeLoop aRows, typeLoop aColumns)
-{
-
-}
-
-
-
-/*
  * void mAddElement(typeLoop aRows,typeData aElement)
  */
 void cVectorTwoDimension::mAddElement(typeLoop aRows,typeData aElement)
@@ -87,7 +77,15 @@ void cVectorTwoDimension::cVectorTwoDimension::mDrawElements(typeLoop aRows, typ
  */
 void cVectorTwoDimension::mFindMinElement()
 {
-
+    vMinElement = VectorElements[0][0]; // nadanie poczatkowej wartosci najmniejszej
+    for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
+    {
+        for (typeLoop j = 0; j < VectorElements[0].size(); j++) // przejscie po wszystkich elementach w danym wektorze
+        {
+            if (VectorElements[i][j] < vMinElement) // sprawdzamy czy nowa wartosc jest mniejsza niz aktualne minimum
+                vMinElement = VectorElements[i][j]; // jesli tak to mamy nowe minimum
+        }
+    }
 }
 
 /*
@@ -95,7 +93,15 @@ void cVectorTwoDimension::mFindMinElement()
  */
 void cVectorTwoDimension::mFindMaxElement()
 {
-
+    vMaxElement = VectorElements[0][0]; // nadanie poczatkowej wartosci najwiekszej
+    for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
+    {
+        for (typeLoop j = 0; j < VectorElements[0].size(); j++) // przejscie po wszystkich elementach w danym wektorze
+        {
+            if (VectorElements[i][j] > vMaxElement) // sprawdzamy czy nowa wartosc jest wieksza niz aktualne maksimum
+                vMaxElement = VectorElements[i][j]; // jesli tak to mamy nowe maksimum
+        }
+    }
 }
 
 
