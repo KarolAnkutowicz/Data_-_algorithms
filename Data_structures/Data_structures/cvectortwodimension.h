@@ -121,7 +121,10 @@ public:
      * POST:
      * - zwrocenie liczby wierszy (typ: typeLoop).
      */
-    typeLoop getRows();
+    inline typeLoop getRows()
+    {
+        return VectorElements.size();
+    }
 
     /*
      * typeLoop getColumns() - metoda zwracajaca liczbe
@@ -132,7 +135,10 @@ public:
      * POST:
      * - zwrocenie liczby kolumn (typ: typeLoop).
      */
-    typeLoop getColumns();
+    inline typeLoop getColumns()
+    {
+        return VectorElements[0].size();
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -143,25 +149,36 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeData).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
-     *
+     * typeData getMinElement() - metoda znajdujaca
+     * najmniejszy element w strukturze.
      * PRE:
      * - brak;
      * POST:
      * - zwrocenie wartosci pola vMinElement (typ: typeData).
      */
-    typeData getMinElement();
+    inline typeData getMinElement()
+    {
+        return vMinElement;
+    }
 
     /*
-     *
+     * typeData getMaxElement() - metoda znajdujaca
+     * najwiekszy element w strukturze.
      * PRE:
      * - brak;
      * POST:
      * - zwrocenie wartosci pola vMaxElement (typ: typeData).
      */
-    typeData getMaxElement();
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
+    }
 
 
 
@@ -235,7 +252,8 @@ public:
      */
     void mPrintElement(typeLoop aRows, typeLoop aColumns);
 
-    /* void mPrintVector(typeLoop aRows) - metoda
+    /*
+     * void mPrintVector(typeLoop aRows) - metoda
      * wyswietlajaca zawartosc wskazanego wektora.
      * PRE:
      * - podanie numeru wektora (typ: typeLoop);
