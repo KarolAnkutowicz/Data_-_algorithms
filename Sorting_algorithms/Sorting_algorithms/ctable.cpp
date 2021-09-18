@@ -15,6 +15,10 @@ using namespace std;
  */
 cTable::cTable()
 {
+    vSeries = 1; // ustnowienie liczby serii
+    vLength = 1; // ustanowienie liczby elementow w serii
+    vDrawingRange = 1; // ustanowienie zakresu losowania elementow
+    tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
 }
 
 /*
@@ -22,7 +26,10 @@ cTable::cTable()
  */
 cTable::cTable(typeLoop aSeries)
 {
-
+    vSeries = aSeries; // ustnowienie liczby serii
+    vLength = 1; // ustanowienie liczby elementow w serii
+    vDrawingRange = 1; // ustanowienie zakresu losowania elementow
+    tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
 }
 
 /*
@@ -30,7 +37,10 @@ cTable::cTable(typeLoop aSeries)
  */
 cTable::cTable(typeLoop aSeries, typeLoop aLength)
 {
-
+    vSeries = aSeries; // ustnowienie liczby serii
+    vLength = aLength; // ustanowienie liczby elementow w serii
+    vDrawingRange = 1; // ustanowienie zakresu losowania elementow
+    tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
 }
 
 /*
@@ -38,7 +48,10 @@ cTable::cTable(typeLoop aSeries, typeLoop aLength)
  */
 cTable::cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange)
 {
-
+    vSeries = aSeries; // ustnowienie liczby serii
+    vLength = aLength; // ustanowienie liczby elementow w serii
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
 }
 
 /*
