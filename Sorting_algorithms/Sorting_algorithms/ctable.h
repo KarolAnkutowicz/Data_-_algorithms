@@ -48,6 +48,17 @@ class cTable
      */
     typeData vDrawingRange;
 
+    /*
+     * double *tabTimes - wskaznik do tablicy czasow sortowania
+     * kolejnych serii.
+     */
+    double *tabTimes;
+
+    /*
+     * double vAverageTime - sredni czas sortowania kolejnych
+     * serii
+     */
+    double vAverageTime;
 
 
     /*
@@ -89,6 +100,17 @@ class cTable
     {
         vDrawingRange = aDrawingRange;
     }
+
+
+    /*
+     * void mCalculateAverageTime() - metoda obliczajaca
+     * sredni czas sortowania kolejnych serii.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mCalculateAverageTime();
 
 /********** PRIVATE: END **********/
 /********** PUBLIC: BEGIN **********/
@@ -201,6 +223,33 @@ public:
     }
 
     /*
+     * double getTime(typeLoop aSeries) - metoda zwracajaca
+     * wartosc czasu wskazanej serii.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci czasu sortowania wskazanej
+     * serii (typ: double).
+     */
+    inline double getTime(typeLoop aSeries)
+    {
+        return tabTimes[aSeries];
+    }
+
+    /*
+     * double getAverageTime() - metoda zwracajaca
+     * srednia wartosc czasu sortowania.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vAverageTime (typ: double).
+     */
+    inline double getAverageTime()
+    {
+        return vAverageTime;
+    }
+
+    /*
      * void setElement(typeLoop aSeries, typeLoop aColumn, typeData aValue) -
      * metoda ustanawiajaca wartosc wskazanego elementu.
      * PRE:
@@ -213,6 +262,20 @@ public:
     inline void setElement(typeLoop aSeries, typeLoop aColumn, typeData aValue)
     {
         tabElements[aSeries * vLength + aColumn] = aValue;
+    }
+
+    /*
+     * void setTime(typeLoop aSeries, double aTime) - metoda
+     * ustanawiajaca wartosc czasu sortowania wskazanej serii.
+     * PRE:
+     * - podanie numeru serii (typ: typeLoop);
+     * - podanie czasu (typ: double);
+     * POST:
+     * - brak.
+     */
+    void setTime(typeLoop aSeries, double aTime)
+    {
+        tabTimes[aSeries] = aTime;
     }
 
 

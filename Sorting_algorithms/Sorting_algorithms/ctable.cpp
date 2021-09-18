@@ -8,6 +8,22 @@
 
 using namespace std;
 
+/********** PRIVATE: BEGIN **********/
+
+/*
+ * void mCalculateAverageTime()
+ */
+void cTable::mCalculateAverageTime()
+{
+    double vSum = 0.0; // zdefiniowanie sumy poczatkowej czasow
+    for (typeLoop i = 0; i < vSeries; i++) // przejscie przez czasy wszystkich serii
+        vSum += tabTimes[i]; // dodanie czasu kolejnej serii
+    vAverageTime = vSum / vSeries; // obliczenie sredniego czasu sortowania
+}
+
+/********** PRIVATE: END **********/
+
+
 /********** PUBLIC: BEGIN **********/
 
 /*
