@@ -45,6 +45,48 @@ class cTable
      */
     int vDrawingRange;
 
+
+
+    /*
+     * void setSeries(int aSeries) - metoda ustanawiajaca
+     * liczbe serii.
+     * PRE:
+     * - podanie liczby serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    inline void setSeries(int aSeries)
+    {
+        vSeries = aSeries;
+    }
+
+    /*
+     * void setLength(int aLength) - metoda ustanawiajaca
+     * liczbe elementow w danej serii
+     * PRE:
+     * - podanie liczby elementow w serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    inline void setLength(int aLength)
+    {
+        vLength = aLength;
+    }
+
+    /*
+     * void setDrawingRange(int aDrawingRange) - metoda
+     * ustanawiajaca wartosc zakresu losowania elmentow
+     * PRE:
+     * - podanie wartosci zakresu losowania elementow
+     * (typ: int);
+     * POST:
+     * - brak.
+     */
+    inline void setDrawingRange(int aDrawingRange)
+    {
+        vDrawingRange = aDrawingRange;
+    }
+
 /********** PRIVATE: END **********/
 /********** PUBLIC: BEGIN **********/
 public:
