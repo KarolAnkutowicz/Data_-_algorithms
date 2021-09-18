@@ -111,7 +111,10 @@ public:
      * POST:
      * - zwrocenie wskazanego elementu (typ: int).
      */
-    int getElement(int aSeries, int aColumn);
+    int getElement(int aSeries, int aColumn)
+    {
+        return tabElements[aSeries * vLength + aColumn];
+    }
 
     /*
      * int getSeries() - metoda zwracajaca liczbe serii.
@@ -120,7 +123,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vSeries (typ: int).
      */
-    int getSeries();
+    inline int getSeries()
+    {
+        return vSeries;
+    }
 
     /*
      * int getLength() - metoda zwracajaca dlugosc serii.
@@ -129,7 +135,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vLength (typ: int).
      */
-    int getLength();
+    inline int getLength()
+    {
+        return vLength;
+    }
 
     /*
      * int getDrawingRange() - metoda zwracajaca wartosc
@@ -139,7 +148,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange (typ: int).
      */
-    int getDrawingRange();
+    inline int getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * void setElement(int aSeries, int aColumn, int aValue) -
@@ -151,68 +163,257 @@ public:
      * POST:
      * - brak.
      */
-    void setElement(int aSeries, int aColumn, int aValue);
+    inline void setElement(int aSeries, int aColumn, int aValue)
+    {
+        tabElements[aSeries * vLength + aColumn] = aValue;
+    }
 
 
 
     /*
-     *
+     * void mPrintTable() -
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
      */
     void mPrintTable();
 
+    /*
+     * void mWriteTableToFile() -
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
     void mWriteTableToFile();
 
+    /*
+     * void mReadTableFromFile() -
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
     void mReadTableFromFile();
 
 
 
-    void mQuicksort();
+    /*
+     * void mQuicksort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mQuicksort(int aSeries);
 
-    void mMergeSort();
+    /*
+     * mMergeSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mMergeSort(int aSeries);
 
-    void mInPlaceMergeSort();
+    /*
+     * void mInPlaceMergeSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mInPlaceMergeSort(int aSeries);
 
-    void mIntrosort();
+    /*
+     * void mIntrosort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mIntrosort(int aSeries);
 
-    void mHeapsort();
+    /*
+     * void mHeapsort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mHeapsort(int aSeries);
 
-    void mInsertionSort();
+    /*
+     * void mInsertionSort(int aSeries)
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mInsertionSort(int aSeries);
 
-    void mBlockSort();
+    /*
+     * void mBlockSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mBlockSort(int aSeries);
 
-    void mTimsort();
+    /*
+     * void mTimsort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mTimsort(int aSeries);
 
-    void mSelectionSort();
+    /*
+     * void mSelectionSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mSelectionSort(int aSeries);
 
-    void mCubesort();
+    /*
+     * void mCubesort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mCubesort(int aSeries);
 
-    void mShellsort();
+    /*
+     * void mShellsort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mShellsort(int aSeries);
 
-    void mBubbleSort();
+    /*
+     * void mBubbleSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mBubbleSort(int aSeries);
 
-    void mExchangeSort();
+    /*
+     * void mExchangeSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mExchangeSort(int aSeries);
 
-    void mTreeSort();
+    /*
+     * void mTreeSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mTreeSort(int aSeries);
 
-    void mCycleSort();
+    /*
+     * void mCycleSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mCycleSort(int aSeries);
 
-    void mLibrarySort();
+    /*
+     * void mLibrarySort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mLibrarySort(int aSeries);
 
-    void mPatienceSorting();
+    /*
+     * void mPatienceSorting(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mPatienceSorting(int aSeries);
 
-    void mSmoothsort();
+    /*
+     * void mSmoothsort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mSmoothsort(int aSeries);
 
-    void mStrandSort();
+    /*
+     * void mStrandSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mStrandSort(int aSeries);
 
-    void mTournamentSort();
+    /*
+     * void mTournamentSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mTournamentSort(int aSeries);
 
-    void mCocktailShakerSort();
+    /*
+     * void mCocktailShakerSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mCocktailShakerSort(int aSeries);
 
-    void mCombSort();
+    /*
+     * void mCombSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mCombSort(int aSeries);
 
-    void mGnomeSort();
+    /*
+     * void mGnomeSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mGnomeSort(int aSeries);
 
-    void mOddEvenSort();
+    /*
+     * void mOddEvenSort(int aSeries) -
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mOddEvenSort(int aSeries);
 
 
 /********** PUBLIC: END **********/
