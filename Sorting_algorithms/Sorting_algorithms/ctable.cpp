@@ -105,7 +105,25 @@ void cTable::mWriteTableToFile()
  */
 void cTable::mReadTableFromFile()
 {
-
+    ifstream StreamIn; // utworzenie strumienia plikowego
+    typeData aElement; // deklaracja zmiennej wykorzystywanej do wczytywanie elementow
+    typeLoop aSize; // deklaracja zmiennej wykorzystywanej do wczytywanie rozmiarow tablicy
+    StreamIn.open("table.txt"); // otwarcie pliku
+    StreamIn >> skipws >> aSize; // wczytanie liczby serii
+    setSeries(aSize); // ustanowienie liczby serii
+    StreamIn >> skipws >> aSize; // wczytywanie liczby elementow w serii
+    setLength(aSize); // ustanowienie liczby elementow w serii
+    delete []tabElements; // zwalnianie zasobow w celu utworzenie tablicy o nowej liczbie elementow
+    tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow o wskazanych wymiarach
+    for (typeLoop i = 0; i < vSeries; i++) // przejscie po wszystkich seriach
+    {
+        for (typeLoop j = 0; j < vLength; j++) // przejscie po wszystkich elmenentach w serii
+        {
+            StreamIn >> skipws >> aElement; // wczytywanie wartosci elementu
+            setElement(i, j, aElement); // ustanowienie wartosci wskazanego elementu
+        }
+    }
+    StreamIn.close(); // zamkniecie strumienia
 }
 
 
