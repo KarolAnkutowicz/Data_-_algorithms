@@ -16,8 +16,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    ctable.cpp
+    ctable.cpp \
+    ctablehandling.cpp
 
 HEADERS += \
     ctable.h \
-    constantsandtypes.h
+    constantsandtypes.h \
+    ctablehandling.h
