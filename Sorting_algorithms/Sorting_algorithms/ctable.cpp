@@ -19,6 +19,7 @@ cTable::cTable()
     vLength = 1; // ustanowienie liczby elementow w serii
     vDrawingRange = 1; // ustanowienie zakresu losowania elementow
     tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
+    mDrawingElements(); // losowanie elementow
 }
 
 /*
@@ -30,6 +31,7 @@ cTable::cTable(typeLoop aSeries)
     vLength = 1; // ustanowienie liczby elementow w serii
     vDrawingRange = 1; // ustanowienie zakresu losowania elementow
     tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
+    mDrawingElements(); // losowanie elementow
 }
 
 /*
@@ -41,6 +43,7 @@ cTable::cTable(typeLoop aSeries, typeLoop aLength)
     vLength = aLength; // ustanowienie liczby elementow w serii
     vDrawingRange = 1; // ustanowienie zakresu losowania elementow
     tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
+    mDrawingElements(); // losowanie elementow
 }
 
 /*
@@ -52,6 +55,7 @@ cTable::cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange)
     vLength = aLength; // ustanowienie liczby elementow w serii
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
     tabElements = new typeData[vSeries * vLength]; // utworzenie nowej tablicy elementow
+    mDrawingElements(); // losowanie elementow
 }
 
 /*
@@ -137,6 +141,19 @@ void cTable::mReadTableFromFile()
         }
     }
     StreamIn.close(); // zamkniecie strumienia
+}
+
+
+
+/*
+ * void mDrawingElements()
+ */
+void cTable::mDrawingElements()
+{
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < vSeries; i++) // przejscie po wszystkich seriach
+        for (typeLoop j = 0; j < vLength; j++) // przejscie po wszystkich elememntach w serii
+            setElement(i, j, rand () % vDrawingRange); // wylosowanie wartosci elementu
 }
 
 

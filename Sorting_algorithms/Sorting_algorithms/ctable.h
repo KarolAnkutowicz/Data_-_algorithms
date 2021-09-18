@@ -9,6 +9,8 @@
 #define CTABLE_H
 
 #include "constantsandtypes.h"
+#include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -265,6 +267,18 @@ public:
      * - brak.
      */
     void mReadTableFromFile();
+
+
+
+    /*
+     * void mDrawingElements() - metoda losujaca elementy
+     * tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mDrawingElements();
 
 
 
