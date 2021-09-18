@@ -15,29 +15,28 @@ using namespace std;
  */
 cTable::cTable()
 {
-
 }
 
 /*
- * cTable(int aSeries)
+ * cTable(typeLoop aSeries)
  */
-cTable::cTable(int aSeries)
+cTable::cTable(typeLoop aSeries)
 {
 
 }
 
 /*
- * cTable(int aSeries, int aLength)
+ * cTable(typeLoop aSeries, typeLoop aLength)
  */
-cTable::cTable(int aSeries, int aLength)
+cTable::cTable(typeLoop aSeries, typeLoop aLength)
 {
 
 }
 
 /*
- * cTable(int aSeries, int aLength, int aDrawingRange)
+ * cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange)
  */
-cTable::cTable(int aSeries, int aLength, int aDrawingRange)
+cTable::cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange)
 {
 
 }
@@ -47,25 +46,25 @@ cTable::cTable(int aSeries, int aLength, int aDrawingRange)
  */
 cTable::~cTable()
 {
-
+    delete []tabElements; // zwalnianie zasobow przydzielanych dynamicznie
 }
 
 
 
 /*
- * void mPrintElement(int aSeries, int aLength)
+ * void mPrintElement(typeLoop aSeries, typeLoop aLength)
  */
-void cTable::mPrintElement(int aSeries, int aLength)
+void cTable::mPrintElement(typeLoop aSeries, typeLoop aLength)
 {
     cout << getElement(aSeries, aLength); // wypisanie wskazanego elementu
 }
 
 /*
- * void mPrintSeries(int aSeries)
+ * void mPrintSeries(typeLoop aSeries)
  */
-void cTable::mPrintSeries(int aSeries)
+void cTable::mPrintSeries(typeLoop aSeries)
 {
-    for (int i = 0; i < vLength; i++) // przejscie po wszystkich elementach w serii
+    for (typeLoop i = 0; i < vLength; i++) // przejscie po wszystkich elementach w serii
     {
         mPrintElement(aSeries, i); // wywolanie metody wypisujacej wskazany element w serii
         cout << " "; // zrobienie odstepu miedzy wypisanymi elementami
@@ -77,7 +76,7 @@ void cTable::mPrintSeries(int aSeries)
  */
 void cTable::mPrintTable()
 {
-    for (int i = 0; i < vSeries; i++) // przejscie po wszystkih seriach
+    for (typeLoop i = 0; i < vSeries; i++) // przejscie po wszystkih seriach
     {
         mPrintSeries(i); // wywolanie metody wypisujacej wskazana serie
         cout << endl; // przejscie do kolejnej linii
@@ -92,9 +91,9 @@ void cTable::mWriteTableToFile()
     ofstream StreamOut; // utworzenie strumienia plikowego
     StreamOut.open("table.txt"); // otwarcie pliku
     StreamOut << getSeries() << " " << getLength() << endl; // wypisanie
-    for (int i = 0; i < vSeries; i++) // przejscie po wszystkich seriach
+    for (typeLoop i = 0; i < vSeries; i++) // przejscie po wszystkich seriach
     {
-        for (int j = 0; j < vLength; j++) // przejscie po wszystkich elementach w serii
+        for (typeLoop j = 0; j < vLength; j++) // przejscie po wszystkich elementach w serii
             StreamOut << getElement(i, j) << " "; // wypisanie wskazanego elementu
         StreamOut << endl; // przejscie do nowej linii
     }
@@ -112,193 +111,193 @@ void cTable::mReadTableFromFile()
 
 
 /*
- * void mQuicksort(int aSeries)
+ * void mQuicksort(typeLoop aSeries)
  */
-void cTable::mQuicksort(int aSeries)
+void cTable::mQuicksort(typeLoop aSeries)
 {
 
 }
 
 /*
- * mMergeSort(int aSeries)
+ * mMergeSort(typeLoop aSeries)
  */
-void cTable::mMergeSort(int aSeries)
+void cTable::mMergeSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mInPlaceMergeSort(int aSeries)
+ * void mInPlaceMergeSort(typeLoop aSeries)
  */
-void cTable::mInPlaceMergeSort(int aSeries)
+void cTable::mInPlaceMergeSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mIntrosort(int aSeries)
+ * void mIntrosort(typeLoop aSeries)
  */
-void cTable::mIntrosort(int aSeries)
+void cTable::mIntrosort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mHeapsort(int aSeries)
+ * void mHeapsort(typeLoop aSeries)
  */
-void cTable::mHeapsort(int aSeries)
+void cTable::mHeapsort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mInsertionSort(int aSeries)
+ * void mInsertionSort(typeLoop aSeries)
  */
-void cTable::mInsertionSort(int aSeries)
+void cTable::mInsertionSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mBlockSort(int aSeries)
+ * void mBlockSort(typeLoop aSeries)
  */
-void cTable::mBlockSort(int aSeries)
+void cTable::mBlockSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mTimsort(int aSeries)
+ * void mTimsort(typeLoop aSeries)
  */
-void cTable::mTimsort(int aSeries)
+void cTable::mTimsort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mSelectionSort(int aSeries)
+ * void mSelectionSort(typeLoop aSeries)
  */
-void cTable::mSelectionSort(int aSeries)
+void cTable::mSelectionSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mCubesort(int aSeries)
+ * void mCubesort(typeLoop aSeries)
  */
-void cTable::mCubesort(int aSeries)
+void cTable::mCubesort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mShellsort(int aSeries)
+ * void mShellsort(typeLoop aSeries)
  */
-void cTable::mShellsort(int aSeries)
+void cTable::mShellsort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mBubbleSort(int aSeries)
+ * void mBubbleSort(typeLoop aSeries)
  */
-void cTable::mBubbleSort(int aSeries)
+void cTable::mBubbleSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mExchangeSort(int aSeries)
+ * void mExchangeSort(typeLoop aSeries)
  */
-void cTable::mExchangeSort(int aSeries)
+void cTable::mExchangeSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mTreeSort(int aSeries)
+ * void mTreeSort(typeLoop aSeries)
  */
-void cTable::mTreeSort(int aSeries)
+void cTable::mTreeSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mCycleSort(int aSeries)
+ * void mCycleSort(typeLoop aSeries)
  */
-void cTable::mCycleSort(int aSeries)
+void cTable::mCycleSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mLibrarySort(int aSeries)
+ * void mLibrarySort(typeLoop aSeries)
  */
-void cTable::mLibrarySort(int aSeries)
+void cTable::mLibrarySort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mPatienceSorting(int aSeries)
+ * void mPatienceSorting(typeLoop aSeries)
  */
-void cTable::mPatienceSorting(int aSeries)
+void cTable::mPatienceSorting(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mSmoothsort(int aSeries)
+ * void mSmoothsort(typeLoop aSeries)
  */
-void cTable::mSmoothsort(int aSeries)
+void cTable::mSmoothsort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mStrandSort(int aSeries)
+ * void mStrandSort(typeLoop aSeries)
  */
-void cTable::mStrandSort(int aSeries)
+void cTable::mStrandSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mTournamentSort(int aSeries)
+ * void mTournamentSort(typeLoop aSeries)
  */
-void cTable::mTournamentSort(int aSeries)
+void cTable::mTournamentSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mCocktailShakerSort(int aSeries)
+ * void mCocktailShakerSort(typeLoop aSeries)
  */
-void cTable::mCocktailShakerSort(int aSeries)
+void cTable::mCocktailShakerSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mCombSort(int aSeries)
+ * void mCombSort(typeLoop aSeries)
  */
-void cTable::mCombSort(int aSeries)
+void cTable::mCombSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mGnomeSort(int aSeries)
+ * void mGnomeSort(typeLoop aSeries)
  */
-void cTable::mGnomeSort(int aSeries)
+void cTable::mGnomeSort(typeLoop aSeries)
 {
 
 }
 
 /*
- * void mOddEvenSort(int aSeries)
+ * void mOddEvenSort(typeLoop aSeries)
  */
-void cTable::mOddEvenSort(int aSeries)
+void cTable::mOddEvenSort(typeLoop aSeries)
 {
 
 }

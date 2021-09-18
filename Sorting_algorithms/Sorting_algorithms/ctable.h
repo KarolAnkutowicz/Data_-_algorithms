@@ -24,65 +24,65 @@ class cTable
 /********** PRIVATE: BEGIN **********/
 
     /*
-     * int *tabElements - wskaznik do tablicy elementow
-     * typu int.
+     * typeData *tabElements - wskaznik do tablicy elementow
+     * typu typeData.
      */
-    int *tabElements;
+    typeData *tabElements;
 
     /*
-     * int vSeries - liczba serii danych.
+     * typeLoop vSeries - liczba serii danych.
      */
-    int vSeries;
+    typeLoop vSeries;
 
     /*
-     * int vLength - liczba danych w pojedynczej serii.
+     * typeLoop vLength - liczba danych w pojedynczej serii.
      */
-    int vLength;
+    typeLoop vLength;
 
     /*
-     * int vDrawingRange - maksymalny zakres losowania
+     * typeData vDrawingRange - maksymalny zakres losowania
      *elementow tablicy.
      */
-    int vDrawingRange;
+    typeData vDrawingRange;
 
 
 
     /*
-     * void setSeries(int aSeries) - metoda ustanawiajaca
+     * void setSeries(typeLoop aSeries) - metoda ustanawiajaca
      * liczbe serii.
      * PRE:
-     * - podanie liczby serii (typ: int);
+     * - podanie liczby serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    inline void setSeries(int aSeries)
+    inline void setSeries(typeLoop aSeries)
     {
         vSeries = aSeries;
     }
 
     /*
-     * void setLength(int aLength) - metoda ustanawiajaca
+     * void setLength(typeLoop aLength) - metoda ustanawiajaca
      * liczbe elementow w danej serii
      * PRE:
-     * - podanie liczby elementow w serii (typ: int);
+     * - podanie liczby elementow w serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    inline void setLength(int aLength)
+    inline void setLength(typeLoop aLength)
     {
         vLength = aLength;
     }
 
     /*
-     * void setDrawingRange(int aDrawingRange) - metoda
+     * void setDrawingRange(typeData aDrawingRange) - metoda
      * ustanawiajaca wartosc zakresu losowania elmentow
      * PRE:
      * - podanie wartosci zakresu losowania elementow
-     * (typ: int);
+     * (typ: typeData);
      * POST:
      * - brak.
      */
-    inline void setDrawingRange(int aDrawingRange)
+    inline void setDrawingRange(typeData aDrawingRange)
     {
         vDrawingRange = aDrawingRange;
     }
@@ -100,40 +100,40 @@ public:
     cTable();
 
     /*
-     * cTable(int aSeries) - konstruktor wywolywany
+     * cTable(typeLoop aSeries) - konstruktor wywolywany
      * ze jednym argumentem - liczba serii.
      * PRE:
-     * - podanie liczby serii (typ: int);
+     * - podanie liczby serii (typ: typeLoop);
      * POST:
      * - utworzenie obiektu klasy cTable.
      */
-    cTable(int aSeries);
+    cTable(typeLoop aSeries);
 
     /*
-     * cTable(int aSeries, int aLength) - konstruktor
+     * cTable(typeLoop aSeries, typeLoop aLength) - konstruktor
      * wywolywany z dwoma argumentami - liczba serii
      * oraz liczba elementow w pojedynczej serii.
      * PRE:
-     * - podanie liczby serii (typ: int);
-     * - podanie dlugosci pojedynczej serii (typ: int)
+     * - podanie liczby serii (typ: typeLoop);
+     * - podanie dlugosci pojedynczej serii (typ: typeLoop)
      * POST:
      * - utworzenie obiektu klasy cTable.
      */
-    cTable(int aSeries, int aLength);
+    cTable(typeLoop aSeries, typeLoop aLength);
 
     /*
-     * cTable(int aSeries, int aLength, int aDrawingRange) -
+     * cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange) -
      * konstruktor wywolywany z trzema argumentami -
      * liczba serii, liczba elementow w pojedynczej serii
      * oraz zakresem losowania elementow.
      * PRE:
-     * - podanie liczby serii (typ: int);
-     * - podanie dlugosci pojedynczej serii (typ: int)
-     * - podanie zakresu losowanie elementow (typ: int)
+     * - podanie liczby serii (typ: typeLoop);
+     * - podanie dlugosci pojedynczej serii (typ: typeLoop)
+     * - podanie zakresu losowanie elementow (typ: typeData)
      * POST:
      * - utworzenie obiektu klasy cTable.
      */
-    cTable(int aSeries, int aLength, int aDrawingRange);
+    cTable(typeLoop aSeries, typeLoop aLength, typeData aDrawingRange);
 
     /*
      * ~cTable() - destruktor klasy cTable.
@@ -147,67 +147,67 @@ public:
 
 
     /*
-     * int getElement(int aSeries, int aColumn) - metoda
+     * typeData getElement(typeLoop aSeries, typeLoop aColumn) - metoda
      * zwracajaca wskazany element tablicy.
      * PRE:
-     * - podanie numeru serii (typ: int);
-     * - podanie numeru elementu w serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
+     * - podanie numeru elementu w serii (typ: typeLoop);
      * POST:
-     * - zwrocenie wskazanego elementu (typ: int).
+     * - zwrocenie wskazanego elementu (typ: typeData).
      */
-    inline int getElement(int aSeries, int aColumn)
+    inline typeData getElement(typeLoop aSeries, typeLoop aColumn)
     {
         return tabElements[aSeries * vLength + aColumn];
     }
 
     /*
-     * int getSeries() - metoda zwracajaca liczbe serii.
+     * typeLoop getSeries() - metoda zwracajaca liczbe serii.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vSeries (typ: int).
+     * - zwrocenie wartosci pola vSeries (typ: typeLoop).
      */
-    inline int getSeries()
+    inline typeLoop getSeries()
     {
         return vSeries;
     }
 
     /*
-     * int getLength() - metoda zwracajaca dlugosc serii.
+     * typeLoop getLength() - metoda zwracajaca dlugosc serii.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vLength (typ: int).
+     * - zwrocenie wartosci pola vLength (typ: typeLoop).
      */
-    inline int getLength()
+    inline typeLoop getLength()
     {
         return vLength;
     }
 
     /*
-     * int getDrawingRange() - metoda zwracajaca wartosc
+     * typeData getDrawingRange() - metoda zwracajaca wartosc
      * zakresu losowania liczb.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vDrawingRange (typ: int).
+     * - zwrocenie wartosci pola vDrawingRange (typ: typeData).
      */
-    inline int getDrawingRange()
+    inline typeData getDrawingRange()
     {
         return vDrawingRange;
     }
 
     /*
-     * void setElement(int aSeries, int aColumn, int aValue) -
+     * void setElement(typeLoop aSeries, typeLoop aColumn, typeData aValue) -
      * metoda ustanawiajaca wartosc wskazanego elementu.
      * PRE:
-     * - podanie numeru serii (typ: int);
-     * - podanie numeru elementu w serii (typ: int);
-     * - podanie wartosci (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
+     * - podanie numeru elementu w serii (typ: typeLoop);
+     * - podanie wartosci (typ: typeData);
      * POST:
      * - brak.
      */
-    inline void setElement(int aSeries, int aColumn, int aValue)
+    inline void setElement(typeLoop aSeries, typeLoop aColumn, typeData aValue)
     {
         tabElements[aSeries * vLength + aColumn] = aValue;
     }
@@ -215,25 +215,25 @@ public:
 
 
     /*
-     * void mPrintElement(int aSeries, int aLength) -
+     * void mPrintElement(typeLoop aSeries, typeLoop aLength) -
      * metoda wypisujaca wskazany element tablicy.
      * PRE:
-     * - podanie numeru serii (typ: int);
-     * - podanie numeru kolumny (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
+     * - podanie numeru kolumny (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mPrintElement(int aSeries, int aLength);
+    void mPrintElement(typeLoop aSeries, typeLoop aLength);
 
     /*
-     * void mPrintSeries(int aSeries) - metoda wypisujaca
+     * void mPrintSeries(typeLoop aSeries) - metoda wypisujaca
      * wskazana serie z tablicy.
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mPrintSeries(int aSeries);
+    void mPrintSeries(typeLoop aSeries);
 
     /*
      * void mPrintTable() - metoda wypisujaca
@@ -246,7 +246,8 @@ public:
     void mPrintTable();
 
     /*
-     * void mWriteTableToFile() -
+     * void mWriteTableToFile() - metoda wypisujaca
+     * zawartosc tablicy do pliku.
      * PRE:
      * - brak;
      * POST:
@@ -255,7 +256,8 @@ public:
     void mWriteTableToFile();
 
     /*
-     * void mReadTableFromFile() -
+     * void mReadTableFromFile() - metoda wczytujaca
+     * zawartosc pliku do tablicy.
      * PRE:
      * - brak;
      * POST:
@@ -266,220 +268,221 @@ public:
 
 
     /*
-     * void mQuicksort(int aSeries) -
+     * void mQuicksort(typeLoop aSeries) - metoda realizujaca
+     * algorytm sortowania szybkiego.
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mQuicksort(int aSeries);
+    void mQuicksort(typeLoop aSeries);
 
     /*
-     * mMergeSort(int aSeries) -
+     * mMergeSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop;
      * POST:
      * - brak.
      */
-    void mMergeSort(int aSeries);
+    void mMergeSort(typeLoop aSeries);
 
     /*
-     * void mInPlaceMergeSort(int aSeries) -
+     * void mInPlaceMergeSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mInPlaceMergeSort(int aSeries);
+    void mInPlaceMergeSort(typeLoop aSeries);
 
     /*
-     * void mIntrosort(int aSeries) -
+     * void mIntrosort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mIntrosort(int aSeries);
+    void mIntrosort(typeLoop aSeries);
 
     /*
-     * void mHeapsort(int aSeries) -
+     * void mHeapsort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mHeapsort(int aSeries);
+    void mHeapsort(typeLoop aSeries);
 
     /*
-     * void mInsertionSort(int aSeries)
+     * void mInsertionSort(typeLoop aSeries)
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mInsertionSort(int aSeries);
+    void mInsertionSort(typeLoop aSeries);
 
     /*
-     * void mBlockSort(int aSeries) -
+     * void mBlockSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mBlockSort(int aSeries);
+    void mBlockSort(typeLoop aSeries);
 
     /*
-     * void mTimsort(int aSeries) -
+     * void mTimsort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mTimsort(int aSeries);
+    void mTimsort(typeLoop aSeries);
 
     /*
-     * void mSelectionSort(int aSeries) -
+     * void mSelectionSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mSelectionSort(int aSeries);
+    void mSelectionSort(typeLoop aSeries);
 
     /*
-     * void mCubesort(int aSeries) -
+     * void mCubesort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mCubesort(int aSeries);
+    void mCubesort(typeLoop aSeries);
 
     /*
-     * void mShellsort(int aSeries) -
+     * void mShellsort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mShellsort(int aSeries);
+    void mShellsort(typeLoop aSeries);
 
     /*
-     * void mBubbleSort(int aSeries) -
+     * void mBubbleSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mBubbleSort(int aSeries);
+    void mBubbleSort(typeLoop aSeries);
 
     /*
-     * void mExchangeSort(int aSeries) -
+     * void mExchangeSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mExchangeSort(int aSeries);
+    void mExchangeSort(typeLoop aSeries);
 
     /*
-     * void mTreeSort(int aSeries) -
+     * void mTreeSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mTreeSort(int aSeries);
+    void mTreeSort(typeLoop aSeries);
 
     /*
-     * void mCycleSort(int aSeries) -
+     * void mCycleSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mCycleSort(int aSeries);
+    void mCycleSort(typeLoop aSeries);
 
     /*
-     * void mLibrarySort(int aSeries) -
+     * void mLibrarySort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mLibrarySort(int aSeries);
+    void mLibrarySort(typeLoop aSeries);
 
     /*
-     * void mPatienceSorting(int aSeries) -
+     * void mPatienceSorting(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mPatienceSorting(int aSeries);
+    void mPatienceSorting(typeLoop aSeries);
 
     /*
-     * void mSmoothsort(int aSeries) -
+     * void mSmoothsort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mSmoothsort(int aSeries);
+    void mSmoothsort(typeLoop aSeries);
 
     /*
-     * void mStrandSort(int aSeries) -
+     * void mStrandSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mStrandSort(int aSeries);
+    void mStrandSort(typeLoop aSeries);
 
     /*
-     * void mTournamentSort(int aSeries) -
+     * void mTournamentSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mTournamentSort(int aSeries);
+    void mTournamentSort(typeLoop aSeries);
 
     /*
-     * void mCocktailShakerSort(int aSeries) -
+     * void mCocktailShakerSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mCocktailShakerSort(int aSeries);
+    void mCocktailShakerSort(typeLoop aSeries);
 
     /*
-     * void mCombSort(int aSeries) -
+     * void mCombSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mCombSort(int aSeries);
+    void mCombSort(typeLoop aSeries);
 
     /*
-     * void mGnomeSort(int aSeries) -
+     * void mGnomeSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mGnomeSort(int aSeries);
+    void mGnomeSort(typeLoop aSeries);
 
     /*
-     * void mOddEvenSort(int aSeries) -
+     * void mOddEvenSort(typeLoop aSeries) -
      * PRE:
-     * - podanie numeru serii (typ: int);
+     * - podanie numeru serii (typ: typeLoop);
      * POST:
      * - brak.
      */
-    void mOddEvenSort(int aSeries);
+    void mOddEvenSort(typeLoop aSeries);
 
 
 /********** PUBLIC: END **********/
