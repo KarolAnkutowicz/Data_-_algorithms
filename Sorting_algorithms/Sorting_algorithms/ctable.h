@@ -9,6 +9,8 @@
 #define CTABLE_H
 
 #include "constantsandtypes.h"
+#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -111,7 +113,7 @@ public:
      * POST:
      * - zwrocenie wskazanego elementu (typ: int).
      */
-    int getElement(int aSeries, int aColumn)
+    inline int getElement(int aSeries, int aColumn)
     {
         return tabElements[aSeries * vLength + aColumn];
     }
@@ -171,7 +173,29 @@ public:
 
 
     /*
-     * void mPrintTable() -
+     * void mPrintElement(int aSeries, int aLength) -
+     * metoda wypisujaca wskazany element tablicy.
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * - podanie numeru kolumny (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mPrintElement(int aSeries, int aLength);
+
+    /*
+     * void mPrintSeries(int aSeries) - metoda wypisujaca
+     * wskazana serie z tablicy.
+     * PRE:
+     * - podanie numeru serii (typ: int);
+     * POST:
+     * - brak.
+     */
+    void mPrintSeries(int aSeries);
+
+    /*
+     * void mPrintTable() - metoda wypisujaca
+     * zawartosc tablicy.
      * PRE:
      * - brak;
      * POST:
