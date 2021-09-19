@@ -267,7 +267,19 @@ void cTable::mShellsort(typeLoop aSeries)
  */
 void cTable::mBubbleSort(typeLoop aSeries)
 {
-
+    typeData vAux;
+    for (typeLoop i = 0; i < (vLength - 1); i++)
+    {
+        for (typeLoop j = i + 1; j < vLength; j++)
+        {
+            if (getElement(aSeries, i) > getElement(aSeries, j))
+            {
+                vAux = getElement(aSeries, i);
+                setElement(aSeries, i, getElement(aSeries,j));
+                setElement(aSeries, j, vAux);
+            }
+        }
+    }
 }
 
 /*
