@@ -5,18 +5,23 @@
  */
 
 #include "ctable.h"
-#include <iostream>
+//#include <iostream>
 
 using namespace std;
 
 int main()
 {
-    cTable T(10, 10, 10);
-    T.mPrintTable();
-    for (typeLoop i = 0; i < T.getLength(); i++)
-        T.mBubbleSort(i);
+    //clock_t vTime;
+    cTable T(10, 10, 10); // utworzenie obiektu
+    T.mPrintTable(); // wypisanie tablicy
+    //vTime = clock();
+    for (typeLoop i = 0; i < T.getLength(); i++) // przejscie po wszystkich seriach
+        T.mInsertionSort(i); // wywolania sortowania przez wstawianie dla danej serii
+        //T.mBubbleSort(i); // wywolanie sortowania babelkowego dla danej serii
+    //vTime = clock() - vTime;
     cout << endl;
-    T.mPrintTable();
+    T.mPrintTable(); // wypisanie posortowanych serii
+    //cout << setprecision(5) << /*double(*/vTime/*/CLOCKS_PER_SEC)*/ << endl;
 
     return 0;
 }

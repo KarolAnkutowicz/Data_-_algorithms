@@ -172,6 +172,16 @@ void cTable::mDrawingElements()
             setElement(i, j, rand () % vDrawingRange); // wylosowanie wartosci elementu
 }
 
+/*
+ * void mSwap(typeLoop aSeries, typeLoop aColumn1, typeLoop aColumn2)
+ */
+void cTable::mSwap(typeLoop aSeries, typeLoop aColumn1, typeLoop aColumn2)
+{
+    typeData vAux = getElement(aSeries, aColumn1); // zamiana elementow z wykorzystaniem zmiennej pomocniczej
+    setElement(aSeries, aColumn1, getElement(aSeries, aColumn2));
+    setElement(aSeries, aColumn2, vAux);
+}
+
 
 
 /*
@@ -219,7 +229,23 @@ void cTable::mHeapsort(typeLoop aSeries)
  */
 void cTable::mInsertionSort(typeLoop aSeries)
 {
-
+    typeData *tabAux; // utworzenie wskaznika do tablicy pomocniczej i zmiennej pomocniczej
+    tabAux = new typeData[vLength]; // utworzenie tablicy elementow posortowanych o dlugosci rownej liczbie kolumn glownej tablicy elementow
+    tabAux[0] = getElement(aSeries, 0); // przypisanie wartosci pierwszego elementu
+    for (typeLoop i = 1; i < vLength; i++) // przejscie po wszystkich elementach serii z pominieciem pierwszego elementu
+    {
+        tabAux[i] = getElement(aSeries, i); // wstawiamy element do tablicy posortowanej
+        typeLoop j = i; // ustanawiamy zakres sprawdzania
+        while ((getElement(aSeries, i) < tabAux[j - 1]) && (j > 0)) // sprawdzamy czy nowy element nie jest mniejszy od elementu z tablicy posortowanej
+        {
+            tabAux[j] = tabAux[j - 1]; // jesli tak to przesuwamy elementy
+            tabAux[j - 1] = getElement(aSeries, i);
+            j--;
+        }
+    }
+    for (typeLoop i = 0; i < vLength; i++) // przejscie po wszystkich elementach
+        setElement(aSeries, i, tabAux[i]); // przypisanie posortowanych elementow z tablicy pomocniczej
+    delete []tabAux; // zwalnianie zasobow przydzialanych dynamicznie
 }
 
 /*
@@ -267,19 +293,10 @@ void cTable::mShellsort(typeLoop aSeries)
  */
 void cTable::mBubbleSort(typeLoop aSeries)
 {
-    typeData vAux;
-    for (typeLoop i = 0; i < (vLength - 1); i++)
-    {
-        for (typeLoop j = i + 1; j < vLength; j++)
-        {
-            if (getElement(aSeries, i) > getElement(aSeries, j))
-            {
-                vAux = getElement(aSeries, i);
-                setElement(aSeries, i, getElement(aSeries,j));
-                setElement(aSeries, j, vAux);
-            }
-        }
-    }
+    for (typeLoop i = 0; i < (vLength - 1); i++) // przejscie po wszystkich elementach z wyjatkiem ostatniego
+        for (typeLoop j = i + 1; j < vLength; j++) // przejscie po wszystkich dalszych elemenatach
+            if (getElement(aSeries, i) > getElement(aSeries, j)) // sprawdzenie warunku
+                mSwap(aSeries, i, j); // w przypadku spelnienia warunku nastepuje zamiana elemantow
 }
 
 /*

@@ -343,6 +343,19 @@ public:
      */
     void mDrawingElements();
 
+    /*
+     * void mSwap(typeLoop aSeries, typeLoop aColumn1, typeLoop aColumn2) -
+     * metoda pomocnicza zamieniajaca miejscami w tablicy
+     * wskazane elementy.
+     * PRE:
+     * - podanie serii w jakiej mamy zaminic elementy
+     * (typ: typeLoop);
+     * - podanie wspolrzednych obu elementow (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mSwap(typeLoop aSeries, typeLoop aColumn1, typeLoop aColumn2);
+
 
 
     /*
@@ -392,7 +405,8 @@ public:
     void mHeapsort(typeLoop aSeries);
 
     /*
-     * void mInsertionSort(typeLoop aSeries)
+     * void mInsertionSort(typeLoop aSeries) - metoda
+     * realizujaca algorytm sortowania przez wstawianie.
      * PRE:
      * - podanie numeru serii (typ: typeLoop);
      * POST:
@@ -446,7 +460,8 @@ public:
     void mShellsort(typeLoop aSeries);
 
     /*
-     * void mBubbleSort(typeLoop aSeries) -
+     * void mBubbleSort(typeLoop aSeries) - metoda
+     * realizujaca algorytm sortowania babelkowego.
      * PRE:
      * - podanie numeru serii (typ: typeLoop);
      * POST:
