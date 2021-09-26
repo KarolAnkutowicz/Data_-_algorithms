@@ -16,7 +16,8 @@ int main()
     T.mPrintTable(); // wypisanie tablicy
     //vTime = clock();
     for (typeLoop i = 0; i < T.getLength(); i++) // przejscie po wszystkich seriach
-        T.mInsertionSort(i); // wywolania sortowania przez wstawianie dla danej serii
+        T.mCountingSort(i); // wywolanie sortowania przez zliczanie dla danej serii
+        //T.mInsertionSort(i); // wywolanie sortowania przez wstawianie dla danej serii
         //T.mBubbleSort(i); // wywolanie sortowania babelkowego dla danej serii
     //vTime = clock() - vTime;
     cout << endl;

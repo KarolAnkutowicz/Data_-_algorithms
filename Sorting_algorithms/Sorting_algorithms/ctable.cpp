@@ -395,6 +395,46 @@ void cTable::mOddEvenSort(typeLoop aSeries)
 
 }
 
+/*
+ * void mCountingSort(typeLoop aSeries)
+ */
+void cTable::mCountingSort(typeLoop aSeries)
+{
+    typeData vMin = getElement(aSeries, 0), vMax = getElement(aSeries, 0); // deklaracja wartosci najmniejszej i najwiekszej w serii
+    for (typeLoop i = 1; i < vLength; i++) // przejscie po wszystkich elementach w poszukiwaniu nowych wartosci: najmniejszej i najwiekszej
+    {
+        if (getElement(aSeries, i) < vMin) // sprawdzenie czy nie znalezlismy mniejszego elementu niz aktualne minimum
+            vMin = getElement(aSeries, i); // jesli tak to uaktualniamy minimum
+        if (getElement(aSeries, i) > vMax) // sprawdzenie czy nie znalezlismy wiekszego elementu niz aktualne maximum
+            vMax = getElement(aSeries, i); // jesli tak to uaktualniamy maximum
+    }
+    if (vMin != vMax) // sprawdzamy czy wartosci najmniejsze i najwieksze sa rozne - jesli sa rowne to oznacza, ze zbior sklada sie z identycznych elementow
+    {
+        typeData vLen = vMax - vMin + 1; // zdefiniowanie liczby elementow tablicy pomocniczej
+        typeData *tabAux; // deklaracja wskaznika do tablicy pomocniczej
+        tabAux = new typeData[vLen]; // utoworzenie tablicy pomocniczej
+        for (typeLoop i = 0; i < vLen; i++) // przejscie po wszystkich elementach tablicy pomocniczej
+            tabAux[i] = 0; // nadanie wartosci poczatkowej
+        for (typeLoop i = 0; i < vLength; i++) // przejscie po wszystkich elementach serii
+            tabAux[getElement(aSeries, i) - vMin]++; // inkrementacja liczby danych elementow
+        typeLoop k = 0; // zdefiniowanie pomocniczej zmiennej indeksowej do odnoszenia sie do elementow tablicy glownej
+        for (typeLoop i = 0; i < vLen; i++) // przejscie po wszystkich elementach tablicy pomocniczej
+        {
+            if (tabAux[i] == 0) // jesli wartosc w tablicy pomocniczej jest rowna "0" to nie ma elementow do przypisania
+                continue;
+            else // jesli wartosc w tablicy pomocniczej jest niezerowa
+            {
+                for (typeLoop j = 0; j < tabAux[i]; j++) // wartosc z tablicy pomocniczej jest rowna liczbie elementow
+                {
+                    setElement(aSeries, k, i + vMin); // ustanowienie wartosci elementu
+                    k++; // przesuniecie na kolejny element tablicy glownej
+                }
+            }
+        }
+    }
+}
+
+
 /********** PUBLIC: END **********/
 
 /* ctable.cpp */

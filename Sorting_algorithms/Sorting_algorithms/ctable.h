@@ -577,6 +577,16 @@ public:
      */
     void mOddEvenSort(typeLoop aSeries);
 
+    /*
+     * void mCountingSort(typeLoop aSeries) - metoda
+     * realizujaca algorytm sortowania przez zliczanie.
+     * PRE:
+     * - podanie numeru serii (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mCountingSort(typeLoop aSeries);
+
 
 /********** PUBLIC: END **********/
 };
