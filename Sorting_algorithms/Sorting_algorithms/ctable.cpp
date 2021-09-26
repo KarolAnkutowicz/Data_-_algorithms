@@ -269,7 +269,23 @@ void cTable::mTimsort(typeLoop aSeries)
  */
 void cTable::mSelectionSort(typeLoop aSeries)
 {
-
+    typeData vMin; // deklaracja zmiennej przechowujaca wartosc najmniejsza
+    typeLoop iMin; // deklaracja zmiennej przechowujacej indeks wartosci najmniejszej
+    for (typeLoop i = 0; i < (vLength - 1); i++) // przejscie po wszystkich elementach z wyjatkiem pierwszego
+    {
+        vMin = getElement(aSeries, i); // ustanowienie wartosci najmniejszej
+        iMin = i; // ustanowienie indeksu wartosci najmniejszej
+        for (typeLoop j = i + 1; j < vLength; j++) // przejscie po wszystkich elementach z wyjatkiem ostatniego
+        {
+            if (getElement(aSeries, j) < vMin) // sprawdzenie czy koeljny element nie jest mniejszy od aktualnego minimum
+            {
+                vMin = getElement(aSeries, j); // jesli tak to ustanawiamy nowe minimum
+                iMin = j; // ustanawiamy indeks nowego minimum
+            }
+        }
+        if (iMin != i) // jesli indeksy pierwotnego i ostatecznego minimum sie roznily...
+            mSwap(aSeries, i ,iMin); // ...to zamieniamy je miejscami
+    }
 }
 
 /*

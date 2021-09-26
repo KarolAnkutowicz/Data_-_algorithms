@@ -433,7 +433,8 @@ public:
     void mTimsort(typeLoop aSeries);
 
     /*
-     * void mSelectionSort(typeLoop aSeries) -
+     * void mSelectionSort(typeLoop aSeries) - metoda
+     * realizujaza algorytm sortowania przez wybieranie.
      * PRE:
      * - podanie numeru serii (typ: typeLoop);
      * POST:

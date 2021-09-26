@@ -16,7 +16,8 @@ int main()
     T.mPrintTable(); // wypisanie tablicy
     //vTime = clock();
     for (typeLoop i = 0; i < T.getLength(); i++) // przejscie po wszystkich seriach
-        T.mCountingSort(i); // wywolanie sortowania przez zliczanie dla danej serii
+        T.mSelectionSort(i); // wywolanie sortowania przez wybieranie dla danej serii
+        //T.mCountingSort(i); // wywolanie sortowania przez zliczanie dla danej serii
         //T.mInsertionSort(i); // wywolanie sortowania przez wstawianie dla danej serii
         //T.mBubbleSort(i); // wywolanie sortowania babelkowego dla danej serii
     //vTime = clock() - vTime;
