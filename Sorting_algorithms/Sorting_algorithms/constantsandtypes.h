@@ -21,6 +21,13 @@ typedef int typeData;
  */
 typedef unsigned short typeLoop;
 
+/*
+ * const double constCombGap - stala zdefiniowana
+ * do obliczen odstepow miedzy porownywanymi
+ * wartosciami w algorytmie sortowania grzebieniowego.
+ */
+const double constCombGap = 1.3;
+
 #endif // CONSTANTSANDTYPES_H
 
 /* constantsandtypes.h */

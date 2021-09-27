@@ -552,7 +552,8 @@ public:
     void mCocktailShakerSort(typeLoop aSeries);
 
     /*
-     * void mCombSort(typeLoop aSeries) -
+     * void mCombSort(typeLoop aSeries) - metoda
+     * realizujaca algorytm sortowania grzebieniowego.
      * PRE:
      * - podanie numeru serii (typ: typeLoop);
      * POST:

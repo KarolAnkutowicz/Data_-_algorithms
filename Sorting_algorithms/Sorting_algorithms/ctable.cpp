@@ -277,7 +277,7 @@ void cTable::mSelectionSort(typeLoop aSeries)
         iMin = i; // ustanowienie indeksu wartosci najmniejszej
         for (typeLoop j = i + 1; j < vLength; j++) // przejscie po wszystkich elementach z wyjatkiem ostatniego
         {
-            if (getElement(aSeries, j) < vMin) // sprawdzenie czy koeljny element nie jest mniejszy od aktualnego minimum
+            if (getElement(aSeries, j) <= vMin) // sprawdzenie czy koeljny element nie jest mniejszy od aktualnego minimum
             {
                 vMin = getElement(aSeries, j); // jesli tak to ustanawiamy nowe minimum
                 iMin = j; // ustanawiamy indeks nowego minimum
@@ -392,7 +392,14 @@ void cTable::mCocktailShakerSort(typeLoop aSeries)
  */
 void cTable::mCombSort(typeLoop aSeries)
 {
-
+    typeLoop vGap = getLength(); // zdefiniowanie pierwotego odstepu pomiedzy porownywanymi elementami
+    do
+    {
+        vGap /= constCombGap; // uaktualnienie wartosci odstepu
+        for (typeLoop i = 0; i < (vLength - vGap); i++) // przejscie po wszystkich parach o wskazanym odstepie uwzgledniajac zakres tablicy
+            if (getElement(aSeries, i) > getElement(aSeries, i + vGap)) // porownanie elementow o wskazanym odstepie
+                mSwap(aSeries, i, i + vGap); // w przypadku wystapienia wiekszej wartosci jako pierwszej - zamiana elementow
+    } while (vGap > 1); // warunek zakonczenia petli
 }
 
 /*
