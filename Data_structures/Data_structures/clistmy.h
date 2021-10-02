@@ -112,7 +112,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru listy (typ: typeLoop).
      */
-    typeLoop getListSize();
+    inline typeLoop getListSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -123,7 +126,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getListIsEmpty() - metoda zawracajaca
@@ -134,7 +140,10 @@ public:
      * - zwrocenie informacji o tym czy lista jest pusta
      * (typ: bool).
      */
-    bool getListIsEmpty();
+    inline bool getListIsEmpty()
+    {
+        return vIsEmpty;
+    }
 
 
 
@@ -189,16 +198,6 @@ public:
      * - brak.
      */
     void mDrawElements(typeLoop aSize);
-
-    /*
-     * void mCheckListIsEmpty() - metoda sprawdzajaca czy
-     * lista jest pusta.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mCheckListIsEmpty();
 
 
 

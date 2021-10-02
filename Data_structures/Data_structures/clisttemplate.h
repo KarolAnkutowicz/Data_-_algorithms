@@ -198,6 +198,7 @@ public:
     void mDrawElements(typeLoop aSize);
 
 
+
     /*
      * void mPrintFirstElement() - metoda wyswietlajaca
      * pierwszy element listy (o ile lista nie jest pusta!).
