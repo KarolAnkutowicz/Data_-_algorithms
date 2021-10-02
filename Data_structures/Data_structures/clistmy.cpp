@@ -13,144 +13,115 @@ using namespace std;
 /*
  * cListMy()
  */
-/*cListMy::cListMy()
+cListMy::cListMy()
 {
-
-}*/
+    *ListTemplate = NULL;
+    vSize = 0;
+    vIsEmpty = true;
+    vDrawingRange = 0;
+}
 
 /*
  * cListMy(typeLoop aSize)
  */
-/*cListMy::cListMy(typeLoop aSize)
+cListMy::cListMy(typeLoop aSize)
 {
 
-}*/
+}
 
 /*
  * cListMy(typeLoop aSize, typeData aDrawingRange)
  */
-/*cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
+cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
 
-}*/
+}
 
 
 
 /*
  * typeData getFirstElement()
  */
-/*typeData cListMy::getFirstElement()
+typeData cListMy::getFirstElement()
 {
 
-}*/
+}
 
 /*
  * typeData getLastElement()
  */
-/*typeData cListMy::getLastElement()
+typeData cListMy::getLastElement()
 {
 
-}*/
-
-/*
- * typeLoop getListSize()
- */
-/*typeLoop cListMy::getListSize()
-{
-
-}*/
-
-/*
- * typeLoop getDrawingRange()
- */
-/*typeLoop cListMy::getDrawingRange()
-{
-
-}*/
-
-/*
- * bool getListIsEmpty()
- */
-/*bool cListMy::getListIsEmpty()
-{
-
-}*/
+}
 
 
 
 /*
  * void mAddElementToBegin(typeData aElement)
  */
-/*void cListMy::mAddElementToBegin(typeData aElement)
+void cListMy::mAddElementToBegin(typeData aElement)
 {
 
-}*/
+}
 
 /*
  * void mAddElementToEnd(typeData aElement)
  */
-/*void cListMy::mAddElementToEnd(typeData aElement)
+void cListMy::mAddElementToEnd(typeData aElement)
 {
 
-}*/
+}
 
 /*
  * bool mRemoveElementFromBegin()
  */
-/*bool cListMy::mRemoveElementFromBegin()
+bool cListMy::mRemoveElementFromBegin()
 {
 
-}*/
+}
 
 /*
  * bool mRemoveElementFromEnd()
  */
-/*bool cListMy::mRemoveElementFromEnd()
+bool cListMy::mRemoveElementFromEnd()
 {
 
-}*/
+}
 
 /*
  * void mDrawElements(typeLoop aSize)
  */
-/*void cListMy::mDrawElements(typeLoop aSize)
+void cListMy::mDrawElements(typeLoop aSize)
 {
 
-}*/
-
-/*
- * void mCheckListIsEmpty()
- */
-/*void cListMy::mCheckListIsEmpty()
-{
-
-}*/
+}
 
 
 
 /*
  * void mPrintFirstElement()
  */
-/*void cListMy::mPrintFirstElement()
+void cListMy::mPrintFirstElement()
 {
 
-}*/
+}
 
 /*
  * void mPrintLastElement()
  */
-/*void cListMy::mPrintLastElement()
+void cListMy::mPrintLastElement()
 {
 
-}*/
+}
 
 /*
  * void mPrintAllElements()
  */
-/*void cListMy::mPrintAllElements()
+void cListMy::mPrintAllElements()
 {
 
-}*/
+}
 
 /********** PUBLIC: END **********/
 

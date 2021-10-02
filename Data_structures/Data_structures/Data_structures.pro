@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     cqueuetemplate.cpp \
     cqueuemy.cpp \
     cheapbinary.cpp \
-    cvectoronedimension.cpp
+    cvectoronedimension.cpp \
+    clistmyelement.cpp
 
 HEADERS += \
     cdatahandling.h \
@@ -42,4 +43,5 @@ HEADERS += \
     cqueuetemplate.h \
     cqueuemy.h \
     cheapbinary.h \
-    cvectoronedimension.h
+    cvectoronedimension.h \
+    clistmyelement.h
