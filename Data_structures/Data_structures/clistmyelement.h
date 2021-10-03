@@ -54,6 +54,59 @@ public:
      */
     cListMyElement(typeData aValue);
 
+    /*
+     * ~cListMyElement() - destruktor klasy cListMyElement.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cListMyElement();
+
+
+
+    /*
+     * typeData getValue() - metoda zwracajaca
+     * wartosc elementu.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie zawartosci pola vValue (typ: typeData).
+     */
+    typeData getValue();
+
+    /*
+     * typeLoop *getNext() - metoda zwracajaca
+     * wskaznik do nastepnego elementu w liscie.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie zawartosci pola *vNext (typ: typeLoop).
+     */
+    typeLoop *getNext();
+
+    /*
+     * void setValue (typeData aValue) - metoda
+     * ustanawiajaca wartosc elementu.
+     * PRE:
+     * - podanie wartosci elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void setValue (typeData aValue);
+
+    /*
+     * void setNext (typeLoop *aNext) - metoda
+     * ustanawiajaca wskaznik do nastepnego elementu.
+     * PRE:
+     * - podanie wskaznika do nastepnego elementu
+     * (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void setNext (typeLoop *aNext);
+
+
 /********** PUBLIC: END **********/
 };
 
