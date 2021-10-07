@@ -15,10 +15,11 @@ using namespace std;
  */
 cListMy::cListMy()
 {
-    *ListTemplate = NULL;
-    vSize = 0;
-    vIsEmpty = true;
-    vDrawingRange = 0;
+    *ListMyBegin = NULL; // brak pierwszego elementu
+    *ListMyEnd = NULL; // brak ostatniego elementu
+    vSize = 0; // zerowy rozmiar listy
+    vIsEmpty = true; // lista jest pusta
+    vDrawingRange = 0; // zakres losowania elementow jest zerowy
 }
 
 /*
@@ -44,7 +45,10 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
  */
 typeData cListMy::getFirstElement()
 {
-
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        return NULL; // jesli tak to nie mamy co zwracac
+    else // jesli lista nie jest pusta
+        return ListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
 }
 
 /*
@@ -52,7 +56,10 @@ typeData cListMy::getFirstElement()
  */
 typeData cListMy::getLastElement()
 {
-
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        return NULL; // jesli tak to nie mamy co zwracac
+    else // jesli lista nie jest pusta
+        return ListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
 }
 
 

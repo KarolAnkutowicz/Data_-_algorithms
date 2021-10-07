@@ -8,6 +8,7 @@
 #define CLISTMY_H
 
 #include "constantsandtypes.h"
+#include "clistmyelement.h"
 #include <cstdlib>
 
 using namespace std;
@@ -21,10 +22,16 @@ class cListMy
 /********** PRIVATE: BEGINNING **********/
 
     /*
-     * typeData *ListTemplate - lista przechowujaca
-     * elementy typu typeData.
+     * cListMyElement *ListMyBegin - wskaznik do pierwszego
+     * elementu listy przechowujacej elementy typu typeData.
      */
-    typeData *ListTemplate;
+    cListMyElement *ListMyBegin;
+
+    /*
+     * cListMyElement *ListMyEnd - wskaznik do ostatniego
+     * elementu listy przechowujacej elementy typu typeData.
+     */
+    cListMyElement *ListMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar listy.
