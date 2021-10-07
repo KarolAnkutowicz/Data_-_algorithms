@@ -197,7 +197,7 @@ public:
 
     /*
      * void mAddElement(typeLoop aRows,typeData aElement) -
-     * metoda dopisujaca element do wskazanego wektora.
+     * metoda ustanawiajaca wartosc wskazanego elementu.
      * PRE:
      * - podanie wspolrzednej wektora (typ: typeLoop);
      * - podanie wspolrzednej we wskazanym wektorze
@@ -209,18 +209,16 @@ public:
     void mSetElement(typeLoop aRows, typeLoop aColumns, typeData aElement);
 
     /*
-     * bool mRemoveElement(typeLoop aRows) - metoda
-     * usuwajaca element z konca wskazanego wektora
-     * (o ile wektor nie jest pusty!).
+     * void mRemoveElement(typeLoop aRows) - metoda
+     * resetujaca wartosc wskazanego elementu.
      * PRE:
      * - podanie wspolrzednej wektora (typ: typeLoop);
      * - podanie wspolrzednej we wskazanym wektorze
      * (typ: typeLoop);
      * POST:
-     * - zwrocenie informacji o tym, ze usuniecie elementu
-     * sie powiodlo (typ: bool).
+     * - brak.
      */
-    bool mResetElement(typeLoop aRows , typeLoop aColumns);
+    void mResetElement(typeLoop aRows , typeLoop aColumns);
 
 
 

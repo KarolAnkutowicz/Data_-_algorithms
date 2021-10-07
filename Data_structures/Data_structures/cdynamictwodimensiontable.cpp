@@ -87,6 +87,28 @@ cDynamicTwoDimensionTable::~cDynamicTwoDimensionTable()
 
 
 /*
+ * void mAddElement(typeLoop aRows,typeData aElement)
+ */
+void cDynamicTwoDimensionTable::mSetElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
+{
+    tabElements[aRows * vColumns + aColumns] = aElement; // przypisanie wartosci elementu
+    mFindMinElement(); // aktualizacja minimum
+    mFindMaxElement(); // aktualizacja maximum
+}
+
+/*
+ * void mRemoveElement(typeLoop aRows)
+ */
+void cDynamicTwoDimensionTable::mResetElement(typeLoop aRows , typeLoop aColumns)
+{
+    tabElements[aRows * vColumns + aColumns] = 0; // przypisanie wartosci elementu
+    mFindMinElement(); // aktualizacja minimum
+    mFindMaxElement(); // aktualizacja maximum
+}
+
+
+
+/*
  * void mDrawElements()
  */
 void cDynamicTwoDimensionTable::mDrawElements()
@@ -129,19 +151,33 @@ void cDynamicTwoDimensionTable::mFindMaxElement()
     }
 }
 
+
+
 /*
- * void mPrintTable()
+ * void mPrintElement(typeLoop aRows, typeLoop aColumns)
  */
-/*void cDynamicTwoDimensionTable::mPrintTable()
+void cDynamicTwoDimensionTable::mPrintElement(typeLoop aRows, typeLoop aColumns)
 {
-    cout << "    Zawartosc tablicy: " << endl;
-    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
-    {
-        for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
-            cout << getElement(i, j) << " "; // wypisanie kolejnego elementu
-        cout << endl; // przejscie do nowej linii
-    }
-}*/
+    cout << tabElements[aRows * vColumns + aColumns] << " "; // wypisanie wartosci elementu
+}
+
+/*
+ * void mPrintVector(typeLoop aRows)
+ */
+void cDynamicTwoDimensionTable::mPrintVector(typeLoop aRows)
+{
+    for (typeLoop i = 0; i < vColumns; i++) // przejscie po wszystkich elementach w wektorze
+        mPrintElement(aRows, i); // wywolanie wypisania elementu
+}
+
+/*
+ * void mPrintAllElements()
+ */
+void cDynamicTwoDimensionTable::mPrintAllElements()
+{
+    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wektorach
+        mPrintVector(i); // wywolanie wypisania wektora
+}
 
 /********** PUBLIC: END **********/
 
