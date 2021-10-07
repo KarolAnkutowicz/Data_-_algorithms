@@ -136,16 +136,18 @@ void cDataHandling::mMenuVectorOneDimension()
  */
 void cDataHandling::mMenuDynamicTwoDimensionTable()
 {
-    typeLoop vColumns, vRows; // zmienne okreslajace wymiary tablicy
+    typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
-         << "    Liczba kolumn: ";
+         << "    Liczba wierszy: ";
+    cin >> vRows; // wczytanie liczby wierszy;
+    cout << "    Liczba kolumn: ";
     cin >> vColumns; // wczytanie liczby kolumn
-    cout << "    Liczba wierszy: ";
-    cin >> vRows; // wczytanie liczby wierszy
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cDynamicTwoDimensionTable D(vColumns, vRows, vDrawingRange); // utworzenie obiektu
+    cDynamicTwoDimensionTable D(vRows, vColumns, vDrawingRange); // utworzenie obiektu
+    cout << "    Minimum: " << D.getMinElement() << endl // wypisanie minimum tablicy
+         << "    Maximum: " << D.getMaxElement() << endl; // wypisanie maximum tablicy
 }
 
 /*
