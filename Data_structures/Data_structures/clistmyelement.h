@@ -8,6 +8,8 @@
 #define CLISTMYELEMENT_H
 
 #include "constantsandtypes.h"
+#include <cstdlib>
+
 using namespace std;
 
 /*
@@ -73,7 +75,10 @@ public:
      * POST:
      * - zwrocenie zawartosci pola vValue (typ: typeData).
      */
-    typeData getValue();
+    inline typeData getValue()
+    {
+        return vValue;
+    }
 
     /*
      * typeLoop *getNext() - metoda zwracajaca
@@ -83,7 +88,10 @@ public:
      * POST:
      * - zwrocenie zawartosci pola *vNext (typ: typeLoop).
      */
-    typeLoop *getNext();
+    inline typeLoop *getNext()
+    {
+        return vNext;
+    }
 
     /*
      * void setValue (typeData aValue) - metoda
@@ -93,7 +101,10 @@ public:
      * POST:
      * - brak.
      */
-    void setValue (typeData aValue);
+    inline void setValue (typeData aValue)
+    {
+        vValue = aValue;
+    }
 
     /*
      * void setNext (typeLoop *aNext) - metoda
@@ -104,7 +115,10 @@ public:
      * POST:
      * - brak.
      */
-    void setNext (typeLoop *aNext);
+    inline void setNext (typeLoop *aNext)
+    {
+        vNext = aNext;
+    }
 
 
 /********** PUBLIC: END **********/
