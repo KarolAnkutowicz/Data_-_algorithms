@@ -17,6 +17,18 @@ using namespace std;
  */
 cVectorTwoDimension::cVectorTwoDimension()
 {
+    vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
+    vMinElement = NULL; // ustanowienie najmniejszej wartosci w wektorze
+    vMaxElement = NULL; // ustanowienie najwiekszej wartosci w wektorze
+    mPrintAllElements(); // wypisanie zawartosci
+
+    /*vColumns = vRows = 1; // ustanowienie wymiarow tablicy
+    tabElements = new typeData[vColumns * vRows]; // utworzenie nowej tablicy
+    vDrawingRange = 0; // ustnowienie maksymalnej wartosci w tablicy
+    tabElements[0] = vDrawingRange; // przypisanie wartosci jej jedynego elementu
+    vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
+    vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
+    mPrintAllElements(); // wypisanie zawartosci tablicy*/
 
 }
 
@@ -25,7 +37,12 @@ cVectorTwoDimension::cVectorTwoDimension()
  */
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aSize)
 {
-
+    vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+        VectorElements[0].push_back(0); // dodanie nowej wartosci
+    vMinElement = 0; // ustanowienie najmniejszej wartosci w wektorze
+    vMaxElement = 0; // ustanowienie najwiekszej wartosci w wektorze
+    mPrintAllElements(); // wypisanie zawartosci
 }
 
 /*
@@ -33,7 +50,13 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aSize)
  */
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns)
 {
-
+    vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
+    for (typeLoop i = 0; i < aRows; i++) // przejscie po wszystkich wektorach
+        for (typeLoop j = 0; j < aColumns; j++) // przejscie po wszystkich elementach w wektorze
+            VectorElements[i].push_back(0); // dodanie nowej wartosci
+    vMinElement = 0; // ustanowienie najmniejszej wartosci w wektorze
+    vMaxElement = 0; // ustanowienie najwiekszej wartosci w wektorze
+    mPrintAllElements(); // wypisanie zawartosci
 }
 
 /*
@@ -41,7 +64,14 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns)
  */
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns, typeData aDrawingRange)
 {
-
+    vDrawingRange = aDrawingRange; // ustanowienie maksymalnej wartosci w wektorze
+    for (typeLoop i = 0; i < aRows; i++) // przejscie po wszystkich wektorach
+        for (typeLoop j = 0; j < aColumns; j++) // przejscie po wszystkich elementach w wektorze
+            VectorElements[i].push_back(0); // dodanie nowej wartosci
+    mDrawElements(); // wylosowanie nowych wartosci
+    mFindMinElement(); // wywolanie szukania najmniejszej wartosci w wektorze
+    mFindMaxElement(); // wywolanie szukania najwiekszej wartosci w wektorze
+    mPrintAllElements(); // wypisanie zawartosci
 }
 
 
@@ -71,14 +101,14 @@ bool cVectorTwoDimension::cVectorTwoDimension::mRemoveElement(typeLoop aRows)
 
 
 /*
- * void mDrawElements(typeLoop aRows, typeLoop aColumns)
+ * void mDrawElements()
  */
-void cVectorTwoDimension::cVectorTwoDimension::mDrawElements(typeLoop aRows, typeLoop aColumns)
+void cVectorTwoDimension::cVectorTwoDimension::mDrawElements()
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
         for (typeLoop j = 0; j < VectorElements[0].size(); j++) // przejscie po wszystkich elementach w wektorze
-            VectorElements[aRows][aColumns] = rand() % vDrawingRange; // wylosowanie i przypisanie wartosci
+            VectorElements[i][j] = rand() % vDrawingRange; // wylosowanie i przypisanie wartosci
 }
 
 /*

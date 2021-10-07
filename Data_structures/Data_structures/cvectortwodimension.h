@@ -214,16 +214,14 @@ public:
 
 
     /*
-     * void mDrawElements(typeLoop aRows, typeLoop aColumns) -
-     * metoda losujaca elementy wektora wektorow
-     * o podanych rozmiarach.
+     * void mDrawElements() - metoda losujaca elementy
+     * wektora wektorow o podanych rozmiarach.
      * PRE:
-     * - podanie liczby wektorow (typ: typeLoop);
-     * - podanie liczby kolumn (typ: typeLoop);
+     * - brak;
      * POST:
      * - brak.
      */
-    void mDrawElements(typeLoop aRows, typeLoop aColumns);
+    void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca
