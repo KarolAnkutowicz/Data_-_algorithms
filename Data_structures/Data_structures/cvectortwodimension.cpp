@@ -111,7 +111,7 @@ void cVectorTwoDimension::mFindMaxElement()
  */
 void cVectorTwoDimension::mPrintElement(typeLoop aRows, typeLoop aColumns)
 {
-
+    cout << VectorElements[aRows][aColumns] << " "; // wypisanie zawartosci wskazanego elementu
 }
 
 /*

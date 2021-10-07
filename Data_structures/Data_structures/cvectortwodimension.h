@@ -8,6 +8,7 @@
 #define CVECTORTWODIMENSION_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 #include <vector>
 
 using namespace std;
