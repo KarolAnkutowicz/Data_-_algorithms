@@ -29,7 +29,7 @@ void cDataHandling::mPrintMainMenu()
          << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
          << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
          << "(3) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-         //<< "(4) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+         << "(4) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
          << "(5) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
          << "(6) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
          << "(7) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
@@ -55,7 +55,7 @@ void cDataHandling::mMainMenu()
             case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
             case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
             case 3 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-            //case 4 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+            case 4 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
             case 5 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
             case 6 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             case 7 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
@@ -155,7 +155,18 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
  */
 void cDataHandling::mMenuVectorTwoDimension()
 {
-    //
+    typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar wektora wektorow
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry wektora:" << endl // wczytywanie parametrow
+         << "    Liczba wierszy: ";
+    cin >> vRows; // wczytanie liczby wierszy;
+    cout << "    Liczba kolumn: ";
+    cin >> vColumns; // wczytanie liczby kolumn
+    cout << "    Zakres liczb od 0 do...: ";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cVectorTwoDimension V(vRows, vColumns, vDrawingRange); // utworzenie obiektu
+    cout << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora wektorow
+         << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora wektorow
 }
 
 /*
