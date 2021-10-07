@@ -129,19 +129,6 @@ public:
     }
 
     /*
-     * typeLoop getColumns() - metoda zwracajaca liczbe kolumn
-     * tablicy.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
-     */
-    inline typeLoop getColumns()
-    {
-        return vColumns;
-    }
-
-    /*
      * typeLoop getRows() - metoda zwracajaca liczbe wierszy
      * tablicy
      * PRE:
@@ -152,6 +139,19 @@ public:
     inline typeLoop getRows()
     {
         return vRows;
+    }
+
+    /*
+     * typeLoop getColumns() - metoda zwracajaca liczbe kolumn
+     * tablicy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
+     */
+    inline typeLoop getColumns()
+    {
+        return vColumns;
     }
 
     /*
@@ -196,6 +196,35 @@ public:
 
 
     /*
+     * void mAddElement(typeLoop aRows,typeData aElement) -
+     * metoda dopisujaca element do wskazanego wektora.
+     * PRE:
+     * - podanie wspolrzednej wektora (typ: typeLoop);
+     * - podanie wspolrzednej we wskazanym wektorze
+     * (typ: typeLoop);
+     * - podanie wartosci elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void mSetElement(typeLoop aRows, typeLoop aColumns, typeData aElement);
+
+    /*
+     * bool mRemoveElement(typeLoop aRows) - metoda
+     * usuwajaca element z konca wskazanego wektora
+     * (o ile wektor nie jest pusty!).
+     * PRE:
+     * - podanie wspolrzednej wektora (typ: typeLoop);
+     * - podanie wspolrzednej we wskazanym wektorze
+     * (typ: typeLoop);
+     * POST:
+     * - zwrocenie informacji o tym, ze usuniecie elementu
+     * sie powiodlo (typ: bool).
+     */
+    bool mResetElement(typeLoop aRows , typeLoop aColumns);
+
+
+
+    /*
      * void mDrawElements() - metoda losujaca elementy tablicy.
      * PRE:
      * - brak;
@@ -224,24 +253,38 @@ public:
      */
     void mFindMaxElement();
 
-    /*
-     * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mPrintTable();
+
 
     /*
-     * void mPrintResults() - metoda wypisujaca rezultaty
-     * wskazywanie i wyznaczania wlasnosci tablicy.
+     * void mPrintElement(typeLoop aRows, typeLoop aColumns) -
+     * metoda wypisujaca wskazany element.
+     * PRE:
+     * - podanie numeru wektora (typ: typeLoop);
+     * - podanie numeru kolumny (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mPrintElement(typeLoop aRows, typeLoop aColumns);
+
+    /*
+     * void mPrintVector(typeLoop aRows) - metoda
+     * wyswietlajaca zawartosc wskazanego wektora.
+     * PRE:
+     * - podanie numeru wektora (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mPrintVector(typeLoop aRows);
+
+    /*
+     * void mPrintAllElements() - metoda wypisujaca
+     * wszystkie elementy.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mPrintResults();
+    void mPrintAllElements();
 
 /********** PUBLIC: END **********/
 };
