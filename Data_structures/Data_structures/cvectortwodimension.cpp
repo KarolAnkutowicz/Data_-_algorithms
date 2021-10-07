@@ -51,7 +51,7 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns, type
  */
 void cVectorTwoDimension::mAddElement(typeLoop aRows,typeData aElement)
 {
-
+    VectorElements[aRows].push_back(aElement); // dodanie elementu do wskazanego wektora
 }
 
 /*
@@ -59,7 +59,13 @@ void cVectorTwoDimension::mAddElement(typeLoop aRows,typeData aElement)
  */
 bool cVectorTwoDimension::cVectorTwoDimension::mRemoveElement(typeLoop aRows)
 {
-
+    if (VectorElements[aRows].empty() == true) // sprawdzamy czy wskazany wektor jest pusty
+        return false; // jesli tak to zwracamy informacje, ze nie mozemy usunac elementu
+    else // w przeciwnym przypadku
+    {
+        VectorElements[aRows].pop_back(); // usuwamy ostatni element we wskazanym wektorze
+        return true; // zwracamy informacje, ze operacja sie powiodla
+    }
 }
 
 
@@ -69,7 +75,10 @@ bool cVectorTwoDimension::cVectorTwoDimension::mRemoveElement(typeLoop aRows)
  */
 void cVectorTwoDimension::cVectorTwoDimension::mDrawElements(typeLoop aRows, typeLoop aColumns)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
+        for (typeLoop j = 0; j < VectorElements[0].size(); j++) // przejscie po wszystkich elementach w wektorze
+            VectorElements[aRows][aColumns] = rand() % vDrawingRange; // wylosowanie i przypisanie wartosci
 }
 
 /*
@@ -119,7 +128,8 @@ void cVectorTwoDimension::mPrintElement(typeLoop aRows, typeLoop aColumns)
  */
 void cVectorTwoDimension::mPrintVector(typeLoop aRows)
 {
-
+    for (typeLoop i = 0; i < VectorElements[0].size(); i++) // przejscie po wszystkich elementach wektora
+        mPrintElement(aRows, i); // wywolanie wypisania wskazanego elementu
 }
 
 /*
@@ -127,7 +137,11 @@ void cVectorTwoDimension::mPrintVector(typeLoop aRows)
  */
 void cVectorTwoDimension::mPrintAllElements()
 {
-
+    for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
+    {
+        mPrintVector(i); // wywolanie wypisania wskazanego wektora
+        cout << endl; // przejscie do nowej linii
+    }
 }
 
 /********** PUBLIC: END **********/

@@ -176,7 +176,10 @@ void cDynamicTwoDimensionTable::mPrintVector(typeLoop aRows)
 void cDynamicTwoDimensionTable::mPrintAllElements()
 {
     for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wektorach
+    {
         mPrintVector(i); // wywolanie wypisania wektora
+        cout << endl; // przejscie do nowej linii
+    }
 }
 
 /********** PUBLIC: END **********/
