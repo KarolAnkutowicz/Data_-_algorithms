@@ -10,6 +10,7 @@
 #include "constantsandtypes.h"
 #include "clistmyelement.h"
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 

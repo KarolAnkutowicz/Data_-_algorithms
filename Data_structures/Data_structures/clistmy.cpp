@@ -150,7 +150,10 @@ void cListMy::mDrawElements(typeLoop aSize)
  */
 void cListMy::mPrintFirstElement()
 {
-
+    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+        cout << vListMyBegin->getValue() << " "; // wypisanie wartosci pierwszego elementu
+    else // jesli lista jest pusta
+        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
 }
 
 /*
@@ -158,7 +161,10 @@ void cListMy::mPrintFirstElement()
  */
 void cListMy::mPrintLastElement()
 {
-
+    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+        cout << vListMyEnd->getValue() << " "; // wypisanie wartosci ostatniego elementu
+    else // jesli lista jest pusta
+        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
 }
 
 /*
