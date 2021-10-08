@@ -22,16 +22,16 @@ class cListMy
 /********** PRIVATE: BEGINNING **********/
 
     /*
-     * cListMyElement *ListMyBegin - wskaznik do pierwszego
+     * cListMyElement *vListMyBegin - wskaznik do pierwszego
      * elementu listy przechowujacej elementy typu typeData.
      */
-    cListMyElement *ListMyBegin;
+    cListMyElement *vListMyBegin;
 
     /*
-     * cListMyElement *ListMyEnd - wskaznik do ostatniego
+     * cListMyElement *vListMyEnd - wskaznik do ostatniego
      * elementu listy przechowujacej elementy typu typeData.
      */
-    cListMyElement *ListMyEnd;
+    cListMyElement *vListMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar listy.

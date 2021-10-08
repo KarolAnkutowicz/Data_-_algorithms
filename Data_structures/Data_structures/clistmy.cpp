@@ -15,8 +15,8 @@ using namespace std;
  */
 cListMy::cListMy()
 {
-    *ListMyBegin = NULL; // brak pierwszego elementu
-    *ListMyEnd = NULL; // brak ostatniego elementu
+    *vListMyBegin = NULL; // brak pierwszego elementu
+    *vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
     vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
@@ -27,7 +27,6 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
-
 }
 
 /*
@@ -48,7 +47,7 @@ typeData cListMy::getFirstElement()
     if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return ListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
+        return vListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
 }
 
 /*
@@ -59,7 +58,7 @@ typeData cListMy::getLastElement()
     if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return ListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
+        return vListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
 }
 
 
@@ -69,14 +68,20 @@ typeData cListMy::getLastElement()
  */
 void cListMy::mAddElementToBegin(typeData aElement)
 {
-    /*if (vIsEmpty == true)
+    cListMyElement Elem(aElement); // utworzenie nowego elementu
+    if (vIsEmpty == true)
     {
-        cListMyElement Elem(aElement);
+        vListMyBegin = &Elem; // przypisanie wskaznika do pierwszego (aktualnie jedynego) elementu
+        vListMyEnd = &Elem; // przypisanie wskaznika do ostatniego (aktualnie jedynego) elementu
+        vSize++; // zwiekszamy rozmiar listy
+        vIsEmpty = false; // lista nie jest juz pusta
     }
     else
     {
-
-    }*/
+        Elem.setNext(vListMyBegin); // nowy element wskazuje na element, ktory jeszcze przes chwila byl jako pierwszy
+        vListMyBegin = &Elem; // ustanawiamy nowy pierwszy element
+        vSize++; // zwiekszamy rozmiar listy
+    }
 }
 
 /*
@@ -84,14 +89,20 @@ void cListMy::mAddElementToBegin(typeData aElement)
  */
 void cListMy::mAddElementToEnd(typeData aElement)
 {
-    /*if (vIsEmpty == true)
+    cListMyElement Elem(aElement); // utworzenie nowego elementu
+    if (vIsEmpty == true)
     {
-
+        vListMyBegin = &Elem; // przypisanie wskaznika do pierwszego (aktualnie jedynego) elementu
+        vListMyEnd = &Elem; // przypisanie wskaznika do ostatniego (aktualnie jedynego) elementu
+        vSize++; // zwiekszamy rozmiar listy
+        vIsEmpty = false; // lista nie jest juz pusta
     }
     else
     {
-
-    }*/
+        Elem.setNext(vListMyEnd); // nowy element wskazuje na element, ktory jeszcze przed chwila byl jako ostatni
+        vListMyEnd = &Elem; // ustanawiamy nowy ostatni element
+        vSize++; // zwiekszamy rozmiar listy
+    }
 }
 
 /*
@@ -99,12 +110,16 @@ void cListMy::mAddElementToEnd(typeData aElement)
  */
 bool cListMy::mRemoveElementFromBegin()
 {
-    /*if (vIsEmpty == true)
+    if (vIsEmpty == true)
         return false;
     else
     {
-
-    }*/
+        cListMyElement Elem; // tworzymy nowy, pomocniczy element
+        Elem.setNext(vListMyBegin); // ustanawiamy wskaznik na jego kolejny element jako obecny pierwszy element
+        vListMyBegin = (vListMyBegin->getNext()); // nowym pierwszym elementem listy bedzie element na ktory pierwotnie wskazywal pierwszy element
+        (Elem.getNext())->~cListMyElement(); // destrukcja pierwotnego pierwszego elementu
+        Elem.~cListMyElement(); // destrukcja pomocniczego elementu
+    }
 }
 
 /*
