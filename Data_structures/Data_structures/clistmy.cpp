@@ -20,6 +20,7 @@ cListMy::cListMy()
     vSize = 0; // zerowy rozmiar listy
     vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
+    //mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 /*
@@ -27,16 +28,14 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
-    //vListMyBegin = NULL; // brak pierwszego elementu
-    //vListMyEnd = NULL; // brak ostatniego elementu
-    //for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
-    //    mAddElementToEnd(0); // dodajemy nowy element na koniec listy
-    vSize = aSize; // aktualny rozmiar listy
-    if (aSize == 0) // sprawdzamy czy podalismy rozmiar zerowy
-        vIsEmpty = true; // jesli tak to lista jest pusta
-    else // w przeciwnym przypadku
-        vIsEmpty = false; // lista nie jest pusta
+    vListMyBegin = NULL; // brak pierwszego elementu
+    vListMyEnd = NULL; // brak ostatniego elementu
+    vSize = 0; // zerowy rozmiar listy
+    vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
+    for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
+        mAddElementToEnd(0); // dodajemy nowy element na koniec listy
+    //mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 /*
@@ -46,12 +45,11 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
     vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
+    vSize = 0; // zerowy rozmiar listy
     vIsEmpty = true;
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
-    vSize = aSize; // aktualny rozmiar listy
-    mPrintFirstElement();
-    mPrintLastElement();
+    //mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 
@@ -100,18 +98,16 @@ void cListMy::mAddElementToBegin(typeData aElement)
 void cListMy::mAddElementToEnd(typeData aElement)
 {
     cListMyElement Elem(aElement); // utworzenie nowego elementu
-    if (vIsEmpty == true)
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        vListMyBegin = &Elem; // jesli tak to ostatni element jest rownoczesnie pierwszym
+    else // w przeciwnym przypadku
     {
-        vListMyBegin = &Elem;
+        vListMyEnd->setNext(&Elem); // aktualnie ostatni element ma wskazywac na nowo dodawany
+        Elem.setNext(NULL); // za nowo dodanym aktualnie nie ma zadnego elementu
     }
-    else
-    {
-        vListMyEnd->setNext(&Elem);
-        Elem.setNext(NULL);
-    }
-    vListMyEnd = &Elem;
-    vIsEmpty = false;
-    vSize++;
+    vListMyEnd = &Elem; // ustanawiamy nowy ostatni element
+    vIsEmpty = false; // lista na pewno nie jest juz pusta
+    vSize++; // zwieksza sie rozmiar listy
 }
 
 /*
