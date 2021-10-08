@@ -33,7 +33,7 @@ void cDataHandling::mPrintMainMenu()
          << "(5) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
          << "(6) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
          << "(7) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
-         //<< "(8) - lista bez wykorzystanie szablonu <list>" << endl // opcja dla listy  bez wykorzystania <list>
+         << "(8) - lista bez wykorzystanie szablonu <list>" << endl // opcja dla listy  bez wykorzystania <list>
          << "(9) - kolejka z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(10) - kolejka bez wykorzystanis szablonu <queue<" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
          //<< "(11) - kopiec binarny" << endl // opcja dla kopca binarnego
@@ -59,7 +59,7 @@ void cDataHandling::mMainMenu()
             case 5 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
             case 6 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             case 7 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-            //case 8 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            case 8 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
             case 9 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 10 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
             //case 11 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
@@ -245,7 +245,20 @@ void cDataHandling::mMenuListTemplate()
  */
 void cDataHandling::mMenuListMy()
 {
-    //
+    typeLoop vElements; // zmienna okreslajaca liczbe elementow listy
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry listy" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vElements; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cListMy L(vElements, vDrawingRange); // utworzenie obiektu
+    /*L.mPrintFirstElement();
+    cout << endl;
+    L.mPrintLastElement();
+    cout << endl;*/
+    cout << "Liczba elementow listy: " << L.getListSize() << endl
+         << "Zakres losowania elementow " << L.getDrawingRange() << endl;
 }
 
 /*

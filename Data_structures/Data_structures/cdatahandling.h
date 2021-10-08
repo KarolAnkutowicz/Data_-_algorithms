@@ -9,6 +9,7 @@
 
 #include "cdynamiconedimensiontable.h"
 #include "cdynamictwodimensiontable.h"
+#include "clistmy.h"
 #include "clisttemplate.h"
 #include "constantsandtypes.h"
 #include "cqueuetemplate.h"

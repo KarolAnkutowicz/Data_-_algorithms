@@ -27,6 +27,16 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
+    //*vListMyBegin = NULL; // brak pierwszego elementu
+    //*vListMyEnd = NULL; // brak ostatniego elementu
+    //for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
+    //    mAddElementToEnd(0); // dodajemy nowy element na koniec listy
+    vSize = aSize; // aktualny rozmiar listy
+    if (aSize == 0) // sprawdzamy czy podalismy rozmiar zerowy
+        vIsEmpty = true; // jesli tak to lista jest pusta
+    else // w przeciwnym przypadku
+        vIsEmpty = false; // lista nie jest pusta
+    vDrawingRange = 0; // zakres losowania elementow jest zerowy
 }
 
 /*
@@ -34,7 +44,15 @@ cListMy::cListMy(typeLoop aSize)
  */
 cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
-
+    //*vListMyBegin = NULL; // brak pierwszego elementu
+    //*vListMyEnd = NULL; // brak ostatniego elementu
+    //mDrawElements(aSize); // wywolanie dodawania losowych elementow
+    vSize = aSize; // aktualny rozmiar listy
+    if (aSize == 0) // sprawdzamy czy podalismy rozmiar zerowy
+        vIsEmpty = true; // jesli tak to lista jest pusta
+    else // w przeciwnym przypadku
+        vIsEmpty = false; // lista nie jest pusta
+    vDrawingRange = aDrawingRange; // zakres losowania elementow jest zerowy
 }
 
 
@@ -140,7 +158,13 @@ bool cListMy::mRemoveElementFromEnd()
  */
 void cListMy::mDrawElements(typeLoop aSize)
 {
-
+    if (aSize != 0) // sprawdzamy czy rozmiar jest niezerowy
+    {
+        vIsEmpty = false; // jesli tak to lista nie bedzie pusta
+        srand(time_t(NULL)); // ustanowienie zmiennej losowej
+        for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+            mAddElementToEnd(rand() % vDrawingRange); // dodanie nowego elementu na koniec listy
+    }
 }
 
 
