@@ -20,12 +20,21 @@ cListMyElement::cListMyElement()
 }
 
 /*
- * cListMyElement()
+ * cListMyElement(typeData aValue)
  */
 cListMyElement::cListMyElement(typeData aValue)
 {
     vValue = aValue; // ustanowienie wartosci elementu
     vNext = NULL; // ustanawiamy brak wskazania na nastepny element
+}
+
+/*
+ * cListMyElement(typeData aValue, typeLoop *aNext)
+ */
+cListMyElement::cListMyElement(typeData aValue, typeLoop *aNext)
+{
+    vValue = aValue; // ustanowienie wartosci elementu
+    vNext = aNext; // ustanawiamy wskaznik na nastepny element
 }
 
 /*

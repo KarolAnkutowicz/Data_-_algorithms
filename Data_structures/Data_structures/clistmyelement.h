@@ -47,14 +47,27 @@ public:
     cListMyElement();
 
     /*
-     * cListMyElement() - konstruktor wywolywany
-     * z jednym argumentem - wartoscia elementu.
+     * cListMyElement(typeData aValue) - konstruktor
+     * wywolywany z jednym argumentem - wartoscia elementu.
      * PRE:
      * - podanie wartosci elementu (typ: typeData);
      * POST:
      * - tworzenie obiektu klasy cListMyElement.
      */
     cListMyElement(typeData aValue);
+
+    /*
+     * cListMyElement(typeData aValue, typeLoop *aNext) -
+     * konstruktor wywolywany z dwoma argumentami -
+     * wartoscia elementu oraz wskaznikiem na nastepny element.
+     * PRE:
+     * - podanie wartosci elementu (typ: typeData);
+     * - podanie wskaünika do nastepnego elementu
+     * (typ: *typeLoop);
+     * POST:
+     * - tworzenie obiektu klasy cListMyElement.
+     */
+    cListMyElement(typeData aValue, typeLoop *aNext);
 
     /*
      * ~cListMyElement() - destruktor klasy cListMyElement.

@@ -69,7 +69,14 @@ typeData cListMy::getLastElement()
  */
 void cListMy::mAddElementToBegin(typeData aElement)
 {
+    /*if (vIsEmpty == true)
+    {
+        cListMyElement Elem(aElement);
+    }
+    else
+    {
 
+    }*/
 }
 
 /*
@@ -77,7 +84,14 @@ void cListMy::mAddElementToBegin(typeData aElement)
  */
 void cListMy::mAddElementToEnd(typeData aElement)
 {
+    /*if (vIsEmpty == true)
+    {
 
+    }
+    else
+    {
+
+    }*/
 }
 
 /*
@@ -85,7 +99,12 @@ void cListMy::mAddElementToEnd(typeData aElement)
  */
 bool cListMy::mRemoveElementFromBegin()
 {
+    /*if (vIsEmpty == true)
+        return false;
+    else
+    {
 
+    }*/
 }
 
 /*
@@ -93,7 +112,12 @@ bool cListMy::mRemoveElementFromBegin()
  */
 bool cListMy::mRemoveElementFromEnd()
 {
+    /*if (vIsEmpty == true)
+        return false;
+    else
+    {
 
+    }*/
 }
 
 /*
