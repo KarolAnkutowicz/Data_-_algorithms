@@ -29,9 +29,9 @@ cListMyElement::cListMyElement(typeData aValue)
 }
 
 /*
- * cListMyElement(typeData aValue, typeLoop *aNext)
+ * cListMyElement(typeData aValue, cListMyElement *aNext)
  */
-cListMyElement::cListMyElement(typeData aValue, typeLoop *aNext)
+cListMyElement::cListMyElement(typeData aValue, cListMyElement *aNext)
 {
     vValue = aValue; // ustanowienie wartosci elementu
     vNext = aNext; // ustanawiamy wskaznik na nastepny element

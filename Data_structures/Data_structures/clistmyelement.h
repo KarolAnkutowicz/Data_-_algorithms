@@ -28,9 +28,10 @@ class cListMyElement
     typeData vValue;
 
     /*
-     * typeLoop *vNext - wskaznik na nastepny element listy.
+     * cListMyElement *vNext - wskaznik na nastepny
+     * element listy.
      */
-    typeLoop *vNext;
+    cListMyElement *vNext;
 
 /********** PRIVATE: END **********/
 
@@ -63,11 +64,11 @@ public:
      * PRE:
      * - podanie wartosci elementu (typ: typeData);
      * - podanie wskaünika do nastepnego elementu
-     * (typ: *typeLoop);
+     * (typ: *cListMyElement);
      * POST:
      * - tworzenie obiektu klasy cListMyElement.
      */
-    cListMyElement(typeData aValue, typeLoop *aNext);
+    cListMyElement(typeData aValue, cListMyElement *aNext);
 
     /*
      * ~cListMyElement() - destruktor klasy cListMyElement.
@@ -99,9 +100,9 @@ public:
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie zawartosci pola *vNext (typ: typeLoop).
+     * - zwrocenie zawartosci pola *vNext (typ: cListMyElement).
      */
-    inline typeLoop *getNext()
+    inline cListMyElement *getNext()
     {
         return vNext;
     }
@@ -124,11 +125,11 @@ public:
      * ustanawiajaca wskaznik do nastepnego elementu.
      * PRE:
      * - podanie wskaznika do nastepnego elementu
-     * (typ: typeLoop);
+     * (typ: cListMyElement);
      * POST:
      * - brak.
      */
-    inline void setNext (typeLoop *aNext)
+    inline void setNext (cListMyElement *aNext)
     {
         vNext = aNext;
     }
