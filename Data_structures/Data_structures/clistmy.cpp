@@ -224,28 +224,18 @@ void cListMy::mPrintLastElement()
  */
 void cListMy::mPrintAllElements()
 {
-    //WYPISANIE CALEJ LISTY
-    // sprawdzamy czy lista jest pusta
-        // jesli tak to wypisujemy odpowiedni komunikat
-    // jesli lista nie jest pusta
-        // tworzymy element pomocniczy
-        // przypisujemy element pomocniczy rowny wartosci pierwszego elementu listy
-        // przechodzimy przez wszystkie elementy
-            // wypisujemy wartosc elementu
-            // przypisujemy nastepnik do elementu pomocniczego
-
-    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        cout << "Lista jestpusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli lista nie jest pusta
     {
-        cListMyElement *ElemAux; // utworzenie pomocniczego wskaznika do przechodzenia przez kolejne elementy listy
-        ElemAux = vListMyBegin; // ustanowienie wskaznika na poczatek listy
-        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach listy
+        cListMyElement *Elem; // tworzymy element pomocniczy
+        Elem = vListMyBegin; // przypisujemy element pomocniczy rowny wartosci pierwszego elementu listy
+        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
         {
-            cout << ElemAux->getValue() << endl; // wypisanie zawartosci elementu
-            ElemAux->setNext(ElemAux->getNext()); // przejscie do kolejnego elementu
+            cout << Elem->getValue() << endl; // wypisujemy wartosc elementu
+            Elem = Elem->getNext(); // przypisujemy nastepnik do elementu pomocniczego
         }
     }
-    else // jesli lista jest pusta
-        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
 }
 
 /********** PUBLIC: END **********/
