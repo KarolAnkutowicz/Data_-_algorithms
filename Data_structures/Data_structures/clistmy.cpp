@@ -20,7 +20,7 @@ cListMy::cListMy()
     vSize = 0; // zerowy rozmiar listy
     vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
-    //mPrintAllElements(); // wypisanie wszystkich elementow listy
+    mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 /*
@@ -35,7 +35,7 @@ cListMy::cListMy(typeLoop aSize)
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
     for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
         mAddElementToEnd(0); // dodajemy nowy element na koniec listy
-    //mPrintAllElements(); // wypisanie wszystkich elementow listy
+    mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 /*
@@ -49,7 +49,7 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
     vIsEmpty = true;
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
-    //mPrintAllElements(); // wypisanie wszystkich elementow listy
+    mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
 
 
@@ -83,6 +83,16 @@ typeData cListMy::getLastElement()
  */
 void cListMy::mAddElementToBegin(typeData aElement)
 {
+    //DODAWANIE ELEMENTU NA POCZATEK
+    // sprawdzamy czy lista jest pusta
+        // jesli jest pusta to wskaznik na element poczatkowy ustanawiamy na dodawany element
+        // wskaznik na element koncowy rowniez ustawiamy na dodawany element
+    // jesli na liscie jest juz co najmniej jeden element
+        // ustanawiamy nastepnik nowego elementu jako aktualnie pierwszy element
+        // ustanawiamy poczatek listy na nowododany element
+    // zwiekszamy rozmiar listy
+    // ustanawiamy ze lista nie jest pusta
+
     cListMyElement Elem(aElement); // utworzenie nowego elementu
     Elem.setNext(vListMyBegin); // nowy element wskazuje na element, ktory jeszcze przes chwila byl jako pierwszy
     vListMyBegin = &Elem; // ustanawiamy nowy pierwszy element
@@ -97,6 +107,17 @@ void cListMy::mAddElementToBegin(typeData aElement)
  */
 void cListMy::mAddElementToEnd(typeData aElement)
 {
+    //DODAWANIE ELEMENTU NA KONIEC
+    // sprawdzamy czy lista jest pusta
+        // jesli jest pusta to wskaznik na element poczatkowy ustanawiamy na dodawany element
+        // wskaznik na element koncowy rowniez ustawiamy na dodawany element
+    // jesli na liscie jest juz co najmniej jeden element
+        // ustanawiamy nowy element jako nastepnik aktualnie ostatniego elementu
+        // nowy element aktualnie wskazuje na NULL
+        // ustanawiamy koniec listy na nowododany element
+    // zwiekszamy rozmiar listy
+    // ustanawiamy ze lista nie jest pusta
+
     cListMyElement Elem(aElement); // utworzenie nowego elementu
     if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
         vListMyBegin = &Elem; // jesli tak to ostatni element jest rownoczesnie pierwszym
@@ -115,16 +136,51 @@ void cListMy::mAddElementToEnd(typeData aElement)
  */
 bool cListMy::mRemoveElementFromBegin()
 {
-    if (vIsEmpty == true)
-        return false;
+    //USUWANIE ELEMENTU Z POCZATKU
+    // sprawdzamy czy lista jest pusta
+        // jesli tak to nie mamy co usuwac z listy
+    // jesli lista nie jest pusta
+        // jesli jest na niej jeden element
+            // likwidujemy pierwszy element listy
+            // poczatek listy ustanawiamy na NULL
+            // koniec listy ustanawiamy na NULL
+            // ustanawiamy ze lista jest pusta
+        // jesli jest na niej wiecej niz jeden element
+            // tworzymy element pomocniczy
+            // nastepnik elementu pomocniczego jest nastepnikiem elementu z poczatku listy
+            // usuwamy element z poczatku listy
+            // ustanawiamy poczatek listy jako nastepnik elementu pomocniczego
+            // usuwamy element pomocniczy
+        // zmniejszamy rozmiar listy
+
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        return false; // jesli tak to nie ma co usuwac
     else
+    {
+        if (vSize == 1) // sprawdzamy czy mamy tylko jeden element na liscie
+        {
+            vListMyEnd->~cListMyElement(); // usuwamy jedyny element
+            vListMyBegin = NULL; // nie istnieje element poczatkowy
+            vListMyEnd = NULL; // nie istnieje element koncowy
+        }
+        else
+        {
+            //
+        }
+    }
+
+
+
+    /*if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+        return false; // jesli tak to nie ma co usuwac
+    else // jesli lista nie jest pusta
     {
         cListMyElement Elem; // tworzymy nowy, pomocniczy element
         Elem.setNext(vListMyBegin); // ustanawiamy wskaznik na jego kolejny element jako obecny pierwszy element
         vListMyBegin = (vListMyBegin->getNext()); // nowym pierwszym elementem listy bedzie element na ktory pierwotnie wskazywal pierwszy element
         (Elem.getNext())->~cListMyElement(); // destrukcja pierwotnego pierwszego elementu
         Elem.~cListMyElement(); // destrukcja pomocniczego elementu
-    }
+    }*/
 }
 
 /*
@@ -132,11 +188,34 @@ bool cListMy::mRemoveElementFromBegin()
  */
 bool cListMy::mRemoveElementFromEnd()
 {
-    /*if (vIsEmpty == true)
-        return false;
-    else
-    {
+    //USUWANIE ELEMENTU Z KONCA
+    // sprawdzamy czy lista jest pusta
+        // jesli tak to nie mamy co usuwac z listy
+    // jesli lista nie jest pusta
+        // jesli jest na niej jeden element
+            // likwidujemy pierwszy element listy
+            // poczatek listy ustanawiamy na NULL
+            // koniec listy ustanawiamy na NULL
+            // ustanawiamy ze lista jest pusta
+        // jesli jest na niej wiecej niz jeden element
+            // tworzymy element pomocniczy
+            // przechodzimy przez wszystkie elementy
+                // przypisujemy pomocniczy element jako pierwszy element
+                // sprawdzamy czy analizowany element wskazuje jako nastepnik na ostatni element
+                    // jesli tak to zmieniamy jego wskazanie na nastepnik jako NULL
+                    // usuwamy aktualnie ostatni element
+                    // ustanawiamy nowy ostatni element jako biezacy
+                // jesli tak nie jest
+                    // wowczas jako element pomocniczy wskazujemy nastepnik biezacego elementu
+            // niszczymy element pomocniczy
+        // zmniejszamy rozmiar listy
 
+    /*if (vIsEmpty == true) //
+        return false; //
+    else //
+    {
+        cListMyElement Elem; //
+        Elem = vListMyEnd;
     }*/
 }
 
@@ -183,7 +262,28 @@ void cListMy::mPrintLastElement()
  */
 void cListMy::mPrintAllElements()
 {
+    //WYPISANIE CALEJ LISTY
+    // sprawdzamy czy lista jest pusta
+        // jesli tak to wypisujemy odpowiedni komunikat
+    // jesli lista nie jest pusta
+        // tworzymy element pomocniczy
+        // przypisujemy element pomocniczy rowny wartosci pierwszego elementu listy
+        // przechodzimy przez wszystkie elementy
+            // wypisujemy wartosc elementu
+            // przypisujemy nastepnik do elementu pomocniczego
 
+    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+    {
+        cListMyElement *ElemAux; // utworzenie pomocniczego wskaznika do przechodzenia przez kolejne elementy listy
+        ElemAux = vListMyBegin; // ustanowienie wskaznika na poczatek listy
+        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach listy
+        {
+            cout << ElemAux->getValue() << endl; // wypisanie zawartosci elementu
+            ElemAux->setNext(ElemAux->getNext()); // przejscie do kolejnego elementu
+        }
+    }
+    else // jesli lista jest pusta
+        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
 }
 
 /********** PUBLIC: END **********/
