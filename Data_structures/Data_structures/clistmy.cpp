@@ -83,23 +83,17 @@ typeData cListMy::getLastElement()
  */
 void cListMy::mAddElementToBegin(typeData aElement)
 {
-    //DODAWANIE ELEMENTU NA POCZATEK
-    // sprawdzamy czy lista jest pusta
-        // jesli jest pusta to wskaznik na element poczatkowy ustanawiamy na dodawany element
-        // wskaznik na element koncowy rowniez ustawiamy na dodawany element
-    // jesli na liscie jest juz co najmniej jeden element
-        // ustanawiamy nastepnik nowego elementu jako aktualnie pierwszy element
-        // ustanawiamy poczatek listy na nowododany element
-    // zwiekszamy rozmiar listy
-    // ustanawiamy ze lista nie jest pusta
-
     cListMyElement Elem(aElement); // utworzenie nowego elementu
-    Elem.setNext(vListMyBegin); // nowy element wskazuje na element, ktory jeszcze przes chwila byl jako pierwszy
-    vListMyBegin = &Elem; // ustanawiamy nowy pierwszy element
-    vIsEmpty = false; // lista na pewno nie bedzie pusta
+    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    {
+        Elem.setNext(NULL); // nowy element poki co nie ma nastepnika
+        vListMyEnd = &Elem; // wskaznik na element koncowy ustawiamy na dodawany element
+    }
+    else // jesli na liscie jest juz co najmniej jeden element
+        Elem.setNext(vListMyBegin); // ustanawiamy nastepnik nowego elementu jako aktualnie pierwszy element
+    vListMyBegin = &Elem; // ustanawiamy poczatek listy na nowododany element
     vSize++; // zwiekszamy rozmiar listy
-    if (getListSize() == 1) // sprawdzamy czy lista sklada sie tylko z jednego elementu
-        vListMyEnd = &Elem; // wowczas pierwszy element jest rownoczesnie ostatnim
+    vIsEmpty = false; // ustanawiamy ze lista nie jest pusta
 }
 
 /*
