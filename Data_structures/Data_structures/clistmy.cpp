@@ -119,51 +119,28 @@ void cListMy::mAddElementToEnd(typeData aElement)
  */
 bool cListMy::mRemoveElementFromBegin()
 {
-    //USUWANIE ELEMENTU Z POCZATKU
-    // sprawdzamy czy lista jest pusta
-        // jesli tak to nie mamy co usuwac z listy
-    // jesli lista nie jest pusta
-        // jesli jest na niej jeden element
-            // likwidujemy pierwszy element listy
-            // poczatek listy ustanawiamy na NULL
-            // koniec listy ustanawiamy na NULL
-            // ustanawiamy ze lista jest pusta
-        // jesli jest na niej wiecej niz jeden element
-            // tworzymy element pomocniczy
-            // nastepnik elementu pomocniczego jest nastepnikiem elementu z poczatku listy
-            // usuwamy element z poczatku listy
-            // ustanawiamy poczatek listy jako nastepnik elementu pomocniczego
-            // usuwamy element pomocniczy
-        // zmniejszamy rozmiar listy
-
     if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
-        return false; // jesli tak to nie ma co usuwac
-    else
-    {
-        if (vSize == 1) // sprawdzamy czy mamy tylko jeden element na liscie
-        {
-            vListMyEnd->~cListMyElement(); // usuwamy jedyny element
-            vListMyBegin = NULL; // nie istnieje element poczatkowy
-            vListMyEnd = NULL; // nie istnieje element koncowy
-        }
-        else
-        {
-            //
-        }
-    }
-
-
-
-    /*if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
-        return false; // jesli tak to nie ma co usuwac
+        return false; // jesli tak to nie mamy co usuwac z listy
     else // jesli lista nie jest pusta
     {
-        cListMyElement Elem; // tworzymy nowy, pomocniczy element
-        Elem.setNext(vListMyBegin); // ustanawiamy wskaznik na jego kolejny element jako obecny pierwszy element
-        vListMyBegin = (vListMyBegin->getNext()); // nowym pierwszym elementem listy bedzie element na ktory pierwotnie wskazywal pierwszy element
-        (Elem.getNext())->~cListMyElement(); // destrukcja pierwotnego pierwszego elementu
-        Elem.~cListMyElement(); // destrukcja pomocniczego elementu
-    }*/
+        if (vSize == 1) // jesli jest na niej jeden element
+        {
+            vListMyBegin->~cListMyElement(); // likwidujemy pierwszy element listy
+            vListMyBegin = NULL; // poczatek listy ustanawiamy na NULL
+            vListMyEnd = NULL; // koniec listy ustanawiamy na NULL
+            vIsEmpty = true; // ustanawiamy ze lista jest pusta
+        }
+        else // jesli jest na niej wiecej niz jeden element
+        {
+            cListMyElement Elem;// tworzymy element pomocniczy
+            Elem.setNext(vListMyBegin->getNext()); // nastepnik elementu pomocniczego jest nastepnikiem elementu z poczatku listy
+            vListMyBegin->~cListMyElement(); // usuwamy element z poczatku listy
+            vListMyBegin = Elem.getNext(); // ustanawiamy poczatek listy jako nastepnik elementu pomocniczego
+            Elem.~cListMyElement(); // usuwamy element pomocniczy
+        }
+        vSize--; // zmniejszamy rozmiar listy
+        return true; // zwrasamy informacje, ze element zostal usuniety
+    }
 }
 
 /*
