@@ -18,7 +18,6 @@ cListMy::cListMy()
     vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
-    vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
     mPrintAllElements(); // wypisanie wszystkich elementow listy
 }
@@ -31,7 +30,6 @@ cListMy::cListMy(typeLoop aSize)
     vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
-    vIsEmpty = true; // lista jest pusta
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
     for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
         mAddElementToEnd(0); // dodajemy nowy element na koniec listy
@@ -46,7 +44,6 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
     vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
-    vIsEmpty = true;
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
     mPrintAllElements(); // wypisanie wszystkich elementow listy
@@ -59,7 +56,7 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
  */
 typeData cListMy::getFirstElement()
 {
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
         return vListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
@@ -70,7 +67,7 @@ typeData cListMy::getFirstElement()
  */
 typeData cListMy::getLastElement()
 {
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
         return vListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
@@ -84,7 +81,7 @@ typeData cListMy::getLastElement()
 void cListMy::mAddElementToBegin(typeData aElement)
 {
     cListMyElement Elem(aElement); // utworzenie nowego elementu
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
     {
         Elem.setNext(NULL); // nowy element poki co nie ma nastepnika
         vListMyEnd = &Elem; // wskaznik na element koncowy ustawiamy na dodawany element
@@ -93,7 +90,6 @@ void cListMy::mAddElementToBegin(typeData aElement)
         Elem.setNext(vListMyBegin); // ustanawiamy nastepnik nowego elementu jako aktualnie pierwszy element
     vListMyBegin = &Elem; // ustanawiamy poczatek listy na nowododany element
     vSize++; // zwiekszamy rozmiar listy
-    vIsEmpty = false; // ustanawiamy ze lista nie jest pusta
 }
 
 /*
@@ -102,7 +98,7 @@ void cListMy::mAddElementToBegin(typeData aElement)
 void cListMy::mAddElementToEnd(typeData aElement)
 {
     cListMyElement Elem(aElement); // utworzenie nowego elementu
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         vListMyBegin = &Elem; // jesli jest pusta to wskaznik na element poczatkowy ustanawiamy na dodawany element
     else // jesli na liscie jest juz co najmniej jeden element
     {
@@ -111,7 +107,10 @@ void cListMy::mAddElementToEnd(typeData aElement)
     }
     vListMyEnd = &Elem; // ustanawiamy koniec listy na nowododany element
     vSize++; // zwiekszamy rozmiar listy
-    vIsEmpty = false; // ustanawiamy ze lista nie jest pusta
+    //cout << "Rozmiar listy: " << getListSize() << endl;
+    //cout << "Nowy element: " << Elem.getValue() << endl;
+    //cout << "Aktualnie pierwszy: " << vListMyBegin->getValue() << endl;
+    //cout << "Aktualnie ostatni: " << vListMyEnd->getValue() << endl << endl;
 }
 
 /*
@@ -119,7 +118,7 @@ void cListMy::mAddElementToEnd(typeData aElement)
  */
 bool cListMy::mRemoveElementFromBegin()
 {
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
     else // jesli lista nie jest pusta
     {
@@ -128,7 +127,6 @@ bool cListMy::mRemoveElementFromBegin()
             vListMyBegin->~cListMyElement(); // likwidujemy pierwszy element listy
             vListMyBegin = NULL; // poczatek listy ustanawiamy na NULL
             vListMyEnd = NULL; // koniec listy ustanawiamy na NULL
-            vIsEmpty = true; // ustanawiamy ze lista jest pusta
         }
         else // jesli jest na niej wiecej niz jeden element
         {
@@ -148,7 +146,7 @@ bool cListMy::mRemoveElementFromBegin()
  */
 bool cListMy::mRemoveElementFromEnd()
 {
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
     else // jesli lista nie jest pusta
     {
@@ -157,7 +155,6 @@ bool cListMy::mRemoveElementFromEnd()
             vListMyBegin->~cListMyElement(); // likwidujemy pierwszy element listy
             vListMyBegin = NULL; // poczatek listy ustanawiamy na NULL
             vListMyEnd =  NULL; // koniec listy ustanawiamy na NULL
-            vIsEmpty = true; // ustanawiamy ze lista jest pusta
         }
         else // jesli jest na niej wiecej niz jeden element
         {
@@ -188,7 +185,6 @@ void cListMy::mDrawElements(typeLoop aSize)
 {
     if (aSize != 0) // sprawdzamy czy rozmiar jest niezerowy
     {
-        //vIsEmpty = false; // jesli tak to lista nie bedzie pusta
         srand(time_t(NULL)); // ustanowienie zmiennej losowej
         for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
             mAddElementToEnd(rand() % vDrawingRange); // dodanie nowego elementu na koniec listy
@@ -202,7 +198,7 @@ void cListMy::mDrawElements(typeLoop aSize)
  */
 void cListMy::mPrintFirstElement()
 {
-    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+    if (getListSize() == 0) // sprawdzenie czy lista nie jest pusta
         cout << vListMyBegin->getValue() << endl; // wypisanie wartosci pierwszego elementu
     else // jesli lista jest pusta
         cout << "Lista jest pusta 2!" << endl; // wypisujemy odpowiedni komunikat
@@ -213,7 +209,7 @@ void cListMy::mPrintFirstElement()
  */
 void cListMy::mPrintLastElement()
 {
-    if (vIsEmpty == false) // sprawdzenie czy lista nie jest pusta
+    if (getListSize() == 0) // sprawdzenie czy lista nie jest pusta
         cout << vListMyEnd->getValue() << endl; // wypisanie wartosci ostatniego elementu
     else // jesli lista jest pusta
         cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
@@ -224,8 +220,8 @@ void cListMy::mPrintLastElement()
  */
 void cListMy::mPrintAllElements()
 {
-    if (vIsEmpty == true) // sprawdzamy czy lista jest pusta
-        cout << "Lista jestpusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+        cout << "Lista jest pusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
     else // jesli lista nie jest pusta
     {
         cListMyElement *Elem; // tworzymy element pomocniczy

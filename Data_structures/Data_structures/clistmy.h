@@ -41,12 +41,6 @@ class cListMy
     typeLoop vSize;
 
     /*
-     * bool vIsEmpty - zmienna logiczna okreslajaca czy lista
-     * jest pusta czy nie.
-     */
-    bool vIsEmpty;
-
-    /*
      * typeData vDrawingRange - zakres losowania
      * elementow stosu.
      */
@@ -139,20 +133,6 @@ public:
     inline typeLoop getDrawingRange()
     {
         return vDrawingRange;
-    }
-
-    /*
-     * bool getListIsEmpty() - metoda zawracajaca
-     * informacje o tym czy lista jest pusta.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie informacji o tym czy lista jest pusta
-     * (typ: bool).
-     */
-    inline bool getListIsEmpty()
-    {
-        return vIsEmpty;
     }
 
 
