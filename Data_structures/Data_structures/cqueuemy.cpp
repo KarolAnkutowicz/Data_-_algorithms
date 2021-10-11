@@ -13,112 +13,104 @@ using namespace std;
 /*
  * cQueueMy()
  */
-/*cQueueMy::cQueueMy()
+cQueueMy::cQueueMy()
 {
 
-}*/
+}
 
 /*
  * cQueueTemplate()
  */
-/*cQueueMy::cQueueMy(typeLoop aSize)
+cQueueMy::cQueueMy(typeLoop aSize)
 {
 
-}*/
+}
 
 /*
  * cQueueTemplate()
  */
-/*cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
+cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
 {
 
-}*/
+}
 
 
 
 /*
  * typeData getFirstElement()
  */
-/*typeData cQueueMy::getFirstElement()
+typeData cQueueMy::getFirstElement()
 {
 
-}*/
+}
 
 /*
  * typeData getLastElement()
  */
-/*typeData cQueueMy::getLastElement()
+typeData cQueueMy::getLastElement()
 {
 
-}*/
+}
 
 /*
  * typeLoop getQueueSize()
  */
-/*typeLoop cQueueMy::getQueueSize()
+typeLoop cQueueMy::getQueueSize()
 {
 
-}*/
+}
 
 /*
  * typeLoop getDrawingRange()
  */
-/*typeLoop cQueueMy::getDrawingRange()
+typeLoop cQueueMy::getDrawingRange()
 {
 
-}*/
-
-/*
- * bool getListQueueIsEmpty()
- */
-/*bool cQueueMy::getQueueIsEmpty()
-{
-
-}*/
+}
 
 
 
 /*
  * void mAddElement(typeData aElement)
  */
-/*void cQueueMy::mAddElement(typeData aElement)
+void cQueueMy::mAddElement(typeData aElement)
 {
 
-}*/
+}
 
 /*
  * bool mRemoveElement()
  */
-/*bool cQueueMy::mRemoveElement()
+bool cQueueMy::mRemoveElement()
 {
 
-}*/
+}
 
 
 
 /*
  * void mPrintFirstElement()
  */
-/*void cQueueMy::mPrintFirstElement()
+void cQueueMy::mPrintFirstElement()
 {
 
-}*/
+}
 
 /*
  * void mPrintLastElement()
  */
-/*void cQueueMy::mPrintLastElement()
+void cQueueMy::mPrintLastElement()
 {
 
-}*/
+}
 
 /*
  * void mPrintAllElements()
  */
-/*void cQueueMy::mPrintAllElements()
+void cQueueMy::mPrintAllElements()
 {
 
-}*/
+}
 
 /********** PUBLIC: END **********/
 

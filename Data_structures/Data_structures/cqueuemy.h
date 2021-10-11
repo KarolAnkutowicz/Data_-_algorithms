@@ -23,18 +23,18 @@ class cQueueMy
      * typeData *QueuekMy - wskaznik do pierwszego elementu
      * kolejki.
      */
-    typeData *QueueMy;
+    typeData *vQueueMyBegin;
+
+    /*
+     * typeData *QueueMyEnd - wskaznik do ostatniego elementu
+     * kolejki
+     */
+    typeData *vQueueMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
      */
     typeLoop vSize;
-
-    /*
-     * bool vIsEmpty - zmienna logiczna okreslajaca czy kolejka
-     * jest pusta czy nie.
-     */
-    bool vIsEmpty;
 
     /*
      * typeData vDrawingRange - zakres losowania elementow
@@ -122,17 +122,6 @@ public:
      * (typ: typeLoop).
      */
     typeLoop getDrawingRange();
-
-    /*
-     * bool getListQueueIsEmpty() - metoda zawracajaca
-     * informacje o tym czy lista jest pusta.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie informacji o tym czy lista jest pusta
-     * (typ: bool).
-     */
-    bool getQueueIsEmpty();
 
 
 
