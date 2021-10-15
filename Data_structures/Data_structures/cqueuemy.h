@@ -8,6 +8,7 @@
 #define CQUEUEMY_H
 
 #include "constantsandtypes.h"
+#include "clistmyelement.h"
 
 using namespace std;
 
@@ -20,16 +21,16 @@ class cQueueMy
 /********** PRIVATE: BEGIN **********/
 
     /*
-     * typeData *QueuekMy - wskaznik do pierwszego elementu
+     * cListMyElement *QueuekMy - wskaznik do pierwszego elementu
      * kolejki.
      */
-    typeData *vQueueMyBegin;
+    cListMyElement *vQueueMyBegin;
 
     /*
-     * typeData *QueueMyEnd - wskaznik do ostatniego elementu
+     * cListMyElement *QueueMyEnd - wskaznik do ostatniego elementu
      * kolejki
      */
-    typeData *vQueueMyEnd;
+    cListMyElement *vQueueMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
