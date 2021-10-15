@@ -52,22 +52,6 @@ typeData cQueueMy::getLastElement()
 
 }
 
-/*
- * typeLoop getQueueSize()
- */
-typeLoop cQueueMy::getQueueSize()
-{
-
-}
-
-/*
- * typeLoop getDrawingRange()
- */
-typeLoop cQueueMy::getDrawingRange()
-{
-
-}
-
 
 
 /*

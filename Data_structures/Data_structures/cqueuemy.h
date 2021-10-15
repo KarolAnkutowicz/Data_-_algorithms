@@ -110,7 +110,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru kolejki (typ: typeLoop).
      */
-    typeLoop getQueueSize();
+    inline typeLoop getQueueSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -121,7 +124,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
 
 
