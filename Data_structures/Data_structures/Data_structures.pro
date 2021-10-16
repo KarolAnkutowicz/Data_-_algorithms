@@ -28,7 +28,8 @@ SOURCES += main.cpp \
     cqueuemy.cpp \
     cheapbinary.cpp \
     cvectoronedimension.cpp \
-    clistmyelement.cpp
+    clistmyelement.cpp \
+    celementmy.cpp
 
 HEADERS += \
     cdatahandling.h \
@@ -44,4 +45,5 @@ HEADERS += \
     cqueuemy.h \
     cheapbinary.h \
     cvectoronedimension.h \
-    clistmyelement.h
+    clistmyelement.h \
+    celementmy.h
