@@ -221,7 +221,7 @@ void cDataHandling::mMenuStackMy()
     S.mRemoveElement(); // usuwanie ostatniego elementu
     cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
     cout << "    Zawartosc stosu: " << endl;
-    S.mPrintAllElements(); // wypisanie zawartosci wektora
+    S.mPrintAllElements(); // wypisanie zawartosci stosu
     cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
 }
 
@@ -230,14 +230,27 @@ void cDataHandling::mMenuStackMy()
  */
 void cDataHandling::mMenuListTemplate()
 {
-    typeLoop vElements; // zmienna okreslajaca liczbe elementow listy
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
     cout << "Okresl parametry listy" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
-    cin >> vElements; // wczytanie liczby elementow
+    cin >> vSize; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cListTemplate L(vElements, vDrawingRange); // utworzenie obiektu
+    cListTemplate L(vSize, vDrawingRange); // utworzenie obiektu
+    cout << "    Podaj nowy element do dodania na koniec listy: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
+    cout << "    Usuwamy pierwszy element..." << endl;
+    L.mRemoveElementFromBegin() ; // usuwanie pierwszego elementu
+    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
+    cout << "    Zawartosc listy: " << endl;
+    L.mPrintAllElements(); // wypisanie zawartosci listy
+    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
 }
 
 /*

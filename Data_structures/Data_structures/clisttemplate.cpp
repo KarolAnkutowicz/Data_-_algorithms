@@ -137,7 +137,6 @@ void cListTemplate::mPrintAllElements()
         cout << "    Lista jest pusta" << endl; // wypisujemy komunikat o tej sytuacji
     else // jesli lista nie jest pusta
     {
-        cout << "    Zawartosc Listy:" << endl; // rozpoczynamy wypisywanie zawartosci stosu
         while (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
         {
             mPrintFirstElement(); // wypisujemy element z poczatku listy
