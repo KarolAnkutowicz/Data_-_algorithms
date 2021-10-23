@@ -16,6 +16,7 @@ using namespace std;
 cListTemplate::cListTemplate()
 {
     vDrawingRange = 0; // usranowienie zakresu losowania elementow
+    mPrintAllElements(); // wypisanie wszystkich elementow
 }
 
 /*
@@ -26,6 +27,7 @@ cListTemplate::cListTemplate(typeLoop aSize)
     vDrawingRange = 0; // usranowienie zakresu losowania elementow
     for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
         mAddElementToEnd(0); // dodanie nowego elementu
+    mPrintAllElements(); // wypisanie wszystkich elementow
 }
 
 /*
@@ -35,6 +37,7 @@ cListTemplate::cListTemplate(typeLoop aSize, typeData aDrawingRange)
 {
     vDrawingRange = aDrawingRange; // usranowienie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie metody losujacej elementy
+    mPrintAllElements(); // wypisanie wszystkich elementow
 }
 
 
