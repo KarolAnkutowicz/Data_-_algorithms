@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2021-07-11T17:27:57
+# Project created by QtCreator 2021-11-06T23:02:01
 #
 #-------------------------------------------------
 
@@ -16,32 +16,36 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    cdatahandling.cpp \
-    cdynamiconedimensiontable.cpp \
-    cdynamictwodimensiontable.cpp \
+    cvectortwodimension.cpp \
+    cvectoronedimension.cpp \
     cstacktemplate.cpp \
     cstackmy.cpp \
-    clisttemplate.cpp \
-    clistmy.cpp \
-    cvectortwodimension.cpp \
     cqueuetemplate.cpp \
     cqueuemy.cpp \
+    clisttemplate.cpp \
+    clistmy.cpp \
     cheapbinary.cpp \
-    cvectoronedimension.cpp \
-    celementmy.cpp
+    celementmy.cpp \
+    cdynamictwodimensiontable.cpp \
+    cdynamiconedimensiontable.cpp \
+    cdequetemplate.cpp \
+    cdatahandling.cpp \
+    carrayonedimension.cpp
 
 HEADERS += \
-    cdatahandling.h \
-    cdynamiconedimensiontable.h \
-    constantsandtypes.h \
-    cdynamictwodimensiontable.h \
+    cvectortwodimension.h \
+    cvectoronedimension.h \
     cstacktemplate.h \
     cstackmy.h \
-    clisttemplate.h \
-    clistmy.h \
-    cvectortwodimension.h \
     cqueuetemplate.h \
     cqueuemy.h \
+    constantsandtypes.h \
+    clisttemplate.h \
+    clistmy.h \
     cheapbinary.h \
-    cvectoronedimension.h \
-    celementmy.h
+    celementmy.h \
+    cdynamictwodimensiontable.h \
+    cdynamiconedimensiontable.h \
+    cdequetemplate.h \
+    cdatahandling.h \
+    carrayonedimension.h
