@@ -20,7 +20,6 @@ cVectorTwoDimension::cVectorTwoDimension()
     vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
     vMinElement = NULL; // ustanowienie najmniejszej wartosci w wektorze
     vMaxElement = NULL; // ustanowienie najwiekszej wartosci w wektorze
-    mPrintAllElements(); // wypisanie zawartosci
 }
 
 /*
@@ -35,7 +34,6 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aSize)
     VectorElements.push_back(Vector); // dodanie wektora do wektora wektorow
     vMinElement = 0; // ustanowienie najmniejszej wartosci w wektorze
     vMaxElement = 0; // ustanowienie najwiekszej wartosci w wektorze
-    mPrintAllElements(); // wypisanie zawartosci
 }
 
 /*
@@ -53,7 +51,6 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns)
     }
     vMinElement = 0; // ustanowienie najmniejszej wartosci w wektorze
     vMaxElement = 0; // ustanowienie najwiekszej wartosci w wektorze
-    mPrintAllElements(); // wypisanie zawartosci
 }
 
 /*
@@ -72,7 +69,6 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns, type
     mDrawElements(); // wylosowanie nowych wartosci
     mFindMinElement(); // wywolanie szukania najmniejszej wartosci w wektorze
     mFindMaxElement(); // wywolanie szukania najwiekszej wartosci w wektorze
-    mPrintAllElements(); // wypisanie zawartosci
 }
 
 

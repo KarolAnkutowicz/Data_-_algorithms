@@ -21,7 +21,6 @@ cDynamicTwoDimensionTable::cDynamicTwoDimensionTable()
     tabElements[0] = vDrawingRange; // przypisanie wartosci jej jedynego elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
-    mPrintAllElements(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -37,7 +36,6 @@ cDynamicTwoDimensionTable::cDynamicTwoDimensionTable(typeLoop aColumn)
         tabElements[i] = 0; // przypisanie wartosci elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
-    mPrintAllElements(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -54,7 +52,6 @@ cDynamicTwoDimensionTable::cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop 
             tabElements[i * vColumns + j] = 0; // przypisanie wartosci elementu
     vMinElement = tabElements[0]; // ustanowienie wartosci najmniejszej
     vMaxElement = tabElements[0]; // ustanowienie wartosci najwiekszej
-    mPrintAllElements(); // wypisanie zawartosci tablicy
 }
 
 /*
@@ -69,7 +66,6 @@ cDynamicTwoDimensionTable::cDynamicTwoDimensionTable(typeLoop aColumn, typeLoop 
     mDrawElements(); // wylosowanie wartosci elementow tablicy
     mFindMinElement(); // znalezienie najmniejszego elementu w tablicy
     mFindMaxElement(); // znalezienie najwiekszego elementu w tablicy
-    mPrintAllElements(); // wypisanie zawartosci tablicy
 }
 
 /*

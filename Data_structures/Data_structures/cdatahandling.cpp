@@ -28,15 +28,29 @@ void cDataHandling::mPrintMainMenu()
     cout << endl << "Wybierz opcje:" << endl // menu glowne
          << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
          << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-         << "(3) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-         << "(4) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-         << "(5) - stos w oparciu o szablon <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
-         << "(6) - stos bez wykorzystania szablonu <stack>" << endl // opcja dla stosu bez wykorzystania <stack>
-         << "(7) - lista z wykorzystaniem szblonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
-         << "(8) - lista bez wykorzystanie szablonu <list>" << endl // opcja dla listy  bez wykorzystania <list>
-         << "(9) - kolejka z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
-         //<< "(10) - kolejka bez wykorzystanis szablonu <queue<" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
-         //<< "(11) - kopiec binarny" << endl // opcja dla kopca binarnego
+         //<< "(3) - dynamiczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+         << "(4) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
+         << "(5) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+         //<< "(6) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+         << "(7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
+         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
+         //<< "(9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
+         //<< "(10) lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+         << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
+         << "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
+         << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
+         //<< "(14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
+         //<< "(15) - kolejka dwukierunkowa z wykorzystaniem <deque> << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+         //<< "(16) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
+         //<< "(17) - kopiec binarny" << endl // opcja dla kopca binarnego
+         //<< "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
+         //<< "(19) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
+         //<< "(20) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+         //<< "(21) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+         //<< "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
+         //<< "(23) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
+         //<< "(24) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
+         //<< "(25) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
          << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
 }
 
@@ -54,15 +68,30 @@ void cDataHandling::mMainMenu()
             case 0 : break; // wybor zakonczenia dzialana programu
             case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
             case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-            case 3 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-            case 4 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-            case 5 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
-            case 6 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
-            case 7 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-            case 8 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-            case 9 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
-            //case 10 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-            //case 11 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
+            //case 3 :
+            case 4 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+            case 5 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+            //case 6 :
+            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
+            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
+            //case 9 :
+            //case 10 :
+            //case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+            //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            //case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+            //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
+            //case 15 :
+            //case 16 :
+            //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
+            //case 18 :
+            //case 18 :
+            //case 19 :
+            //case 20 :
+            //case 21 :
+            //case 22 :
+            //case 23 :
+            //case 24 :
+            //case 25 :
             default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
@@ -146,6 +175,8 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicTwoDimensionTable D(vRows, vColumns, vDrawingRange); // utworzenie obiektu
+    cout << "    Zawartosc tablicy: " << endl;
+    D.mPrintAllElements(); // wypisanie zawartosci tablicy
     cout << "    Minimum: " << D.getMinElement() << endl // wypisanie minimum tablicy
          << "    Maximum: " << D.getMaxElement() << endl; // wypisanie maximum tablicy
 }
@@ -165,6 +196,8 @@ void cDataHandling::mMenuVectorTwoDimension()
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorTwoDimension V(vRows, vColumns, vDrawingRange); // utworzenie obiektu
+    cout << "    Zawartosc wektorow: " << endl;
+    V.mPrintAllElements(); // wypisanie zawartosci wektorow
     cout << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora wektorow
          << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora wektorow
 }
@@ -189,7 +222,7 @@ void cDataHandling::mMenuStackTemplate()
     cout << "    Podaj jeszcze jeden nowy element: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    cout << "    Usuwamy element..." << endl;
     S.mRemoveElement(); // usuwanie ostatniego elementu
     cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
     cout << "    Zawartosc stosu: " << endl;
@@ -217,7 +250,7 @@ void cDataHandling::mMenuStackMy()
     cout << "    Podaj jeszcze jeden nowy element: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    cout << "    Usuwamy element..." << endl;
     S.mRemoveElement(); // usuwanie ostatniego elementu
     cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
     cout << "    Zawartosc stosu: " << endl;
