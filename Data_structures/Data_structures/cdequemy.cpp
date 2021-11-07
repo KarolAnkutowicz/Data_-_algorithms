@@ -1,16 +1,16 @@
 /********** BEGIN_OF_FILE **********/
 /*
  * author: Karol Ankutowicz
- * file: cdequetemplate.cpp
+ * file: cdequemy.cpp
  */
 
-#include "cdequetemplate.h"
+#include "cdequemy.h"
 
 using namespace std;
 
-cDequeTemplate::cDequeTemplate()
+cDequeMy::cDequeMy()
 {
 }
 
-/* cdequetemplate.cpp */
+/* cdequemy.cpp */
 /********** END_OF_FILE **********/

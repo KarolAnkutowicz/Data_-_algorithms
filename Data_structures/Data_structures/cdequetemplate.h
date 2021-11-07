@@ -9,6 +9,13 @@
 
 #include <deque>
 
+using namespace std;
+
+/*
+ * cDequeTemplate - klasa modelujaca kolejke
+ * dwukierunkowa z wykorzystaniem szablonu
+ * <deque>.
+ */
 class cDequeTemplate
 {
 public:

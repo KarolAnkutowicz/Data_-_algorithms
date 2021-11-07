@@ -34,7 +34,8 @@ SOURCES += main.cpp \
     carrayonedimension.cpp \
     carraytwodimension.cpp \
     cforwardlisttemplate.cpp \
-    cforwardlistmy.cpp
+    cforwardlistmy.cpp \
+    cdequemy.cpp
 
 HEADERS += \
     cvectortwodimension.h \
@@ -55,6 +56,7 @@ HEADERS += \
     carrayonedimension.h \
     carraytwodimension.h \
     cforwardlisttemplate.h \
-    cforwardlistmy.h
+    cforwardlistmy.h \
+    cdequemy.h
 
 #QMAKE_CXXFLAGS += -std=c++0x
