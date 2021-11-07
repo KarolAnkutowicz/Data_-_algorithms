@@ -39,18 +39,18 @@ cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
 /*
  * typeData getFirstElement()
  */
-typeData cQueueMy::getFirstElement()
+/*typeData cQueueMy::getFirstElement()
 {
 
-}
+}*/
 
 /*
  * typeData getLastElement()
  */
-typeData cQueueMy::getLastElement()
+/*typeData cQueueMy::getLastElement()
 {
 
-}
+}*/
 
 
 
@@ -65,10 +65,10 @@ void cQueueMy::mAddElement(typeData aElement)
 /*
  * bool mRemoveElement()
  */
-bool cQueueMy::mRemoveElement()
+/*bool cQueueMy::mRemoveElement()
 {
 
-}
+}*/
 
 
 
