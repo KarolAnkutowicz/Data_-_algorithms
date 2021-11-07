@@ -41,7 +41,9 @@ SOURCES += main.cpp \
     csettemplate.cpp \
     csetmy.cpp \
     cunorderedmaptemplate.cpp \
-    cunorderedmapmy.cpp
+    cunorderedmapmy.cpp \
+    cunorderedsettemplate.cpp \
+    cunorderedsetmy.cpp
 
 HEADERS += \
     cvectortwodimension.h \
@@ -69,6 +71,8 @@ HEADERS += \
     csettemplate.h \
     csetmy.h \
     cunorderedmaptemplate.h \
-    cunorderedmapmy.h
+    cunorderedmapmy.h \
+    cunorderedsettemplate.h \
+    cunorderedsetmy.h
 
 #QMAKE_CXXFLAGS += -std=c++0x
