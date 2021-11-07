@@ -11,6 +11,7 @@ QT       -= gui
 TARGET = Data_structures
 CONFIG   += console
 CONFIG   -= app_bundle
+#CONFIG += C++11
 
 TEMPLATE = app
 
@@ -30,7 +31,10 @@ SOURCES += main.cpp \
     cdynamiconedimensiontable.cpp \
     cdequetemplate.cpp \
     cdatahandling.cpp \
-    carrayonedimension.cpp
+    carrayonedimension.cpp \
+    carraytwodimension.cpp \
+    cforwardlisttemplate.cpp \
+    cforwardlistmy.cpp
 
 HEADERS += \
     cvectortwodimension.h \
@@ -48,4 +52,9 @@ HEADERS += \
     cdynamiconedimensiontable.h \
     cdequetemplate.h \
     cdatahandling.h \
-    carrayonedimension.h
+    carrayonedimension.h \
+    carraytwodimension.h \
+    cforwardlisttemplate.h \
+    cforwardlistmy.h
+
+#QMAKE_CXXFLAGS += -std=c++0x

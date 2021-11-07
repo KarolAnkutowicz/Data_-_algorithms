@@ -11,6 +11,10 @@
 
 using namespace std;
 
+/*
+ * cArrayOneDimension - klasa modelujaca tablica
+ * jednowymiarowa z wykorzystaniem szablonu <array>
+ */
 class cArrayOneDimension
 {
 public:

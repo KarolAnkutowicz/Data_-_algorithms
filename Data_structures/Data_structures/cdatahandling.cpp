@@ -26,14 +26,14 @@ cDataHandling::cDataHandling()
 void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
-         << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
-         << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+//         << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
+//         << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
          //<< "(3) - dynamiczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-         << "(4) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-         << "(5) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+//         << "(4) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
+//         << "(5) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
          //<< "(6) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
-         << "(7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
-         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
+//         << "(7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
+//         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
          //<< "(9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
          //<< "(10) lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
          << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
@@ -66,19 +66,19 @@ void cDataHandling::mMainMenu()
         switch(vOption) // wybor opcji
         {
             case 0 : break; // wybor zakonczenia dzialana programu
-            case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+//            case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
+//            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
             //case 3 :
-            case 4 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-            case 5 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+//            case 4 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+//            case 5 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
             //case 6 :
-            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
-            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
+//            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
+//            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             //case 9 :
             //case 10 :
-            //case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-            //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-            //case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+            case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
             //case 15 :
             //case 16 :
