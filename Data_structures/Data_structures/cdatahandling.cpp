@@ -38,9 +38,9 @@ void cDataHandling::mPrintMainMenu()
          //<< "(10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
 //         << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
          //<< "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
-         << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
+//         << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
-         //<< "(15) - kolejka dwukierunkowa z wykorzystaniem <deque> << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+         << "(15) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
          //<< "(16) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
          //<< "(17) - kopiec binarny" << endl // opcja dla kopca binarnego
          //<< "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
@@ -78,9 +78,9 @@ void cDataHandling::mMainMenu()
             //case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
 //            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
             //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+//            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-            //case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
+            case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
             //case 16 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
             //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
             //case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
@@ -368,7 +368,6 @@ void cDataHandling::mMenuQueueTemplate()
     cout << "    Zawartosc kolejki: " << endl;
     Q.mPrintAllElements(); // wypisanie zawartosci kolejki
     cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
-
 }
 
 /*
@@ -384,7 +383,28 @@ void cDataHandling::mMenuQueueMy()
  */
 void cDataHandling::mMenuDequeTemplate()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwustronnej
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry kolejki dwustronnej" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cDequeTemplate D(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
+    cout << "    Podaj nowy element do dodania na koniec kolejki dwustronnej: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwustronnej: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy ostatni element..." << endl;
+    D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwustronnej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
+    cout << "    Zawartosc kolejki dwustronnej: " << endl;
+    D.mPrintAllElements(); // wypisanie zawartosci kolejki dwustronnej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
 }
 
 /*
