@@ -161,7 +161,7 @@ public:
      * POST:
      * - brak.
      */
-    inline void mAddElement(typeData aElement)
+    inline void mAddElementToEnd(typeData aElement)
     {
         DequeTemplate.push_back(aElement);
     }
