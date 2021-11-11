@@ -68,31 +68,30 @@ void cDataHandling::mMainMenu()
             case 0 : break; // wybor zakonczenia dzialana programu
 //            case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
 //            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-            //case 3 :
+            //case 3 : mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
 //            case 4 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
 //            case 5 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-            //case 6 :
-//            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie w oparciu o szablon <stack>
+            //case 6 : mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
+//            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
 //            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
-            //case 9 :
-            //case 10 :
+            //case 9 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
+            //case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
             case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
             case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
             case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-            //case 15 :
-            //case 16 :
+            //case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
+            //case 16 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
             //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
-            //case 18 :
-            //case 18 :
-            //case 19 :
-            //case 20 :
-            //case 21 :
-            //case 22 :
-            //case 23 :
-            //case 24 :
-            //case 25 :
-            default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
+            //case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
+            //case 19 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
+            //case 20 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+            //case 21 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+            //case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
+            //case 23 : mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
+            //case 24 : mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
+            //case 25 : mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
+            //default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
@@ -161,6 +160,14 @@ void cDataHandling::mMenuVectorOneDimension()
 }
 
 /*
+ * mMenuArrayOneDimension()
+ */
+void cDataHandling::mMenuArrayOneDimension()
+{
+    //
+}
+
+/*
  * void mMenuDynamicTwoDimensionTable()
  */
 void cDataHandling::mMenuDynamicTwoDimensionTable()
@@ -200,6 +207,14 @@ void cDataHandling::mMenuVectorTwoDimension()
     V.mPrintAllElements(); // wypisanie zawartosci wektorow
     cout << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora wektorow
          << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora wektorow
+}
+
+/*
+ * void mMenuArrayTwoDimension()
+ */
+void cDataHandling::mMenuArrayTwoDimension()
+{
+    //
 }
 
 /*
@@ -256,6 +271,22 @@ void cDataHandling::mMenuStackMy()
     cout << "    Zawartosc stosu: " << endl;
     S.mPrintAllElements(); // wypisanie zawartosci stosu
     cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+}
+
+/*
+ * void mMenuForwardListTemplate()
+ */
+void cDataHandling::mMenuForwardListTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuForwardListMy()
+ */
+void cDataHandling::mMenuForwardListMy()
+{
+    //
 }
 
 /*
@@ -331,9 +362,89 @@ void cDataHandling::mMenuQueueMy()
 }
 
 /*
+ * void mMenuDequeTemplate()
+ */
+void cDataHandling::mMenuDequeTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuDequeMy()
+ */
+void cDataHandling::mMenuDequeMy()
+{
+    //
+}
+
+/*
  * void mMenuHeapBinary()
  */
 void cDataHandling::mMenuHeapBinary()
+{
+    //
+}
+
+/*
+ * void mMenuMapTemplate()
+ */
+void cDataHandling::mMenuMapTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuMapMy()
+ */
+void cDataHandling::mMenuMapMy()
+{
+    //
+}
+
+/*
+ * void mMenuUnorderedMapTemplate()
+ */
+void cDataHandling::mMenuUnorderedMapTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuUnorderedMapMy()
+ */
+void cDataHandling::mMenuUnorderedMapMy()
+{
+    //
+}
+
+/*
+ * void mMenuSetTemplate()
+ */
+void cDataHandling::mMenuSetTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuSetMy()
+ */
+void cDataHandling::mMenuSetMy()
+{
+    //
+}
+
+/*
+ * void mMenuUnorderedSetTemplate()
+ */
+void cDataHandling::mMenuUnorderedSetTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuUnorderedSetMy()
+ */
+void cDataHandling::mMenuUnorderedSetMy()
 {
     //
 }

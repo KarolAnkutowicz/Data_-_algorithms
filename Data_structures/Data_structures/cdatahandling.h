@@ -214,7 +214,7 @@ public:
     void mMenuQueueMy();
 
     /*
-     * void mDequeTemplate() - metoda obslugujace kolejke
+     * void mMenuDequeTemplate() - metoda obslugujace kolejke
      * dwukierunkowa dzialajaca z wykorzystaniem szablonu
      * <deque>.
      * PRE:
@@ -222,10 +222,10 @@ public:
      * POST:
      * - brak.
      */
-    void mDequeTemplate();
+    void mMenuDequeTemplate();
 
     /*
-     * void mDequeMy() - metoda obslugujace kolejke
+     * void mMenuDequeMy() - metoda obslugujace kolejke
      * dwukierunkowa dzialajaca bez wykorzystania szablonu
      * <deque>.
      * PRE:
@@ -233,7 +233,7 @@ public:
      * POST:
      * - brak.
      */
-    void mDequeMy();
+    void mMenuDequeMy();
 
     /*
      * void mMenuHeapBinary() - metoda obslugujaca kopiec
