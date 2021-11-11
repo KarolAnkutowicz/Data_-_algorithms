@@ -50,8 +50,8 @@ public:
     cQueueTemplate();
 
     /*
-     * cQueueTemplate() - konstruktor wywolywany z jednym
-     * argumentem - liczba elementow jakie mamy dodac
+     * cQueueTemplate(typeLoop aSize) - konstruktor wywolywany
+     * z jednym argumentem - liczba elementow jakie mamy dodac
      * do kolejki.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
@@ -61,10 +61,10 @@ public:
     cQueueTemplate(typeLoop aSize);
 
     /*
-     * cQueueTemplate() - konstruktor wywolywany z dwoma
-     * argumentami - liczba elementow jakie mamy dodac
-     * do kolejki oraz zakresem z jakiego mamy te elementy
-     * losowac.
+     * cQueueTemplate(typeLoop aSize, typeData aDrawingRange) -
+     * konstruktor wywolywany z dwoma argumentami - liczba
+     * elementow jakie mamy dodac do kolejki oraz zakresem
+     * z jakiego mamy te elementy losowac.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * POST:
@@ -123,12 +123,12 @@ public:
     }
 
     /*
-     * bool getListQueueIsEmpty() - metoda zawracajaca
-     * informacje o tym czy lista jest pusta.
+     * bool getQueueIsEmpty() - metoda zawracajaca
+     * informacje o tym czy kolejka jest pusta.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie informacji o tym czy lista jest pusta
+     * - zwrocenie informacji o tym czy kolejka jest pusta
      * (typ: bool).
      */
     inline bool getQueueIsEmpty()
