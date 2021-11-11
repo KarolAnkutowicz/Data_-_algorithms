@@ -44,7 +44,10 @@ cDequeTemplate::cDequeTemplate(typeLoop aSize, typeData aDrawingRange)
  */
 typeData cDequeTemplate::getFirstElement()
 {
-
+    if (getDequeIsEmpty()) // sprawdzamy czy kolejka dwustronna jest pusta
+        return NULL; // jesli tak to nie ma elementu, ktory mozemy zwrocic
+    else // jesli lista nie jest pusta
+        return DequeTemplate.front(); // zwracamy element z poczatku kolejki dwustronnej
 }
 
 /*
@@ -52,7 +55,10 @@ typeData cDequeTemplate::getFirstElement()
  */
 typeData cDequeTemplate::getLastElement()
 {
-
+    if (getDequeIsEmpty()) // sprawdzamy czy kolejka dwustronna jest pusta
+        return NULL; // jesli tak to nie ma elementu, ktory mozemy zwrocic
+    else // jesli lista nie jest pusta
+        return DequeTemplate.back(); // zwracamy element z konca kolejki dwustronnej
 }
 
 
@@ -62,7 +68,13 @@ typeData cDequeTemplate::getLastElement()
  */
 bool cDequeTemplate::mRemoveElementFromBegin()
 {
-
+    if (getDequeIsEmpty()) // sprawdzamy czy kolejka dwustronna jest pusta
+        return false; // jesli tak to nie mamy mozliwosci cokolwiek usunac
+    else // jesli lista nie jest pusta
+    {
+        DequeTemplate.pop_front(); // usuniecie elementu z poczatku kolejki dwustronnej
+        return true; // zwracamy informacje o powodzeniu operacji
+    }
 }
 
 /*
@@ -70,7 +82,13 @@ bool cDequeTemplate::mRemoveElementFromBegin()
  */
 bool cDequeTemplate::mRemoveElementFromEnd()
 {
-
+    if (getDequeIsEmpty()) // sprawdzamy czy kolejka dwustronna jest pusta
+        return false; // jesli tak to nie mamy mozliwosci cokolwiek usunac
+    else // jesli lista nie jest pusta
+    {
+        DequeTemplate.pop_back(); // usuniecie elementu z konca kolejki dwustronnej
+        return true; // zwracamy informacje o powodzeniu operacji
+    }
 }
 
 /*
@@ -78,6 +96,9 @@ bool cDequeTemplate::mRemoveElementFromEnd()
  */
 void cDequeTemplate::mDrawElements(typeLoop aSize)
 {
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElementToEnd(rand() % vDrawingRange); // dodanie nowego elementu na koniec listy dwukierunkowej
 
 }
 
@@ -88,7 +109,10 @@ void cDequeTemplate::mDrawElements(typeLoop aSize)
  */
 void cDequeTemplate::mPrintFirstElement()
 {
-
+    if (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
+        cout << DequeTemplate.front() << endl; // jesli nie to wypisujemy pierwszy element kolejki dwukierunkowej
+    else // jesli kolejka dwustronna jest pusta
+        cout << "    Kolejka dwustronna jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -96,7 +120,10 @@ void cDequeTemplate::mPrintFirstElement()
  */
 void cDequeTemplate::mPrintLastElement()
 {
-
+    if (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
+        cout << DequeTemplate.back() << endl; // jesli nie to wypisujemy ostatni element kolejki dwukierunkowej
+    else // jesli kolejka dwustronna jest pusta
+        cout << "    Kolejka dwustronna jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -104,7 +131,16 @@ void cDequeTemplate::mPrintLastElement()
  */
 void cDequeTemplate::mPrintAllElements()
 {
-
+    if (DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna jest pusta
+        cout << "    Kolejka dwustronna jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+    else // jesli kolejka dwustronna nie jest pusta
+    {
+        while (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
+        {
+            mPrintFirstElement(); // wypisujemy element z poczatku kolejki dwustronnej
+            mRemoveElementFromBegin(); // usuwamy element dajac dostep do kolejnego
+        }
+    }
 }
 
 /********** PUBLIC: END **********/

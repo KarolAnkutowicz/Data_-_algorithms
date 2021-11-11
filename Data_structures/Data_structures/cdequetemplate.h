@@ -7,7 +7,10 @@
 #ifndef CDEQUETEMPLATE_H
 #define CDEQUETEMPLATE_H
 
+#include <cstdlib>
+#include <ctime>
 #include <deque>
+#include <iostream>
 #include "constantsandtypes.h"
 
 using namespace std;
