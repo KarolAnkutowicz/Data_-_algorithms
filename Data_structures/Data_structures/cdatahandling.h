@@ -69,7 +69,7 @@ public:
 
     /*
      * void mMenuDynamicOneDimensionTable() - metoda obslugujaca
-     * dynamiczna tabele jednowymiarowa.
+     * dynamiczna tablice jednowymiarowa.
      * PRE:
      * - brak;
      * POST:
@@ -90,7 +90,7 @@ public:
 
     /*
      * mMenuArrayOneDimension() - metoda obslugujaca
-     * dynamiczna tablice jednowymiarowa wykorzystujaca
+     * statyczna tablice jednowymiarowa wykorzystujaca
      * szablon <array>.
      * PRE:
      * - brak;
@@ -101,7 +101,7 @@ public:
 
     /*
      * void mMenuDynamicTwoDimensionTable() - metoda obslugujaca
-     * dynamiczna tabele dwuwymiarowa.
+     * dynamiczna tablice dwuwymiarowa.
      * PRE:
      * - brak;
      * POST:
@@ -111,7 +111,7 @@ public:
 
     /*
      * void mMenuVectorTwoDimension() - metoda obslugujaca
-     * dynamiczna tabele dwuwymiarowa wykorzystujaca
+     * dynamiczna tablice dwuwymiarowa wykorzystujaca
      * szablon <vector>.
      * PRE:
      * - brak;
@@ -122,7 +122,7 @@ public:
 
     /*
      * void mMenuArrayTwoDimension() - metoda obslugujaca
-     * dynamiczna tabele dwuwymiarowa wykorzystujaca
+     * statyczna tablice dwuwymiarowa wykorzystujaca
      * szablon <array>.
      * PRE:
      * - brak;

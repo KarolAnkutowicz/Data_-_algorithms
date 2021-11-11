@@ -28,16 +28,16 @@ void cDataHandling::mPrintMainMenu()
     cout << endl << "Wybierz opcje:" << endl // menu glowne
 //         << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
 //         << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-         //<< "(3) - dynamiczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+         //<< "(3) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
 //         << "(4) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
 //         << "(5) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-         //<< "(6) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+         //<< "(6) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
 //         << "(7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
 //         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
          //<< "(9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-         //<< "(10) lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+         //<< "(10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
          << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
-         << "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
+         //<< "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
          << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
          //<< "(15) - kolejka dwukierunkowa z wykorzystaniem <deque> << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
@@ -77,7 +77,7 @@ void cDataHandling::mMainMenu()
             //case 9 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
             //case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
             case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-            case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
             case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
             //case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
@@ -115,6 +115,7 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); //utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << D.getLenthtTable() << endl; // wypisanie rozmiaru tablicy
     cout << "    Podaj nowy element: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElement(vElement); // dodanie nowego elementu
@@ -144,6 +145,7 @@ void cDataHandling::mMenuVectorOneDimension()
     cout << "    Zakres liczb od 0 do...: ";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl; // wypisanie rozmiaru wektora
     cout << "    Podaj nowy element: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     V.mAddElement(vElement); // dodanie nowego elementu
@@ -303,6 +305,7 @@ void cDataHandling::mMenuListTemplate()
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cListTemplate L(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
     cout << "    Podaj nowy element do dodania na koniec listy: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
@@ -322,14 +325,14 @@ void cDataHandling::mMenuListTemplate()
  */
 void cDataHandling::mMenuListMy()
 {
-    typeLoop vElements; // zmienna okreslajaca liczbe elementow listy
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry listy" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
-    cin >> vElements; // wczytanie liczby elementow
+    cin >> vSize; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cListMy L(vElements, vDrawingRange); // utworzenie obiektu
+    cListMy L(vSize, vDrawingRange); // utworzenie obiektu
     /*L.mPrintFirstElement();
     cout << endl;
     L.mPrintLastElement();
@@ -343,14 +346,28 @@ void cDataHandling::mMenuListMy()
  */
 void cDataHandling::mMenuQueueTemplate()
 {
-    typeLoop vElements; // zmienna okreslajaca liczbe elementow kolejki
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
     cout << "Okresl parametry kolejki" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
-    cin >> vElements; // wczytanie liczby elementow
+    cin >> vSize; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
-    cQueueTemplate Q(vElements, vDrawingRange); // utworzenie obiektu
+    cQueueTemplate Q(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+    cout << "    Podaj nowy element do dodania do kolejki: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    Q.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    Q.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element..." << endl;
+    Q.mRemoveElement(); // usuniecie elementu z kolejki
+    cout << "    Zawartosc kolejki: " << endl;
+    Q.mPrintAllElements(); // wypisanie zawartosci kolejki
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+
 }
 
 /*

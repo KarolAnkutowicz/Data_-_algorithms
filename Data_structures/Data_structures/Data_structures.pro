@@ -11,7 +11,7 @@ QT       -= gui
 TARGET = Data_structures
 CONFIG   += console
 CONFIG   -= app_bundle
-#CONFIG += C++11
+CONFIG += C++11
 
 TEMPLATE = app
 
