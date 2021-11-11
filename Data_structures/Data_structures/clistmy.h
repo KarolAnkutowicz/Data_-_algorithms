@@ -8,7 +8,7 @@
 #define CLISTMY_H
 
 #include "constantsandtypes.h"
-#include "celementmy.h"
+//#include "celementmy.h"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -27,13 +27,13 @@ class cListMy
      * cElementMy *vListMyBegin - wskaznik do pierwszego
      * elementu listy przechowujacej elementy typu typeData.
      */
-    cElementMy *vListMyBegin;
+    //cElementMy *vListMyBegin;
 
     /*
      * cElementMy *vListMyEnd - wskaznik do ostatniego
      * elementu listy przechowujacej elementy typu typeData.
      */
-    cElementMy *vListMyEnd;
+    //cElementMy *vListMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar listy.

@@ -26,7 +26,6 @@ SOURCES += main.cpp \
     clisttemplate.cpp \
     clistmy.cpp \
     cheapbinary.cpp \
-    celementmy.cpp \
     cdynamictwodimensiontable.cpp \
     cdynamiconedimensiontable.cpp \
     cdequetemplate.cpp \
@@ -56,7 +55,6 @@ HEADERS += \
     clisttemplate.h \
     clistmy.h \
     cheapbinary.h \
-    celementmy.h \
     cdynamictwodimensiontable.h \
     cdynamiconedimensiontable.h \
     cdequetemplate.h \
@@ -73,6 +71,7 @@ HEADERS += \
     cunorderedmaptemplate.h \
     cunorderedmapmy.h \
     cunorderedsettemplate.h \
-    cunorderedsetmy.h
+    cunorderedsetmy.h \
+    celementsmystructures.h
 
 #QMAKE_CXXFLAGS += -std=c++0x
