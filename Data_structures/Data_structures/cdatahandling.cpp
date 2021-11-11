@@ -36,7 +36,7 @@ void cDataHandling::mPrintMainMenu()
 //         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
          //<< "(9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
          //<< "(10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
-         << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
+//         << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
          //<< "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
          << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
@@ -76,7 +76,7 @@ void cDataHandling::mMainMenu()
 //            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             //case 9 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
             //case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
-            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+//            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
             //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
             case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
@@ -364,6 +364,7 @@ void cDataHandling::mMenuQueueTemplate()
     Q.mAddElement(vElement); // dodanie nowego elementu
     cout << "    Usuwamy element..." << endl;
     Q.mRemoveElement(); // usuniecie elementu z kolejki
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
     cout << "    Zawartosc kolejki: " << endl;
     Q.mPrintAllElements(); // wypisanie zawartosci kolejki
     cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki

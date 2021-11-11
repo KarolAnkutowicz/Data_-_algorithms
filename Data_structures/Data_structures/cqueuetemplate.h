@@ -162,6 +162,16 @@ public:
      */
     bool mRemoveElement();
 
+    /*
+     * void mDrawElements(typeLoop aSize) - metoda losujaca
+     * elementy kolejki.
+     * PRE:
+     * - podanie liczby elementow (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    void mDrawElements(typeLoop aSize);
+
 
 
     /*

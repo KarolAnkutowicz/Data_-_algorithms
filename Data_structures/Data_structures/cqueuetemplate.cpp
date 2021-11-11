@@ -15,7 +15,7 @@ using namespace std;
  */
 cQueueTemplate::cQueueTemplate()
 {
-    mPrintAllElements(); // wypisanie zawartosci kolejki
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
 }
 
 /*
@@ -23,9 +23,9 @@ cQueueTemplate::cQueueTemplate()
  */
 cQueueTemplate::cQueueTemplate(typeLoop aSize)
 {
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
     for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
         mAddElement(0); // dodanie nowego elementu
-    mPrintAllElements(); // wypisanie zawartosci kolejki
 }
 
 /*
@@ -33,10 +33,8 @@ cQueueTemplate::cQueueTemplate(typeLoop aSize)
  */
 cQueueTemplate::cQueueTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-    srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
-        mAddElement(rand() % aDrawingRange);
-    mPrintAllElements(); // wypisanie zawartosci kolejki
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 
@@ -77,6 +75,16 @@ bool cQueueTemplate::mRemoveElement()
     }
     else // przypadek w ktorym kolejka jest pusta
         return false; // zwracamy wartosc logiczna
+}
+
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cQueueTemplate::mDrawElements(typeLoop aSize)
+{
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
