@@ -11,7 +11,7 @@ using namespace std;
 
 /*
  * int typeData - zdefiniowany synonim typu, glownie
- * do losowania liczb w sgtrukturach danych.
+ * do losowania liczb w strukturach danych.
  */
 typedef int typeData;
 
@@ -20,6 +20,13 @@ typedef int typeData;
  * glownie do stosowanie w petlach.
  */
 typedef unsigned short typeLoop;
+
+/*
+ * char typeKey - zdefiniowany synonim typu, stosowany
+ * do struktur danych wykorzystujacych elementy
+ * z kluczem.
+ */
+typedef char typeKey;
 
 #endif // CONSTANTSANDTYPES_H
 
