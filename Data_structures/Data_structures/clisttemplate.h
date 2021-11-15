@@ -191,7 +191,7 @@ public:
      * void mDrawElements(typeLoop aSize) - metoda losujaca
      * elementy listy.
      * PRE:
-     * - podanie liczby elementow (typ: typeData);
+     * - podanie liczby elementow (typ: typeLoop);
      * POST:
      * - brak.
      */
