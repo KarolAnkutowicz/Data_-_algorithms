@@ -93,7 +93,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru mapy (typ: typeLoop).
      */
-    typeLoop getMapSize();
+    inline typeLoop getMapSize()
+    {
+        return MapTemplate.size();
+    }
 
     /*
      * typeLoop getDrawingRangeValue() - metoda zwracajaca
@@ -104,7 +107,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRangeValue
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRangeValue();
+    inline typeLoop getDrawingRangeValue()
+    {
+        return vDrawingRangeValue;
+    }
 
     /*
      * bool getMapIsEmpty() - metoda zawracajaca
@@ -115,7 +121,10 @@ public:
      * - zwrocenie informacji o tym czy mapa jest pusta
      * (typ: bool).
      */
-    bool getMapIsEmpty();
+    inline bool getMapIsEmpty()
+    {
+        MapTemplate.empty();
+    }
 
 
 
