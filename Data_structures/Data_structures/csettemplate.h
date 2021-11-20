@@ -91,7 +91,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru zbioru (typ: typeLoop).
      */
-    typeLoop getSetSize();
+    inline typeLoop getSetSize()
+    {
+        return SetTemplate.size();
+    }
 
     /*
      * typeLoop getDrawingRangeValue() - metoda zwracajaca
@@ -102,7 +105,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRangeValue
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRangeValue();
+    inline typeLoop getDrawingRangeValue()
+    {
+        return vDrawingRangeValue;
+    }
 
     /*
      * bool getSetIsEmpty() - metoda zawracajaca
@@ -113,7 +119,10 @@ public:
      * - zwrocenie informacji o tym czy zbior jest pusty
      * (typ: bool).
      */
-    bool getSetIsEmpty();
+    inline bool getSetIsEmpty()
+    {
+        return SetTemplate.empty();
+    }
 
 
 
