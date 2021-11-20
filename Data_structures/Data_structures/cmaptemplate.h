@@ -129,14 +129,15 @@ public:
 
 
     /*
-     * void mAddElement(cElementMapAndSet aElement) - metoda
+     * void mAddElement(typeKey aKey, typeData aValue) - metoda
      * dopisujaca element do mapy.
      * PRE:
-     * - podanie elementu (typ: cElementMapAndSet);
+     * - podanie klucza (typ: aKey);
+     * - podanie wartosci (typ: aValue);
      * POST:
      * - brak.
      */
-    void mAddElement(cElementMapAndSet aElement);
+    void mAddElement(typeKey aKey, typeData aValue);
 
     /*
      * bool mRemoveElement(typeKey aKey) - metoda usuwajaca

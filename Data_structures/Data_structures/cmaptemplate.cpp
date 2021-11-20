@@ -25,11 +25,10 @@ cMapTemplate::cMapTemplate(typeLoop aSize)
 {
     vDrawingRangeValue = 0; // ustanowienie zakresu losowania elementow
     typeLoop vChar; // utworzenie zmiennej wykorzystywanej do tworzenia kluczy
-    srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
     {
-        vChar = i + 97; // przesuniecie zmiennej do wartosci w tablicy ASCII do malych liter
-        MapTemplate[(char)vChar] = rand() % vDrawingRangeValue; // dodanie nowego elementu
+        vChar = i + 97; // przesuniecie wartosci na male litery w tablicy kodow ASCII
+        mAddElement((char)vChar, 0); // dodanie nowego elementu
     }
 }
 
@@ -45,21 +44,11 @@ cMapTemplate::cMapTemplate(typeLoop aSize, typeData aDrawingRangeValue)
 
 
 /*
- * typeData getElement(typeKey aKey)
+ * void mAddElement(typeKey aKey, typeData aValue)
  */
-typeData cMapTemplate::getElement(typeKey aKey)
+void cMapTemplate::mAddElement(typeKey aKey, typeData aValue)
 {
-
-}
-
-
-
-/*
- * void mAddElement(cElementMapAndSet aElement)
- */
-void cMapTemplate::mAddElement(cElementMapAndSet aElement)
-{
-
+    MapTemplate[aKey] = aValue; // dopisanie elementu zgodnie z zadanymi argumentami
 }
 
 /*
@@ -67,7 +56,15 @@ void cMapTemplate::mAddElement(cElementMapAndSet aElement)
  */
 bool cMapTemplate::mRemoveElement(typeKey aKey)
 {
-
+    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+    {
+        if ((it->first) == aKey) // sprawdzenie czy znajdujemy poszukiwany klucz
+        {
+            MapTemplate.erase(it); // w przypadku znalezienia - usuwamy wskazany element
+            return true; // zwracamy informacje o powodzeniu usuniecia elementu
+        }
+    }
+    return false; // w przypadku braku elementu w mapie o wskazanym kluczu zwracamy informacje o niepowodzeniu usuniecia elementu
 }
 
 /*
@@ -75,17 +72,22 @@ bool cMapTemplate::mRemoveElement(typeKey aKey)
  */
 void cMapTemplate::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    typeLoop vChar; // utworzenie zmiennej wykorzystywanej do tworzenia kluczy
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+    {
+        vChar = i + 97; // przesuniecie wartosci na male litery w tablicy kodow ASCII
+        mAddElement((char)vChar, rand() % vDrawingRangeValue); // dodanie nowego elementu
+    }
 }
-
-
 
 /*
  * void mPrintAllElements()
  */
 void cMapTemplate::mPrintAllElements()
 {
-
+    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+        cout << "[" << it->first << "]=" << it->second << endl; // wypisanie kolejnego elementu
 }
 
 /********** PUBLIC: END **********/
