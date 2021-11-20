@@ -43,7 +43,7 @@ void cDataHandling::mPrintMainMenu()
          << "(15) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
          //<< "(16) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
          //<< "(17) - kopiec binarny" << endl // opcja dla kopca binarnego
-         //<< "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
+         << "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
          //<< "(19) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
          //<< "(20) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
          //<< "(21) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
@@ -83,7 +83,7 @@ void cDataHandling::mMainMenu()
             case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
             //case 16 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
             //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
-            //case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
+            case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
             //case 19 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
             //case 20 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
             //case 21 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
@@ -428,7 +428,27 @@ void cDataHandling::mMenuHeapBinary()
  */
 void cDataHandling::mMenuMapTemplate()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow mapy
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry mapy" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres wartosci od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cMapTemplate M(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
+    cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(97 + vSize), vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(98 + vSize), vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element z najmniejszym kluczem..." << endl;
+    M.mRemoveElement((char)97); // usuniecie elementu z mapy
+    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
+    cout << "    Zawartosc mapy: " << endl;
+    M.mPrintAllElements(); // wypisanie zawartosci mapy
 }
 
 /*
