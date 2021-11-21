@@ -44,12 +44,19 @@ cMapTemplate::cMapTemplate(typeLoop aSize, typeData aDrawingRangeValue)
 
 
 /*
- * void mAddElement(typeKey aKey, typeData aValue)
+ * typeData getElement(typeKey aKey)
  */
-void cMapTemplate::mAddElement(typeKey aKey, typeData aValue)
+typeData cMapTemplate::getElement(typeKey aKey)
 {
-    MapTemplate[aKey] = aValue; // dopisanie elementu zgodnie z zadanymi argumentami
+    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+    {
+        if ((it->first) == aKey) // sprawdzenie czy znajdujemy poszukiwany klucz
+            return MapTemplate[aKey]; // w przypadku znalezienia - zwracamy wskazany element
+    }
+    return NULL; // w przypadku braku nie mamy co zwrocic
 }
+
+
 
 /*
  * bool mRemoveElement(typeKey aKey)

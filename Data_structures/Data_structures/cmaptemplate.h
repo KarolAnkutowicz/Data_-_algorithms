@@ -137,7 +137,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeKey aKey, typeData aValue);
+    void mAddElement(typeKey aKey, typeData aValue)
+    {
+        MapTemplate[aKey] = aValue; // dopisanie elementu zgodnie z zadanymi argumentami
+    }
 
     /*
      * bool mRemoveElement(typeKey aKey) - metoda usuwajaca

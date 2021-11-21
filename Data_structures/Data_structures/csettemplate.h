@@ -8,6 +8,9 @@
 #define CSETTEMPLATE_H
 
 #include "constantsandtypes.h"
+#include <ctime>
+#include <cstdlib>
+#include <iostream>
 #include <set>
 
 using namespace std;
@@ -135,7 +138,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeKey aKey, typeData aValue);
+    inline void mAddElement(typeKey aKey, typeData aValue)
+    {
+        //
+    }
 
     /*
      * bool mRemoveElement(typeKey aKey) - metoda usuwajaca

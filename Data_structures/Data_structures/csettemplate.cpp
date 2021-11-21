@@ -48,43 +48,41 @@ cSetTemplate::cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue)
  */
 typeData cSetTemplate::getElement(typeKey aKey)
 {
-
+    //
 }
 
 
 
 /*
- * void mAddElement(typeKey aKey, typeData aValue) - metoda
- */
-void cSetTemplate::mAddElement(typeKey aKey, typeData aValue)
-{
-
-}
-
-/*
- * bool mRemoveElement(typeKey aKey) - metoda usuwajaca
+ * bool mRemoveElement(typeKey aKey)
  */
 bool cSetTemplate::mRemoveElement(typeKey aKey)
 {
-
+    //
 }
 
 /*
- * void mDrawElements(typeLoop aSize) - metoda losujaca
+ * void mDrawElements(typeLoop aSize)
  */
 void cSetTemplate::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    typeLoop vChar; // utworzenie zmiennej wykorzystywanej do tworzenia kluczy
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+    {
+        vChar = i + 97; // przesuniecie wartosci na male litery w tablicy kodow ASCII
+        mAddElement((char)vChar, rand() % vDrawingRangeValue); // dodanie nowego elementu
+    }
 }
 
 
 
 /*
- * void mPrintAllElements() - metoda wyswietlajaca
+ * void mPrintAllElements()
  */
 void cSetTemplate::mPrintAllElements()
 {
-
+    //
 }
 
 /********** PUBLIC: END **********/
