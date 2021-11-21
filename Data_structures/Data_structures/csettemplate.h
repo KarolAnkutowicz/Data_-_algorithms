@@ -24,11 +24,10 @@ class cSetTemplate
 /********** PRIVATE: BEGIN **********/
 
     /*
-     * set <typeKey, typeData> MapTemplate - zbior
-     * elementow o kluczu typu "typeKey" i wartosciach
-     * typu "typeData".
+     * set <typeData> SetTemplate - zbior elementow
+     * o wartosciach typu "typeData".
      */
-    set <typeKey, typeData> SetTemplate;
+    set <typeData> SetTemplate;
 
     /*
      * typeData vDrawingRangeValue - pole przechowujace
@@ -76,17 +75,6 @@ public:
 
 
     /*
-     * typeData getElement(typeKey aKey) - metoda
-     * zwracajaca wartosc wskazanego elementu ze zbioru
-     * wedlug podanego klucza (o ile element istnieje).
-     * PRE:
-     * - podanie klucza (typ: typeKey);
-     * POST:
-     * - zwrocenie elementu ze zbioru (typ: typeData).
-     */
-    typeData getElement(typeKey aKey);
-
-    /*
      * typeLoop getSetSize() - metoda zwracajaca rozmiar
      * zbioru.
      * PRE:
@@ -130,29 +118,28 @@ public:
 
 
     /*
-     * void mAddElement(typeKey aKey, typeData aValue) - metoda
+     * void mAddElement(typeData aValue) - metoda
      * dopisujaca element do zbioru.
      * PRE:
-     * - podanie klucza (typ: aKey);
      * - podanie wartosci (typ: aValue);
      * POST:
      * - brak.
      */
-    inline void mAddElement(typeKey aKey, typeData aValue)
+    inline void mAddElement(typeData aValue)
     {
         //
     }
 
     /*
-     * bool mRemoveElement(typeKey aKey) - metoda usuwajaca
+     * bool mRemoveElement(typeData aValue) - metoda usuwajaca
      * wskazany element ze zbioru (o ile element istnieje!).
      * PRE:
-     * - podanie klucza (typeKey aKey);
+     * - podanie wartosci (typeData aValue);
      * POST:
      * - zwrocenie informacji o tym czy usuniecie elementu
      * sie udalo (typ: bool).
      */
-    bool mRemoveElement(typeKey aKey);
+    bool mRemoveElement(typeData aValue);
 
     /*
      * void mDrawElements(typeLoop aSize) - metoda losujaca
