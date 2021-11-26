@@ -127,7 +127,7 @@ public:
      */
     inline void mAddElement(typeData aValue)
     {
-        //
+        SetTemplate.insert(aValue);
     }
 
     /*

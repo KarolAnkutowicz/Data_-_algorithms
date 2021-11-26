@@ -47,7 +47,7 @@ void cDataHandling::mPrintMainMenu()
          //<< "(19) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
          //<< "(20) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
          //<< "(21) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-         //<< "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
+         << "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
          //<< "(23) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
          //<< "(24) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
          //<< "(25) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
@@ -87,7 +87,7 @@ void cDataHandling::mMainMenu()
             //case 19 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
             //case 20 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
             //case 21 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-            //case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
+            case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
             //case 23 : mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
             //case 24 : mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
             //case 25 : mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
@@ -480,7 +480,25 @@ void cDataHandling::mMenuUnorderedMapMy()
  */
 void cDataHandling::mMenuSetTemplate()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry zbioru" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres wartosci od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cSetTemplate S(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
+    cout << "    Podaj nowy element do dodania do zbioru: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << endl << "    Liczb elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
+    cout << "    Zawartosc zbioru: " << endl;
+    S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 
 /*
