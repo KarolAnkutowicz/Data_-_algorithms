@@ -116,7 +116,10 @@ public:
      * - zwrocenie rozmiaru listy jednokierunkowej
      * (typ: typeLoop).
      */
-    typeLoop getListSize();
+    inline typeLoop getListSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -127,7 +130,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getListIsEmpty() - metoda zawracajaca
