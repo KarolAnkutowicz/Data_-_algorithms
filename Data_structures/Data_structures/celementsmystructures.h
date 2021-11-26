@@ -162,10 +162,9 @@ public:
 
 
 /*
- * cElementMapAndSet - klasa modelujaca element
- * map oraz zbiorow.
+ * cElementMap - klasa modelujaca element mapy.
  */
-class cElementMapAndSet
+class cElementMap
 {
 /********** PRIVATE: BEGIN **********/
 
@@ -196,7 +195,7 @@ public:
      * POST:
      * - tworzenie obiektu klasy cElementMapAndSet.
      */
-    cElementMapAndSet(typeKey aKey, typeData aValue)
+    cElementMap(typeKey aKey, typeData aValue)
     {
         vKey = aKey; // przypisanie klucza elementu
         vValue = aValue; // przypisanie wartosci elementu

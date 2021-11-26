@@ -40,14 +40,14 @@ void cDataHandling::mPrintMainMenu()
          //<< "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
 //         << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
          //<< "(14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
-         << "(15) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+//         << "(15) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
          //<< "(16) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
          //<< "(17) - kopiec binarny" << endl // opcja dla kopca binarnego
-         << "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
+//         << "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
          //<< "(19) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
          //<< "(20) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
          //<< "(21) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-         << "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
+//         << "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
          //<< "(23) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
          //<< "(24) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
          //<< "(25) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
@@ -80,14 +80,14 @@ void cDataHandling::mMainMenu()
             //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
 //            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
             //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-            case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
+//            case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
             //case 16 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
             //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
-            case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
+//            case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
             //case 19 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
             //case 20 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
             //case 21 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-            case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
+//            case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
             //case 23 : mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
             //case 24 : mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
             //case 25 : mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>

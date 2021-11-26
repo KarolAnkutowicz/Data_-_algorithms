@@ -123,7 +123,7 @@ public:
      */
     inline bool getMapIsEmpty()
     {
-        MapTemplate.empty();
+        return MapTemplate.empty();
     }
 
 
