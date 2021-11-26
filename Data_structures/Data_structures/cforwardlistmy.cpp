@@ -45,7 +45,10 @@ cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
  */
 typeData cForwardListMy::getFirstElement()
 {
-
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+        return vFirst->getValue(); // jesli nie jest to zwracamy wartosc pierwszego elementu
+    else // jesli lista jednokierunkowa kest pusta...
+        return NULL; // ...wowczas nie mamy co zwracac
 }
 
 /*
@@ -53,7 +56,10 @@ typeData cForwardListMy::getFirstElement()
  */
 typeData cForwardListMy::getLastElement()
 {
-
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+        return vLast->getValue(); // jesli nie jest to zwracamy wartosc ostatniego elementu
+    else // jesli lista jednokierunkowa kest pusta...
+        return NULL; // ...wowczas nie mamy co zwracac
 }
 
 /*
@@ -61,7 +67,10 @@ typeData cForwardListMy::getLastElement()
  */
 bool cForwardListMy::getListIsEmpty()
 {
-
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie zawiera zadnego elementu
+        return true; // jesli tak to zwracamy informacje o tym
+    else // jesli na liscie jest jakikolwiek element
+        return false; // zwracamy informacje ze lista jednokierunkowa nie jest pusta
 }
 
 

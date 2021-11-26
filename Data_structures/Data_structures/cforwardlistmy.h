@@ -28,10 +28,10 @@ class cForwardListMy
     cElementForwardListAndQueue *vFirst;
 
     /*
-     * cElementForwardListAndQueue *vEnd; - wskaznik
+     * cElementForwardListAndQueue *vLast; - wskaznik
      * na ostatni element listy.
      */
-    cElementForwardListAndQueue *vEnd;
+    cElementForwardListAndQueue *vLast;
 
     /*
      * typeLoop vSize - pole przechowujace rozmiar listy.
