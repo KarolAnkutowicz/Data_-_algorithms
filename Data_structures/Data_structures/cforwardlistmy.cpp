@@ -80,7 +80,18 @@ bool cForwardListMy::getListIsEmpty()
  */
 void cForwardListMy::mAddElementToBegin(typeData aElement)
 {
-
+    cElementForwardListAndQueue Element(aElement); // utworzenie nowego elementu ze wskazana wartoscia
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+    {
+        vFirst = &Element; // ustanowienie wskaznika na pierwszy (jedyny) element
+        vLast = &Element; // ustanowienie wskaznika na ostatni (jedyny) element
+    }
+    else // lista nie jest pusta
+    {
+        Element.vNext = vFirst; // nowy element wskazuje jako nastepnik dotychczasowy pierwszy element
+        vFirst = &Element; // nowy element staje sie pierwszym elementem
+    }
+    vSize++; // zwiekszenie liczby elementow na liscie jednokierunkowej
 }
 
 /*
@@ -88,7 +99,18 @@ void cForwardListMy::mAddElementToBegin(typeData aElement)
  */
 void cForwardListMy::mAddElementToEnd(typeData aElement)
 {
-
+    cElementForwardListAndQueue Element(aElement); // utworzenie nowego elementu ze wskazana wartoscia
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+    {
+        vFirst = &Element; // ustanowienie wskaznika na pierwszy (jedyny) element
+        vLast = &Element; // ustanowienie wskaznika na ostatni (jedyny) element
+    }
+    else // lista nie jest pusta
+    {
+        vLast->vNext = &Element; // ostatni element wskazuje jako nastepnik nowy element
+        vLast = &Element; // nowy element staje sie ostatnim elementem
+    }
+    vSize++; // zwiekszenie liczby elementow na liscie jednokierunkowej
 }
 
 /*
@@ -96,7 +118,25 @@ void cForwardListMy::mAddElementToEnd(typeData aElement)
  */
 bool cForwardListMy::mRemoveElementFromBegin()
 {
-
+    if (!vSize) // sprawdzamy czy lista jest pusta
+        return false; // jesli tak to nie mamy co usuwac
+    else // jesli na liscie jest cokolwiek
+    {
+        if (vSize == 1) // sprawdzamy czy mamy tylko jeden element na liscie
+        {
+            vFirst = NULL; // jesli tak to lista jednokierunkowa nie ma juz zadnego elementu na poczatku...
+            vLast = NULL; // ...ani na koncu
+        }
+        else // na liscie jest wiecej niz jeden element
+        {
+            cElementForwardListAndQueue ElementAux(0); // utworzenie elementu pomocniczego
+            ElementAux.vNext = vFirst->vNext; // element pomocniczy wskazuje jako nastepnik ten sam element co pierwszy
+            vFirst = ElementAux.vNext; // pierwszym elementem zostaje nastepnik elementu pomocniczego
+            ElementAux.vNext = NULL; // element pomocniczy juz nie jest nam potrzebny
+        }
+        vSize--; // zmniejszenie liczby elementow na liscie jednokierunkowej
+        return true; // zwrocenie informacji o powodzeniu usuniecia elementu
+    }
 }
 
 /*
@@ -104,7 +144,28 @@ bool cForwardListMy::mRemoveElementFromBegin()
  */
 bool cForwardListMy::mRemoveElementFromEnd()
 {
-
+    if (!vSize) // sprawdzamy czy lista jest pusta
+        return false; // jesli tak to nie mamy co usuwac
+    else // jesli na liscie jest cokolwiek
+    {
+        if (vSize == 1) // sprawdzamy czy mamy tylko jeden elemeny na liscie
+        {
+            vFirst = NULL; // jesli tak to lista jednokierunkowa nie ma juz zadnego elementu na poczatku...
+            vLast = NULL; // ...anie na koncu
+        }
+        else // na liscie jest wiecej niz jeden element
+        {
+            cElementForwardListAndQueue ElementAux(0); // utworzenie elementu pomocniczego
+            ElementAux.vNext = vFirst->vNext; // element pomocniczy wskazuje jako nastepnik ten sam element co pierwszy
+            for (typeLoop i = 0; i < (vSize - 1); i++) // przejscie po wszystkich elementach az do przedostatniego
+                ElementAux.vNext = &ElementAux; // przechodzimy przez kolejne elementy az dojdziemy do tego ktory wskazuje na ostatni
+            vLast = ElementAux.vNext; // ostatnim elementem zostaje ten, ktory wskazywal na ostatni element
+            vLast->vNext = NULL; // nowy ostatni element nie ma juz nastepnika
+            ElementAux.vNext = NULL; // element pomocniczy juz nie jest nam potrzebny
+        }
+        vSize--; // zmniejszenie liczby elementow na liscie jednokierunkowej
+        return true; // zwrocenie informacji o powodzeniu usuniecia elementu
+    }
 }
 
 /*
