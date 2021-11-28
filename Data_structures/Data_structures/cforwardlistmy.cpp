@@ -11,7 +11,7 @@ using namespace std;
 /********** PUBLIC: BEGINNING **********/
 
 /*
- * cForwardListMy() - konstruktor wywolywany bez argumentow.
+ * cForwardListMy()
  */
 cForwardListMy::cForwardListMy()
 {
@@ -20,7 +20,7 @@ cForwardListMy::cForwardListMy()
 }
 
 /*
- * cForwardListMy(typeLoop aSize) - konstruktor wywolywany
+ * cForwardListMy(typeLoop aSize)
  */
 cForwardListMy::cForwardListMy(typeLoop aSize)
 {
@@ -30,7 +30,7 @@ cForwardListMy::cForwardListMy(typeLoop aSize)
 }
 
 /*
- * cForwardListMy(typeLoop aSize, typeData aDrawingRange) -
+ * cForwardListMy(typeLoop aSize, typeData aDrawingRange)
  */
 cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
 {
@@ -41,7 +41,7 @@ cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
 
 
 /*
- * typeData getFirstElement() - metoda zwracajaca
+ * typeData getFirstElement()
  */
 typeData cForwardListMy::getFirstElement()
 {
@@ -52,7 +52,7 @@ typeData cForwardListMy::getFirstElement()
 }
 
 /*
- * typeData getLastElement() - metoda zwracajaca
+ * typeData getLastElement()
  */
 typeData cForwardListMy::getLastElement()
 {
@@ -63,7 +63,7 @@ typeData cForwardListMy::getLastElement()
 }
 
 /*
- * bool getListIsEmpty() - metoda zawracajaca
+ * bool getListIsEmpty()
  */
 bool cForwardListMy::getListIsEmpty()
 {
@@ -76,7 +76,7 @@ bool cForwardListMy::getListIsEmpty()
 
 
 /*
- * void mAddElementToBegin(typeData aElement) - metoda
+ * void mAddElementToBegin(typeData aElement)
  */
 void cForwardListMy::mAddElementToBegin(typeData aElement)
 {
@@ -95,7 +95,7 @@ void cForwardListMy::mAddElementToBegin(typeData aElement)
 }
 
 /*
- * void mAddElementToEnd(typeData aElement) - metoda
+ * void mAddElementToEnd(typeData aElement)
  */
 void cForwardListMy::mAddElementToEnd(typeData aElement)
 {
@@ -114,7 +114,7 @@ void cForwardListMy::mAddElementToEnd(typeData aElement)
 }
 
 /*
- * bool mRemoveElementFromBegin() - metoda usuwajaca
+ * bool mRemoveElementFromBegin()
  */
 bool cForwardListMy::mRemoveElementFromBegin()
 {
@@ -140,7 +140,7 @@ bool cForwardListMy::mRemoveElementFromBegin()
 }
 
 /*
- * bool mRemoveElementFromEnd() - metoda usuwajaca
+ * bool mRemoveElementFromEnd()
  */
 bool cForwardListMy::mRemoveElementFromEnd()
 {
@@ -169,37 +169,56 @@ bool cForwardListMy::mRemoveElementFromEnd()
 }
 
 /*
- * void mDrawElements(typeLoop aSize) - metoda losujaca
+ * void mDrawElements(typeLoop aSize)
  */
 void cForwardListMy::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
+        mAddElementToEnd(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
 
 /*
- * void mPrintFirstElement() - metoda wyswietlajaca
+ * void mPrintFirstElement()
  */
 void cForwardListMy::mPrintFirstElement()
 {
-
+    if (!vSize) // sprawdzamy czy lista jest pusta
+        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+    else // jesli na liscie jest cokolwiek
+        cout << vFirst->getValue() << endl; // wypisujemy wartosc pierwszego elementu
 }
 
 /*
- * void mPrintLastElement() - metoda wyswietlajaca
+ * void mPrintLastElement()
  */
 void cForwardListMy::mPrintLastElement()
 {
-
+    if (!vSize) // sprawdzamy czy lista jest pusta
+        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+    else // jesli na liscie jest cokolwiek
+        cout << vLast->getValue() << endl; // wypisujemy wartosc ostatniego elementu
 }
 
 /*
- * void mPrintAllElements() - metoda wyswietlajaca
+ * void mPrintAllElements()
  */
 void cForwardListMy::mPrintAllElements()
 {
-
+    if (!vSize) // sprawdzamy czy lista jest pusta
+        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+    else // jesli na liscie jest cokolwiek
+    {
+        cElementForwardListAndQueue ElementAux(0); // tworzymy element pomocniczy
+        ElementAux.vNext = vFirst; // jako nastepnik element pomoczniczego ustanawiamy pierwszy element listy jednokierunkowej
+        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
+        {
+            ElementAux.vNext = &ElementAux; // przechodzimy przez kolejne elementy az dojdziemy do tego ktory wskazuje na ostatni
+            cout << ElementAux.getValue() << endl; // wypisanie wartosci elementu
+        }
+    }
 }
 
 /********** PUBLIC: END **********/
