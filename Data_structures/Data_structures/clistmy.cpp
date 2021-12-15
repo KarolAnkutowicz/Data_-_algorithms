@@ -54,24 +54,24 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 /*
  * typeData getFirstElement()
  */
-typeData cListMy::getFirstElement()
+/*typeData cListMy::getFirstElement()
 {
-    /*if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return vListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu*/
-}
+        return vListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
+}*/
 
 /*
  * typeData getLastElement()
  */
-typeData cListMy::getLastElement()
+/*typeData cListMy::getLastElement()
 {
-    /*if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return vListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu*/
-}
+        return vListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
+}*/
 
 
 
@@ -116,9 +116,9 @@ void cListMy::mAddElementToEnd(typeData aElement)
 /*
  * bool mRemoveElementFromBegin()
  */
-bool cListMy::mRemoveElementFromBegin()
+/*bool cListMy::mRemoveElementFromBegin()
 {
-    /*if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
     else // jesli lista nie jest pusta
     {
@@ -138,15 +138,15 @@ bool cListMy::mRemoveElementFromBegin()
         }
         vSize--; // zmniejszamy rozmiar listy
         return true; // zwrasamy informacje, ze element zostal usuniety
-    }*/
-}
+    }
+}*/
 
 /*
  * bool mRemoveElementFromEnd()
  */
-bool cListMy::mRemoveElementFromEnd()
+/*bool cListMy::mRemoveElementFromEnd()
 {
-    /*if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
     else // jesli lista nie jest pusta
     {
@@ -175,8 +175,8 @@ bool cListMy::mRemoveElementFromEnd()
         }
         vSize--; // zmniejszamy rozmiar listy
         return true; // zwracamy informacje, ze element zostal usuniety
-    }*/
-}
+    }
+}*/
 
 /*
  * void mDrawElements(typeLoop aSize)

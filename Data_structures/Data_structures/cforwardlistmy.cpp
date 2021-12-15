@@ -43,35 +43,35 @@ cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
 /*
  * typeData getFirstElement()
  */
-typeData cForwardListMy::getFirstElement()
+/*typeData cForwardListMy::getFirstElement()
 {
-/*    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
         return vFirst->getValue(); // jesli nie jest to zwracamy wartosc pierwszego elementu
     else // jesli lista jednokierunkowa kest pusta...
-        return NULL; // ...wowczas nie mamy co zwracac*/
-}
+        return NULL; // ...wowczas nie mamy co zwracac
+}*/
 
 /*
  * typeData getLastElement()
  */
-typeData cForwardListMy::getLastElement()
+/*typeData cForwardListMy::getLastElement()
 {
-/*    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
         return vLast->getValue(); // jesli nie jest to zwracamy wartosc ostatniego elementu
     else // jesli lista jednokierunkowa kest pusta...
-        return NULL; // ...wowczas nie mamy co zwracac*/
-}
+        return NULL; // ...wowczas nie mamy co zwracac
+}*/
 
 /*
  * bool getListIsEmpty()
  */
-bool cForwardListMy::getListIsEmpty()
+/*bool cForwardListMy::getListIsEmpty()
 {
-/*    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie zawiera zadnego elementu
+    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie zawiera zadnego elementu
         return true; // jesli tak to zwracamy informacje o tym
     else // jesli na liscie jest jakikolwiek element
-        return false; // zwracamy informacje ze lista jednokierunkowa nie jest pusta*/
-}
+        return false; // zwracamy informacje ze lista jednokierunkowa nie jest pusta
+}*/
 
 
 
@@ -119,9 +119,9 @@ void cForwardListMy::mAddElementToEnd(typeData aElement)
 /*
  * bool mRemoveElementFromBegin()
  */
-bool cForwardListMy::mRemoveElementFromBegin()
+/*bool cForwardListMy::mRemoveElementFromBegin()
 {
-    /*if (!vSize) // sprawdzamy czy lista jest pusta
+    if (!vSize) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac
     else // jesli na liscie jest cokolwiek
     {
@@ -143,7 +143,7 @@ bool cForwardListMy::mRemoveElementFromBegin()
 /*    if (vFirst)
     {
         //cElementForwardListAndQueue Element(0);
-        cElementForwardListAndQueue *El/* = &Element*/;
+        cElementForwardListAndQueue *El = &Element;*/
 /*        El = vFirst;
         vFirst = vFirst->vNext;
         if (!vFirst)
@@ -152,15 +152,15 @@ bool cForwardListMy::mRemoveElementFromBegin()
         return true;
     }
     else
-        return false;*/
-}
+        return false;
+}*/
 
 /*
  * bool mRemoveElementFromEnd()
  */
-bool cForwardListMy::mRemoveElementFromEnd()
+/*bool cForwardListMy::mRemoveElementFromEnd()
 {
-    /*if (!vSize) // sprawdzamy czy lista jest pusta
+    if (!vSize) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac
     else // jesli na liscie jest cokolwiek
     {
@@ -185,7 +185,7 @@ bool cForwardListMy::mRemoveElementFromEnd()
 /*    if (vLast)
     {
         //cElementForwardListAndQueue Element(0);
-        cElementForwardListAndQueue *El/* = &Element*/;
+        cElementForwardListAndQueue *El = &Element;*/
 /*        El = vLast;
         if (El == vFirst)
             vFirst = vLast = NULL;
@@ -200,8 +200,8 @@ bool cForwardListMy::mRemoveElementFromEnd()
         return true;
     }
     else
-        return false;*/
-}
+        return false;
+}*/
 
 /*
  * void mDrawElements(typeLoop aSize)
