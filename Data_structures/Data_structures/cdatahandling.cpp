@@ -35,7 +35,7 @@ void cDataHandling::mPrintMainMenu()
 //         << "(7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
 //         << "(8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
          //<< "(9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-         //<< "(10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+        << "(10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
 //         << "(11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
          //<< "(12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
 //         << "(13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
@@ -75,7 +75,7 @@ void cDataHandling::mMainMenu()
 //            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
 //            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
             //case 9 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
-            //case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
+            case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
 //            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
             //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
 //            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
@@ -288,7 +288,28 @@ void cDataHandling::mMenuForwardListTemplate()
  */
 void cDataHandling::mMenuForwardListMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy jednokierunkowej
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    //typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry listy jednokierunkowej" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cForwardListMy F/*(vSize, vDrawingRange)*/; // utworzenie obiektu
+    //cout << "    Podaj nowy element do dodania na koniec listy jednokierunkowej: ";
+    //cin >> vElement; // wczytanie wartosci nowego elementu
+    //F.mAddElementToEnd(vElement); // dodanie nowego elementu
+    //cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy jednokierunkowej: ";
+    //cin >> vElement; // wczytanie wartosci nowego elementu
+    //F.mAddElementToEnd(vElement); // dodanie nowego elementu
+    //cout << "    Usuwamy element z poczatku..." << endl;
+    //F.mRemoveElementFromBegin(); // usuwanie pierwszego elementu
+    //cout << "    Usuwamy element z konca..." << endl;
+    //F.mRemoveElementFromEnd(); // usuwanie ostatniego elementu
+    cout << endl << "    Liczba elementow: " << F.getListSize() << endl; // wypisanie rozmiaru listy jednokierunkowej
+    cout << "    Zawartosc listy jednokierunkowej: " << endl;
+    F.mPrintAllElements(); // wypisanie zawartosci listy jednokierunkowej
 }
 
 /*
