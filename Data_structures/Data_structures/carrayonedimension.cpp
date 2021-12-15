@@ -29,66 +29,6 @@ cArrayOneDimension::cArrayOneDimension()
 
 
 /*
- * typeData getElement(typeLoop aIndex)
- */
-/*typeData cArrayOneDimension::getElement(typeLoop aIndex)
-{
-
-}*/
-
-/*
- * typeLoop getLengthTable()
- */
-/*typeLoop cArrayOneDimension::getLengthTable()
-{
-
-}*/
-
-/*
- * typeData getDrawingRange()
- */
-/*typeData cArrayOneDimension::getDrawingRange()
-{
-
-}*/
-
-/*
- * typeData getMinElement()
- */
-/*typeData cArrayOneDimension::getMinElement()
-{
-
-}*/
-
-/*
- * typeData getMaxElement()
- */
-/*typeData cArrayOneDimension::getMaxElement()
-{
-
-}*/
-
-
-
-/*
- * void mReplaceElement(typeLoop aIndex, typeData aElement)
- */
-/*void cArrayOneDimension::mReplaceElement(typeLoop aIndex, typeData aElement)
-{
-
-}*/
-
-/*
- * void mClearElement()
- */
-/*void cArrayOneDimension::mClearElement(typeLoop aIndex)
-{
-
-}*/
-
-
-
-/*
  * void mDrawElements()
  */
 /*void cArrayOneDimension::mDrawElements()
