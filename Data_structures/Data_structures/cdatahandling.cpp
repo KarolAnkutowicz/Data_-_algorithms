@@ -26,6 +26,7 @@ cDataHandling::cDataHandling()
 void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
+            //<< "(?) - statyczna tablica jednowymiarowa" << endl; // opcja dla statycznej tablicy jednowymiarowej
 //         << "(1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
 //         << "(2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
          //<< "(3) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
@@ -66,6 +67,7 @@ void cDataHandling::mMainMenu()
         switch(vOption) // wybor opcji
         {
             case 0 : break; // wybor zakonczenia dzialana programu
+            // case ? : mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
 //            case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
 //            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
             //case 3 : mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
@@ -100,6 +102,15 @@ void cDataHandling::mMainMenu()
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
 }
+
+/*
+ * void mMenuStaticOneDimensionTable()
+ */
+void cDataHandling::mMenuStaticOneDimensionTable()
+{
+
+}
+
 
 /*
  * void mMenuDynamicOneDimensionTable()

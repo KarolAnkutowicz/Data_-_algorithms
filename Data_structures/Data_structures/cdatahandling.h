@@ -27,6 +27,7 @@
 #include "csettemplate.h"
 #include "cstackmy.h"
 #include "cstacktemplate.h"
+#include "cstaticonedimensiontable.h"
 #include "cunorderedmapmy.h"
 #include "cunorderedmaptemplate.h"
 #include "cunorderedsetmy.h"
@@ -82,6 +83,16 @@ public:
     void mMainMenu();
 
 
+
+    /*
+     * void mMenuStaticOneDimensionTable() - metoda obslugujaca
+     * statyczna tablice jednowymiarowa.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStaticOneDimensionTable();
 
     /*
      * void mMenuDynamicOneDimensionTable() - metoda obslugujaca
