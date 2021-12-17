@@ -27,37 +27,37 @@ void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
          << "TABLICE I WEKTORY:" << endl
-         << "    (?) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
-         << "    (?) - statyczna tablica dwuwymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
-         << "    (1) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
-         << "    (2) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-         << "    (3) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-         << "    (4) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-         << "    (5) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-         << "    (6) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+         << "    (10) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
+         << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+         << "    (12) - statyczna tablica dwuwymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
+         << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+         << "    (14) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
+         << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+         << "    (16) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
+         << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
          << "LISTY i KOLEJKI:" << endl
-         << "    (7) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
-         << "    (8) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
-         << "    (9) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-         << "    (10) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
-         << "    (11) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
-         << "    (12) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
-         << "    (13) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
-         << "    (14) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
-         << "    (15) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
-         << "    (16) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
-         << "    (17) - kopiec binarny" << endl // opcja dla kopca binarnego
-        << "STOSY I KOPCE:" << endl
-            << "MAPY:" << endl
-//         << "(18) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
-         //<< "(19) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
-         //<< "(20) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
-         //<< "(21) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-//         << "(22) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
-            << "ZBIORY:" << endl
-         //<< "(23) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
-         //<< "(24) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
-         //<< "(25) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
+         << "    (20) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+         << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
+         << "    (22) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
+         << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
+         << "    (24) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
+         << "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
+         << "    (26) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
+         << "    (27) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+         << "STOSY I KOPCE:" << endl
+         << "    (30) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
+         << "    (31) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
+         << "    (32) - kopiec binarny" << endl // opcja dla kopca binarnego
+         << "MAPY:" << endl
+         << "    (40) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
+         << "    (41) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
+         << "    (42) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+         << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+         << "ZBIORY:" << endl
+         << "    (50) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
+         << "    (51) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
+         << "    (52) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
+         << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
          << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
 }
 
@@ -73,33 +73,40 @@ void cDataHandling::mMainMenu()
         switch(vOption) // wybor opcji
         {
             case 0 : break; // wybor zakonczenia dzialana programu
-            // case ? : mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
-//            case 1 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-//            case 2 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-            //case 3 : mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-//            case 4 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-//            case 5 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-            //case 6 : mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
-//            case 7 : mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
-//            case 8 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
-            //case 9 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
-            case 10 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
-//            case 11 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-            //case 12 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-//            case 13 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
-            //case 14 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-//            case 15 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
-            //case 16 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
-            //case 17 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
-//            case 18 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
-            //case 19 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
-            //case 20 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
-            //case 21 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-//            case 22 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
-            //case 23 : mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
-            //case 24 : mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
-            //case 25 : mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
-            //default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
+            // TABLICE I WEKTORY
+            case 10 : mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
+            case 11 : mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+            case 12 : mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
+            case 13 : mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
+            case 14 : mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
+            case 15 : mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+            case 16 : mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+            case 17 : mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+            // LISTY I KOLEJKI
+            case 20 : mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
+            case 21 : mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
+            case 22 : mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+            case 23 : mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+            case 24 : mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
+            case 25 : mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+            case 26 : mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
+            case 27 : mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
+            // STOSY I KOPCE
+            case 30 : mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
+            case 31 : mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
+            case 32 : mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
+            // MAPY
+            case 40 : mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
+            case 41 : mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
+            case 42 : mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+            case 43 : mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+            // ZBIORY
+            case 50 : mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
+            case 51 : mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
+            case 52 : mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
+            case 53 : mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
+            // OPERACJA DOMYSLNA
+            default : cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
@@ -108,6 +115,8 @@ void cDataHandling::mMainMenu()
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
 }
+
+
 
 /*
  * void mMenuStaticOneDimensionTable()
@@ -118,6 +127,14 @@ void cDataHandling::mMenuStaticOneDimensionTable()
 }
 
 /*
+ * mMenuArrayOneDimension()
+ */
+void cDataHandling::mMenuArrayOneDimension()
+{
+    //
+}
+
+/*
  * void mMenuStaticTwoDimensionTable()
  */
 void cDataHandling::mMenuStaticTwoDimensionTable()
@@ -125,6 +142,13 @@ void cDataHandling::mMenuStaticTwoDimensionTable()
 
 }
 
+/*
+ * void mMenuArrayTwoDimension()
+ */
+void cDataHandling::mMenuArrayTwoDimension()
+{
+    //
+}
 
 /*
  * void mMenuDynamicOneDimensionTable()
@@ -187,14 +211,6 @@ void cDataHandling::mMenuVectorOneDimension()
 }
 
 /*
- * mMenuArrayOneDimension()
- */
-void cDataHandling::mMenuArrayOneDimension()
-{
-    //
-}
-
-/*
  * void mMenuDynamicTwoDimensionTable()
  */
 void cDataHandling::mMenuDynamicTwoDimensionTable()
@@ -236,77 +252,7 @@ void cDataHandling::mMenuVectorTwoDimension()
          << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora wektorow
 }
 
-/*
- * void mMenuArrayTwoDimension()
- */
-void cDataHandling::mMenuArrayTwoDimension()
-{
-    //
-}
 
-/*
- * void mMenuStackTemplate()
- */
-void cDataHandling::mMenuStackTemplate()
-{
-    typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
-    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
-         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
-    cStackTemplate S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
-    S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
-    S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
-    S.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-    cout << "    Zawartosc stosu: " << endl;
-    S.mPrintAllElements(); // wypisanie zawartosci wektora
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-}
-
-/*
- * void mMenuStackMy()
- */
-void cDataHandling::mMenuStackMy()
-{
-    typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
-    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
-         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
-    cStackMy S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
-    S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
-    S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
-    S.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-    cout << "    Zawartosc stosu: " << endl;
-    S.mPrintAllElements(); // wypisanie zawartosci stosu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-}
-
-/*
- * void mMenuForwardListTemplate()
- */
-void cDataHandling::mMenuForwardListTemplate()
-{
-    //
-}
 
 /*
  * void mMenuForwardListMy()
@@ -335,6 +281,35 @@ void cDataHandling::mMenuForwardListMy()
     cout << endl << "    Liczba elementow: " << F.getListSize() << endl; // wypisanie rozmiaru listy jednokierunkowej
     cout << "    Zawartosc listy jednokierunkowej: " << endl;
     F.mPrintAllElements(); // wypisanie zawartosci listy jednokierunkowej
+}
+
+/*
+ * void mMenuForwardListTemplate()
+ */
+void cDataHandling::mMenuForwardListTemplate()
+{
+    //
+}
+
+/*
+ * void mMenuListMy()
+ */
+void cDataHandling::mMenuListMy()
+{
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry listy" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cListMy L(vSize, vDrawingRange); // utworzenie obiektu
+    /*L.mPrintFirstElement();
+    cout << endl;
+    L.mPrintLastElement();
+    cout << endl;*/
+    cout << "Liczba elementow listy: " << L.getListSize() << endl
+         << "Zakres losowania elementow " << L.getDrawingRange() << endl;
 }
 
 /*
@@ -367,24 +342,11 @@ void cDataHandling::mMenuListTemplate()
 }
 
 /*
- * void mMenuListMy()
+ * void mMenuQueueMy()
  */
-void cDataHandling::mMenuListMy()
+void cDataHandling::mMenuQueueMy()
 {
-    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
-    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    cout << "Okresl parametry listy" << endl // wczytanie parametrow
-         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
-    cListMy L(vSize, vDrawingRange); // utworzenie obiektu
-    /*L.mPrintFirstElement();
-    cout << endl;
-    L.mPrintLastElement();
-    cout << endl;*/
-    cout << "Liczba elementow listy: " << L.getListSize() << endl
-         << "Zakres losowania elementow " << L.getDrawingRange() << endl;
+    //
 }
 
 /*
@@ -417,9 +379,9 @@ void cDataHandling::mMenuQueueTemplate()
 }
 
 /*
- * void mMenuQueueMy()
+ * void mMenuDequeMy()
  */
-void cDataHandling::mMenuQueueMy()
+void cDataHandling::mMenuDequeMy()
 {
     //
 }
@@ -453,18 +415,78 @@ void cDataHandling::mMenuDequeTemplate()
     cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
 }
 
+
+
 /*
- * void mMenuDequeMy()
+ * void mMenuStackMy()
  */
-void cDataHandling::mMenuDequeMy()
+void cDataHandling::mMenuStackMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStackMy S(vSize, vDrawingRange); // utworzenie obiektu
+    cout << "    Podaj nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element..." << endl;
+    S.mRemoveElement(); // usuwanie ostatniego elementu
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+    cout << "    Zawartosc stosu: " << endl;
+    S.mPrintAllElements(); // wypisanie zawartosci stosu
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+}
+
+/*
+ * void mMenuStackTemplate()
+ */
+void cDataHandling::mMenuStackTemplate()
+{
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStackTemplate S(vSize, vDrawingRange); // utworzenie obiektu
+    cout << "    Podaj nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element..." << endl;
+    S.mRemoveElement(); // usuwanie ostatniego elementu
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+    cout << "    Zawartosc stosu: " << endl;
+    S.mPrintAllElements(); // wypisanie zawartosci wektora
+    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
 }
 
 /*
  * void mMenuHeapBinary()
  */
 void cDataHandling::mMenuHeapBinary()
+{
+    //
+}
+
+
+
+/*
+ * void mMenuMapMy()
+ */
+void cDataHandling::mMenuMapMy()
 {
     //
 }
@@ -498,9 +520,9 @@ void cDataHandling::mMenuMapTemplate()
 }
 
 /*
- * void mMenuMapMy()
+ * void mMenuUnorderedMapMy()
  */
-void cDataHandling::mMenuMapMy()
+void cDataHandling::mMenuUnorderedMapMy()
 {
     //
 }
@@ -513,10 +535,12 @@ void cDataHandling::mMenuUnorderedMapTemplate()
     //
 }
 
+
+
 /*
- * void mMenuUnorderedMapMy()
+ * void mMenuSetMy()
  */
-void cDataHandling::mMenuUnorderedMapMy()
+void cDataHandling::mMenuSetMy()
 {
     //
 }
@@ -548,9 +572,9 @@ void cDataHandling::mMenuSetTemplate()
 }
 
 /*
- * void mMenuSetMy()
+ * void mMenuUnorderedSetMy()
  */
-void cDataHandling::mMenuSetMy()
+void cDataHandling::mMenuUnorderedSetMy()
 {
     //
 }
@@ -559,14 +583,6 @@ void cDataHandling::mMenuSetMy()
  * void mMenuUnorderedSetTemplate()
  */
 void cDataHandling::mMenuUnorderedSetTemplate()
-{
-    //
-}
-
-/*
- * void mMenuUnorderedSetMy()
- */
-void cDataHandling::mMenuUnorderedSetMy()
 {
     //
 }

@@ -96,6 +96,17 @@ public:
     void mMenuStaticOneDimensionTable();
 
     /*
+     * mMenuArrayOneDimension() - metoda obslugujaca
+     * statyczna tablice jednowymiarowa wykorzystujaca
+     * szablon <array>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuArrayOneDimension();
+
+    /*
      * void mMenuStaticTwoDimensionTable() - metoda obslugujaca
      * statyczna tablice dwuwymiarowa.
      * PRE:
@@ -104,6 +115,17 @@ public:
      * - brak.
      */
     void mMenuStaticTwoDimensionTable();
+
+    /*
+     * void mMenuArrayTwoDimension() - metoda obslugujaca
+     * statyczna tablice dwuwymiarowa wykorzystujaca
+     * szablon <array>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuArrayTwoDimension();
 
     /*
      * void mMenuDynamicOneDimensionTable() - metoda obslugujaca
@@ -127,17 +149,6 @@ public:
     void mMenuVectorOneDimension();
 
     /*
-     * mMenuArrayOneDimension() - metoda obslugujaca
-     * statyczna tablice jednowymiarowa wykorzystujaca
-     * szablon <array>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuArrayOneDimension();
-
-    /*
      * void mMenuDynamicTwoDimensionTable() - metoda obslugujaca
      * dynamiczna tablice dwuwymiarowa.
      * PRE:
@@ -158,47 +169,7 @@ public:
      */
     void mMenuVectorTwoDimension();
 
-    /*
-     * void mMenuArrayTwoDimension() - metoda obslugujaca
-     * statyczna tablice dwuwymiarowa wykorzystujaca
-     * szablon <array>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuArrayTwoDimension();
 
-    /*
-     * void mMenuStackTemplate() - metoda obslugujaca stos dzialajacy
-     * na podstawie szablonu <stack>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuStackTemplate();
-
-    /*
-     * void mMenuStackMy() - metoda obslugujaca stos dzialajacy
-     * bez wykorzystania szablonu <stack>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuStackMy();
-
-    /*
-     * void mMenuForwardListTemplate() - metoda obslugujaca
-     * liste jednokierunkowa dzialajaca z wykorzystaniem
-     * szablonu <forward_list>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuForwardListTemplate();
 
     /*
      * void mMenuForwardListMy() - metoda obslugujaca liste
@@ -212,14 +183,15 @@ public:
     void mMenuForwardListMy();
 
     /*
-     * void mMenuListTemplate() - metoda obslugujaca liste dzialajaca
-     * z wykorzystaniem szablonu <list>.
+     * void mMenuForwardListTemplate() - metoda obslugujaca
+     * liste jednokierunkowa dzialajaca z wykorzystaniem
+     * szablonu <forward_list>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuListTemplate();
+    void mMenuForwardListTemplate();
 
     /*
      * void mMenuListMy() - metoda obslugujaca liste dzialajaca
@@ -232,14 +204,14 @@ public:
     void mMenuListMy();
 
     /*
-     * void mMenuQueueTemplate() - metoda obslugujaca kolejke
-     * dzialajaca z wykorzystaniem szablonu <queue>.
+     * void mMenuListTemplate() - metoda obslugujaca liste dzialajaca
+     * z wykorzystaniem szablonu <list>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuQueueTemplate();
+    void mMenuListTemplate();
 
     /*
      * void mMenuQueueMy() - metoda obslugujace kolejke
@@ -252,15 +224,14 @@ public:
     void mMenuQueueMy();
 
     /*
-     * void mMenuDequeTemplate() - metoda obslugujace kolejke
-     * dwukierunkowa dzialajaca z wykorzystaniem szablonu
-     * <deque>.
+     * void mMenuQueueTemplate() - metoda obslugujaca kolejke
+     * dzialajaca z wykorzystaniem szablonu <queue>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuDequeTemplate();
+    void mMenuQueueTemplate();
 
     /*
      * void mMenuDequeMy() - metoda obslugujace kolejke
@@ -274,6 +245,39 @@ public:
     void mMenuDequeMy();
 
     /*
+     * void mMenuDequeTemplate() - metoda obslugujace kolejke
+     * dwukierunkowa dzialajaca z wykorzystaniem szablonu
+     * <deque>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuDequeTemplate();
+
+
+
+    /*
+     * void mMenuStackMy() - metoda obslugujaca stos dzialajacy
+     * bez wykorzystania szablonu <stack>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStackMy();
+
+    /*
+     * void mMenuStackTemplate() - metoda obslugujaca stos dzialajacy
+     * na podstawie szablonu <stack>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStackTemplate();
+
+    /*
      * void mMenuHeapBinary() - metoda obslugujaca kopiec
      * binarny.
      * PRE:
@@ -283,15 +287,7 @@ public:
      */
     void mMenuHeapBinary();
 
-    /*
-     * void mMenuMapTemplate() - metoda obslugujaca mape
-     * dzialajaca z wykorzystaniem szablonu <map>.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mMenuMapTemplate();
+
 
     /*
      * void mMenuMapMy() - metoda obslugujaca mape
@@ -304,15 +300,14 @@ public:
     void mMenuMapMy();
 
     /*
-     * void mMenuUnorderedMapTemplate() - metoda obslugujaca
-     * nieuporzadkowana mape wykorzystujaca szablon
-     * <unordered_map>.
+     * void mMenuMapTemplate() - metoda obslugujaca mape
+     * dzialajaca z wykorzystaniem szablonu <map>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuUnorderedMapTemplate();
+    void mMenuMapTemplate();
 
     /*
      * void mMenuUnorderedMapMy() - metoda obslugujaca
@@ -326,14 +321,17 @@ public:
     void mMenuUnorderedMapMy();
 
     /*
-     * void mMenuSetTemplate() - metoda obslugujaca zbior
-     * dzialajacy z wykorzystaniem szablonu <set>.
+     * void mMenuUnorderedMapTemplate() - metoda obslugujaca
+     * nieuporzadkowana mape wykorzystujaca szablon
+     * <unordered_map>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuSetTemplate();
+    void mMenuUnorderedMapTemplate();
+
+
 
     /*
      * void mMenuSetMy() - metoda obslugujaca zbior dzialajacy
@@ -346,15 +344,14 @@ public:
     void mMenuSetMy();
 
     /*
-     * void mMenuUnorderedSetTemplate() - metoda obslugujaca
-     * nieuporzadkowany zbior dzialajacy z wykorzystaniem
-     * szablonu <unordered_set>.
+     * void mMenuSetTemplate() - metoda obslugujaca zbior
+     * dzialajacy z wykorzystaniem szablonu <set>.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mMenuUnorderedSetTemplate();
+    void mMenuSetTemplate();
 
     /*
      * void mMenuUnorderedSetMy() - metoda obslugujaca
@@ -366,6 +363,17 @@ public:
      * - brak.
      */
     void mMenuUnorderedSetMy();
+
+    /*
+     * void mMenuUnorderedSetTemplate() - metoda obslugujaca
+     * nieuporzadkowany zbior dzialajacy z wykorzystaniem
+     * szablonu <unordered_set>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuUnorderedSetTemplate();
 
 /********** PUBLIC: END **********/
 };
