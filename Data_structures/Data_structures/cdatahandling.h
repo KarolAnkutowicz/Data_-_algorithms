@@ -28,6 +28,7 @@
 #include "cstackmy.h"
 #include "cstacktemplate.h"
 #include "cstaticonedimensiontable.h"
+#include "cstatictwodimensiontable.h"
 #include "cunorderedmapmy.h"
 #include "cunorderedmaptemplate.h"
 #include "cunorderedsetmy.h"
@@ -93,6 +94,16 @@ public:
      * - brak.
      */
     void mMenuStaticOneDimensionTable();
+
+    /*
+     * void mMenuStaticTwoDimensionTable() - metoda obslugujaca
+     * statyczna tablice dwuwymiarowa.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuStaticTwoDimensionTable();
 
     /*
      * void mMenuDynamicOneDimensionTable() - metoda obslugujaca

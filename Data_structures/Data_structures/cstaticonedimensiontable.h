@@ -11,8 +11,8 @@ using namespace std;
 
 /*
  * cStaticOneDimensionTable - klasa modelujaca
- * tablice jednowymiarowa statyczna o zadanym
- * i niemodyfikowanym rozmiarze.
+ * statyczna tablice jednowymiarowa o zadanym
+ * i niemodyfikowalnym pozniej rozmiarze.
  */
 class cStaticOneDimensionTable
 {

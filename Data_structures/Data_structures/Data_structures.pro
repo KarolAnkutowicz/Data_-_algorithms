@@ -43,7 +43,8 @@ SOURCES += main.cpp \
     cunorderedmapmy.cpp \
     cunorderedsettemplate.cpp \
     cunorderedsetmy.cpp \
-    cstaticonedimensiontable.cpp
+    cstaticonedimensiontable.cpp \
+    cstatictwodimensiontable.cpp
 
 HEADERS += \
     cvectortwodimension.h \
@@ -74,6 +75,7 @@ HEADERS += \
     cunorderedsettemplate.h \
     cunorderedsetmy.h \
     celementsmystructures.h \
-    cstaticonedimensiontable.h
+    cstaticonedimensiontable.h \
+    cstatictwodimensiontable.h
 
 #QMAKE_CXXFLAGS += -std=c++0x
