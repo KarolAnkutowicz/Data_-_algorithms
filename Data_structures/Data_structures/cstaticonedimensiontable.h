@@ -21,16 +21,15 @@ class cStaticOneDimensionTable
 /********** PRIVATE: BEGINNING **********/
 
     /*
-     * typeData tabElements[conLengthTable] - tablica
-     * elementow.
+     * typeData tabElements[] - tablica elementow.
      */
     typeData tabElements[];
 
     /*
-     * const typeLoop conLengthTable - stala okreslajaca
+     * typeLoop vLengthTable - stala okreslajaca
      * liczbe elementow tablicy.
      */
-    typeLoop conLengthTable;
+    typeLoop vLengthTable;
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
@@ -84,16 +83,22 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    typeData getElement(typeLoop aIndex);
+    inline typeData getElement(typeLoop aIndex)
+    {
+        return tabElements[aIndex];
+    }
 
     /*
      * typeLoop getLenthtTable() - metoda zwracajaca dlugosc tablicy
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola conLengthTable (typ: typeLoop).
+     * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
      */
-    typeLoop getLenthtTable();
+    inline typeLoop getLenthtTable()
+    {
+        return vLengthTable;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -103,7 +108,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -113,7 +121,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    typeData getMinElement();
+    inline typeData getMinElement()
+    {
+        return vMinElement;
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -123,7 +134,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    typeData getMaxElement();
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
+    }
 
 
 
