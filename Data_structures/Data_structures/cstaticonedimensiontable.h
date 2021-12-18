@@ -8,6 +8,9 @@
 #define CSTATICONEDIMENSIONTABLE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -47,9 +50,9 @@ class cStaticOneDimensionTable
      */
     typeData vMaxElement;
 
-    /********** PRIVATE: END **********/
+/********** PRIVATE: END **********/
 
-    /********** PUBLIC: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 public:
 
     /*
@@ -203,7 +206,10 @@ public:
      * POST:
      * - brak.
      */
-    void mPrintElement(typeLoop aIndex);
+    inline void mPrintElement(typeLoop aIndex)
+    {
+        cout << tabElements[aIndex] << endl;
+    }
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
@@ -214,6 +220,7 @@ public:
      */
     void mPrintTable();
 
+/********** PUBLIC: END **********/
 };
 
 #endif // CSTATICONEDIMENSIONTABLE_H

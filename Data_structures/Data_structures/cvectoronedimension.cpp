@@ -104,7 +104,6 @@ void cVectorOneDimension::mDrawElements(typeLoop aSize)
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < aSize; i++) // sprawdzenie liczby dodanych elementow
         mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
-
 }
 
 /*
