@@ -123,7 +123,16 @@ void cDataHandling::mMainMenu()
  */
 void cDataHandling::mMenuStaticOneDimensionTable()
 {
-
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    cout << "Okresl parametry tablicy:" << endl; // wczytywanie parametrow
+    cout << "    Zakres liczb od 0 do...: ";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStaticOneDimensionTable S(vDrawingRange); //utworzenie obiektu
+    cout << "    Zawartosc tablicy: " << endl;
+    S.mPrintTable(); // wypisanie zawartosci tablicy
+    cout << endl << "    Liczba elementow: " << S.getLengthTable() << endl // wypisanie rozmiaru tablicy
+         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
+         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
 }
 
 /*

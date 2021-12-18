@@ -92,13 +92,13 @@ public:
     }
 
     /*
-     * typeLoop getLenthtTable() - metoda zwracajaca dlugosc tablicy
+     * typeLoop getLengthTable() - metoda zwracajaca dlugosc tablicy
      * PRE:
      * - brak;
      * POST:
      * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
      */
-    inline typeLoop getLenthtTable()
+    inline typeLoop getLengthTable()
     {
         return vLengthTable;
     }
