@@ -145,8 +145,8 @@ public:
 
 
     /*
-     * void mReplaceElement(typeData aElement) - metoda zmieniajaca
-     * wartosc wskazanego elementu tablicy.
+     * void mReplaceElement(typeLoop aIndex, typeData aElement) -
+     * metoda zmieniajaca wartosc wskazanego elementu tablicy.
      * PRE:
      * - podanie indeksu elementu (typ: typeLoop);
      * - podanie wartosci elementu (typ: typeData);
@@ -156,8 +156,8 @@ public:
     void mReplaceElement(typeLoop aIndex, typeData aElement);
 
     /*
-     * void mRemoveElement() - metoda resetujaca wskazany element
-     * tablicy.
+     * void mRemoveElement(typeLoop aIndex) - metoda resetujaca
+     * wskazany element tablicy.
      * PRE:
      * - podanie indeksu elementu (typ: typeLoop);
      * POST:
