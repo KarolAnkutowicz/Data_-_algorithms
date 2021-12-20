@@ -148,7 +148,20 @@ void cDataHandling::mMenuArrayOneDimension()
  */
 void cDataHandling::mMenuStaticTwoDimensionTable()
 {
-
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeLoop vRows; // zmienna okreslajaca liczbe wierszy tablicy
+    cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
+        << "    Liczba wierszy: ";
+    cin >> vRows; // wczytanie liczby wierszy
+    cout << "    Zakres liczb od 0 do...: ";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStaticTwoDimensionTable S(vDrawingRange, vRows); //utworzenie obiektu
+    cout << "    Zawartosc tablicy: " << endl;
+    S.mPrintTable(); // wypisanie zawartosci tablicy
+    cout << endl << "    Liczba wierszy: " << S.getRows() << endl // wypisanie liczby wierszy
+         << "    Liczba kolumn: " << S.getColumns() << endl // wypisanie liczby kolumn
+         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
+         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
 }
 
 /*
