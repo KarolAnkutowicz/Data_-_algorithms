@@ -66,7 +66,6 @@ void cStaticOneDimensionTable::mDrawElements()
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
         tabElements[i] = (rand() % vDrawingRange); // zmiana wartosci wskazanego elementu
-
 }
 
 /*

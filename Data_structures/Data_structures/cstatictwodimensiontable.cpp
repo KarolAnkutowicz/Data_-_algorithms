@@ -52,29 +52,14 @@ cStaticTwoDimensionTable::cStaticTwoDimensionTable(typeData aDrawingRange, typeL
 
 
 /*
- * void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
- */
-void cStaticTwoDimensionTable::mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
-{
-
-}
-
-/*
- * void mRemoveElement(typeLoop aRows, typeLoop aColumns)
- */
-void cStaticTwoDimensionTable::mClearElement(typeLoop aRows, typeLoop aColumns)
-{
-
-}
-
-
-
-/*
  * void mDrawElements()
  */
 void cStaticTwoDimensionTable::mDrawElements()
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
+        for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
+            tabElements[i][j] = (rand() % vDrawingRange); // zmiana wartosci wskazanego elementu
 }
 
 /*
@@ -82,7 +67,11 @@ void cStaticTwoDimensionTable::mDrawElements()
  */
 void cStaticTwoDimensionTable::mFindMinElement()
 {
-
+    vMinElement = tabElements[0][0]; // nadanie poczatkowej wartosci najmniejszej
+    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
+        for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
+            if (tabElements[i][j] < vMinElement) // sprawdzenie czy nowy element jest mniejszy od aktualnego najmniejszego elementu
+                vMinElement = tabElements[i][j]; // jezeli tak to ustanawiamy nowy element najmniejszy
 }
 
 /*
@@ -90,7 +79,11 @@ void cStaticTwoDimensionTable::mFindMinElement()
  */
 void cStaticTwoDimensionTable::mFindMaxElement()
 {
-
+    vMaxElement = tabElements[0][0]; // nadanie poczatkowej wartosci najwiekszej
+    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
+        for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
+            if (tabElements[i][j] > vMaxElement) // sprawdzenie czy nowy element jest mniejszy od aktualnego najwiekszego elementu
+                vMaxElement = tabElements[i][j]; // jezeli tak to ustanawiamy nowy element najwiekszy
 }
 
 
@@ -100,7 +93,12 @@ void cStaticTwoDimensionTable::mFindMaxElement()
  */
 void cStaticTwoDimensionTable::mPrintTable()
 {
-
+    for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wierszach
+    {
+        for (typeLoop j = 0; j < vColumns; j++) // przejscie po wszystkich kolumnach
+            mPrintElement(i, j); // wywolanie wypisania wskazanego elementu
+        cout << endl; // przejscie do nowego wiersza
+    }
 }
 
 /********** PUBLIC: END **********/

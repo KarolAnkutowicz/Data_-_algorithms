@@ -8,6 +8,8 @@
 #define CSTATICTWODIMENSIONTABLE_H
 
 #include "constantsandtypes.h"
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 using namespace std;
@@ -183,7 +185,10 @@ public:
      * POST:
      * - brak.
      */
-    void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement);
+    inline void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
+    {
+        tabElements[aRows][aColumns] = aElement;
+    }
 
     /*
      * void mRemoveElement(typeLoop aRows, typeLoop aColumns) - metoda
@@ -194,7 +199,10 @@ public:
      * POST:
      * - brak.
      */
-    void mClearElement(typeLoop aRows, typeLoop aColumns);
+    inline void mClearElement(typeLoop aRows, typeLoop aColumns)
+    {
+        tabElements[aRows][aColumns] = NULL;
+    }
 
 
 
