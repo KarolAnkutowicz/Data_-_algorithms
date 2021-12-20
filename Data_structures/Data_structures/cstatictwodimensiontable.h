@@ -8,6 +8,7 @@
 #define CSTATICTWODIMENSIONTABLE_H
 
 #include "constantsandtypes.h"
+#include <iostream>
 
 using namespace std;
 
@@ -102,7 +103,10 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    typeData getElement(typeLoop aRows, typeLoop aColumn);
+    inline typeData getElement(typeLoop aRows, typeLoop aColumns)
+    {
+        return tabElements[aRows][aColumns];
+    }
 
     /*
      * typeLoop getRows() - metoda zwracajaca liczbe wierszy tablicy
@@ -111,7 +115,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vRows (typ: typeLoop).
      */
-    typeLoop getRows();
+    inline typeLoop getRows()
+    {
+        return vRows;
+    }
 
     /*
      * typeLoop getColumns() - metoda zwracajaca liczbe kolumn tablicy
@@ -120,7 +127,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vColumn (typ: typeLoop).
      */
-    typeLoop getColumns();
+    inline typeLoop getColumns()
+    {
+        return vColumns;
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -130,7 +140,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    typeData getDrawingRange();
+    inline typeData getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -140,7 +153,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    typeData getMinElement();
+    inline typeData getMinElement()
+    {
+        return vMinElement;
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -150,7 +166,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    typeData getMaxElement();
+    inline typeData getMaxElement()
+    {
+        return vMaxElement;
+    }
 
 
 
@@ -219,7 +238,10 @@ public:
      * POST:
      * - brak.
      */
-    void mPrintElement(typeLoop aRows, typeLoop aColumns);
+    inline void mPrintElement(typeLoop aRows, typeLoop aColumns)
+    {
+        cout << tabElements[aRows][aColumns] << " ";
+    }
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
