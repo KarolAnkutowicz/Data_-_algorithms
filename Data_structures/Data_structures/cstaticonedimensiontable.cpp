@@ -18,6 +18,8 @@ cStaticOneDimensionTable::cStaticOneDimensionTable()
     vLengthTable = 10; // ustanowienie dlugosci tablicy
     vDrawingRange = 0; // ustanowienie zakresu losowania wartosci elementow
     mDrawElements(); // wywolanie losowania wartosci elementow
+    mFindMinElement(); // znajdujemy element najmniejszy
+    mFindMaxElement(); // znajdujemy element najwiekszy
 }
 
 /*
@@ -28,6 +30,8 @@ cStaticOneDimensionTable::cStaticOneDimensionTable(typeData aDrawingRange)
     vLengthTable = 10; // ustanowienie dlugosci tablicy
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania wartosci elementow
     mDrawElements(); // wywolanie losowania wartosci elementow
+    mFindMinElement(); // znajdujemy element najmniejszy
+    mFindMaxElement(); // znajdujemy element najwiekszy
 }
 
 
