@@ -80,7 +80,7 @@ void cQueueMy::mAddElement(typeData aElement)
     for (typeLoop i = 0; i < (vSize - 1); i++) // przejscie po wszystkich elementach w kolejce
         QueueMyAux[i] = QueueMy[i]; // kopiowanie elementow do kolejki pomocniczej
     QueueMyAux[vSize - 1] = aElement; // dopisanie nowego elementu
-    delete []QueueMy; // zwolnienie zasobow przydzielanych dynamicznie
+    delete []QueueMy; // zwalnienie zasobow przydzielanych dynamicznie
     QueueMy = new typeData[vSize]; // utworzenie nowej kolejki
     for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach w kolejce
         QueueMy[i] = QueueMyAux[i]; // kopiowanie elementow z kolejki pomocniczej
@@ -101,7 +101,7 @@ bool cQueueMy::mRemoveElement()
         QueueMyAux = new typeData[vSize]; // tworzymy kolejke pomocnicza
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach w kolejce
             QueueMyAux[i] = QueueMy[i + 1]; // kopiowanie elementow do kolejki pomocniczej - pominiecie pierwszego elementu
-        delete []QueueMy; // zwolnienie zasobow przydzielanych dynamicznie
+        delete []QueueMy; // zwalnienie zasobow przydzielanych dynamicznie
         QueueMy = new typeData[vSize]; // utworzenie nowej kolejki
         for (typeLoop i = 0; i < vSize ; i++) // przejscie po wszystkich elementach w kolejce
             QueueMy[i] = QueueMyAux[i]; // kopiowanie elementow z kolejki pomocniczej
@@ -127,7 +127,7 @@ void cQueueMy::mDrawElements(typeLoop aSize)
  */
 void cQueueMy::mPrintFirstElement()
 {
-    if (vSize == 0) // sprawdzenie czy kolejka nie jest pusta
+    if (vSize == 0) // sprawdzenie czy kolejka jest pusta
         cout << "Kolejka jest pusta!" << endl; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
         cout << QueueMy[0] << endl; // wypisujemy wartosc pierwszego elementu kolejki
@@ -138,7 +138,7 @@ void cQueueMy::mPrintFirstElement()
  */
 void cQueueMy::mPrintLastElement()
 {
-    if (vSize == 0) // sprawdzenie czy kolejka nie jest pusta
+    if (vSize == 0) // sprawdzenie czy kolejka jest pusta
         cout << "Kolejka jest pusta!" << endl; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
         cout << QueueMy[vSize - 1] << endl; // wypisujemy wartosc ostatniego elementu kolejki
@@ -149,7 +149,7 @@ void cQueueMy::mPrintLastElement()
  */
 void cQueueMy::mPrintAllElements()
 {
-    if (vSize == 0) // sprawdzenie czy kolejka nie jest pusta
+    if (vSize == 0) // sprawdzenie czy kolejka jest pusta
         cout << "Kolejka jest pusta!" << endl; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
     {
