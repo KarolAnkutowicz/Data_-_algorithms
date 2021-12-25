@@ -24,8 +24,7 @@ cQueueTemplate::cQueueTemplate()
 cQueueTemplate::cQueueTemplate(typeLoop aSize)
 {
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
-    for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
-        mAddElement(0); // dodanie nowego elementu
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 /*
@@ -120,7 +119,7 @@ void cQueueTemplate::mPrintAllElements()
     {
         while (!QueueTemplate.empty()) // dopoki kolejka nie jest pusta
         {
-            mPrintLastElement(); // wypisujemy ostatni element
+            mPrintFirstElement(); // wypisujemy ostatni element
             mRemoveElement(); // usuwamy ostatni element dajac dostep do wczesniejszego
         }
     }

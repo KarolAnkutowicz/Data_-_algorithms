@@ -79,12 +79,7 @@ void cStackTemplate::mDrawElements(typeLoop aSize)
 
 
 /*
- * void mPrintElement() - metoda wypisujaca element
- * ze szczytu stosu (o ile stos nie jest pusty!).
- * PRE:
- * - brak;
- * POST:
- * - brak.
+ * void mPrintElement()
  */
 void cStackTemplate::mPrintElement()
 {

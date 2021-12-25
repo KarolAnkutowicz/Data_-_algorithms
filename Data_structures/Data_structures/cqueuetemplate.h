@@ -67,6 +67,7 @@ public:
      * z jakiego mamy te elementy losowac.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
+     * - podanie zakresu losowanie elementow (typ: typeData);
      * POST:
      * - tworzenie obiektu klasy cQueueTemplate.
      */
