@@ -26,7 +26,7 @@ class cQueueMy
      * cElementMy *QueuekMy - wskaznik do pierwszego elementu
      * kolejki.
      */
-    typeData *vQueueMy;
+    typeData *QueueMy;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
