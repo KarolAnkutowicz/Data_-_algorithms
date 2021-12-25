@@ -426,7 +426,28 @@ void cDataHandling::mMenuQueueTemplate()
  */
 void cDataHandling::mMenuDequeMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwukierunkowej
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry kolejki dwukierunkowej" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cDequeMy D(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy ostatni element..." << endl;
+    D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwukierunkowej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    cout << "    Zawartosc kolejki dwukierunkowej: " << endl;
+    D.mPrintAllElements(); // wypisanie zawartosci kolejki dwukierunkowej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
 }
 
 /*
@@ -434,28 +455,28 @@ void cDataHandling::mMenuDequeMy()
  */
 void cDataHandling::mMenuDequeTemplate()
 {
-    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwustronnej
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwukierunkowej
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kolejki dwustronnej" << endl // wczytanie parametrow
+    cout << "Okresl parametry kolejki dwukierunkowej" << endl // wczytanie parametrow
          << "    Liczba elementow: ";
     cin >> vSize; // wczytanie liczby elementow
     cout << "    Zakres liczb od 0 do...";
     cin >> vDrawingRange; // wczytanie granicy zakresu
     cDequeTemplate D(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
-    cout << "    Podaj nowy element do dodania na koniec kolejki dwustronnej: ";
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwustronnej: ";
+    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
     cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
     cout << "    Usuwamy ostatni element..." << endl;
-    D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwustronnej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
-    cout << "    Zawartosc kolejki dwustronnej: " << endl;
-    D.mPrintAllElements(); // wypisanie zawartosci kolejki dwustronnej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwustronnej
+    D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwukierunkowej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    cout << "    Zawartosc kolejki dwukierunkowej: " << endl;
+    D.mPrintAllElements(); // wypisanie zawartosci kolejki dwukierunkowej
+    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
 }
 
 
