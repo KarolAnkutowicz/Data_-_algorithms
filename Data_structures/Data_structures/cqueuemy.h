@@ -29,7 +29,7 @@ class cQueueMy
     typeData *QueueMy;
 
     /*
-     *  typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
+     * typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
      */
     typeLoop vSize;
 
