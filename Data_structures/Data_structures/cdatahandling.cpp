@@ -368,7 +368,28 @@ void cDataHandling::mMenuListTemplate()
  */
 void cDataHandling::mMenuQueueMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry kolejki" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres liczb od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cQueueMy Q(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+    cout << "    Podaj nowy element do dodania do kolejki: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    Q.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    Q.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element..." << endl;
+    Q.mRemoveElement(); // usuniecie elementu z kolejki
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+    cout << "    Zawartosc kolejki: " << endl;
+    Q.mPrintAllElements(); // wypisanie zawartosci kolejki
+    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
 }
 
 /*

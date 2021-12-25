@@ -82,7 +82,7 @@ void cQueueMy::mAddElement(typeData aElement)
     QueueMyAux[vSize - 1] = aElement; // dopisanie nowego elementu
     delete []QueueMy; // zwolnienie zasobow przydzielanych dynamicznie
     QueueMy = new typeData[vSize]; // utworzenie nowej kolejki
-    for (typeLoop i = 0; i < (vSize - 1); i++) // przejscie po wszystkich elementach w kolejce
+    for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach w kolejce
         QueueMy[i] = QueueMyAux[i]; // kopiowanie elementow z kolejki pomocniczej
     delete []QueueMyAux; // zwalnianie zasobow przydzielanych dynamicznie
 }
