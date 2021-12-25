@@ -111,7 +111,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru kolejki (typ: typeLoop).
      */
-    typeLoop getDequeSize();
+    inline typeLoop getDequeSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -122,7 +125,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    inline typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
 
 
