@@ -8,7 +8,9 @@
 #define CQUEUEMY_H
 
 #include "constantsandtypes.h"
-//#include "celementmy.h"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
 using namespace std;
 
@@ -24,13 +26,7 @@ class cQueueMy
      * cElementMy *QueuekMy - wskaznik do pierwszego elementu
      * kolejki.
      */
-    //cElementMy *vQueueMyBegin;
-
-    /*
-     * cElementMy *QueueMyEnd - wskaznik do ostatniego elementu
-     * kolejki
-     */
-    //cElementMy *vQueueMyEnd;
+    typeData *vQueueMy;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
@@ -152,6 +148,16 @@ public:
      * sie udalo (typ: bool).
      */
     bool mRemoveElement();
+
+    /*
+     * void mDrawElements(typeLoop aSize) - metoda losujaca
+     * elementy kolejki.
+     * PRE:
+     * - podanie liczby losowanych elementow (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mDrawElements(typeLoop aSize);
 
 
 

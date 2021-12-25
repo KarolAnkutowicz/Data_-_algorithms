@@ -15,7 +15,10 @@ using namespace std;
  */
 cQueueMy::cQueueMy()
 {
-
+    vQueueMy = new typeData[1]; // utworzenie nowej kolejki
+    vSize = 1; // ustanowienie rozmiaru kolejki
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    vQueueMy[0] = 0; // nadanie wartosci jedynego elementu
 }
 
 /*
@@ -23,7 +26,10 @@ cQueueMy::cQueueMy()
  */
 cQueueMy::cQueueMy(typeLoop aSize)
 {
-
+    vQueueMy = new typeData[aSize]; // utworzenie nowej kolejki
+    vSize = aSize; // ustanowienie rozmiaru kolejki
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 /*
@@ -31,7 +37,10 @@ cQueueMy::cQueueMy(typeLoop aSize)
  */
 cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
 {
-
+    vQueueMy = new typeData[aSize]; // utworzenie nowej kolejki
+    vSize = aSize; // ustanowienie rozmiaru kolejki
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 
@@ -39,18 +48,18 @@ cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
 /*
  * typeData getFirstElement()
  */
-/*typeData cQueueMy::getFirstElement()
+typeData cQueueMy::getFirstElement()
 {
 
-}*/
+}
 
 /*
  * typeData getLastElement()
  */
-/*typeData cQueueMy::getLastElement()
+typeData cQueueMy::getLastElement()
 {
 
-}*/
+}
 
 
 
@@ -65,10 +74,18 @@ void cQueueMy::mAddElement(typeData aElement)
 /*
  * bool mRemoveElement()
  */
-/*bool cQueueMy::mRemoveElement()
+bool cQueueMy::mRemoveElement()
 {
 
-}*/
+}
+
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cQueueMy::mDrawElements(typeLoop aSize)
+{
+
+}
 
 
 
