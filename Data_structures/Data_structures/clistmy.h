@@ -8,7 +8,7 @@
 #define CLISTMY_H
 
 #include "constantsandtypes.h"
-//#include "celementmy.h"
+#include "celementsmystructures.h"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -24,16 +24,16 @@ class cListMy
 /********** PRIVATE: BEGINNING **********/
 
     /*
-     * cElementMy *vListMyBegin - wskaznik do pierwszego
-     * elementu listy przechowujacej elementy typu typeData.
+     * cElementListAndDeque *vListMyBegin - wskaznik do
+     * pierwszego elementu listy.
      */
-    //cElementMy *vListMyBegin;
+    cElementListAndDeque *vListMyBegin;
 
     /*
-     * cElementMy *vListMyEnd - wskaznik do ostatniego
-     * elementu listy przechowujacej elementy typu typeData.
+     * cElementListAndDeque *vListMyEnd - wskaznik do
+     * ostatniego elementu listy.
      */
-    //cElementMy *vListMyEnd;
+    cElementListAndDeque *vListMyEnd;
 
     /*
      *  typeLoop vSize - zmienna przechowujaca rozmiar listy.
@@ -89,7 +89,7 @@ public:
 
     /*
      * typeData getFirstElement() - metoda zwracajaca
-     * pierwszy element z listy.
+     * pierwszy element z listy (o ile lista nie jest pusta!).
      * PRE:
      * - brak;
      * POST:
@@ -100,7 +100,7 @@ public:
 
     /*
      * typeData getLastElement() - metoda zwracajaca
-     * ostatni element z listy.
+     * ostatni element z listy  (o ile lista nie jest pusta!).
      * PRE:
      * - brak;
      * POST:

@@ -15,11 +15,10 @@ using namespace std;
  */
 cListMy::cListMy()
 {
-    /*vListMyBegin = NULL; // brak pierwszego elementu
+    vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
-    mPrintAllElements(); // wypisanie wszystkich elementow listy*/
 }
 
 /*
@@ -27,13 +26,12 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
-    /*vListMyBegin = NULL; // brak pierwszego elementu
+    vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
     for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
         mAddElementToEnd(0); // dodajemy nowy element na koniec listy
-    mPrintAllElements(); // wypisanie wszystkich elementow listy*/
 }
 
 /*
@@ -41,12 +39,11 @@ cListMy::cListMy(typeLoop aSize)
  */
 cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
-    /*vListMyBegin = NULL; // brak pierwszego elementu
+    vListMyBegin = NULL; // brak pierwszego elementu
     vListMyEnd = NULL; // brak ostatniego elementu
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
-    mPrintAllElements(); // wypisanie wszystkich elementow listy*/
 }
 
 
