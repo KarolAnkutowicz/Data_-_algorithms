@@ -51,24 +51,24 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 /*
  * typeData getFirstElement()
  */
-/*typeData cListMy::getFirstElement()
+typeData cListMy::getFirstElement()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return vListMyBegin->getValue(); // zwracamy wartosc pierwszego elementu
-}*/
+        return vListMyBegin->vNext->getValue(); // zwracamy wartosc pierwszego elementu
+}
 
 /*
  * typeData getLastElement()
  */
-/*typeData cListMy::getLastElement()
+typeData cListMy::getLastElement()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return NULL; // jesli tak to nie mamy co zwracac
     else // jesli lista nie jest pusta
-        return vListMyEnd->getValue(); // zwracamy wartosc ostatniego elementu
-}*/
+        return vListMyEnd->vPrevious->getValue(); // zwracamy wartosc ostatniego elementu
+}
 
 
 
