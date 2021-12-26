@@ -15,8 +15,10 @@ using namespace std;
  */
 cListMy::cListMy()
 {
-    vListMyBegin = NULL; // brak pierwszego elementu
-    vListMyEnd = NULL; // brak ostatniego elementu
+    vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
+    vListMyBegin->vNext = NULL; // brak pierwszego elementu
+    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
 }
@@ -26,8 +28,10 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
-    vListMyBegin = NULL; // brak pierwszego elementu
-    vListMyEnd = NULL; // brak ostatniego elementu
+    vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
+    vListMyBegin->vNext = NULL; // brak pierwszego elementu
+    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
     for (typeLoop i = 0; i < aSize; i++) // przechodzimy przez wszystkie elementy
@@ -39,8 +43,10 @@ cListMy::cListMy(typeLoop aSize)
  */
 cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
-    vListMyBegin = NULL; // brak pierwszego elementu
-    vListMyEnd = NULL; // brak ostatniego elementu
+    vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
+    vListMyBegin->vNext = NULL; // brak pierwszego elementu
+    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
@@ -195,10 +201,10 @@ void cListMy::mDrawElements(typeLoop aSize)
  */
 void cListMy::mPrintFirstElement()
 {
-    /*if (getListSize() == 0) // sprawdzenie czy lista nie jest pusta
-        cout << vListMyBegin->getValue() << endl; // wypisanie wartosci pierwszego elementu
-    else // jesli lista jest pusta
-        cout << "Lista jest pusta 2!" << endl; // wypisujemy odpowiedni komunikat*/
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
+    else // jesli lista nie jest pusta
+        cout << vListMyBegin->vNext->getValue() << endl; // wypisujemy wartosc pierwszego elementu
 }
 
 /*
@@ -206,10 +212,10 @@ void cListMy::mPrintFirstElement()
  */
 void cListMy::mPrintLastElement()
 {
-    /*if (getListSize() == 0) // sprawdzenie czy lista nie jest pusta
-        cout << vListMyEnd->getValue() << endl; // wypisanie wartosci ostatniego elementu
-    else // jesli lista jest pusta
-        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat*/
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
+    else // jesli lista nie jest pusta
+        cout << vListMyEnd->vPrevious->getValue() << endl; // wypisujemy wartosc ostatniego elementu
 }
 
 /*
@@ -217,18 +223,18 @@ void cListMy::mPrintLastElement()
  */
 void cListMy::mPrintAllElements()
 {
-    /*if (getListSize() == 0) // sprawdzamy czy lista jest pusta
+    if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         cout << "Lista jest pusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
-    else // jesli lista nie jest pusta
+    else
     {
-        cElementMy *Elem; // tworzymy element pomocniczy
-        Elem = vListMyBegin; // przypisujemy element pomocniczy rowny wartosci pierwszego elementu listy
-        for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
+        cElementListAndDeque *ElemAux; // tworzymy wskaznik pomocniczy
+        ElemAux = vListMyBegin; // przypisujemy wskaznik do poczatku listy
+        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach listy
         {
-            cout << Elem->getValue() << endl; // wypisujemy wartosc elementu
-            Elem = Elem->getNext(); // przypisujemy nastepnik do elementu pomocniczego
+            ElemAux = ElemAux->vNext; // wskaznik przypisujemy do nastepnika biezacego elementu
+            cout << ElemAux->getValue() << endl; // wypisanie wartosci biezacego elementu
         }
-    }*/
+    }
 }
 
 /********** PUBLIC: END **********/
