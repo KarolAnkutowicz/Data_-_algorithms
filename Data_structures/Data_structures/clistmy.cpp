@@ -15,9 +15,11 @@ using namespace std;
  */
 cListMy::cListMy()
 {
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
-    vListMyBegin->vNext = NULL; // brak pierwszego elementu
-    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
+    vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
     vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
@@ -28,9 +30,11 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
-    vListMyBegin->vNext = NULL; // brak pierwszego elementu
-    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
+    vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
     vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = 0; // zakres losowania elementow jest zerowy
@@ -43,9 +47,11 @@ cListMy::cListMy(typeLoop aSize)
  */
 cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
-    vListMyBegin->vNext = NULL; // brak pierwszego elementu
-    vListMyEnd->vPrevious = NULL; // brak ostatniego elementu
+    vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
+    vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
     vListMyEnd->vNext = NULL; // nie istnieje nic poza koncem listy
     vSize = 0; // zerowy rozmiar listy
     vDrawingRange = aDrawingRange; // przypisanie zakresu losowania elementow
@@ -83,16 +89,20 @@ typeData cListMy::getLastElement()
  */
 void cListMy::mAddElementToBegin(typeData aElement)
 {
-    /*cElementMy Elem(aElement); // utworzenie nowego elementu
+    cElementListAndDeque *Elem; // tworzymy nowy wskaznik
+    Elem = new cElementListAndDeque(aElement); // wskazujemy na nowoutworzony obiekt
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
     {
-        Elem.setNext(NULL); // nowy element poki co nie ma nastepnika
-        vListMyEnd = &Elem; // wskaznik na element koncowy ustawiamy na dodawany element
+        vListMyBegin->vNext = Elem; // ustawiamy wskaznik na poczatkowy (jedyny) element
+        vListMyEnd->vPrevious = Elem; // ustawiamy wskaznik na koncowy (jedyny) element
     }
-    else // jesli na liscie jest juz co najmniej jeden element
-        Elem.setNext(vListMyBegin); // ustanawiamy nastepnik nowego elementu jako aktualnie pierwszy element
-    vListMyBegin = &Elem; // ustanawiamy poczatek listy na nowododany element
-    vSize++; // zwiekszamy rozmiar listy*/
+    else
+    {
+        Elem->vNext = vListMyBegin->vNext; // nastepnikiem nowego elementu jest dotychczasowy pierwszy element
+        (vListMyBegin->vNext)->vPrevious = Elem; // dotychczasowy pierwszy element wskazuje na nowy element jako poprzednik
+        vListMyBegin->vNext = Elem; // wskazujemy na nowy element jako pierwszy
+    }
+    vSize++; // zwiekszamy rozmiar listy
 }
 
 /*
@@ -100,86 +110,69 @@ void cListMy::mAddElementToBegin(typeData aElement)
  */
 void cListMy::mAddElementToEnd(typeData aElement)
 {
-    /*cElementMy Elem(aElement); // utworzenie nowego elementu
+    cElementListAndDeque *Elem; // tworzymy nowy wskaznik
+    Elem = new cElementListAndDeque(aElement); // wskazujemy na nowoutworzony obiekt
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
-        vListMyBegin = &Elem; // jesli jest pusta to wskaznik na element poczatkowy ustanawiamy na dodawany element
-    else // jesli na liscie jest juz co najmniej jeden element
     {
-        vListMyEnd->setNext(&Elem); // ustanawiamy nowy element jako nastepnik aktualnie ostatniego elementu
-        Elem.setNext(NULL); // nowy element aktualnie wskazuje na NULL
+        vListMyBegin->vNext = Elem; // ustawiamy wskaznik na poczatkowy (jedyny) element
+        vListMyEnd->vPrevious = Elem; // ustawiamy wskaznik na koncowy (jedyny) element
     }
-    vListMyEnd = &Elem; // ustanawiamy koniec listy na nowododany element
-    vSize++; // zwiekszamy rozmiar listy*/
-    //cout << "Rozmiar listy: " << getListSize() << endl;
-    //cout << "Nowy element: " << Elem.getValue() << endl;
-    //cout << "Aktualnie pierwszy: " << vListMyBegin->getValue() << endl;
-    //cout << "Aktualnie ostatni: " << vListMyEnd->getValue() << endl << endl;
+    else // jesli lista nie jest pusta
+    {
+        Elem->vPrevious = vListMyEnd->vPrevious; // poprzednikiem nowego elementu jest dotychczasowy ostatni element
+        (vListMyEnd->vPrevious)->vNext = Elem; // dotychczasowy ostatni element wskazuje na nowy element jako nastepnik
+        vListMyEnd->vPrevious = Elem; // wskazujemy na nowy element listy jako ostatni
+    }
+    vSize++; // zwiekszamy rozmiar listy
 }
 
 /*
  * bool mRemoveElementFromBegin()
  */
-/*bool cListMy::mRemoveElementFromBegin()
+bool cListMy::mRemoveElementFromBegin()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
-    else // jesli lista nie jest pusta
+    else
     {
-        if (vSize == 1) // jesli jest na niej jeden element
+        if (vSize == 1) // jesli na liscie byl tylko jeden element
         {
-            vListMyBegin->~cElementMy(); // likwidujemy pierwszy element listy
-            vListMyBegin = NULL; // poczatek listy ustanawiamy na NULL
-            vListMyEnd = NULL; // koniec listy ustanawiamy na NULL
+            vListMyBegin->vNext = NULL; // poczatek listy wskazuje na NULL
+            vListMyEnd->vPrevious = NULL; // koniec listy wskazuje na NULL
         }
-        else // jesli jest na niej wiecej niz jeden element
+        else
         {
-            cElementMy Elem;// tworzymy element pomocniczy
-            Elem.setNext(vListMyBegin->getNext()); // nastepnik elementu pomocniczego jest nastepnikiem elementu z poczatku listy
-            vListMyBegin->~cElementMy(); // usuwamy element z poczatku listy
-            vListMyBegin = Elem.getNext(); // ustanawiamy poczatek listy jako nastepnik elementu pomocniczego
-            Elem.~cElementMy(); // usuwamy element pomocniczy
+            vListMyBegin->vNext = (vListMyBegin->vNext)->vNext; // poczatek listy wskazuje jako nastepnik nastepnika dotychczasowego pierwszego elementu
+            (vListMyBegin->vNext)->vPrevious = vListMyBegin; // nowy pierwszy element wskazuje jako poprzednik na poczatek listy
         }
         vSize--; // zmniejszamy rozmiar listy
-        return true; // zwrasamy informacje, ze element zostal usuniety
+        return true; // usuniecie elementu powiodlo sie
     }
-}*/
+}
 
 /*
  * bool mRemoveElementFromEnd()
  */
-/*bool cListMy::mRemoveElementFromEnd()
+bool cListMy::mRemoveElementFromEnd()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
         return false; // jesli tak to nie mamy co usuwac z listy
-    else // jesli lista nie jest pusta
+    else
     {
-        if (vSize == 1) // jesli jest na niej jeden element
+        if (vSize == 1) // jesli na liscie byl tylko jeden element
         {
-            vListMyBegin->~cElementMy(); // likwidujemy pierwszy element listy
-            vListMyBegin = NULL; // poczatek listy ustanawiamy na NULL
-            vListMyEnd =  NULL; // koniec listy ustanawiamy na NULL
+            vListMyBegin->vNext = NULL; // poczatek listy wskazuje na NULL
+            vListMyEnd->vPrevious = NULL; // koniec listy wskazuje na NULL
         }
-        else // jesli jest na niej wiecej niz jeden element
+        else
         {
-            cElementMy *Elem; // tworzymy element pomocniczy
-            Elem = vListMyBegin; // przypisujemy pomocniczy element jako pierwszy element
-            for (typeLoop i = 0; i < vSize; i++)// przechodzimy przez wszystkie elementy
-            {
-                if ((Elem->getNext()) == vListMyEnd)// sprawdzamy czy analizowany element wskazuje jako nastepnik na ostatni element
-                {
-                    Elem->setNext(NULL); // jesli tak to zmieniamy jego wskazanie na nastepnik jako NULL
-                    vListMyEnd->~cElementMy(); // usuwamy aktualnie ostatni element
-                    vListMyEnd = Elem; // ustanawiamy nowy ostatni element jako biezacy
-                }
-                else// jesli tak nie jest
-                    Elem = Elem->getNext(); // wowczas jako element pomocniczy wskazujemy nastepnik biezacego elementu
-            }
-            Elem->~cElementMy(); // niszczymy element pomocniczy
+            vListMyEnd->vPrevious = (vListMyEnd->vPrevious)->vPrevious; // koniec listy wskazuje jako poprzednik poprzednika dotychczasowego ostatniego elementu
+            (vListMyEnd->vPrevious)->vNext = vListMyEnd; // nowy ostatni element wskazuje jako nastepnik koniec listy
         }
         vSize--; // zmniejszamy rozmiar listy
-        return true; // zwracamy informacje, ze element zostal usuniety
+        return true; // usuniecie elementu powiodlo sie
     }
-}*/
+}
 
 /*
  * void mDrawElements(typeLoop aSize)
@@ -227,7 +220,8 @@ void cListMy::mPrintAllElements()
         cout << "Lista jest pusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
     else
     {
-        cElementListAndDeque *ElemAux; // tworzymy wskaznik pomocniczy
+        cElementListAndDeque *ElemAux; // deklarujemy wskaznik pomocniczy
+        ElemAux = new cElementListAndDeque(NULL); // wskazujemy na nowoutworzony obiekt
         ElemAux = vListMyBegin; // przypisujemy wskaznik do poczatku listy
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach listy
         {

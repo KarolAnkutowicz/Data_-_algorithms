@@ -9,6 +9,7 @@
 
 #include "constantsandtypes.h"
 #include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -54,8 +55,6 @@ public:
     cElementListAndDeque(typeData aValue)
     {
         vValue = aValue; // ustanowienie wartosci elementu
-        vPrevious = NULL; // ustawienie wskaznika na poprzedni element
-        vNext = NULL; // ustawienie wskaznika na nastepny element
     }
 
     /*
