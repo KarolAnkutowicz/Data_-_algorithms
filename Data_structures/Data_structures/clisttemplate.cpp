@@ -134,11 +134,8 @@ void cListTemplate::mPrintAllElements()
         cout << "    Lista jest pusta" << endl; // wypisujemy komunikat o tej sytuacji
     else // jesli lista nie jest pusta
     {
-        while (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
-        {
-            mPrintFirstElement(); // wypisujemy element z poczatku listy
-            mRemoveElementFromBegin(); // usuwamy element dajac dostep do kolejnego
-        }
+        for (list<typeData>::iterator it = ListTemplate.begin(); it != ListTemplate.end(); it ++) // przejscie po wszystkich elementach
+            cout << *it << endl; // wypisanie wartosci wskazanego elementu
     }
 }
 
