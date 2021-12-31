@@ -43,6 +43,14 @@ cDequeMy::cDequeMy(typeLoop aSize, typeData aDrawingRange)
     mDrawElements(aSize); // wywolanie metody losujacej elementy kolejki
 }
 
+/*
+ * ~cDequeMy()
+ */
+cDequeMy::~cDequeMy()
+{
+    delete []DequeMy; // zwlanianie zasobow przydzielanych dynamicznie
+}
+
 
 
 /*

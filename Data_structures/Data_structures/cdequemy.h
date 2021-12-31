@@ -77,6 +77,15 @@ public:
      */
     cDequeMy(typeLoop aSize, typeData aDrawingRange);
 
+    /*
+     * ~cDequeMy() - destruktor klasy cDequeMy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cDequeMy();
+
 
 
     /*
