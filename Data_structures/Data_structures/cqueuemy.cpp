@@ -43,6 +43,14 @@ cQueueMy::cQueueMy(typeLoop aSize, typeData aDrawingRange)
     mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
+/*
+ * ~cQueueMy()
+ */
+cQueueMy::~cQueueMy()
+{
+    delete []QueueMy; // zwalnianie zasobow przydzielanych dynamicznie
+}
+
 
 
 /*

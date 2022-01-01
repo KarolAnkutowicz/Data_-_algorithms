@@ -76,6 +76,15 @@ public:
      */
     cQueueMy(typeLoop aSize, typeData aDrawingRange);
 
+    /*
+     * ~cQueueMy() - destruktor klasy cQueueMy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cQueueMy();
+
 
 
     /*
