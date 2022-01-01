@@ -58,6 +58,15 @@ cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
     mDrawElements(aSize); // wywolanie dodawania losowych elementow
 }
 
+/*
+ * ~cListMy()
+ */
+cListMy::~cListMy()
+{
+    delete vListMyBegin; // zwalnianie wskaznika na poczatek listy
+    delete vListMyEnd; // zwalnianie wskaznika na koniec listy
+}
+
 
 
 /*

@@ -85,6 +85,14 @@ public:
      */
     cListMy(typeLoop aSize, typeData aDrawingRange);
 
+    /*
+     * ~cListMy() - destruktor klasy cListMy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cListMy();
 
 
     /*
