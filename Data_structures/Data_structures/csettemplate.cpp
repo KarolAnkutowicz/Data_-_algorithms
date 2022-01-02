@@ -21,16 +21,6 @@ cSetTemplate::cSetTemplate()
 /*
  * cSetTemplate(typeLoop aSize)
  */
-cSetTemplate::cSetTemplate(typeLoop aSize)
-{
-    vDrawingRangeValue = 0; // ustnowienie zakresu losowania elementow
-    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
-        mAddElement(i); // dodanie nowego elementu
-}
-
-/*
- * cSetTemplate(typeLoop aSize)
- */
 cSetTemplate::cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue)
 {
     vDrawingRangeValue = aDrawingRangeValue; // ustanowienie zakresu losowania elementow

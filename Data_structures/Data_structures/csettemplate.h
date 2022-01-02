@@ -51,24 +51,14 @@ public:
     cSetTemplate();
 
     /*
-     * cSetTemplate(typeLoop aSize) - konstruktor wywolywany
-     * z jednym argumentem - liczba elementow.
-     * PRE:
-     * - podanie liczby elementow (typ: typeLoop;
-     * POST:
-     * - utworzenie obiektu klasy cSetTemplate.
-     */
-    cSetTemplate(typeLoop aSize);
-
-    /*
-     * cSetTemplate(typeLoop aSize) - konstruktor wywolywany
-     * z dwoma argumentem - liczba elementow oraz zakresem
-     * losowanie wartosci elementow.
+     * cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue) -
+     * konstruktor wywolywany z dwoma argumentem - liczba
+     * elementow oraz zakresem losowanie wartosci elementow.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop;
      * - podanie zakresu losowania elementow (typ: typeData);
      * POST:
-     * - utworzenie obiektu klasy cMapTemplate.
+     * - utworzenie obiektu klasy cSetTemplate.
      */
     cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue);
 
