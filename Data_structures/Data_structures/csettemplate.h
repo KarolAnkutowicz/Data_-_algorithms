@@ -30,10 +30,10 @@ class cSetTemplate
     set <typeData> SetTemplate;
 
     /*
-     * typeData vDrawingRangeValue - pole przechowujace
+     * typeData vDrawingRange - pole przechowujace
      * zakres losowania wartosci elementow.
      */
-    typeData vDrawingRangeValue;
+    typeData vDrawingRange;
 
 /********** PRIVATE: END **********/
 
@@ -51,7 +51,7 @@ public:
     cSetTemplate();
 
     /*
-     * cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue) -
+     * cSetTemplate(typeLoop aSize, typeData aDrawingRange) -
      * konstruktor wywolywany z dwoma argumentem - liczba
      * elementow oraz zakresem losowanie wartosci elementow.
      * PRE:
@@ -60,7 +60,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cSetTemplate.
      */
-    cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue);
+    cSetTemplate(typeLoop aSize, typeData aDrawingRange);
 
 
 
@@ -78,17 +78,17 @@ public:
     }
 
     /*
-     * typeLoop getDrawingRangeValue() - metoda zwracajaca
+     * typeLoop getDrawingRange() - metoda zwracajaca
      * wartosc zakresu losowania elementow.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vDrawingRangeValue
+     * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    inline typeLoop getDrawingRangeValue()
+    inline typeLoop getDrawingRange()
     {
-        return vDrawingRangeValue;
+        return vDrawingRange;
     }
 
     /*

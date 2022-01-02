@@ -81,18 +81,24 @@ public:
      * POST:
      * - zwrocenie rozmiaru zbioru (typ: typeLoop).
      */
-    typeLoop getSetSize();
+    inline typeLoop getSetSize()
+    {
+        return vSize;
+    }
 
     /*
-     * typeLoop getDrawingRangeValue() - metoda zwracajaca
+     * typeLoop getDrawingRange() - metoda zwracajaca
      * wartosc zakresu losowania elementow.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vDrawingRangeValue
+     * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRangeValue();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
 
 

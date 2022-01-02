@@ -15,15 +15,15 @@ using namespace std;
  */
 cSetTemplate::cSetTemplate()
 {
-    vDrawingRangeValue = 0; // ustanowienie zakresu losowania elementow
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
 }
 
 /*
  * cSetTemplate(typeLoop aSize)
  */
-cSetTemplate::cSetTemplate(typeLoop aSize, typeData aDrawingRangeValue)
+cSetTemplate::cSetTemplate(typeLoop aSize, typeData aDrawingRange)
 {
-    vDrawingRangeValue = aDrawingRangeValue; // ustanowienie zakresu losowania elementow
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
@@ -52,7 +52,7 @@ void cSetTemplate::mDrawElements(typeLoop aSize)
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
-        mAddElement(rand() % vDrawingRangeValue); // dodanie nowego elementu
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
