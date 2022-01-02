@@ -8,6 +8,7 @@
 #define CSETMY_H
 
 #include "constantsandtypes.h"
+#include <cstdlib>
 
 using namespace std;
 
