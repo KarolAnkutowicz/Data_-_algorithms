@@ -560,7 +560,27 @@ void cDataHandling::mMenuHeapBinary()
  */
 void cDataHandling::mMenuMapMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow mapy
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry mapy" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres wartosci od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cMapMy M(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
+    cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(97 + vSize), vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(98 + vSize), vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element z najmniejszym kluczem..." << endl;
+    M.mRemoveElement((char)97); // usuniecie elementu z mapy
+    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
+    cout << "    Zawartosc mapy: " << endl;
+    M.mPrintAllElements(); // wypisanie zawartosci mapy
 }
 
 /*
