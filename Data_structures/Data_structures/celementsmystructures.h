@@ -46,7 +46,7 @@ public:
 
     /*
      * cElementListAndDeque(typeData aValue) - konstruktor
-     * z jednym argumentem - wartoscia elementu.
+     * wywolywany z jednym argumentem - wartoscia elementu.
      * PRE:
      * - podanie wartosci elementu (typ: typeData);
      * POST:
@@ -183,6 +183,19 @@ public:
      * typeKey vKey - pole przechowujace klucz elementu.
      */
     typeKey vKey;
+
+    /*
+     * cElementMapAndSet() - konstruktor wywolywany bez argumentow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - tworzenie obiektu klasy cElementMapAndSet.
+     */
+    cElementMap()
+    {
+        vKey = NULL; // przypisanie klucza elementu
+        vValue = NULL; // przypisanie wartosci elementu
+    }
 
     /*
      * cElementMapAndSet(typeKey aKey, typeData aValue) -

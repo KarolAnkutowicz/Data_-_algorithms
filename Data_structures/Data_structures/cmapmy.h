@@ -8,6 +8,9 @@
 #define CMAPMY_H
 
 #include "celementsmystructures.h"
+#include "constantsandtypes.h"
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 using namespace std;
@@ -74,6 +77,15 @@ public:
      * - utworzenie obiektu klasy cMapMy.
      */
     cMapMy(typeLoop aSize, typeData aDrawingRange);
+
+    /*
+     * ~cMapMy() - destruktor klasy cMapMy.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cMapMy();
 
 
 
