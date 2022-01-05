@@ -8,6 +8,7 @@
 #define CHEAPBINARY_H
 
 #include "constantsandtypes.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -75,6 +76,15 @@ public:
      * - tworzenie obiektu klasy cHeapBinary.
      */
     cHeapBinary(typeLoop aSize, typeData aDrawingRange);
+
+    /*
+     * ~cHeapBinary() - destruktor klasy cHeapBinary.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwalnianie zasobow przydzielanych dynamicznie.
+     */
+    ~cHeapBinary();
 
 
 
@@ -250,6 +260,16 @@ public:
      * - brak.
      */
     void mRepairHeap();
+
+    /*
+     * void mDrawElements(typeLoop aSize) - metoda
+     * losujaca elementy kopca.
+     * PRE:
+     * - podanie liczby elementow (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mDrawElements(typeLoop aSize);
 
 
 

@@ -15,6 +15,10 @@ using namespace std;
  */
 cHeapBinary::cHeapBinary()
 {
+    HeapBinary = new typeData[1]; // utworzenie nowej tablicy elementow
+    vSize = 0; // ustanowienie rozmiaru kopca binarnego
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    HeapBinary[0] = NULL; // ustanowienie braku wartosci elementu
 }
 
 /*
@@ -22,7 +26,10 @@ cHeapBinary::cHeapBinary()
  */
 cHeapBinary::cHeapBinary(typeLoop aSize)
 {
-
+    HeapBinary = new typeData[aSize]; // utworzenie nowej tablicy elementow
+    vSize = 0; // ustanowienie rozmiaru kopca binarnego
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 /*
@@ -30,7 +37,18 @@ cHeapBinary::cHeapBinary(typeLoop aSize)
  */
 cHeapBinary::cHeapBinary(typeLoop aSize, typeData aDrawingRange)
 {
+    HeapBinary = new typeData[aSize]; // utworzenie nowej tablicy elementow
+    vSize = 0; // ustanowienie rozmiaru kopca binarnego
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
+}
 
+/*
+ * ~cHeapBinary()
+ */
+cHeapBinary::~cHeapBinary()
+{
+    delete []HeapBinary; // zwalniania zasobow przydzielanych dynamicznie
 }
 
 
@@ -147,6 +165,14 @@ bool cHeapBinary::mRemoveElementFromEnd()
  * void mRepairHeap()
  */
 void cHeapBinary::mRepairHeap()
+{
+
+}
+
+/*
+ * void mDrawElements(typeLoop aSize)
+ */
+void cHeapBinary::mDrawElements(typeLoop aSize)
 {
 
 }
