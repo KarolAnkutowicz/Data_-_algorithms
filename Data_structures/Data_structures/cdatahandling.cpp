@@ -634,7 +634,25 @@ void cDataHandling::mMenuUnorderedMapTemplate()
  */
 void cDataHandling::mMenuSetMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry zbioru" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres wartosci od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cSetMy S(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
+    cout << "    Podaj nowy element do dodania do zbioru: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    cout << endl << "    Liczb elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
+    cout << "    Zawartosc zbioru: " << endl;
+    S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 
 /*

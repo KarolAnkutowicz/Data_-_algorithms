@@ -27,9 +27,9 @@ cSetMy::cSetMy()
 cSetMy::cSetMy(typeLoop aSize, typeData aDrawingRange)
 {
     SetMy = new typeData[aSize]; // utworzenie nowego zbioru
-    vSize = aSize; // ustanowienie rozmiaru zbioru
+    vSize = 0; // ustanowienie rozmiaru zbioru
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
-    mDrawElements(vSize); // wywolanie metody losujacej elementy
+    mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
 
 /*
