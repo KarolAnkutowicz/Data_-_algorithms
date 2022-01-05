@@ -173,6 +173,11 @@ class cElementMap
      */
     typeData vValue;
 
+    /*
+     * typeKey vKey - pole przechowujace klucz elementu.
+     */
+    typeKey vKey;
+
 /********** PRIVATE: END **********/
 
 /********** PUBLIC: BEGIN **********/
@@ -180,16 +185,11 @@ class cElementMap
 public:
 
     /*
-     * typeKey vKey - pole przechowujace klucz elementu.
-     */
-    typeKey vKey;
-
-    /*
-     * cElementMapAndSet() - konstruktor wywolywany bez argumentow.
+     * cElementMap() - konstruktor wywolywany bez argumentow.
      * PRE:
      * - brak;
      * POST:
-     * - tworzenie obiektu klasy cElementMapAndSet.
+     * - tworzenie obiektu klasy cElementMap.
      */
     cElementMap()
     {
@@ -198,19 +198,32 @@ public:
     }
 
     /*
-     * cElementMapAndSet(typeKey aKey, typeData aValue) -
+     * cElementMap(typeKey aKey, typeData aValue) -
      * konstruktor wywolywany z dwoma argumentami -
      * kluczem oraz wartoscia elementu.
      * PRE:
      * - podanie klucza (typ: typeKey);
      * - podanie wartosci (typ: typeData);
      * POST:
-     * - tworzenie obiektu klasy cElementMapAndSet.
+     * - tworzenie obiektu klasy cElementMap.
      */
     cElementMap(typeKey aKey, typeData aValue)
     {
         vKey = aKey; // przypisanie klucza elementu
         vValue = aValue; // przypisanie wartosci elementu
+    }
+
+    /*
+     * typeData getKey() - metoda zwracajaca klucz
+     * elementu.
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie wartosci pola vKey.
+     */
+    inline typeData getKey()
+    {
+        return vKey;
     }
 
     /*
@@ -224,6 +237,19 @@ public:
     inline typeData getValue()
     {
         return vValue;
+    }
+
+    /*
+     * void setKey(typeData aValue) - metoda ustanawiajaca
+     * klucz elementu.
+     * PRE:
+     * - podanie klucza elementu (typ: typeData);
+     * POST:
+     * - brak.
+     */
+    inline void setKey(typeData aValue)
+    {
+        vKey = aValue;
     }
 
     /*

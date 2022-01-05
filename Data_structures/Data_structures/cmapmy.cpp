@@ -65,7 +65,7 @@ typeData cMapMy::getElement(typeKey aKey)
         if (mIfExist(aKey) == true) // wywolujemy sprawdzenie czy dany element istnieje
         {
             for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy w mapie
-                if (MapMy[i].vKey == aKey) // porownojemy klucze
+                if (MapMy[i].getKey() == aKey) // porownojemy klucze
                     return MapMy[i].getValue(); // jesli trafiamy na klucz jakiego potrzebujemy to zwracamy wartosc elementu
         }
         return NULL; // jesli dany element nie istnieje to nie mamy co zwrocic
@@ -84,7 +84,7 @@ bool cMapMy::mIfExist(typeKey aKey)
     else // jesli mapa zawiera cokolwiek
     {
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy w mapie
-            if (MapMy[i].vKey == aKey) // porownojemy klucze
+            if (MapMy[i].getKey() == aKey) // porownojemy klucze
                 return true; // zwracamy wartosc logiczna w przypadku znalezienia odpowiedniego elementu
         return false; // zwracamy wartosc logiczna w przypadku nieznalezienia odpowiedniego elementu
     }
@@ -97,7 +97,7 @@ bool cMapMy::mAddElement(typeKey aKey, typeData aValue)
 {
     if (vSize == 0) // sprawdzamy czy mapa jest pusta
     {
-        MapMy[0].vKey = aKey; // ustanawiamy klucz jedynego elementu
+        MapMy[0].setKey(aKey); // ustanawiamy klucz jedynego elementu
         MapMy[0].setValue(aValue); // ustanawiamy wartosc jedynego elementu
         vSize++; // zwiekszamy rozmiar listy
     }
@@ -106,14 +106,14 @@ bool cMapMy::mAddElement(typeKey aKey, typeData aValue)
         if (mIfExist(aKey) == true) // jesli element o danym kluczu juz istnieje
         {
             for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elmenty
-                if (MapMy[i].vKey == aKey) // porownujemy klucze
+                if (MapMy[i].getKey() == aKey) // porownujemy klucze
                     MapMy[i].setValue(aValue); // jesli znalezlismy element o wskazanym kluczu to zmieniamy jego wartosc
         }
         else // jesli element o wskazanym kluczu nie istnieje
         {
             typeLoop aIndex = 0; // tworzymy zmienna do poszukiwan indeksu gdzie umiejscowimy nowy elementc
             for (typeLoop i = 0; i < vSize; i++) // przechodzimy po wszystkich elementach
-                if ((int)MapMy[i].vKey < (int)aKey) // sprawdzamy czy biezacy element ma klucz mniejszy niz klucz nowego elementu
+                if ((int)MapMy[i].getKey() < (int)aKey) // sprawdzamy czy biezacy element ma klucz mniejszy niz klucz nowego elementu
                     aIndex++; // jesli tak to zwiekszamy indeks nowego elementu
             cElementMap *MapMyAux; // utworzenie wskaznika do mapy pomocniczej
             MapMyAux = new cElementMap[vSize + 1]; // utworzenie mapy pomocniczej wiekszej o jeden element od oryginalnej
@@ -148,7 +148,7 @@ bool cMapMy::mRemoveElement(typeKey aKey)
         {
             if (vSize == 1) // jesli wskazany element jest jedynym w mapie
             {
-                MapMy[0].vKey = NULL; // ustanawiamy klucz elementu
+                MapMy[0].setKey(NULL); // ustanawiamy klucz elementu
                 MapMy[0].setValue(NULL); // ustanawiamy wartosc elementu
                 vSize--; // zmniejszenie rozmiaru mapy
             }
@@ -156,7 +156,7 @@ bool cMapMy::mRemoveElement(typeKey aKey)
             {
                 typeLoop aIndex; // zmienna przechowujaca indeks szukanego elementu
                 for (typeLoop i = 0; i < vSize; i++) // przechodzimy po wszystkich elementach
-                    if (MapMy[i].vKey == aKey) // porownujemy klucze
+                    if (MapMy[i].getKey() == aKey) // porownujemy klucze
                         aIndex = i; // jesli znalezlismy poszukiwany klucz zapisujemy indeks elementu
                 cElementMap *MapMyAux; // zadeklarowanie wskaznika do mapy pomocniczej
                 MapMyAux = new cElementMap[vSize - 1]; // utworzenie mapy pomocniczej
@@ -188,7 +188,7 @@ void cMapMy::mDrawElements(typeLoop aSize)
         for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
         {
             vChar = 97 + i; // tworzenie klucza przed jego rzutowaniem
-            MapMy[i].vKey = (char)vChar; // nadanie klucza elementowi
+            MapMy[i].setKey((char)vChar); // nadanie klucza elementowi
             MapMy[i].setValue(rand() % vDrawingRange); // wylosowanie i przypisanie wartosci elementu
         }
     }
@@ -210,8 +210,8 @@ void cMapMy::mPrintElement(typeKey aKey)
         else // jesli element o wskazanym kluczu istnieje
         {
             for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
-                if (MapMy[i].vKey == aKey) // porownujemy klucze
-                    cout << "[" << MapMy[i].vKey << "]=" << MapMy[i].getValue() << endl; // wypisujemy wskazany element
+                if (MapMy[i].getKey() == aKey) // porownujemy klucze
+                    cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << endl; // wypisujemy wskazany element
         }
 
     }
@@ -227,7 +227,7 @@ void cMapMy::mPrintAllElements()
     else // jesli na mapie jest cokolwiek
     {
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
-            cout << "[" << MapMy[i].vKey << "]=" << MapMy[i].getValue() << endl; // wypisujemy kolejny element
+            cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << endl; // wypisujemy kolejny element
     }
 }
 
