@@ -128,6 +128,78 @@ public:
 
 
     /*
+     * typeLoop getParentIndex(typeLoop aIndex) - metoda
+     * zwracajaca indeks rodzica (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-dziecka (typ: typeLoop);
+     * POST:
+     * - zwrocenie indeksu rodzica (typ: typeLoop).
+     */
+    typeLoop getParentIndex(typeLoop aIndex);
+
+    /*
+     * typeData getParentValue(typeLoop aIndex) - metoda
+     * zwracajaca wartosc rodzica (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-dziecka (typ: typeLoop);
+     * POST:
+     * - zwrocenie wartosci rodzica (typ: typeData).
+     */
+    typeData getParentValue(typeLoop aIndex);
+
+    /*
+     * typeLoop getLeftKidIndex(typeLoop aIndex) - metoda
+     * zwracajaca indeks lewego dziecka (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-rodzica (typ: typeLoop);
+     * POST:
+     * - zwrocenie indeksu lewego dziecka (typ: typeLoop).
+     */
+    typeLoop getLeftKidIndex(typeLoop aIndex);
+
+    /*
+     * typeData getLeftKidValue(typeLoop aIndex) - metoda
+     * zwracajaca wartosc lewego dziecka (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-rodzica (typ: typeLoop);
+     * POST:
+     * - zwrocenie wartosci lewego dziecka (typ: typeData).
+     */
+    typeData getLeftKidValue(typeLoop aIndex);
+
+    /*
+     * typeLoop getRigthKidIndex(typeLoop aIndex) - metoda
+     * zwracajaca indeks prawego dziecka (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-rodzica (typ: typeLoop);
+     * POST:
+     * - zwrocenie indeksu prawego dziecka (typ: typeLoop).
+     */
+    typeLoop getRigthKidIndex(typeLoop aIndex);
+
+    /*
+     * typeData getRigthKidValue(typeLoop aIndex) - metoda
+     * zwracajaca wartosc prawego dziecka (o ile istnieje!).
+     * PRE:
+     * - indeks elementu-rodzica (typ: typeLoop);
+     * POST:
+     * - zwrocenie wartosci prawego dziecka (typ: typeData).
+     */
+    typeData getRigthKidValue(typeLoop aIndex);
+
+    /*
+     * typeLoop getLevels() - metoda zwracajaca liczbe
+     * poziomow drzewa (faktyczna wielkosc).
+     * PRE:
+     * - brak;
+     * POST:
+     * - zwrocenie liczby poziomow (typ: typeLoop).
+     */
+    typeLoop getLevels();
+
+
+
+    /*
      * void mAddElementToRoot(typeData aElement) - metoda
      * dopisujaca element w korzeniu kopca.
      * PRE:

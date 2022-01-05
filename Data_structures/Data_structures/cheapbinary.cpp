@@ -15,7 +15,6 @@ using namespace std;
  */
 cHeapBinary::cHeapBinary()
 {
-
 }
 
 /*
@@ -48,6 +47,64 @@ typeData cHeapBinary::getRootHeap()
  * typeData getLastElement()
  */
 typeData cHeapBinary::getLastElement()
+{
+
+}
+
+
+
+/*
+ * typeLoop getParentIndex(typeLoop aIndex)
+ */
+typeLoop cHeapBinary::getParentIndex(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeData getParentValue(typeLoop aIndex)
+ */
+typeData cHeapBinary::getParentValue(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeLoop getLeftKidIndex(typeLoop aIndex)
+ */
+typeLoop cHeapBinary::getLeftKidIndex(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeData getLeftKidValue(typeLoop aIndex)
+ */
+typeData cHeapBinary::getLeftKidValue(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeLoop getRigthKidIndex(typeLoop aIndex)
+ */
+typeLoop cHeapBinary::getRigthKidIndex(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeData getRigthKidValue(typeLoop aIndex)
+ */
+typeData cHeapBinary::getRigthKidValue(typeLoop aIndex)
+{
+
+}
+
+/*
+ * typeLoop getLevels()
+ */
+typeLoop cHeapBinary::getLevels()
 {
 
 }
