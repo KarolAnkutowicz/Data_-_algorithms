@@ -31,12 +31,6 @@ class cHeapBinary
     typeLoop vSize;
 
     /*
-     * bool vIsEmpty - zmienna logiczna okreslajaca czy kopiec
-     * jest pusta czy nie.
-     */
-    bool vIsEmpty;
-
-    /*
      * typeData vDrawingRange - zakres losowania
      * elementow kopca.
      */
@@ -112,7 +106,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru kopca (typ: typeLoop).
      */
-    typeLoop getHeapSize();
+    inline typeLoop getHeapSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -123,18 +120,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
-
-    /*
-     * bool getHeapIsEmpty() - metoda zawracajaca
-     * informacje o tym czy kopiec jest pusty.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie informacji o tym czy kopiec jest pusty
-     * (typ: bool).
-     */
-    bool getHeapIsEmpty();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
 
 
