@@ -58,7 +58,10 @@ cHeapBinary::~cHeapBinary()
  */
 typeData cHeapBinary::getRootHeap()
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec boinarny nie jest pusty
+        return HeapBinary[0]; // jesli nie jest to zwracamy pierwszy element
+    else // jesli kopiec binarny jest pusty
+        return NULL; // to nie mamy co zwracac
 }
 
 /*
@@ -66,7 +69,10 @@ typeData cHeapBinary::getRootHeap()
  */
 typeData cHeapBinary::getLastElement()
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec nie jest pusty
+        return HeapBinary[vSize - 1]; // jesli nie jest to zwracamy ostatni element
+    else // jesli kopiec jest pusty
+        return NULL; // to nie mamy co zwracac
 }
 
 
@@ -76,7 +82,12 @@ typeData cHeapBinary::getLastElement()
  */
 typeLoop cHeapBinary::getParentIndex(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if (aIndex != 0) // sprawdzamy czy element nie jest korzeniem
+            return (aIndex + 1) / 2 - 1; // jesli nie jest to zwracamy indeks rodzica
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element jest korzeniem to wowczas nie mamy co zwracac
 }
 
 /*
@@ -84,7 +95,12 @@ typeLoop cHeapBinary::getParentIndex(typeLoop aIndex)
  */
 typeData cHeapBinary::getParentValue(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if (aIndex != 0) // sprawdzamy czy element nie jest korzeniem
+            return HeapBinary[(aIndex + 1) / 2 - 1]; // jesli nie jest to zwracamy wartosc rodzica
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element jest korzeniem to wowczas nie mamy co zwracac
 }
 
 /*
@@ -92,7 +108,12 @@ typeData cHeapBinary::getParentValue(typeLoop aIndex)
  */
 typeLoop cHeapBinary::getLeftKidIndex(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if ((aIndex * 2 + 1) < vSize) // sprawdzamy czy element w ogole ma lewego potomka
+            return (aIndex + 1) / 2 - 1; // jesli tak to zwracamy indeks lewego potomka
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element nie ma lewego potomka to wowczas nie mamy co zwracac
 }
 
 /*
@@ -100,7 +121,12 @@ typeLoop cHeapBinary::getLeftKidIndex(typeLoop aIndex)
  */
 typeData cHeapBinary::getLeftKidValue(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if ((aIndex * 2 + 1) < vSize) // sprawdzamy czy element w ogole ma lewego potomka
+            return HeapBinary[(aIndex + 1) / 2 - 1]; // jesli tak to zwracamy wartosc lewego potomka
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element nie ma lewego potomka to wowczas nie mamy co zwracac
 }
 
 /*
@@ -108,7 +134,12 @@ typeData cHeapBinary::getLeftKidValue(typeLoop aIndex)
  */
 typeLoop cHeapBinary::getRigthKidIndex(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if ((aIndex * 2 + 2) < vSize) // sprawdzamy czy element w ogole ma prawego potomka
+            return (aIndex + 1) / 2 - 1; // jesli tak to zwracamy indeks prawego potomka
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element nie ma prawego potomka to wowczas nie mamy co zwracac
 }
 
 /*
@@ -116,7 +147,12 @@ typeLoop cHeapBinary::getRigthKidIndex(typeLoop aIndex)
  */
 typeData cHeapBinary::getRigthKidValue(typeLoop aIndex)
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+    {
+        if ((aIndex * 2 + 2) < vSize) // sprawdzamy czy element w ogole ma prawego potomka
+            return HeapBinary[(aIndex + 1) / 2 - 1]; // jesli tak to zwracamy wartosc prawego potomka
+    }
+    return NULL; // jesli kopiec binarny jest pusty lub element nie ma prawego potomka to wowczas nie mamy co zwracac
 }
 
 /*
@@ -124,7 +160,9 @@ typeData cHeapBinary::getRigthKidValue(typeLoop aIndex)
  */
 typeLoop cHeapBinary::getLevels()
 {
-
+    if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
+        return (typeLoop)log10(vSize); // zwracamy wyznaczona liczbe poziomow drzewa, lacznie z ewentualnym ostatnim, niepelnym
+    return NULL; // jesli kopiec binarny jest pusty wowczas nie mamy co zwracac
 }
 
 
@@ -162,9 +200,17 @@ bool cHeapBinary::mRemoveElementFromEnd()
 }
 
 /*
- * void mRepairHeap()
+ * void mRepairHeapFromRoot()
  */
-void cHeapBinary::mRepairHeap()
+void cHeapBinary::mRepairHeapFromRoot()
+{
+
+}
+
+/*
+ * void mRepairHeapFromEnd()
+ */
+void cHeapBinary::mRepairHeapFromEnd()
 {
 
 }

@@ -8,6 +8,7 @@
 #define CHEAPBINARY_H
 
 #include "constantsandtypes.h"
+#include <cmath>
 #include <cstdlib>
 
 using namespace std;
@@ -141,7 +142,7 @@ public:
      * typeLoop getParentIndex(typeLoop aIndex) - metoda
      * zwracajaca indeks rodzica (o ile istnieje!).
      * PRE:
-     * - indeks elementu-dziecka (typ: typeLoop);
+     * - indeks elementu-potomka (typ: typeLoop);
      * POST:
      * - zwrocenie indeksu rodzica (typ: typeLoop).
      */
@@ -151,7 +152,7 @@ public:
      * typeData getParentValue(typeLoop aIndex) - metoda
      * zwracajaca wartosc rodzica (o ile istnieje!).
      * PRE:
-     * - indeks elementu-dziecka (typ: typeLoop);
+     * - indeks elementu-potomka (typ: typeLoop);
      * POST:
      * - zwrocenie wartosci rodzica (typ: typeData).
      */
@@ -159,41 +160,41 @@ public:
 
     /*
      * typeLoop getLeftKidIndex(typeLoop aIndex) - metoda
-     * zwracajaca indeks lewego dziecka (o ile istnieje!).
+     * zwracajaca indeks lewego potomka (o ile istnieje!).
      * PRE:
      * - indeks elementu-rodzica (typ: typeLoop);
      * POST:
-     * - zwrocenie indeksu lewego dziecka (typ: typeLoop).
+     * - zwrocenie indeksu lewego potomka (typ: typeLoop).
      */
     typeLoop getLeftKidIndex(typeLoop aIndex);
 
     /*
      * typeData getLeftKidValue(typeLoop aIndex) - metoda
-     * zwracajaca wartosc lewego dziecka (o ile istnieje!).
+     * zwracajaca wartosc lewego potomka (o ile istnieje!).
      * PRE:
      * - indeks elementu-rodzica (typ: typeLoop);
      * POST:
-     * - zwrocenie wartosci lewego dziecka (typ: typeData).
+     * - zwrocenie wartosci lewego potomka (typ: typeData).
      */
     typeData getLeftKidValue(typeLoop aIndex);
 
     /*
      * typeLoop getRigthKidIndex(typeLoop aIndex) - metoda
-     * zwracajaca indeks prawego dziecka (o ile istnieje!).
+     * zwracajaca indeks prawego potomka (o ile istnieje!).
      * PRE:
      * - indeks elementu-rodzica (typ: typeLoop);
      * POST:
-     * - zwrocenie indeksu prawego dziecka (typ: typeLoop).
+     * - zwrocenie indeksu prawego potomka (typ: typeLoop).
      */
     typeLoop getRigthKidIndex(typeLoop aIndex);
 
     /*
      * typeData getRigthKidValue(typeLoop aIndex) - metoda
-     * zwracajaca wartosc prawego dziecka (o ile istnieje!).
+     * zwracajaca wartosc prawego potomka (o ile istnieje!).
      * PRE:
      * - indeks elementu-rodzica (typ: typeLoop);
      * POST:
-     * - zwrocenie wartosci prawego dziecka (typ: typeData).
+     * - zwrocenie wartosci prawego potomka (typ: typeData).
      */
     typeData getRigthKidValue(typeLoop aIndex);
 
@@ -252,14 +253,26 @@ public:
     bool mRemoveElementFromEnd();
 
     /*
-     * void mRepairHeap() - metoda przywracajaca
-     * wlasnosc kopca.
+     * void mRepairHeapFromRoot() - metoda przywracajaca
+     * wlasnosc kopca, rozpoczynajaca naprawianie go od
+     * korzenia.
      * PRE:
      * - brak;
      * POST:
      * - brak.
      */
-    void mRepairHeap();
+    void mRepairHeapFromRoot();
+
+    /*
+     * void mRepairHeapFromEnd() - metoda przywracajaca
+     * wlasnosc kopca, rozpoczynajaca naprawianie go od
+     * konca.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mRepairHeapFromEnd();
 
     /*
      * void mDrawElements(typeLoop aSize) - metoda
