@@ -10,6 +10,7 @@
 #include "constantsandtypes.h"
 #include <cmath>
 #include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 using namespace std;

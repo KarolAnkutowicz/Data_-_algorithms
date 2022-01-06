@@ -550,7 +550,27 @@ void cDataHandling::mMenuStackTemplate()
  */
 void cDataHandling::mMenuHeapBinary()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow kopca binarnego
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    cout << "Okresl parametry kopca binarnego" << endl // wczytanie parametrow
+         << "    Liczba elementow: ";
+    cin >> vSize; // wczytanie liczby elementow
+    cout << "    Zakres wartosci od 0 do...";
+    cin >> vDrawingRange; // wczytanie granicy zakresu
+    cHeapBinary H(vSize, vDrawingRange); // utworzenie obiektu
+    cout << endl << "    Liczba elementow: " << H.getHeapSize() << endl; // wypisanie rozmiaru kopca binarnego
+    cout << "    Podaj nowy element do dodania na koncu kopca binarnego: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    H.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Podaj jeszcze jeden nowy element do dodania na koncu kopca binarnego: ";
+    cin >> vElement; // wczytanie wartosci nowego elementu
+    H.mAddElementToEnd(vElement); // dodanie nowego elementu
+    cout << "    Usuwamy element z korzenia..." << endl;
+    H.mRemoveRootHeap(); // usuniecie elementu z kopca binarnego
+    cout << endl << "    Liczba elementow: " << H.getHeapSize() << endl; // wypisanie rozmiaru kopca binarnego
+    cout << "    Zawartosc kopca binarnego: " << endl;
+    H.mPrintAllElements(); // wypisanie zawartosci kopca binarnego
 }
 
 

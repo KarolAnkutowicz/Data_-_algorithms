@@ -111,7 +111,7 @@ typeLoop cHeapBinary::getLeftKidIndex(typeLoop aIndex)
     if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
     {
         if ((aIndex * 2 + 1) < vSize) // sprawdzamy czy element w ogole ma lewego potomka
-            return (aIndex + 1) / 2 - 1; // jesli tak to zwracamy indeks lewego potomka
+            return (aIndex + 1) * 2 - 1; // jesli tak to zwracamy indeks lewego potomka
     }
     return NULL; // jesli kopiec binarny jest pusty lub element nie ma lewego potomka to wowczas nie mamy co zwracac
 }
@@ -124,7 +124,7 @@ typeData cHeapBinary::getLeftKidValue(typeLoop aIndex)
     if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
     {
         if ((aIndex * 2 + 1) < vSize) // sprawdzamy czy element w ogole ma lewego potomka
-            return HeapBinary[(aIndex + 1) / 2 - 1]; // jesli tak to zwracamy wartosc lewego potomka
+            return HeapBinary[(aIndex + 1) * 2 - 1]; // jesli tak to zwracamy wartosc lewego potomka
     }
     return NULL; // jesli kopiec binarny jest pusty lub element nie ma lewego potomka to wowczas nie mamy co zwracac
 }
@@ -137,7 +137,7 @@ typeLoop cHeapBinary::getRigthKidIndex(typeLoop aIndex)
     if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
     {
         if ((aIndex * 2 + 2) < vSize) // sprawdzamy czy element w ogole ma prawego potomka
-            return (aIndex + 1) / 2 - 1; // jesli tak to zwracamy indeks prawego potomka
+            return (aIndex + 1) * 2; // jesli tak to zwracamy indeks prawego potomka
     }
     return NULL; // jesli kopiec binarny jest pusty lub element nie ma prawego potomka to wowczas nie mamy co zwracac
 }
@@ -150,7 +150,7 @@ typeData cHeapBinary::getRigthKidValue(typeLoop aIndex)
     if (vSize != 0) // sprawdzamy czy kopiec binarny nie jest pusty
     {
         if ((aIndex * 2 + 2) < vSize) // sprawdzamy czy element w ogole ma prawego potomka
-            return HeapBinary[(aIndex + 1) / 2 - 1]; // jesli tak to zwracamy wartosc prawego potomka
+            return HeapBinary[(aIndex + 1) * 2]; // jesli tak to zwracamy wartosc prawego potomka
     }
     return NULL; // jesli kopiec binarny jest pusty lub element nie ma prawego potomka to wowczas nie mamy co zwracac
 }
@@ -281,7 +281,6 @@ bool cHeapBinary::mRemoveElementFromEnd()
             for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
                 HeapBinary[i] = HeapBinaryAux[i]; // kopiowanie kolejnych elementow do oryginalnej tablicy
             delete []HeapBinaryAux; // zwalnianie zasobow przydzielanych dynamicznie
-            mRepairHeapFromRoot(); // przywrocenie wlasnosci kopca rozpoczynajac od korzenia
         }
         return true; // zwracamy informacje o tym, ze usuniecie elementu sie powiodlo
     }
@@ -300,40 +299,45 @@ void cHeapBinary::mRepairHeapFromRoot()
         {
             vLeftKidIndex = getLeftKidIndex(vParentIndex); // wyznaczenie indeksu lewego potomka
             vRigthKidIndex = getRigthKidIndex(vParentIndex); // wynzaczenie indeksu prawego potomka
-            typeData vElementAux; // zmienna pomocnicza wykorzystywana do zamiany elementow
-            if (vLeftKidIndex > (vSize - 1)) // jesli lewy potomek ma za duzy indeks to powinien byc juz poza kopcem binarnym
-                vRepair = true; // dotarlismy do konca kopca binarnego, zostal naprawiony
-            else if (vLeftKidIndex == (vSize - 1)) // jesli istnieje tylko lewy potomek
+            if ((vParentIndex > vLeftKidIndex) || (vParentIndex > vRigthKidIndex)) // zabezpieczenie w przypadku wyzerowania indeksow potomkow
             {
-                if (HeapBinary[vParentIndex] < getLeftKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                vRepair = true; // naprawianie kopca binarnego zostalo zakonczone
+                break; // wychodzimy z petli
+            }
+            typeData vElementAux; // zmienna pomocnicza wykorzystywana do zamiany elementow
+            if ((vLeftKidIndex > (vSize - 1)) && (vRigthKidIndex > (vSize - 1))) // jesli lewy potomek ma za duzy indeks to powinien byc juz poza kopcem binarnym
+                vRepair = true; // dotarlismy do konca kopca binarnego, zostal naprawiony            }
+            else if ((vLeftKidIndex == (vSize - 1)) && (vRigthKidIndex == vSize)) // jesli istnieje tylko lewy potomek
+            {
+                if (HeapBinary[vParentIndex] < HeapBinary[vLeftKidIndex]) // jesli potomek ma wieksza wartosc niz rodzic
                 {
                     vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i lewego potomka
                     HeapBinary[vParentIndex] = HeapBinary[vLeftKidIndex];
                     HeapBinary[vLeftKidIndex] = vElementAux;
                 }
-                vParentIndex = getLeftKidIndex(vParentIndex); // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+                vParentIndex = vLeftKidIndex; // lewy potomek staje sie rodzicem w nastepnym cyklu petli
             }
             else // jesli istnieja obaj potomkowie
             {
-                if (getLeftKidValue(vParentIndex) > getRigthKidValue(vParentIndex)) // jesli wartosc lewego potomka jest wieksza niz prawego
+                if (HeapBinary[vLeftKidIndex] > HeapBinary[vRigthKidIndex]) // jesli wartosc lewego potomka jest wieksza niz prawego
                 {
-                    if (HeapBinary[vParentIndex] < getLeftKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                    if (HeapBinary[vParentIndex] < HeapBinary[vLeftKidIndex]) // jesli potomek ma wieksza wartosc niz rodzic
                     {
                         vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i lewego potomka
                         HeapBinary[vParentIndex] = HeapBinary[vLeftKidIndex];
                         HeapBinary[vLeftKidIndex] = vElementAux;
                     }
-                    vParentIndex = getLeftKidIndex(vParentIndex); // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+                    vParentIndex = vLeftKidIndex; // lewy potomek staje sie rodzicem w nastepnym cyklu petli
                 }
                 else // jesli wartosc lewego potomka jest nie wieksza niz prawego
                 {
-                    if (HeapBinary[vParentIndex] < getRigthKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                    if (HeapBinary[vParentIndex] < HeapBinary[vRigthKidIndex]) // jesli potomek ma wieksza wartosc niz rodzic
                     {
                         vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i prawego potomka
                         HeapBinary[vParentIndex] = HeapBinary[vRigthKidIndex];
                         HeapBinary[vRigthKidIndex] = vElementAux;
                     }
-                    vParentIndex = getRigthKidIndex(vParentIndex); // prawy potomek staje sie rodzicem w nastepnym cyklu petli
+                    vParentIndex = vRigthKidIndex; // prawy potomek staje sie rodzicem w nastepnym cyklu petli
                 }
             }
 
@@ -350,14 +354,14 @@ void cHeapBinary::mRepairHeapFromEnd()
     if (vSize > 1) // przywracanie wlasnosci kopca binarnego ma sens jesli jest na nim wiecej niz jeden element
     {
         bool vRepair = false; // tworzymy zmienna logiczna okreslajaca czy kopiec binarny jest juz naprawiony
+        typeLoop vKidIndex = vSize - 1, vParentIndex; // zmienne okreslajace indeks potomka i indeks rodzica
         do
         {
-            typeLoop vKidIndex = vSize - 1, vParentIndex; // zmienne okreslajace indeks potomka i indeks rodzica
+            vParentIndex = getParentIndex(vKidIndex); // ustanawiamy indeks rodzica
             if (vKidIndex == 0) // jesli biezacy element jest korzeniem
                 vRepair = true; // wowczas konczymy prace bo kopiec binarny zostal naprawiony
             else // jesli kopiec binarny zawiera wiecej niz jeden element
             {
-                vParentIndex = getParentIndex(vKidIndex); // ustanawiamy indeks rodzica
                 typeData vElementAux; // zmienna wykorzystywana do zamiany elementow
                 if (HeapBinary[vParentIndex] < HeapBinary[vKidIndex]) // sprawdzamy czy wartosc potomka jest wieksza nic rodzica
                 {
