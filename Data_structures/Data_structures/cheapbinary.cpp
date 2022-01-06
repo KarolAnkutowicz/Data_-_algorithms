@@ -172,7 +172,27 @@ typeLoop cHeapBinary::getLevels()
  */
 void cHeapBinary::mAddElementToRoot(typeData aElement)
 {
-
+    if (vSize == 0) // sprawdzenie czy kopiec binarny zawiera jakikolwiek element
+    {
+        HeapBinary[0] = aElement; // jesli nie to nowy element zostaje automatycznie korzeniem
+        vSize++; // zwiekszamy rozmiar kopca binarnego
+    }
+    else // w przypadku kiedy w kopcu binarnym sa juz jakies elementy
+    {
+        typeData *HeapBinaryAux; // deklaracja wskaznika do tablicy pomocniczej
+        HeapBinaryAux = new typeData[vSize + 1]; // utworzenie tablicy pomocniczej
+        HeapBinaryAux[0] = aElement; // przypisanie nowego elementu do korzenia
+        HeapBinaryAux[vSize] = HeapBinary[0]; // przypisanie elementu z korzenia na koniec
+        for (typeLoop i = 1; i < vSize; i++) // przejscie przez wszystkie elementy oryginalnej tablicy oprocz pierwszego
+            HeapBinaryAux[i] = HeapBinary[i]; // kopiowanie kolejnych elementow do tablicy pomocniczej
+        delete []HeapBinary; // zwalnianie zasobow przydzielanych dynamicznie
+        vSize++; // zwiekszenie rozmiaru kopca binarnego
+        HeapBinary = new typeData[vSize]; // utworzenie nowej oryginalnej tablicy
+        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
+            HeapBinary[i] = HeapBinaryAux[i]; // kopiowanie kolejnych elementow do oryginalnej tablicy
+        delete []HeapBinaryAux; // zwalnianie zasobow przydzielanych dynamicznie
+        mRepairHeapFromRoot(); // przywrocenie wlasciwosci kopca zaczynajac od korzenia
+    }
 }
 
 /*
@@ -180,7 +200,26 @@ void cHeapBinary::mAddElementToRoot(typeData aElement)
  */
 void cHeapBinary::mAddElementToEnd(typeData aElement)
 {
-
+    if (vSize == 0) // sprawdzenie czy kopiec binarny zawiera jakikolwiek element
+    {
+        HeapBinary[0] = aElement; // jesli nie to nowy element zostaje automatycznie korzeniem
+        vSize++; // zwiekszamy rozmiar kopca binarnego
+    }
+    else // w przypadku kiedy w kopcu binarnym sa juz jakies elementy
+    {
+        typeData *HeapBinaryAux; // deklaracja wskaznika do tablicy pomocniczej
+        HeapBinaryAux = new typeData[vSize + 1]; // utworzenie tablicy pomocniczej
+        HeapBinaryAux[vSize] = aElement; // przypisanie nowego elementu na koniec kop[ca binarnego
+        for (typeLoop i = 0; i < vSize; i++) // przejscie przez wszystkie elementy oryginalnej tablicy
+            HeapBinaryAux[i] = HeapBinary[i]; // kopiowanie kolejnych elementow do tablicy pomocniczej
+        delete []HeapBinary; // zwalnianie zasobow przydzielanych dynamicznie
+        vSize++; // zwiekszenie rozmiaru kopca binarnego
+        HeapBinary = new typeData[vSize]; // utworzenie nowej oryginalnej tablicy
+        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
+            HeapBinary[i] = HeapBinaryAux[i]; // kopiowanie kolejnych elementow do oryginalnej tablicy
+        delete []HeapBinaryAux; // zwalnianie zasobow przydzielanych dynamicznie
+        mRepairHeapFromEnd(); // przywrocenie wlasciwosci kopca zaczynajac od konca
+    }
 }
 
 /*
@@ -188,7 +227,32 @@ void cHeapBinary::mAddElementToEnd(typeData aElement)
  */
 bool cHeapBinary::mRemoveRootHeap()
 {
-
+    if (vSize == 0) // sprawdzamy czy kopiec binarny jest pusty
+        return false; // jesli jest pusty to zwracamy informacje, ze usuniecie elementu nie powiodlo sie
+    else // jesli kopiec binarny zawiera cokolwiek
+    {
+        if (vSize == 1) // jesli kopiec binarny zawiera tylko jeden element
+        {
+            HeapBinary[0] = NULL; // zniszczenie wartosci jedynego elementu
+            vSize--; // zmniejszenie rozmiaru kopca binarnego
+        }
+        else // jesli kopiec binarny zawiera wiecej niz jeden element
+        {
+            typeData *HeapBinaryAux; // zadeklarowanie wskaznika do tablicy pomocniczej
+            HeapBinaryAux = new typeData[vSize - 1]; // utworzenie tablicy pomocniczej
+            HeapBinaryAux[0] = HeapBinary[vSize - 1]; // przypisanie ostatniego elementu do korzenia
+            for (typeLoop i = 1; i < vSize; i++) // przejscie po wszystkich elementach oprocz pierwszego
+                HeapBinaryAux[i] = HeapBinary[i]; // kopiowanie kolejnych elementow do tablicy pomocniczej
+            delete []HeapBinary; // zwalnianie zasobiow przydzielanych dynamicznie
+            vSize--; // zmniejszenie rozmiaru kopca binarnego
+            HeapBinary = new typeData[vSize]; // utworzenie nowej oryginalnej tablicy
+            for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
+                HeapBinary[i] = HeapBinaryAux[i]; // kopiowanie kolejnych elementow do oryginalnej tablicy
+            delete []HeapBinaryAux; // zwalnianie zasobow przydzielanych dynamicznie
+            mRepairHeapFromRoot(); // przywrocenie wlasnosci kopca rozpoczynajac od korzenia
+        }
+        return true; // zwracamy informacje o tym, ze usuniecie elementu sie powiodlo
+    }
 }
 
 /*
@@ -196,7 +260,31 @@ bool cHeapBinary::mRemoveRootHeap()
  */
 bool cHeapBinary::mRemoveElementFromEnd()
 {
-
+    if (vSize == 0) // sprawdzamy czy kopiec binarny jest pusty
+        return false; // jesli jest pusty to zwracamy informacje, ze usuniecie elementu nie powiodlo sie
+    else // jesli kopiec binarny zawiera cokolwiek
+    {
+        if (vSize == 1) // jesli kopiec binarny zawiera tylko jeden element
+        {
+            HeapBinary[0] = NULL; // zniszczenie wartosci jedynego elementu
+            vSize--; // zmniejszenie rozmiaru kopca binarnego
+        }
+        else // jesli kopiec binarny zawiera wiecej niz jeden element
+        {
+            typeData *HeapBinaryAux; // zadeklarowanie wskaznika do tablicy pomocniczej
+            HeapBinaryAux = new typeData[vSize - 1]; // utworzenie tablicy pomocniczej
+            for (typeLoop i = 1; i < (vSize - 1); i++) // przejscie po wszystkich elementach oprocz ostatniego
+                HeapBinaryAux[i] = HeapBinary[i]; // kopiowanie kolejnych elementow do tablicy pomocniczej
+            delete []HeapBinary; // zwalnianie zasobiow przydzielanych dynamicznie
+            vSize--; // zmniejszenie rozmiaru kopca binarnego
+            HeapBinary = new typeData[vSize]; // utworzenie nowej oryginalnej tablicy
+            for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
+                HeapBinary[i] = HeapBinaryAux[i]; // kopiowanie kolejnych elementow do oryginalnej tablicy
+            delete []HeapBinaryAux; // zwalnianie zasobow przydzielanych dynamicznie
+            mRepairHeapFromRoot(); // przywrocenie wlasnosci kopca rozpoczynajac od korzenia
+        }
+        return true; // zwracamy informacje o tym, ze usuniecie elementu sie powiodlo
+    }
 }
 
 /*
@@ -204,15 +292,83 @@ bool cHeapBinary::mRemoveElementFromEnd()
  */
 void cHeapBinary::mRepairHeapFromRoot()
 {
+    if (vSize > 1) // przywracanie wlasnosci kopca binarnego ma sens jesli jest na nim wiecej niz jeden element
+    {
+        bool vRepair = false; // tworzymy zmienna logiczna okreslajaca czy kopiec binarny jest juz naprawiony
+        typeLoop vParentIndex = 0, vLeftKidIndex, vRigthKidIndex; // zmienne okreslajace indeks rodzica i indeksy potomka
+        do
+        {
+            vLeftKidIndex = getLeftKidIndex(vParentIndex); // wyznaczenie indeksu lewego potomka
+            vRigthKidIndex = getRigthKidIndex(vParentIndex); // wynzaczenie indeksu prawego potomka
+            typeData vElementAux; // zmienna pomocnicza wykorzystywana do zamiany elementow
+            if (vLeftKidIndex > (vSize - 1)) // jesli lewy potomek ma za duzy indeks to powinien byc juz poza kopcem binarnym
+                vRepair = true; // dotarlismy do konca kopca binarnego, zostal naprawiony
+            else if (vLeftKidIndex == (vSize - 1)) // jesli istnieje tylko lewy potomek
+            {
+                if (HeapBinary[vParentIndex] < getLeftKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                {
+                    vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i lewego potomka
+                    HeapBinary[vParentIndex] = HeapBinary[vLeftKidIndex];
+                    HeapBinary[vLeftKidIndex] = vElementAux;
+                }
+                vParentIndex = getLeftKidIndex(vParentIndex); // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+            }
+            else // jesli istnieja obaj potomkowie
+            {
+                if (getLeftKidValue(vParentIndex) > getRigthKidValue(vParentIndex)) // jesli wartosc lewego potomka jest wieksza niz prawego
+                {
+                    if (HeapBinary[vParentIndex] < getLeftKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                    {
+                        vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i lewego potomka
+                        HeapBinary[vParentIndex] = HeapBinary[vLeftKidIndex];
+                        HeapBinary[vLeftKidIndex] = vElementAux;
+                    }
+                    vParentIndex = getLeftKidIndex(vParentIndex); // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+                }
+                else // jesli wartosc lewego potomka jest nie wieksza niz prawego
+                {
+                    if (HeapBinary[vParentIndex] < getRigthKidValue(vParentIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                    {
+                        vElementAux = HeapBinary[vParentIndex]; // zamiana miejscami wartosci rodzica i prawego potomka
+                        HeapBinary[vParentIndex] = HeapBinary[vRigthKidIndex];
+                        HeapBinary[vRigthKidIndex] = vElementAux;
+                    }
+                    vParentIndex = getRigthKidIndex(vParentIndex); // prawy potomek staje sie rodzicem w nastepnym cyklu petli
+                }
+            }
 
+        } while (vRepair == false); // petla bedzie wykonywana dopoki kopiec binarny nie zostanie w calosci naprawiony
+    }
 }
+
 
 /*
  * void mRepairHeapFromEnd()
  */
 void cHeapBinary::mRepairHeapFromEnd()
 {
-
+    if (vSize > 1) // przywracanie wlasnosci kopca binarnego ma sens jesli jest na nim wiecej niz jeden element
+    {
+        bool vRepair = false; // tworzymy zmienna logiczna okreslajaca czy kopiec binarny jest juz naprawiony
+        do
+        {
+            typeLoop vKidIndex = vSize - 1, vParentIndex; // zmienne okreslajace indeks potomka i indeks rodzica
+            if (vKidIndex == 0) // jesli biezacy element jest korzeniem
+                vRepair = true; // wowczas konczymy prace bo kopiec binarny zostal naprawiony
+            else // jesli kopiec binarny zawiera wiecej niz jeden element
+            {
+                vParentIndex = getParentIndex(vKidIndex); // ustanawiamy indeks rodzica
+                typeData vElementAux; // zmienna wykorzystywana do zamiany elementow
+                if (HeapBinary[vParentIndex] < HeapBinary[vKidIndex]) // sprawdzamy czy wartosc potomka jest wieksza nic rodzica
+                {
+                    vElementAux = HeapBinary[vParentIndex]; // jesli tak to zamieniamy miejscami oba elementy
+                    HeapBinary[vParentIndex] = HeapBinary[vKidIndex];
+                    HeapBinary[vKidIndex] = vElementAux;
+                }
+                vKidIndex = getParentIndex(vKidIndex); // ustanawiamy nowy biezacy element na rodzica
+            }
+        } while (vRepair == false); // petla bedzie wykonywana dopoki kopiec binarny nie zostanie w calosci naprawiony
+    }
 }
 
 /*
@@ -220,7 +376,9 @@ void cHeapBinary::mRepairHeapFromEnd()
  */
 void cHeapBinary::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+        mAddElementToEnd(rand() % vDrawingRange); // dodanie do kopca binarnego elementu o wylosowanej wartosci
 }
 
 
@@ -230,7 +388,10 @@ void cHeapBinary::mDrawElements(typeLoop aSize)
  */
 void cHeapBinary::mPrintRootHeap()
 {
-
+    if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
+        cout << HeapBinary[0] << endl; // jesli nie jest to wypisujemy zawartosc korzenia
+    else // jesli kopiec binarny jest pusty
+        cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /*
@@ -238,7 +399,10 @@ void cHeapBinary::mPrintRootHeap()
  */
 void cHeapBinary::mPrintLastElement()
 {
-
+    if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
+        cout << HeapBinary[vSize - 1]; // jesli nie jest to wypisujemy ostatni element
+    else // jesli kopiec binarny jest pusty
+        cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /*
@@ -246,7 +410,13 @@ void cHeapBinary::mPrintLastElement()
  */
 void cHeapBinary::mPrintAllElements()
 {
-
+    if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
+    {
+        for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
+            cout << HeapBinary[i] << endl; // wypisanie kolejnych elementow
+    }
+    else // jesli kopiec binarny jest pusty
+        cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /********** PUBLIC: END **********/
