@@ -217,11 +217,97 @@ void cTable::mIntrosort(typeLoop aSeries)
 }
 
 /*
+ * void mHeapsortRepairFromRoot(typeLoop aSeries, typeLoop aSize)
+ */
+void cTable::mHeapsortRepairFromRoot(typeLoop aSeries, typeLoop aSize)
+{
+    if (aSize > 1) // przywracanie wlasnosci kopca binarnego ma sens jesli jest na nim wiecej niz jeden element
+    {
+        bool vRepair = false; // tworzymy zmienna logiczna okreslajaca czy kopiec binarny jest juz naprawiony
+        typeLoop vParentIndex = 0, vLeftKidIndex, vRigthKidIndex; // zmienne okreslajace indeks rodzica i indeksy potomka
+        do
+        {
+            vLeftKidIndex = (vParentIndex + 1) * 2 - 1; // wyznaczenie indeksu lewego potomka
+            vRigthKidIndex = (vParentIndex + 1) * 2; // wynzaczenie indeksu prawego potomka
+            if ((vParentIndex > vLeftKidIndex) || (vParentIndex > vRigthKidIndex)) // zabezpieczenie w przypadku wyzerowania indeksow potomkow
+            {
+                vRepair = true; // naprawianie kopca binarnego zostalo zakonczone
+                break; // wychodzimy z petli
+            }
+            if ((vLeftKidIndex > (aSize - 1)) && (vRigthKidIndex > (aSize - 1))) // jesli lewy potomek ma za duzy indeks to powinien byc juz poza kopcem binarnym
+            {
+                vRepair = true; // dotarlismy do konca kopca binarnego, zostal naprawiony
+                break; // wychodzimy z petli
+            }
+            else if ((vLeftKidIndex == (aSize - 1)) && (vRigthKidIndex == aSize)) // jesli istnieje tylko lewy potomek
+            {
+                if (getElement(aSeries, vParentIndex) < getElement(aSeries, vLeftKidIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                    mSwap(aSeries, vParentIndex, vLeftKidIndex); // zamiana miejscami wartosci rodzica i lewego potomka
+                vParentIndex = vLeftKidIndex; // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+            }
+            else // jesli istnieja obaj potomkowie
+            {
+                if (getElement(aSeries, vLeftKidIndex) > getElement(aSeries, vRigthKidIndex)) // jesli wartosc lewego potomka jest wieksza niz prawego
+                {
+                    if (getElement(aSeries, vParentIndex) < getElement(aSeries, vLeftKidIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                        mSwap(aSeries, vParentIndex, vLeftKidIndex); // zamiana miejscami wartosci rodzica i lewego potomka
+                    vParentIndex = vLeftKidIndex; // lewy potomek staje sie rodzicem w nastepnym cyklu petli
+                }
+                else // jesli wartosc lewego potomka jest nie wieksza niz prawego
+                {
+                    if (getElement(aSeries, vParentIndex) < getElement(aSeries, vRigthKidIndex)) // jesli potomek ma wieksza wartosc niz rodzic
+                        mSwap(aSeries, vParentIndex, vRigthKidIndex); // zamiana miejscami wartosci rodzica i prawego potomka
+                    vParentIndex = vRigthKidIndex; // prawy potomek staje sie rodzicem w nastepnym cyklu petli
+                }
+            }
+
+        } while (vRepair == false); // petla bedzie wykonywana dopoki kopiec binarny nie zostanie w calosci naprawiony
+    }
+}
+
+/*
+ * void mHeapsortRepairFromEnd(typeLoop aSeries, typeLoop aSize)
+ */
+void cTable::mHeapsortRepairFromEnd(typeLoop aSeries, typeLoop aSize)
+{
+    if (aSize > 1) // przywracanie wlasnosci kopca binarnego ma sens jesli jest na nim wiecej niz jeden element
+    {
+        bool vRepair = false; // tworzymy zmienna logiczna okreslajaca czy kopiec binarny jest juz naprawiony
+        typeLoop vKidIndex = aSize - 1, vParentIndex; // zmienne okreslajace indeks potomka i indeks rodzica
+        do
+        {
+            vParentIndex = (vKidIndex + 1) / 2 - 1; // ustanawiamy indeks rodzica
+            if (vKidIndex == 0) // jesli biezacy element jest korzeniem
+                vRepair = true; // wowczas konczymy prace bo kopiec binarny zostal naprawiony
+            else // jesli kopiec binarny zawiera wiecej niz jeden element
+            {
+                if (getElement(aSeries, vParentIndex) < getElement(aSeries, vKidIndex)) // sprawdzamy czy wartosc potomka jest wieksza nic rodzica
+                    mSwap(aSeries, vParentIndex, vKidIndex); // jesli tak to zamieniamy miejscami oba elementy
+                vKidIndex = (vKidIndex + 1) / 2 - 1; // ustanawiamy nowy biezacy element na rodzica
+            }
+        } while (vRepair == false); // petla bedzie wykonywana dopoki kopiec binarny nie zostanie w calosci naprawiony
+    }
+}
+
+/*
  * void mHeapsort(typeLoop aSeries)
  */
 void cTable::mHeapsort(typeLoop aSeries)
 {
-
+    for (typeLoop i = 0; i < vLength; i++) // przechodzimy przez wszystkie elementy w serii
+        mHeapsortRepairFromEnd(aSeries, i + 1); // przyrostowo doprowadzamy tablice do takiej o wlasciwosciach kopca binarnego
+    typeData *tabAux; // utworzenie wskaznika do tablicy pomocniczej
+    tabAux = new typeData[vLength]; // utworzenie wskaznika do tablicy pomocniczej
+    for (typeLoop i = 0; i < (vLength - 1); i++) // przejscie po wszystkich elementach z wyjatkiem ostatniego
+    {
+        tabAux[vLength - 1 - i] = getElement(aSeries, 0); // kopiujemy element z korzenia do tablicy pomocniczej
+        setElement(aSeries, 0, getElement(aSeries, vLength - 1 - i)); // przenosimy ostatni dostepny element do korzenia
+        mHeapsortRepairFromRoot(aSeries, vLength - 1 - i); // przywracamy wlasciwosci kopca binarnego rozpoczynajac od korzenia
+    }
+    tabAux[0] = getElement(aSeries, 0); // kopiujemy element z korzenia do tablicy pomocniczej
+    for (typeLoop i = 0; i < vLength; i++) // przejscie po wszystkich elementach
+        setElement(aSeries, i, tabAux[i]); // kopiowanie posortowanych elementow z tablicy pomocniczej
+    delete []tabAux; // zwalnianie zasobow przydzielanych dynamicznie
 }
 
 /*
@@ -229,7 +315,7 @@ void cTable::mHeapsort(typeLoop aSeries)
  */
 void cTable::mInsertionSort(typeLoop aSeries)
 {
-    typeData *tabAux; // utworzenie wskaznika do tablicy pomocniczej i zmiennej pomocniczej
+    typeData *tabAux; // utworzenie wskaznika do tablicy pomocniczej
     tabAux = new typeData[vLength]; // utworzenie tablicy elementow posortowanych o dlugosci rownej liczbie kolumn glownej tablicy elementow
     tabAux[0] = getElement(aSeries, 0); // przypisanie wartosci pierwszego elementu
     for (typeLoop i = 1; i < vLength; i++) // przejscie po wszystkich elementach serii z pominieciem pierwszego elementu

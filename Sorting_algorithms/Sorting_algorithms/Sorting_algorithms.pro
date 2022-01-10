@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2021-09-12T19:42:45
+# Project created by QtCreator 2021-11-06T22:41:52
 #
 #-------------------------------------------------
 
@@ -21,5 +21,5 @@ SOURCES += main.cpp \
 
 HEADERS += \
     ctable.h \
-    constantsandtypes.h \
-    ctablehandling.h
+    ctablehandling.h \
+    constantsandtypes.h

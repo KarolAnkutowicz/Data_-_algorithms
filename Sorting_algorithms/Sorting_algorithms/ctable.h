@@ -396,7 +396,34 @@ public:
     void mIntrosort(typeLoop aSeries);
 
     /*
-     * void mHeapsort(typeLoop aSeries) -
+     * void mHeapsortRepairFromRoot(typeLoop aSeries, typeLoop aSize) -
+     * metoda pomocnicza algorytmu sortowania przez
+     * kopcowanie realizujaca przywrocenie wlasciwosci
+     * kopca rozpoczynajac od korzenia.
+     * PRE:
+     * - podanie serii (typ: typeLoop);
+     * - podanie rozmiaru (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mHeapsortRepairFromRoot(typeLoop aSeries, typeLoop aSize);
+
+    /*
+     * void mHeapsortRepairFromEnd(typeLoop aSeries, typeLoop aSize) -
+     * metoda pomocnicza algorytmu sortowania przez
+     * kopcowanie realizujaca przywrocenie wlasciwosci
+     * kopca rozpoczynajac od ostatniego elementu.
+     * PRE:
+     * - podanie serii (typ: typeLoop);
+     * - podanie rozmiaru (typ: typeLoop);
+     * POST:
+     * - brak.
+     */
+    void mHeapsortRepairFromEnd(typeLoop aSeries, typeLoop aSize);
+
+    /*
+     * void mHeapsort(typeLoop aSeries) - metoda realizujaca
+     * algorytm sortowania przez kopcowanie.
      * PRE:
      * - podanie numeru serii (typ: typeLoop);
      * POST:
