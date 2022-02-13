@@ -1,0 +1,78 @@
+﻿  carrayonedimension.cpp
+  carraytwodimension.cpp
+  cdatahandling.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cdequetemplate.hpp(113,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\clisttemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cmaptemplate.hpp(98,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cqueuetemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\csettemplate.hpp(77,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstacktemplate.hpp(100,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(35,14): error C2229: class "cStaticOneDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(35,14): error C2229: class "cStaticTwoDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectoronedimension.hpp(121,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(132,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(146,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cdatahandling.cpp(114,13): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  cdequemy.cpp
+  cdequetemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cdequetemplate.hpp(113,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  cdynamiconedimensiontable.cpp
+  cdynamictwodimensiontable.cpp
+  cforwardlistmy.cpp
+  cforwardlisttemplate.cpp
+  cheapbinary.cpp
+  clistmy.cpp
+  clisttemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\clisttemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  cmapmy.cpp
+  cmaptemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cmaptemplate.hpp(98,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  cqueuemy.cpp
+  cqueuetemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cqueuetemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  csetmy.cpp
+  csettemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\csettemplate.hpp(77,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  cstackmy.cpp
+  cstacktemplate.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstacktemplate.hpp(100,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  Generowanie kodu...
+  Trwa kompilowanie...
+  cstaticonedimensiontable.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(35,14): error C2229: class "cStaticOneDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+  cstatictwodimensiontable.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(35,14): error C2229: class "cStaticTwoDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+  cunorderedmapmy.cpp
+  cunorderedmaptemplate.cpp
+  cunorderedsetmy.cpp
+  cunorderedsettemplate.cpp
+  cvectoronedimension.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectoronedimension.hpp(121,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  cvectortwodimension.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(132,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(146,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  main.cpp
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cdequetemplate.hpp(113,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\clisttemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cmaptemplate.hpp(98,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cqueuetemplate.hpp(109,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\csettemplate.hpp(77,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstacktemplate.hpp(100,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstaticonedimensiontable.hpp(35,14): error C2229: class "cStaticOneDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): warning C4200: użyto niestandardowego rozszerzenia: tablica o rozmiarze zero w typie struct/union
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(29,14): message : Ta składowa zostanie zignorowana przez domyślny konstruktor lub kopiujący/przenoszący operator przypisania
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cstatictwodimensiontable.hpp(35,14): error C2229: class "cStaticTwoDimensionTable" ma niedozwolony zerowy rozmiar tablicy
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectoronedimension.hpp(121,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(132,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+C:\Github\Data_and_algorithms\Data_structures\Data_structures\main\cvectortwodimension.hpp(146,1): warning C4267: "return": konwersja z "size_t" do "typeLoop", możliwa utrata danych
+  Generowanie kodu...
