@@ -65,14 +65,14 @@ public:
 
 
     /*
-     * typeLoop getSetSize() - metoda zwracajaca rozmiar
+     * size_t getSetSize() - metoda zwracajaca rozmiar
      * zbioru.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru zbioru (typ: typeLoop).
+     * - zwrocenie rozmiaru zbioru (typ: size_t).
      */
-    inline typeLoop getSetSize()
+    inline size_t getSetSize()
     {
         return SetTemplate.size();
     }

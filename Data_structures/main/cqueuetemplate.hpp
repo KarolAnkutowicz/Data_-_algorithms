@@ -98,13 +98,13 @@ public:
     typeData getLastElement();
 
     /*
-     * typeLoop getQueueSize() - zwrocenie rozmiaru kolejki.
+     * size_t getQueueSize() - zwrocenie rozmiaru kolejki.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru kolejki (typ: typeLoop).
+     * - zwrocenie rozmiaru kolejki (typ: size_t).
      */
-    inline typeLoop getQueueSize()
+    inline size_t getQueueSize()
     {
         return QueueTemplate.size();
     }

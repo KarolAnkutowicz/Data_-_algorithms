@@ -102,13 +102,13 @@ public:
     typeData getLastElement();
 
     /*
-     * typeLoop getQueueSize() - zwrocenie rozmiaru kolejki.
+     * size_t getQueueSize() - zwrocenie rozmiaru kolejki.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru kolejki dwukierunkowej (typ: typeLoop).
+     * - zwrocenie rozmiaru kolejki dwukierunkowej (typ: size_t).
      */
-    inline typeLoop getDequeSize()
+    inline size_t getDequeSize()
     {
         return DequeTemplate.size();
     }

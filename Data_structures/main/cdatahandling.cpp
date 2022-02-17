@@ -111,7 +111,7 @@ void cDataHandling::mMainMenu()
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
             cout << "    Nacisnij dowolny klawisz..." << endl; // chwilowe "wstrzymanie" wyswietlonych wynikow
-            getch(); // wymuszenie nacisniecia dowolnego klawisza
+            //getch(); // wymuszenie nacisniecia dowolnego klawisza
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
 }

@@ -88,14 +88,14 @@ public:
     typeData getElement();
 
     /*
-     * typeLoop getStackSize() - metoda zwracajaca
+     * size_t getStackSize() - metoda zwracajaca
      * rozmiar stosu.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie wartosci pola vStackSize (typ: typeLoop).
+     * - zwrocenie wartosci pola vStackSize (typ: size_t).
      */
-    inline typeLoop getStackSize()
+    inline size_t getStackSize()
     {
         return StackTemplate.size();
     }

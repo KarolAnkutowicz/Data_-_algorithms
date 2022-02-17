@@ -98,13 +98,13 @@ public:
     typeData getLastElement();
 
     /*
-     * typeLoop getListSize() - zwrocenie rozmiaru listy.
+     * size_t getListSize() - zwrocenie rozmiaru listy.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru listy (typ: typeLoop).
+     * - zwrocenie rozmiaru listy (typ: size_t).
      */
-    inline typeLoop getListSize()
+    inline size_t getListSize()
     {
         return ListTemplate.size();
     }

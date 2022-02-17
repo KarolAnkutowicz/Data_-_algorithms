@@ -109,14 +109,14 @@ public:
     typeData getElement(typeLoop aIndex);
 
     /*
-     * typeLoop getVectorSize() - metoda zwracajaca rozmiar
+     * size_t getVectorSize() - metoda zwracajaca rozmiar
      * wektora.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru wektora (typ: typeLoop).
+     * - zwrocenie rozmiaru wektora (typ: size_t).
      */
-    inline typeLoop getVectorSize()
+    inline size_t getVectorSize()
     {
         return VectorElements.size();
     }

@@ -120,14 +120,14 @@ public:
     }
 
     /*
-     * typeLoop getRows() - metoda zwracajaca liczbe
+     * size_t getRows() - metoda zwracajaca liczbe
      * wierszy (wektorow) struktury.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie liczby wierszy (typ: typeLoop).
+     * - zwrocenie liczby wierszy (typ: size_t).
      */
-    inline typeLoop getRows()
+    inline size_t getRows()
     {
         return VectorElements.size();
     }
@@ -141,7 +141,7 @@ public:
      * POST:
      * - zwrocenie liczby kolumn (typ: typeLoop).
      */
-    inline typeLoop getColumns()
+    inline /*typeLoop*/ size_t getColumns()
     {
         return VectorElements[0].size();
     }

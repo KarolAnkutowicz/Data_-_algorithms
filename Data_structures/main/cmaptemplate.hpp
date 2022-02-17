@@ -86,14 +86,14 @@ public:
     typeData getElement(typeKey aKey);
 
     /*
-     * typeLoop getMapSize() - metoda zwracajaca rozmiar
+     * size_t getMapSize() - metoda zwracajaca rozmiar
      * mapy.
      * PRE:
      * - brak;
      * POST:
-     * - zwrocenie rozmiaru mapy (typ: typeLoop).
+     * - zwrocenie rozmiaru mapy (typ: size_t).
      */
-    inline typeLoop getMapSize()
+    inline size_t getMapSize()
     {
         return MapTemplate.size();
     }
