@@ -4,62 +4,62 @@
  * file: cstatictwodimensiontable.hpp
  */
 
-#ifndef CSTATICTWODIMENSIONTABLE_HPP
-#define CSTATICTWODIMENSIONTABLE_HPP
+//#ifndef CSTATICTWODIMENSIONTABLE_HPP
+//#define CSTATICTWODIMENSIONTABLE_HPP
 
-#include "constantsandtypes.hpp"
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
+//#include "constantsandtypes.hpp"
+//#include <cstdlib>
+//#include <ctime>
+//#include <iostream>
 
-using namespace std;
+//using namespace std;
 
 /*
  * cStaticTwoDimensionTable - klasa modelujaca
  * statyczna tablice dwuwymiarowa o zadanych
  * i niemodyfikowalnych pozniej rozmiarach.
  */
-class cStaticTwoDimensionTable
-{
+//class cStaticTwoDimensionTable
+//{
     /********** PRIVATE: BEGINNING **********/
 
-        /*
-         * typeData tabElements[][10] - tablica elementow.
-         */
-    typeData tabElements[][10];
+    /*
+     * typeData tabElements[][10] - tablica elementow.
+     */
+    //typeData tabElements[][10];
 
     /*
      * typeLoop vRows - pole okreslajace liczbe
      * wierszy tablicy.
      */
-    typeLoop vRows;
+    //typeLoop vRows;
 
     /*
      * typeLoop vColumns - pole okreslajace liczbe
      * kolumn tablicy.
      */
-    typeLoop vColumns;
+    //typeLoop vColumns;
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
-    typeData vDrawingRange;
+    //typeData vDrawingRange;
 
     /*
      * typeData vMinElement - najmniejszy element tablicy.
      */
-    typeData vMinElement;
+    //typeData vMinElement;
 
     /*
      * typeData vMaxElement - najwiekszy element tablicy.
      */
-    typeData vMaxElement;
+    //typeData vMaxElement;
 
     /********** PRIVATE: END **********/
 
     /********** PUBLIC: BEGINNING **********/
-public:
+//public:
 
     /*
      * cStaticOneDimensionTable() - konstruktor wywolywany
@@ -69,7 +69,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    cStaticTwoDimensionTable();
+    //cStaticTwoDimensionTable();
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -80,7 +80,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    cStaticTwoDimensionTable(typeData aDrawingRange);
+    //cStaticTwoDimensionTable(typeData aDrawingRange);
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -92,7 +92,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    cStaticTwoDimensionTable(typeData aDrawingRange, typeLoop aRows);
+    //cStaticTwoDimensionTable(typeData aDrawingRange, typeLoop aRows);
 
 
 
@@ -105,10 +105,10 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    inline typeData getElement(typeLoop aRows, typeLoop aColumns)
+    /*inline typeData getElement(typeLoop aRows, typeLoop aColumns)
     {
         return tabElements[aRows][aColumns];
-    }
+    }*/
 
     /*
      * typeLoop getRows() - metoda zwracajaca liczbe wierszy tablicy
@@ -117,10 +117,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vRows (typ: typeLoop).
      */
-    inline typeLoop getRows()
+    /*inline typeLoop getRows()
     {
         return vRows;
-    }
+    }*/
 
     /*
      * typeLoop getColumns() - metoda zwracajaca liczbe kolumn tablicy
@@ -129,10 +129,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vColumn (typ: typeLoop).
      */
-    inline typeLoop getColumns()
+    /*inline typeLoop getColumns()
     {
         return vColumns;
-    }
+    }*/
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -142,10 +142,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    inline typeData getDrawingRange()
+    /*inline typeData getDrawingRange()
     {
         return vDrawingRange;
-    }
+    }*/
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -155,10 +155,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    inline typeData getMinElement()
+    /*inline typeData getMinElement()
     {
         return vMinElement;
-    }
+    }*/
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -168,10 +168,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    inline typeData getMaxElement()
+    /*inline typeData getMaxElement()
     {
         return vMaxElement;
-    }
+    }*/
 
 
 
@@ -185,10 +185,10 @@ public:
      * POST:
      * - brak.
      */
-    inline void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
+    /*inline void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
     {
         tabElements[aRows][aColumns] = aElement;
-    }
+    }*/
 
     /*
      * void mRemoveElement(typeLoop aRows, typeLoop aColumns) - metoda
@@ -199,10 +199,10 @@ public:
      * POST:
      * - brak.
      */
-    inline void mClearElement(typeLoop aRows, typeLoop aColumns)
+    /*inline void mClearElement(typeLoop aRows, typeLoop aColumns)
     {
         tabElements[aRows][aColumns] = NULL;
-    }
+    }*/
 
 
 
@@ -213,7 +213,7 @@ public:
      * POST:
      * - brak.
      */
-    void mDrawElements();
+    //void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -223,7 +223,7 @@ public:
      * POST:
      * - brak.
      */
-    void mFindMinElement();
+    //void mFindMinElement();
 
     /*
      * void mFindMaxElement() - metoda znajdujaca najwiekszy
@@ -233,7 +233,7 @@ public:
      * POST:
      * - brak.
      */
-    void mFindMaxElement();
+    //void mFindMaxElement();
 
 
 
@@ -246,10 +246,10 @@ public:
      * POST:
      * - brak.
      */
-    inline void mPrintElement(typeLoop aRows, typeLoop aColumns)
+    /*inline void mPrintElement(typeLoop aRows, typeLoop aColumns)
     {
         cout << tabElements[aRows][aColumns] << " ";
-    }
+    }*/
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
@@ -258,12 +258,12 @@ public:
      * POST:
      * - brak.
      */
-    void mPrintTable();
+    //void mPrintTable();
 
     /********** PUBLIC: END **********/
-};
+//};
 
-#endif // CSTATICTWODIMENSIONTABLE_HPP
+//#endif // CSTATICTWODIMENSIONTABLE_HPP
 
 /* cstatictwodimensiontable.hpp */
 /********** END_OF_FILE **********/

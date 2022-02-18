@@ -4,56 +4,56 @@
  * file: cstaticonedimensiontable.hpp
  */
 
-#ifndef CSTATICONEDIMENSIONTABLE_HPP
-#define CSTATICONEDIMENSIONTABLE_HPP
+//#ifndef CSTATICONEDIMENSIONTABLE_HPP
+//#define CSTATICONEDIMENSIONTABLE_HPP
 
-#include "constantsandtypes.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
+//#include "constantsandtypes.hpp"
+//#include <iostream>
+//#include <cstdlib>
+//#include <ctime>
 
-using namespace std;
+//using namespace std;
 
 /*
  * cStaticOneDimensionTable - klasa modelujaca
  * statyczna tablice jednowymiarowa o zadanym
  * i niemodyfikowalnym pozniej rozmiarze.
  */
-class cStaticOneDimensionTable
-{
+//class cStaticOneDimensionTable
+//{
     /********** PRIVATE: BEGINNING **********/
 
-        /*
-         * typeData tabElements[] - tablica elementow.
-         */
-    typeData tabElements[];
+    /*
+     * typeData tabElements[] - tablica elementow.
+     */
+    //typeData tabElements[];
 
     /*
      * typeLoop vLengthTable - stala okreslajaca
      * liczbe elementow tablicy.
      */
-    typeLoop vLengthTable;
+    //typeLoop vLengthTable;
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
-    typeData vDrawingRange;
+    //typeData vDrawingRange;
 
     /*
      * typeData vMinElement - najmniejszy element tablicy.
      */
-    typeData vMinElement;
+    //typeData vMinElement;
 
     /*
      * typeData vMaxElement - najwiekszy element tablicy.
      */
-    typeData vMaxElement;
+    //typeData vMaxElement;
 
     /********** PRIVATE: END **********/
 
     /********** PUBLIC: BEGINNING **********/
-public:
+//public:
 
     /*
      * cStaticOneDimensionTable() - konstruktor wywolywany
@@ -63,7 +63,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    cStaticOneDimensionTable();
+    //cStaticOneDimensionTable();
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -74,7 +74,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    cStaticOneDimensionTable(typeData aDrawingRange);
+    //cStaticOneDimensionTable(typeData aDrawingRange);
 
 
 
@@ -86,10 +86,10 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    inline typeData getElement(typeLoop aIndex)
+    /*inline typeData getElement(typeLoop aIndex)
     {
         return tabElements[aIndex];
-    }
+    }*/
 
     /*
      * typeLoop getLengthTable() - metoda zwracajaca dlugosc tablicy
@@ -98,10 +98,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
      */
-    inline typeLoop getLengthTable()
+    /*inline typeLoop getLengthTable()
     {
         return vLengthTable;
-    }
+    }*/
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -111,10 +111,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    inline typeData getDrawingRange()
+    /*inline typeData getDrawingRange()
     {
         return vDrawingRange;
-    }
+    }*/
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -124,10 +124,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    inline typeData getMinElement()
+    /*inline typeData getMinElement()
     {
         return vMinElement;
-    }
+    }*/
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -137,10 +137,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    inline typeData getMaxElement()
+    /*inline typeData getMaxElement()
     {
         return vMaxElement;
-    }
+    }*/
 
 
 
@@ -153,7 +153,7 @@ public:
      * POST:
      * - brak.
      */
-    void mReplaceElement(typeLoop aIndex, typeData aElement);
+    //void mReplaceElement(typeLoop aIndex, typeData aElement);
 
     /*
      * void mRemoveElement(typeLoop aIndex) - metoda resetujaca
@@ -163,7 +163,7 @@ public:
      * POST:
      * - brak.
      */
-    void mClearElement(typeLoop aIndex);
+    //void mClearElement(typeLoop aIndex);
 
 
 
@@ -174,7 +174,7 @@ public:
      * POST:
      * - brak.
      */
-    void mDrawElements();
+    //void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -184,7 +184,7 @@ public:
      * POST:
      * - brak.
      */
-    void mFindMinElement();
+    //void mFindMinElement();
 
     /*
      * void mFindMaxElement() - metoda znajdujaca najwiekszy
@@ -194,7 +194,7 @@ public:
      * POST:
      * - brak.
      */
-    void mFindMaxElement();
+    //void mFindMaxElement();
 
 
 
@@ -206,10 +206,10 @@ public:
      * POST:
      * - brak.
      */
-    inline void mPrintElement(typeLoop aIndex)
+    /*inline void mPrintElement(typeLoop aIndex)
     {
         cout << tabElements[aIndex] << endl;
-    }
+    }*/
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
@@ -218,12 +218,12 @@ public:
      * POST:
      * - brak.
      */
-    void mPrintTable();
+    //void mPrintTable();
 
     /********** PUBLIC: END **********/
-};
+//};
 
-#endif // CSTATICONEDIMENSIONTABLE_HPP
+//#endif // CSTATICONEDIMENSIONTABLE_HPP
 
 /* cstaticonedimensiontable.hpp */
 /********** END_OF_FILE **********/
