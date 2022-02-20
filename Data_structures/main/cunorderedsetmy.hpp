@@ -4,10 +4,7 @@
  * file: cunorderedsetmy.hpp
  */
 
-#ifndef CUNORDEREDSETMY_HPP
-#define CUNORDEREDSETMY_HPP
-
-using namespace std;
+#pragma once
 
 /*
  * cUnorderedSetMy - klasa modelujaca
@@ -16,11 +13,19 @@ using namespace std;
  */
 class cUnorderedSetMy
 {
+/********** PUBLIC: END **********/
+
 public:
     cUnorderedSetMy();
-};
 
-#endif // CUNORDEREDSETMY_HPP
+/********** PUBLIC: END **********/
+
+/********** PUC: END **********/
+
+//private:
+
+/********** PUBLIC: END **********/
+};
 
 /* cunorderedsetmy.hpp */
 /********** END_OF_FILE **********/

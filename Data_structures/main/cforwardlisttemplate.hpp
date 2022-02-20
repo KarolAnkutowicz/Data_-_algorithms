@@ -4,12 +4,9 @@
  * file: cforwardlisttemplate.hpp
  */
 
-#ifndef CFORWARDLISTTEMPLATE_HPP
-#define CFORWARDLISTTEMPLATE_HPP
+#pragma once
 
  //#include <forward_list>
-
-using namespace std;
 
 /*
  * cForwardListTemplate - klasa modelujaca liste
@@ -18,11 +15,20 @@ using namespace std;
  */
 class cForwardListTemplate
 {
-public:
-    cForwardListTemplate();
-};
+/********** PUBLIC: BEGINNING **********/
 
-#endif // CFORWARDLISTTEMPLATE_HPP
+public:
+
+    cForwardListTemplate();
+
+/********** PUBLIC: END **********/
+
+/********** PRIVATE: BEGINNING **********/
+
+//private:
+
+/********** PRIVATE: END **********/
+};
 
 /* cforwardlisttemplate.hpp */
 /********** END_OF_FILE **********/

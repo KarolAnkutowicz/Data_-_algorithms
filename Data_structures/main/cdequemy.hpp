@@ -4,15 +4,12 @@
  * file: cdequemy.hpp
  */
 
-#ifndef CDEQUEMY_HPP
-#define CDEQUEMY_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cDequeMy - klasa modelujaca kolejke dwukierunkowa
@@ -20,29 +17,8 @@ using namespace std;
  */
 class cDequeMy
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * cElementMy *DequekMy - wskaznik do pierwszego elementu
-         * kolejki dwukierunkowej.
-         */
-    typeData* DequeMy;
-
-    /*
-     * typeLoop vSize - zmienna przechowujaca rozmiar kolejki
-     * dwukierunkowej.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - zakres losowania elementow
-     * kolejki dwukierunkowej.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
 
     /*
@@ -232,10 +208,32 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CDEQUEMY_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * cElementMy *DequekMy - wskaznik do pierwszego elementu
+     * kolejki dwukierunkowej.
+     */
+    typeData* DequeMy;
+
+    /*
+     * typeLoop vSize - zmienna przechowujaca rozmiar kolejki
+     * dwukierunkowej.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - zakres losowania elementow
+     * kolejki dwukierunkowej.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cdequemy.hpp */
 /********** END_OF_FILE **********/

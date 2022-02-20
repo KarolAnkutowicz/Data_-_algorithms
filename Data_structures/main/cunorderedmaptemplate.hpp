@@ -4,12 +4,9 @@
  * file: cunorderedmaptemplate.hpp
  */
 
-#ifndef CUNORDEREDMAPTEMPLATE_HPP
-#define CUNORDEREDMAPTEMPLATE_HPP
+#pragma once
 
  //#include <unordered_map>
-
-using namespace std;
 
 /*
  * cUnorderedMapTemplate - klasa modelujaca
@@ -18,11 +15,19 @@ using namespace std;
  */
 class cUnorderedMapTemplate
 {
+/********** PUBLIC: END **********/
+
 public:
     cUnorderedMapTemplate();
-};
 
-#endif // CUNORDEREDMAPTEMPLATE_HPP
+/********** PUBLIC: END **********/
+
+/********** PUC: END **********/
+
+//private:
+
+/********** PUBLIC: END **********/
+};
 
 /* cunorderedmaptemplate.hpp */
 /********** END_OF_FILE **********/

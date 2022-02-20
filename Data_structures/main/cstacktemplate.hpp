@@ -4,8 +4,7 @@
  * file: cstacktemplate.hpp
  */
 
-#ifndef CSTACKTEMPLATE_HPP
-#define CSTACKTEMPLATE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
@@ -13,32 +12,16 @@
 #include <iostream>
 #include <stack>
 
-using namespace std;
-
 /*
  * cStackTemplate - klasa modelujaca strukture stosu
  * w oparciu o szablon "stack".
  */
 class cStackTemplate
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * stack <typeData> StackTemplate - stos
-         * przechowujacy elementy typu typeData.
-         */
-    stack <typeData> StackTemplate;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow stosu.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
+
     /*
      * cStackTemplate() - konstruktor wywolywany
      * bez argumentow
@@ -185,10 +168,26 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CSTACKTEMPLATE_HPP
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * stack <typeData> StackTemplate - stos
+     * przechowujacy elementy typu typeData.
+     */
+    std::stack <typeData> StackTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow stosu.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cstacktemplate.hpp */
 /********** END_OF_FILE **********/

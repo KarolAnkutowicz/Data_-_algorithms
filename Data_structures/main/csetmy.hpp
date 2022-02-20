@@ -4,15 +4,12 @@
  * file: csetmy.hpp
  */
 
-#ifndef CSETMY_HPP
-#define CSETMY_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cSetMy - klasa modelujaca zbior bez
@@ -20,28 +17,7 @@ using namespace std;
  */
 class cSetMy
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * typeData *SetMy - wskaznik na zbior elementow
-         * o wartosciach typu "typeData".
-         */
-    typeData* SetMy;
-
-    /*
-     * typeLoop vSize - pole przechowujace rozmiar zbioru.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - pole przechowujace
-     * zakres losowania wartosci elementow.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
     /*
@@ -160,10 +136,31 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CSETMY_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * typeData *SetMy - wskaznik na zbior elementow
+     * o wartosciach typu "typeData".
+     */
+    typeData* SetMy;
+
+    /*
+     * typeLoop vSize - pole przechowujace rozmiar zbioru.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - pole przechowujace
+     * zakres losowania wartosci elementow.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* csetmy.hpp */
 /********** END_OF_FILE **********/

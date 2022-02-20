@@ -6,9 +6,13 @@
 
 #include "cunorderedsettemplate.hpp"
 
+ /********** PUBLIC: BEGINNING **********/
+
 cUnorderedSetTemplate::cUnorderedSetTemplate()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* cunorderedsettemplate.cpp */
 /********** END_OF_FILE **********/

@@ -8,9 +8,13 @@
 
 using namespace std;
 
+/********** PUBLIC: BEGINNING **********/
+
 cUnorderedSetMy::cUnorderedSetMy()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* cunorderedsetmy.cpp */
 /********** END_OF_FILE **********/

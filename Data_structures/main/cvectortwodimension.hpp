@@ -4,16 +4,13 @@
  * file: cvectortwodimension.hpp
  */
 
-#ifndef CVECTORTWODIMENSION_HPP
-#define CVECTORTWODIMENSION_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
 #include <vector>
-
-using namespace std;
 
 /*
  * cVectorTwoDimension() - klasa modelujaca tablice
@@ -22,36 +19,10 @@ using namespace std;
  */
 class cVectorTwoDimension
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * vector <vector <typeData> > VectorElements - wektor
-         * przechowujacy wektory typu typeData.
-         */
-    vector <vector <typeData> > VectorElements;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow wektora wektorow.
-     */
-    typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - pole przechowujaca
-     * najmniejsza wartosc w wektorze wektorow.
-     */
-    typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - pole przechowujace
-     * najwieksza wartosc w wektorze wektorow.
-     */
-    typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
+
     /*
      * cVectorTwoDimension() - konstruktor wywolywany
      * bez argumentow.
@@ -276,10 +247,38 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CVECTORTWODIMENSION_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * vector <vector <typeData> > VectorElements - wektor
+     * przechowujacy wektory typu typeData.
+     */
+    std::vector <std::vector <typeData> > VectorElements;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow wektora wektorow.
+     */
+    typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - pole przechowujaca
+     * najmniejsza wartosc w wektorze wektorow.
+     */
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - pole przechowujace
+     * najwieksza wartosc w wektorze wektorow.
+     */
+    typeData vMaxElement;
+
+/********** PRIVATE: END **********/
+};
 
 /* cvectortwodimension.hpp */
 /********** END_OF_FILE **********/

@@ -4,16 +4,13 @@
  * file: cdequetemplate.hpp
  */
 
-#ifndef CDEQUETEMPLATE_HPP
-#define CDEQUETEMPLATE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <deque>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cDequeTemplate - klasa modelujaca kolejke
@@ -22,23 +19,7 @@ using namespace std;
  */
 class cDequeTemplate
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * deque <typeData> DequeTemplate - kolejka dwukierunkowa
-         * elementow typu typeData.
-         */
-    deque <typeData> DequeTemplate;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow kolejki dwukierunkowej.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -238,10 +219,26 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CDEQUETEMPLATE_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * deque <typeData> DequeTemplate - kolejka dwukierunkowa
+     * elementow typu typeData.
+     */
+    std::deque <typeData> DequeTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow kolejki dwukierunkowej.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cdequetemplate.hpp */
 /********** END_OF_FILE **********/

@@ -4,8 +4,7 @@
  * file: cqueuetemplate.hpp
  */
 
-#ifndef CQUEUETEMPLATE_HPP
-#define CQUEUETEMPLATE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include "cstdlib"
@@ -13,31 +12,14 @@
 #include <iostream>
 #include <queue>
 
-using namespace std;
-
 /*
  * class cQueueTemplate - klasa modelujaca kolejke
  * z wykorzystaniem szablonu <queue>.
  */
 class cQueueTemplate
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * queue <typeData> QueueTemplate - kolejka
-         * elementow typu typeData.
-         */
-    queue <typeData> QueueTemplate;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow kolejki.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
 
     /*
@@ -205,10 +187,26 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CQUEUETEMPLATE_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * queue <typeData> QueueTemplate - kolejka
+     * elementow typu typeData.
+     */
+    std::queue <typeData> QueueTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow kolejki.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cqueuetemplate.hpp */
 /********** END_OF_FILE **********/

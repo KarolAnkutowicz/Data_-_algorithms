@@ -4,8 +4,7 @@
  * file: clisttemplate.hpp
  */
 
-#ifndef CLISTTEMPLATE_HPP
-#define CLISTTEMPLATE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
@@ -13,31 +12,14 @@
 #include <iostream>
 #include <list>
 
-using namespace std;
-
 /*
  * cListTemplate - klasa modelujaca liste w oparciu
  * o szablon <list>.
  */
 class cListTemplate
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * list <typeData> ListTemplate - lista przechowujaca
-         * elementy typu typeData.
-         */
-    list <typeData> ListTemplate;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow stosu.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
     /*
      * cListTemplate() - konstruktor wywolywany bez argumentow.
@@ -229,11 +211,26 @@ public:
      */
     void mPrintAllElements();
 
+/********** PUBLIC: END **********/
 
-    /********** PUBLIC: END **********/
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * list <typeData> ListTemplate - lista przechowujaca
+     * elementy typu typeData.
+     */
+    std::list <typeData> ListTemplate;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow stosu.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
 };
-
-#endif // CLISTTEMPLATE_HPP
 
 /* clisttemplate.hpp */
 /********** END_OF_FILE **********/

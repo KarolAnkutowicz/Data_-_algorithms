@@ -4,15 +4,12 @@
  * file: cmaptemplate.hpp
  */
 
-#ifndef CMAPTEMPLATE_HPP
-#define CMAPTEMPLATE_HPP
+#pragma once
 
 #include "celementsmystructures.hpp"
 #include "constantsandtypes.hpp"
 #include <iostream>
 #include <map>
-
-using namespace std;
 
 /*
  * cMapTemplate - klasa modelujaca mape
@@ -20,24 +17,7 @@ using namespace std;
  */
 class cMapTemplate
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * map <typeKey, typeData> MapTemplate - mapa
-         * elementow o kluczu typu "typeKey" i wartosciach
-         * typu "typeData".
-         */
-    map <typeKey, typeData> MapTemplate;
-
-    /*
-     * typeData vDrawingRangeValue - pole przechowujace
-     * zakres losowania wartosci elementow.
-     */
-    typeData vDrawingRangeValue;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -175,10 +155,27 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CMAPTEMPLATE_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * map <typeKey, typeData> MapTemplate - mapa
+     * elementow o kluczu typu "typeKey" i wartosciach
+     * typu "typeData".
+     */
+    std::map <typeKey, typeData> MapTemplate;
+
+    /*
+     * typeData vDrawingRangeValue - pole przechowujace
+     * zakres losowania wartosci elementow.
+     */
+    typeData vDrawingRangeValue;
+
+/********** PRIVATE: END **********/
+};
 
 /* cmaptemplate.hpp */
 /********** END_OF_FILE **********/

@@ -4,14 +4,11 @@
  * file: celementmystructures.hpp
  */
 
-#ifndef CELEMENTSMYSTRUCTURES_HPP
-#define CELEMENTSMYSTRUCTURES_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cElementListAndDeque - klasa modelujaca element
@@ -19,16 +16,7 @@ using namespace std;
  */
 class cElementListAndDeque
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * typeData vValue - pole zawierajace wartosc elementu.
-         */
-    typeData vValue;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -83,7 +71,18 @@ public:
         vValue = aValue;
     }
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
+
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * typeData vValue - pole zawierajace wartosc elementu.
+     */
+    typeData vValue;
+
+/********** PRIVATE: END **********/
 };
 
 
@@ -94,17 +93,7 @@ public:
  */
 class cElementForwardListAndQueue
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * typeData vValue - pole przechowujace wartosc
-         * elementu.
-         */
-    typeData vValue;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -155,7 +144,20 @@ public:
         vValue = aValue;
     }
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
+
+
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * typeData vValue - pole przechowujace wartosc
+     * elementu.
+     */
+    typeData vValue;
+
+/********** PRIVATE: END **********/
 };
 
 
@@ -165,21 +167,6 @@ public:
  */
 class cElementMap
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * typeData vValue - pole przechowujaca wartosc
-         * elementu.
-         */
-    typeData vValue;
-
-    /*
-     * typeKey vKey - pole przechowujace klucz elementu.
-     */
-    typeKey vKey;
-
-    /********** PRIVATE: END **********/
-
     /********** PUBLIC: BEGIN **********/
 
 public:
@@ -266,10 +253,24 @@ public:
     }
 
     /********** PUBLIC: END **********/
+
+    /********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * typeData vValue - pole przechowujaca wartosc
+     * elementu.
+     */
+    typeData vValue;
+
+    /*
+     * typeKey vKey - pole przechowujace klucz elementu.
+     */
+    typeKey vKey;
+
+    /********** PRIVATE: END **********/
 };
-
-
-#endif // CELEMENTSMYSTRUCTURES_HPP
 
 /* celementmystructures.hpp */
 /********** END_OF_FILE **********/

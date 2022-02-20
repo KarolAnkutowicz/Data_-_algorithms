@@ -4,15 +4,12 @@
  * file: cstaticonedimensiontable.hpp
  */
 
-//#ifndef CSTATICONEDIMENSIONTABLE_HPP
-//#define CSTATICONEDIMENSIONTABLE_HPP
+//#pragma once
 
 //#include "constantsandtypes.hpp"
 //#include <iostream>
 //#include <cstdlib>
 //#include <ctime>
-
-//using namespace std;
 
 /*
  * cStaticOneDimensionTable - klasa modelujaca
@@ -21,38 +18,8 @@
  */
 //class cStaticOneDimensionTable
 //{
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-    /*
-     * typeData tabElements[] - tablica elementow.
-     */
-    //typeData tabElements[];
-
-    /*
-     * typeLoop vLengthTable - stala okreslajaca
-     * liczbe elementow tablicy.
-     */
-    //typeLoop vLengthTable;
-
-    /*
-     * typeData vDrawingRange - maksymalna liczba jaka mozemy
-     * wylosowac (zakres od 0 do vDarwingRange).
-     */
-    //typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - najmniejszy element tablicy.
-     */
-    //typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - najwiekszy element tablicy.
-     */
-    //typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 //public:
 
     /*
@@ -220,10 +187,41 @@
      */
     //void mPrintTable();
 
-    /********** PUBLIC: END **********/
-//};
+/********** PUBLIC: END **********/
 
-//#endif // CSTATICONEDIMENSIONTABLE_HPP
+/********** PRIVATE: BEGINNING **********/
+
+//private:
+
+    /*
+     * typeData tabElements[] - tablica elementow.
+     */
+     //typeData tabElements[];
+
+    /*
+     * typeLoop vLengthTable - stala okreslajaca
+     * liczbe elementow tablicy.
+     */
+     //typeLoop vLengthTable;
+
+    /*
+     * typeData vDrawingRange - maksymalna liczba jaka mozemy
+     * wylosowac (zakres od 0 do vDarwingRange).
+     */
+    //typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - najmniejszy element tablicy.
+     */
+    //typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - najwiekszy element tablicy.
+     */
+    //typeData vMaxElement;
+
+/********** PRIVATE: END **********/
+//};
 
 /* cstaticonedimensiontable.hpp */
 /********** END_OF_FILE **********/

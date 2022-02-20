@@ -5,8 +5,7 @@
  * file: cdatahandling.hpp
  */
 
-#ifndef CDATAHANDLING_HPP
-#define CDATAHANDLING_HPP
+#pragma once
 
 #include "carrayonedimension.hpp"
 #include "carraytwodimension.hpp"
@@ -39,15 +38,14 @@
 #include <conio.h>
 #include <iostream>
 
-using namespace std;
-
 /*
  * cDataHandling - klasa modelujaca obsluge zaimplementowanych
  * struktur danych.
  */
 class cDataHandling
 {
-    /********** PUBLIC: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
+
 public:
     /*
      * typeLoop vOption - zmienna wykorzystywanie do sterowania
@@ -376,10 +374,8 @@ public:
      */
     void mMenuUnorderedSetTemplate();
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
 };
-
-#endif // CDATAHANDLING_HPP
 
 /* cdatahandling.hpp */
 /********** END_OF_FILE **********/

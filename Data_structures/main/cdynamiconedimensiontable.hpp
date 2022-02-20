@@ -4,15 +4,12 @@
  * file: cdynamiconedimensiontable.hpp
  */
 
-#ifndef CDYNAMICONEDIMENSIONTABLE_HPP
-#define CDYNAMICONEDIMENSIONTABLE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cDynamicOneDimensionTable - klasa modelujaca jednowymiarowa
@@ -20,43 +17,8 @@ using namespace std;
  */
 class cDynamicOneDimensionTable
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * typeData *tabElements - tablica elementow.
-         */
-    typeData* tabElements;
-
-    /*
-     * typeLoop vLengthTable - liczba elementow tablicy.
-     */
-    typeLoop vLengthTable;
-
-    /*
-     * bool vTableIsEmpty - pole okreslajace czy tablica
-     * jest pusta.
-     */
-    bool vTableIsEmpty;
-
-    /*
-     * typeData vDrawingRange - maksymalna liczba jaka mozemy
-     * wylosowac (zakres od 0 do vDarwingRange).
-     */
-    typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - najmniejszy element tablicy.
-     */
-    typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - najwiekszy element tablicy.
-     */
-    typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
 
     /*
@@ -281,10 +243,46 @@ public:
      */
     void mPrintTable();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CDYNAMICONEDIMENSIONTABLE_HPP
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * typeData *tabElements - tablica elementow.
+     */
+    typeData* tabElements;
+
+    /*
+     * typeLoop vLengthTable - liczba elementow tablicy.
+     */
+    typeLoop vLengthTable;
+
+    /*
+     * bool vTableIsEmpty - pole okreslajace czy tablica
+     * jest pusta.
+     */
+    bool vTableIsEmpty;
+
+    /*
+     * typeData vDrawingRange - maksymalna liczba jaka mozemy
+     * wylosowac (zakres od 0 do vDarwingRange).
+     */
+    typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - najmniejszy element tablicy.
+     */
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - najwiekszy element tablicy.
+     */
+    typeData vMaxElement;
+
+    /********** PRIVATE: END **********/
+};
 
 /* cdynamiconedimensiontable.hpp */
 /********** END_OF_FILE **********/

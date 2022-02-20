@@ -4,8 +4,7 @@
  * file: cmapmy.hpp
  */
 
-#ifndef CMAPMY_HPP
-#define CMAPMY_HPP
+#pragma once
 
 #include "celementsmystructures.hpp"
 #include "constantsandtypes.hpp"
@@ -13,37 +12,13 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 /*
  * cMapMy - klasa modelujaca mape bez
  * wykorzystania szablonu <map>
  */
 class cMapMy
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * map <typeKey, typeData> MapTemplate - mapa
-         * elementow o kluczu typu "typeKey" i wartosciach
-         * typu "typeData".
-         */
-    cElementMap* MapMy;
-
-    /*
-     * typeLoop vSize - pole przechowujace wielkosc mapy.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - pole przechowujace
-     * zakres losowania wartosci elementow.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -196,11 +171,32 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
 
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * map <typeKey, typeData> MapTemplate - mapa
+     * elementow o kluczu typu "typeKey" i wartosciach
+     * typu "typeData".
+     */
+    cElementMap* MapMy;
+
+    /*
+     * typeLoop vSize - pole przechowujace wielkosc mapy.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - pole przechowujace
+     * zakres losowania wartosci elementow.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
 };
-
-#endif // CMAPMY_HPP
 
 /* cmapmy.hpp */
 /********** END_OF_FILE **********/

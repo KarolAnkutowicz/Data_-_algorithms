@@ -4,8 +4,7 @@
  * file: clistmy.hpp
  */
 
-#ifndef CLISTMY_HPP
-#define CLISTMY_Hpp
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include "celementsmystructures.hpp"
@@ -13,44 +12,16 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 /*
  * cListMy - klasa modelujaca liste bez wykorzystania
  * szablonu <list>.
  */
 class cListMy
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * cElementListAndDeque *vListMyBegin - wskaznik do
-         * pierwszego elementu listy.
-         */
-    cElementListAndDeque* vListMyBegin;
-
-    /*
-     * cElementListAndDeque *vListMyEnd - wskaznik do
-     * ostatniego elementu listy.
-     */
-    cElementListAndDeque* vListMyEnd;
-
-    /*
-     *  typeLoop vSize - zmienna przechowujaca rozmiar listy.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow stosu.
-     */
-    typeData vDrawingRange;
-
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
+
     /*
      * cListMy() - konstruktor wywolywany bez argumentow.
      * PRE:
@@ -228,11 +199,38 @@ public:
      * - brak.
      */
     void mPrintAllElements();
+
+    /********** PUBLIC: END **********/
+
+
+
+    /********** PRIVATE: BEGINNING **********/
+
+    /*
+     * cElementListAndDeque *vListMyBegin - wskaznik do
+     * pierwszego elementu listy.
+     */
+    cElementListAndDeque* vListMyBegin;
+
+    /*
+     * cElementListAndDeque *vListMyEnd - wskaznik do
+     * ostatniego elementu listy.
+     */
+    cElementListAndDeque* vListMyEnd;
+
+    /*
+     *  typeLoop vSize - zmienna przechowujaca rozmiar listy.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow stosu.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
 };
-
-/********** PUBLIC: END **********/
-
-#endif // CLISTMY_HPP
 
 /* clistmy.hpp */
 /********** END_OF_FILE **********/

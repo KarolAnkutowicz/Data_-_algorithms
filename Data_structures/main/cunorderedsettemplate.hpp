@@ -4,12 +4,9 @@
  * file: cunorderedsettemplate.hpp
  */
 
-#ifndef CUNORDEREDSETTEMPLATE_HPP
-#define CUNORDEREDSETTEMPLATE_HPP
+#pragma once
 
  //#include <unordered_set>
-
-using namespace std;
 
 /*
  * cUnorderedSetTemplate - klasa modelujaca
@@ -18,11 +15,19 @@ using namespace std;
  */
 class cUnorderedSetTemplate
 {
+/********** PUBLIC: END **********/
+
 public:
     cUnorderedSetTemplate();
-};
 
-#endif // CUNORDEREDSETTEMPLATE_HPP
+/********** PUBLIC: END **********/
+
+/********** PUC: END **********/
+
+//private:
+
+/********** PUBLIC: END **********/
+};
 
 /* cunorderedsettemplate.hpp */
 /********** END_OF_FILE **********/

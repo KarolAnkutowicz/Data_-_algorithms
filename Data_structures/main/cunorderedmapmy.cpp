@@ -8,9 +8,13 @@
 
 using namespace std;
 
+/********** PUBLIC: BEGINNING **********/
+
 cUnorderedMapMy::cUnorderedMapMy()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* cunorderedmapmy.cpp */
 /********** END_OF_FILE **********/

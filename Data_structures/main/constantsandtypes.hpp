@@ -4,10 +4,7 @@
  * file: constantsandtypes.hpp
  */
 
-#ifndef CONSTANTSANDTYPES_HPP
-#define CONSTANTSANDTYPES_HPP
-
-using namespace std;
+#pragma once
 
 /*
  * int typeData - zdefiniowany synonim typu, glownie
@@ -27,9 +24,6 @@ typedef unsigned short typeLoop;
  * z kluczem.
  */
 typedef char typeKey;
-
-#endif // CONSTANTSANDTYPES_HPP
-
 
 /* constantsandtypes.hpp */
 /********** END_OF_FILE **********/

@@ -4,8 +4,7 @@
  * file: csettemplate.hpp
  */
 
-#ifndef CSETTEMPLATE_HPP
-#define CSETTEMPLATE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <ctime>
@@ -13,31 +12,13 @@
 #include <iostream>
 #include <set>
 
-using namespace std;
-
 /*
  * cSetTemplate - klasa modelujaca zbior
  * z wykorzystaniem szablonu <set>
  */
 class cSetTemplate
 {
-    /********** PRIVATE: BEGIN **********/
-
-        /*
-         * set <typeData> SetTemplate - zbior elementow
-         * o wartosciach typu "typeData".
-         */
-    set <typeData> SetTemplate;
-
-    /*
-     * typeData vDrawingRange - pole przechowujace
-     * zakres losowania wartosci elementow.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -153,10 +134,26 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CSETTEMPLATE_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * set <typeData> SetTemplate - zbior elementow
+     * o wartosciach typu "typeData".
+     */
+    std::set <typeData> SetTemplate;
+
+    /*
+     * typeData vDrawingRange - pole przechowujace
+     * zakres losowania wartosci elementow.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* csettemplate.hpp */
 /********** END_OF_FILE **********/

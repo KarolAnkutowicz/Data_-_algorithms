@@ -4,15 +4,12 @@
  * file: cstacktmy.hpp
  */
 
-#ifndef CSTACKMY_HPP
-#define CSTACKMY_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cStackMy - klasa modelujaca strukture stosu
@@ -20,34 +17,8 @@ using namespace std;
  */
 class cStackMy
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * typeData *StackMy - tablica przechowujaca elementy
-         * stosu typu typeData.
-         */
-    typeData* StackMy;
-
-    /*
-     *  typeLoop vSize - zmienna przechowujaca rozmiar stosu.
-     */
-    typeLoop vSize;
-
-    /*
-     * bool vIsEmpty - zmienna logiczna okreslajaca czy stos
-     * jest pusty czy nie.
-     */
-    bool vIsEmpty;
-
-    /*
-     * typeData vDrawingRange - zakres losowania elementow
-     * stosu.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
     /*
      * cStackMy() - konstruktor wywolywany bez argumentow
@@ -211,10 +182,37 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CSTACKMY_HPP
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * typeData *StackMy - tablica przechowujaca elementy
+     * stosu typu typeData.
+     */
+    typeData* StackMy;
+
+    /*
+     *  typeLoop vSize - zmienna przechowujaca rozmiar stosu.
+     */
+    typeLoop vSize;
+
+    /*
+     * bool vIsEmpty - zmienna logiczna okreslajaca czy stos
+     * jest pusty czy nie.
+     */
+    bool vIsEmpty;
+
+    /*
+     * typeData vDrawingRange - zakres losowania elementow
+     * stosu.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cstackmy.hpp */
 /********** END_OF_FILE **********/

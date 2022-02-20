@@ -4,15 +4,12 @@
  * file: cqueuemy.hpp
  */
 
-#ifndef CQUEUEMY_HPP
-#define CQUEUEMY_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * class cQueueMy - klasa modelujaca kolejke
@@ -20,28 +17,8 @@ using namespace std;
  */
 class cQueueMy
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * cElementMy *QueuekMy - wskaznik do pierwszego elementu
-         * kolejki.
-         */
-    typeData* QueueMy;
-
-    /*
-     * typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - zakres losowania elementow
-     * kolejki.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
 
     /*
@@ -200,10 +177,31 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CQUEUEMY_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * cElementMy *QueuekMy - wskaznik do pierwszego elementu
+     * kolejki.
+     */
+    typeData* QueueMy;
+
+    /*
+     * typeLoop vSize - zmienna przechowujaca rozmiar kolejki.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - zakres losowania elementow
+     * kolejki.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cqueuemy.hpp */
 /********** END_OF_FILE **********/

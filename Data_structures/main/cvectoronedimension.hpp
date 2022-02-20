@@ -4,16 +4,13 @@
  * file: cvectoronedimension.hpp
  */
 
-#ifndef CVECTORONEDIMENSION_HPP
-#define CVECTORONEDIMENSION_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
 #include <vector>
-
-using namespace std;
 
 /*
  * cVectorOneDimension() - klasa modelujaca tablice
@@ -22,36 +19,10 @@ using namespace std;
  */
 class cVectorOneDimension
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * vector <typeData> VectorElements - wektor
-         * przechowujacy elementy typu TypeData.
-         */
-    vector <typeData> VectorElements;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow wektora.
-     */
-    typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - pole przechowujaca
-     * najmniejsza wartosc tablicy.
-     */
-    typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - pole przechowujace
-     * najwieksza wartosc tablicy.
-     */
-    typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
+
     /*
      * cVectorOneDimension() - konstruktor wywolywany
      * bez argumentow.
@@ -262,10 +233,38 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CVECTORONEDIMENSION_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * vector <typeData> VectorElements - wektor
+     * przechowujacy elementy typu TypeData.
+     */
+    std::vector <typeData> VectorElements;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow wektora.
+     */
+    typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - pole przechowujaca
+     * najmniejsza wartosc tablicy.
+     */
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - pole przechowujace
+     * najwieksza wartosc tablicy.
+     */
+    typeData vMaxElement;
+
+/********** PRIVATE: END **********/
+};
 
 /* cvectoronedimension.hpp */
 /********** END_OF_FILE **********/

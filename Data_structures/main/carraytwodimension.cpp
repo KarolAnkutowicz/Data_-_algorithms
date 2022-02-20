@@ -6,9 +6,13 @@
 
 #include "carraytwodimension.hpp"
 
+/********** PUBLIC: BEGINNING **********/
+
 cArrayTwoDimension::cArrayTwoDimension()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* carraytwodimension.cpp */
 /********** END_OF_FILE **********/

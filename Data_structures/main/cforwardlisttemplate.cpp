@@ -8,9 +8,13 @@
 
 using namespace std;
 
+/********** PUBLIC: BEGINNING **********/
+
 cForwardListTemplate::cForwardListTemplate()
 {
 }
+
+/********** PUBLIC: END **********/
 
 /* cforwardlisttemplate.cpp */
 /********** END_OF_FILE **********/

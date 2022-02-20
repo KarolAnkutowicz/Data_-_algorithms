@@ -4,10 +4,7 @@
  * file: cunorderedmapmy.hpp
  */
 
-#ifndef CUNORDEREDMAPMY_HPP
-#define CUNORDEREDMAPMY_HPP
-
-using namespace std;
+#pragma once
 
 /*
  * cUnorderedMapMy - klasa midelujaca mape
@@ -16,11 +13,20 @@ using namespace std;
  */
 class cUnorderedMapMy
 {
-public:
-    cUnorderedMapMy();
-};
+/********** PUBLIC: BEGINNING **********/
 
-#endif // CUNORDEREDMAPMY_HPP
+public:
+
+    cUnorderedMapMy();
+
+/********** PUBLIC: END **********/
+
+/********** PRIVATE: BEGINNING **********/
+
+//private:
+
+/********** PRIVATE: END **********/
+};
 
 /* cunorderedmapmy.hpp */
 /********** END_OF_FILE **********/

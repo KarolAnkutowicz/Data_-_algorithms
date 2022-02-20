@@ -4,12 +4,9 @@
  * file: carraytwodimension.hpp
  */
 
-#ifndef CARRAYTWODIMENSION_HPP
-#define CARRAYTWODIMENSION_HPP
+#pragma once
 
  //#include <array>
-
-using namespace std;
 
 /*
  * cArrayTwoDimension - klasa modelujaca dwuwymiarowa
@@ -17,11 +14,19 @@ using namespace std;
  */
 class cArrayTwoDimension
 {
+/********** PUBLIC: BEGINNING **********/
+
 public:
     cArrayTwoDimension();
-};
 
-#endif // CARRAYTWODIMENSION_HPP
+/********** PUBLIC: END **********/
+
+/********** PRIVATE: BEGINNING **********/
+
+//private:
+
+/********** PRIVATE: END **********/
+};
 
 /* carraytwodimension.hpp */
 /********** END_OF_FILE **********/

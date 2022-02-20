@@ -8,7 +8,7 @@
 
 using namespace std;
 
-/********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGINNING **********/
 
 /*
  * cQueueTemplate()

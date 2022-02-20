@@ -4,13 +4,10 @@
  * file: cforwardlistmy.hpp
  */
 
-#ifndef CFORWARDLISTMY_HPP
-#define CFORWARDLISTMY_HPP
+#pragma once
 
 #include "celementsmystructures.hpp"
 #include <iostream>
-
-using namespace std;
 
 /*
  * cForwardListMy - klasa modelujaca liste
@@ -19,34 +16,8 @@ using namespace std;
  */
 class cForwardListMy
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * cElementForwardListAndQueue *vFirst - wskaznik
-         * na pierwszy element listy.
-         */
-    cElementForwardListAndQueue* vFirst;
-
-    /*
-     * cElementForwardListAndQueue *vLast; - wskaznik
-     * na ostatni element listy.
-     */
-    cElementForwardListAndQueue* vLast;
-
-    /*
-     * typeLoop vSize - pole przechowujace rozmiar listy.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - pole przechowujace zakres
-     * losowania elementow listy.
-     */
-    typeData vDrawingRange;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
 
     /*
@@ -246,10 +217,37 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CFORWARDLISTMY_HPP
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * cElementForwardListAndQueue *vFirst - wskaznik
+     * na pierwszy element listy.
+     */
+    cElementForwardListAndQueue* vFirst;
+
+    /*
+     * cElementForwardListAndQueue *vLast; - wskaznik
+     * na ostatni element listy.
+     */
+    cElementForwardListAndQueue* vLast;
+
+    /*
+     * typeLoop vSize - pole przechowujace rozmiar listy.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - pole przechowujace zakres
+     * losowania elementow listy.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cforwardlistmy.hpp */
 /********** END_OF_FILE **********/

@@ -4,15 +4,12 @@
  * file: cdynamictwodimensiontable.hpp
  */
 
-#ifndef CDYNAMICTWODIMENSIONTABLE_HPP
-#define CDYNAMICTWODIMENSIONTABLE_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-using namespace std;
 
 /*
  * cDynamicTwoDimensionTable - klasa modelujaca tablice
@@ -20,43 +17,10 @@ using namespace std;
  */
 class cDynamicTwoDimensionTable
 {
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-        /*
-         * typeData *tabElements - tablica elementow.
-         */
-    typeData* tabElements;
-
-    /*
-     * typeLoop vRows - liczba wierszy w tablicy.
-     */
-    typeLoop vRows;
-
-    /*
-     * typeLoop vColumns - liczba kolumn w tablicy.
-     */
-    typeLoop vColumns;
-
-    /*
-     * typeData vDrawingRange - maksymalna liczba jaka mozemy
-     * wylosowac (zakres od 0 do vDarwingRange).
-     */
-    typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - najmniejszy element tablicy.
-     */
-    typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - najwiekszy element tablicy.
-     */
-    typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 public:
+
     /*
      * cDynamicTwoDimensionTable() - konstruktor wywolywany
      * bez argumentow.
@@ -284,10 +248,45 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CDYNAMICTWODIMENSIONTABLE_HPP
+/********** PRIVATE: BEGINNING **********/
+
+private:
+
+    /*
+     * typeData *tabElements - tablica elementow.
+     */
+    typeData* tabElements;
+
+    /*
+     * typeLoop vRows - liczba wierszy w tablicy.
+     */
+    typeLoop vRows;
+
+    /*
+     * typeLoop vColumns - liczba kolumn w tablicy.
+     */
+    typeLoop vColumns;
+
+    /*
+     * typeData vDrawingRange - maksymalna liczba jaka mozemy
+     * wylosowac (zakres od 0 do vDarwingRange).
+     */
+    typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - najmniejszy element tablicy.
+     */
+    typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - najwiekszy element tablicy.
+     */
+    typeData vMaxElement;
+
+/********** PRIVATE: END **********/
+};
 
 /* cdynamictwodimensiontable.hpp */
 /********** END_OF_FILE **********/

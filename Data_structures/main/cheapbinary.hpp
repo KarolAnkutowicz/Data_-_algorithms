@@ -4,8 +4,7 @@
  * file: cheapbinary.hpp
  */
 
-#ifndef CHEAPBINARY_HPP
-#define CHEAPBINARY_HPP
+#pragma once
 
 #include "constantsandtypes.hpp"
 #include <cmath>
@@ -13,37 +12,14 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
 /*
  * class cHeapBinary - klasa modelujaca
  * kopiec binarny.
  */
 class cHeapBinary
 {
-    /********** PRIVATE: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
-        /*
-         * typeData *HeapBinary - wskaznik do tablicy
-         * reprezentujacej kopiec binarny.
-         */
-    typeData* HeapBinary;
-
-    /*
-     *  typeLoop vSize - zmienna przechowujaca rozmiar kopca.
-     */
-    typeLoop vSize;
-
-    /*
-     * typeData vDrawingRange - zakres losowania
-     * elementow kopca.
-     */
-    typeData vDrawingRange;
-
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGIN **********/
 public:
 
     /*
@@ -318,10 +294,31 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
-};
+/********** PUBLIC: END **********/
 
-#endif // CHEAPBINARY_HPP
+/********** PRIVATE: BEGIN **********/
+
+private:
+
+    /*
+     * typeData *HeapBinary - wskaznik do tablicy
+     * reprezentujacej kopiec binarny.
+     */
+    typeData* HeapBinary;
+
+    /*
+     *  typeLoop vSize - zmienna przechowujaca rozmiar kopca.
+     */
+    typeLoop vSize;
+
+    /*
+     * typeData vDrawingRange - zakres losowania
+     * elementow kopca.
+     */
+    typeData vDrawingRange;
+
+/********** PRIVATE: END **********/
+};
 
 /* cheapbinary.hpp */
 /********** END_OF_FILE **********/

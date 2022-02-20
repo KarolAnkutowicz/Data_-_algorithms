@@ -4,15 +4,12 @@
  * file: cstatictwodimensiontable.hpp
  */
 
-//#ifndef CSTATICTWODIMENSIONTABLE_HPP
-//#define CSTATICTWODIMENSIONTABLE_HPP
+//#pragma once
 
 //#include "constantsandtypes.hpp"
 //#include <cstdlib>
 //#include <ctime>
 //#include <iostream>
-
-//using namespace std;
 
 /*
  * cStaticTwoDimensionTable - klasa modelujaca
@@ -21,44 +18,8 @@
  */
 //class cStaticTwoDimensionTable
 //{
-    /********** PRIVATE: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
-    /*
-     * typeData tabElements[][10] - tablica elementow.
-     */
-    //typeData tabElements[][10];
-
-    /*
-     * typeLoop vRows - pole okreslajace liczbe
-     * wierszy tablicy.
-     */
-    //typeLoop vRows;
-
-    /*
-     * typeLoop vColumns - pole okreslajace liczbe
-     * kolumn tablicy.
-     */
-    //typeLoop vColumns;
-
-    /*
-     * typeData vDrawingRange - maksymalna liczba jaka mozemy
-     * wylosowac (zakres od 0 do vDarwingRange).
-     */
-    //typeData vDrawingRange;
-
-    /*
-     * typeData vMinElement - najmniejszy element tablicy.
-     */
-    //typeData vMinElement;
-
-    /*
-     * typeData vMaxElement - najwiekszy element tablicy.
-     */
-    //typeData vMaxElement;
-
-    /********** PRIVATE: END **********/
-
-    /********** PUBLIC: BEGINNING **********/
 //public:
 
     /*
@@ -260,10 +221,47 @@
      */
     //void mPrintTable();
 
-    /********** PUBLIC: END **********/
-//};
+/********** PUBLIC: END **********/
 
-//#endif // CSTATICTWODIMENSIONTABLE_HPP
+/********** PRIVATE: BEGINNING **********/
+
+//private:
+
+    /*
+     * typeData tabElements[][10] - tablica elementow.
+     */
+    //typeData tabElements[][10];
+
+    /*
+     * typeLoop vRows - pole okreslajace liczbe
+     * wierszy tablicy.
+     */
+    //typeLoop vRows;
+
+    /*
+     * typeLoop vColumns - pole okreslajace liczbe
+     * kolumn tablicy.
+     */
+    //typeLoop vColumns;
+
+    /*
+     * typeData vDrawingRange - maksymalna liczba jaka mozemy
+     * wylosowac (zakres od 0 do vDarwingRange).
+     */
+    //typeData vDrawingRange;
+
+    /*
+     * typeData vMinElement - najmniejszy element tablicy.
+     */
+    //typeData vMinElement;
+
+    /*
+     * typeData vMaxElement - najwiekszy element tablicy.
+     */
+    //typeData vMaxElement;
+
+/********** PRIVATE: END **********/
+//};
 
 /* cstatictwodimensiontable.hpp */
 /********** END_OF_FILE **********/
