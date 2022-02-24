@@ -6,7 +6,7 @@
 
 #include "cunorderedsettemplate.hpp"
 
- /********** PUBLIC: BEGINNING **********/
+/********** PUBLIC: BEGINNING **********/
 
 cUnorderedSetTemplate::cUnorderedSetTemplate()
 {

@@ -6,8 +6,6 @@
 
 #include "cforwardlisttemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 cForwardListTemplate::cForwardListTemplate()

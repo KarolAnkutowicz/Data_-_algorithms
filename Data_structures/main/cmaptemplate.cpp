@@ -6,8 +6,6 @@
 
 #include "cmaptemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

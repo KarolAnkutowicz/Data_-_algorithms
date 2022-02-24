@@ -7,8 +7,6 @@
 #include "cdatahandling.hpp"
 #include <iostream>
 
-using namespace std;
-
 int main()
 {
     cDataHandling D;

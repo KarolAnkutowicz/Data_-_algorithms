@@ -6,7 +6,7 @@
 
 #pragma once
 
- //#include <forward_list>
+ #include <forward_list>
 
 /*
  * cForwardListTemplate - klasa modelujaca liste

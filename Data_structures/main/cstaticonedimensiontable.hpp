@@ -4,23 +4,23 @@
  * file: cstaticonedimensiontable.hpp
  */
 
-//#pragma once
+#pragma once
 
-//#include "constantsandtypes.hpp"
-//#include <iostream>
-//#include <cstdlib>
-//#include <ctime>
+#include "constantsandtypes.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 /*
  * cStaticOneDimensionTable - klasa modelujaca
  * statyczna tablice jednowymiarowa o zadanym
  * i niemodyfikowalnym pozniej rozmiarze.
  */
-//class cStaticOneDimensionTable
-//{
+class cStaticOneDimensionTable
+{
 /********** PUBLIC: BEGINNING **********/
 
-//public:
+public:
 
     /*
      * cStaticOneDimensionTable() - konstruktor wywolywany
@@ -30,7 +30,7 @@
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    //cStaticOneDimensionTable();
+    cStaticOneDimensionTable();
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -41,7 +41,7 @@
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    //cStaticOneDimensionTable(typeData aDrawingRange);
+    cStaticOneDimensionTable(typeData aDrawingRange);
 
 
 
@@ -53,10 +53,10 @@
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    /*inline typeData getElement(typeLoop aIndex)
+    inline typeData getElement(typeLoop aIndex)
     {
         return tabElements[aIndex];
-    }*/
+    }
 
     /*
      * typeLoop getLengthTable() - metoda zwracajaca dlugosc tablicy
@@ -65,10 +65,10 @@
      * POST:
      * - zwrocenie wartosci pola vLengthTable (typ: typeLoop).
      */
-    /*inline typeLoop getLengthTable()
+    inline typeLoop getLengthTable()
     {
         return vLengthTable;
-    }*/
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -78,10 +78,10 @@
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    /*inline typeData getDrawingRange()
+    inline typeData getDrawingRange()
     {
         return vDrawingRange;
-    }*/
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -91,10 +91,10 @@
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    /*inline typeData getMinElement()
+    inline typeData getMinElement()
     {
         return vMinElement;
-    }*/
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -104,10 +104,10 @@
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    /*inline typeData getMaxElement()
+    inline typeData getMaxElement()
     {
         return vMaxElement;
-    }*/
+    }
 
 
 
@@ -120,7 +120,7 @@
      * POST:
      * - brak.
      */
-    //void mReplaceElement(typeLoop aIndex, typeData aElement);
+    void mReplaceElement(typeLoop aIndex, typeData aElement);
 
     /*
      * void mRemoveElement(typeLoop aIndex) - metoda resetujaca
@@ -130,7 +130,7 @@
      * POST:
      * - brak.
      */
-    //void mClearElement(typeLoop aIndex);
+    void mClearElement(typeLoop aIndex);
 
 
 
@@ -141,7 +141,7 @@
      * POST:
      * - brak.
      */
-    //void mDrawElements();
+    void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -151,7 +151,7 @@
      * POST:
      * - brak.
      */
-    //void mFindMinElement();
+    void mFindMinElement();
 
     /*
      * void mFindMaxElement() - metoda znajdujaca najwiekszy
@@ -161,7 +161,7 @@
      * POST:
      * - brak.
      */
-    //void mFindMaxElement();
+    void mFindMaxElement();
 
 
 
@@ -173,10 +173,10 @@
      * POST:
      * - brak.
      */
-    /*inline void mPrintElement(typeLoop aIndex)
+    inline void mPrintElement(typeLoop aIndex)
     {
-        cout << tabElements[aIndex] << endl;
-    }*/
+        std::cout << tabElements[aIndex] << std::endl;
+    }
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
@@ -185,43 +185,43 @@
      * POST:
      * - brak.
      */
-    //void mPrintTable();
+    void mPrintTable();
 
 /********** PUBLIC: END **********/
 
 /********** PRIVATE: BEGINNING **********/
 
-//private:
-
-    /*
-     * typeData tabElements[] - tablica elementow.
-     */
-     //typeData tabElements[];
+private:
 
     /*
      * typeLoop vLengthTable - stala okreslajaca
      * liczbe elementow tablicy.
      */
-     //typeLoop vLengthTable;
+    typeLoop vLengthTable = 10;
+
+    /*
+     * typeData tabElements - tablica elementow.
+     */
+     typeData tabElements[vLengthTable];
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
-    //typeData vDrawingRange;
+    typeData vDrawingRange;
 
     /*
      * typeData vMinElement - najmniejszy element tablicy.
      */
-    //typeData vMinElement;
+    typeData vMinElement;
 
     /*
      * typeData vMaxElement - najwiekszy element tablicy.
      */
-    //typeData vMaxElement;
+    typeData vMaxElement;
 
 /********** PRIVATE: END **********/
-//};
+};
 
 /* cstaticonedimensiontable.hpp */
 /********** END_OF_FILE **********/

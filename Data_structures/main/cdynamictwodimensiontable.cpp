@@ -6,8 +6,6 @@
 
 #include "cdynamictwodimensiontable.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

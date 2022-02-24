@@ -6,8 +6,6 @@
 
 #include "cheapbinary.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

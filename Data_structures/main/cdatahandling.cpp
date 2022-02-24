@@ -6,8 +6,6 @@
 
 #include "cdatahandling.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*
@@ -27,9 +25,9 @@ void cDataHandling::mPrintMainMenu()
 {
     cout << endl << "Wybierz opcje:" << endl // menu glowne
         << "TABLICE I WEKTORY:" << endl
-        //<< "    (10) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
+        << "    (10) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
         << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        //<< "    (12) - statyczna tablica dwuwymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
+        << "    (12) - statyczna tablica dwuwymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
         << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
         << "    (14) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
         << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
@@ -74,9 +72,9 @@ void cDataHandling::mMainMenu()
         {
         case 0: break; // wybor zakonczenia dzialana programu
         // TABLICE I WEKTORY
-        //case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
+        case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
         case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        //case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
+        case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
         case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
         case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
         case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
@@ -121,7 +119,7 @@ void cDataHandling::mMainMenu()
 /*
  * void mMenuStaticOneDimensionTable()
  */
-/*void cDataHandling::mMenuStaticOneDimensionTable()
+void cDataHandling::mMenuStaticOneDimensionTable()
 {
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     cout << "Okresl parametry tablicy:" << endl; // wczytywanie parametrow
@@ -133,7 +131,7 @@ void cDataHandling::mMainMenu()
     cout << endl << "    Liczba elementow: " << S.getLengthTable() << endl // wypisanie rozmiaru tablicy
         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
-}*/
+}
 
 /*
  * mMenuArrayOneDimension()
@@ -146,7 +144,7 @@ void cDataHandling::mMenuArrayOneDimension()
 /*
  * void mMenuStaticTwoDimensionTable()
  */
-/*void cDataHandling::mMenuStaticTwoDimensionTable()
+void cDataHandling::mMenuStaticTwoDimensionTable()
 {
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeLoop vRows; // zmienna okreslajaca liczbe wierszy tablicy
@@ -162,7 +160,7 @@ void cDataHandling::mMenuArrayOneDimension()
         << "    Liczba kolumn: " << S.getColumns() << endl // wypisanie liczby kolumn
         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
-}*/
+}
 
 /*
  * void mMenuArrayTwoDimension()

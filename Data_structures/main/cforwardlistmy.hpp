@@ -61,7 +61,7 @@ public:
      * POST:
      * - zwalnianie zasobow przydzielanych dynamicznie.
      */
-     //~cForwardListMy();
+     ~cForwardListMy();
 
 
 

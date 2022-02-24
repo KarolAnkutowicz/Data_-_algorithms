@@ -6,8 +6,6 @@
 
 #include "carrayonedimension.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*
@@ -21,54 +19,54 @@ cArrayOneDimension::cArrayOneDimension()
 /*
  * cArrayOneDimension(typeData aDrawingRange)
  */
-/*cArrayOneDimension::cArrayOneDimension(typeData aDrawingRange)
+cArrayOneDimension::cArrayOneDimension(typeData aDrawingRange)
 {
 
-}*/
+}
 
 
 
 /*
  * void mDrawElements()
  */
-/*void cArrayOneDimension::mDrawElements()
+void cArrayOneDimension::mDrawElements()
 {
 
-}*/
+}
 
 /*
  * void mFindMinElement()
  */
-/*void cArrayOneDimension::mFindMinElement()
+void cArrayOneDimension::mFindMinElement()
 {
 
-}*/
+}
 
 /*
  * void mFindMaxElement()
  */
-/*void cArrayOneDimension::mFindMaxElement()
+void cArrayOneDimension::mFindMaxElement()
 {
 
-}*/
+}
 
 
 
 /*
  * void mPrintElement(typeLoop aIndex)
  */
-/*void cArrayOneDimension::mPrintElement(typeLoop aIndex)
+void cArrayOneDimension::mPrintElement(typeLoop aIndex)
 {
 
-}*/
+}
 
 /*
  * void mPrintArray()
  */
-/*void cArrayOneDimension::mPrintArray()
+void cArrayOneDimension::mPrintArray()
 {
 
-}*/
+
 
 /********** PUBLIC: END **********/
 

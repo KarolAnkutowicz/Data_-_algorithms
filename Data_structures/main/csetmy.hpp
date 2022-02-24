@@ -20,6 +20,7 @@ class cSetMy
 /********** PUBLIC: BEGIN **********/
 
 public:
+
     /*
      * cSetMy() - konstruktor wywolywany bez argumentow
      * PRE:

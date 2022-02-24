@@ -6,8 +6,6 @@
 
 #include "cdynamiconedimensiontable.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

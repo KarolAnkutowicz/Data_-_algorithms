@@ -6,8 +6,6 @@
 
 #include "cunorderedsetmy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 cUnorderedSetMy::cUnorderedSetMy()

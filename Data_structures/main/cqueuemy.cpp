@@ -6,8 +6,6 @@
 
 #include "cqueuemy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

@@ -6,7 +6,7 @@
 
 #pragma once
 
- //#include <array>
+ #include <array>
 
 /*
  * cArrayTwoDimension - klasa modelujaca dwuwymiarowa

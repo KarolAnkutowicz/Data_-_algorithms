@@ -200,11 +200,11 @@ public:
      */
     void mPrintAllElements();
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
 
+/********** PRIVATE: BEGINNING **********/
 
-
-    /********** PRIVATE: BEGINNING **********/
+private:
 
     /*
      * cElementListAndDeque *vListMyBegin - wskaznik do

@@ -6,8 +6,6 @@
 
 #include "cdequemy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

@@ -4,23 +4,23 @@
  * file: cstatictwodimensiontable.hpp
  */
 
-//#pragma once
+#pragma once
 
-//#include "constantsandtypes.hpp"
-//#include <cstdlib>
-//#include <ctime>
-//#include <iostream>
+#include "constantsandtypes.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
 /*
  * cStaticTwoDimensionTable - klasa modelujaca
  * statyczna tablice dwuwymiarowa o zadanych
  * i niemodyfikowalnych pozniej rozmiarach.
  */
-//class cStaticTwoDimensionTable
-//{
+class cStaticTwoDimensionTable
+{
 /********** PUBLIC: BEGINNING **********/
 
-//public:
+public:
 
     /*
      * cStaticOneDimensionTable() - konstruktor wywolywany
@@ -30,7 +30,7 @@
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    //cStaticTwoDimensionTable();
+    cStaticTwoDimensionTable();
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -41,7 +41,7 @@
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    //cStaticTwoDimensionTable(typeData aDrawingRange);
+    cStaticTwoDimensionTable(typeData aDrawingRange);
 
     /*
      * cStaticOneDimensionTable(typeData aDrawingRange) -
@@ -53,7 +53,7 @@
      * POST:
      * - utworzenie obiektu klasy cStaticOneDimensionTable.
      */
-    //cStaticTwoDimensionTable(typeData aDrawingRange, typeLoop aRows);
+    cStaticTwoDimensionTable(typeData aDrawingRange, typeLoop aRows);
 
 
 
@@ -66,10 +66,10 @@
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    /*inline typeData getElement(typeLoop aRows, typeLoop aColumns)
+    inline typeData getElement(typeLoop aRows, typeLoop aColumns)
     {
         return tabElements[aRows][aColumns];
-    }*/
+    }
 
     /*
      * typeLoop getRows() - metoda zwracajaca liczbe wierszy tablicy
@@ -78,10 +78,10 @@
      * POST:
      * - zwrocenie wartosci pola vRows (typ: typeLoop).
      */
-    /*inline typeLoop getRows()
+    inline typeLoop getRows()
     {
         return vRows;
-    }*/
+    }
 
     /*
      * typeLoop getColumns() - metoda zwracajaca liczbe kolumn tablicy
@@ -90,10 +90,10 @@
      * POST:
      * - zwrocenie wartosci pola vColumn (typ: typeLoop).
      */
-    /*inline typeLoop getColumns()
+    inline typeLoop getColumns()
     {
         return vColumns;
-    }*/
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -103,10 +103,10 @@
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    /*inline typeData getDrawingRange()
+    inline typeData getDrawingRange()
     {
         return vDrawingRange;
-    }*/
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -116,10 +116,10 @@
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    /*inline typeData getMinElement()
+    inline typeData getMinElement()
     {
         return vMinElement;
-    }*/
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -129,10 +129,10 @@
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    /*inline typeData getMaxElement()
+    inline typeData getMaxElement()
     {
         return vMaxElement;
-    }*/
+    }
 
 
 
@@ -146,10 +146,10 @@
      * POST:
      * - brak.
      */
-    /*inline void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
+    inline void mReplaceElement(typeLoop aRows, typeLoop aColumns, typeData aElement)
     {
         tabElements[aRows][aColumns] = aElement;
-    }*/
+    }
 
     /*
      * void mRemoveElement(typeLoop aRows, typeLoop aColumns) - metoda
@@ -160,10 +160,10 @@
      * POST:
      * - brak.
      */
-    /*inline void mClearElement(typeLoop aRows, typeLoop aColumns)
+    inline void mClearElement(typeLoop aRows, typeLoop aColumns)
     {
         tabElements[aRows][aColumns] = NULL;
-    }*/
+    }
 
 
 
@@ -174,7 +174,7 @@
      * POST:
      * - brak.
      */
-    //void mDrawElements();
+    void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -184,7 +184,7 @@
      * POST:
      * - brak.
      */
-    //void mFindMinElement();
+    void mFindMinElement();
 
     /*
      * void mFindMaxElement() - metoda znajdujaca najwiekszy
@@ -194,7 +194,7 @@
      * POST:
      * - brak.
      */
-    //void mFindMaxElement();
+    void mFindMaxElement();
 
 
 
@@ -207,10 +207,10 @@
      * POST:
      * - brak.
      */
-    /*inline void mPrintElement(typeLoop aRows, typeLoop aColumns)
+    inline void mPrintElement(typeLoop aRows, typeLoop aColumns)
     {
-        cout << tabElements[aRows][aColumns] << " ";
-    }*/
+        std::cout << tabElements[aRows][aColumns] << " ";
+    }
 
     /*
      * void mPrintTable() - metoda wypisujaca zawartosc tablicy.
@@ -219,7 +219,7 @@
      * POST:
      * - brak.
      */
-    //void mPrintTable();
+    void mPrintTable();
 
 /********** PUBLIC: END **********/
 
@@ -228,40 +228,40 @@
 //private:
 
     /*
-     * typeData tabElements[][10] - tablica elementow.
-     */
-    //typeData tabElements[][10];
-
-    /*
      * typeLoop vRows - pole okreslajace liczbe
      * wierszy tablicy.
      */
-    //typeLoop vRows;
+    typeLoop vRows = 10;
 
     /*
      * typeLoop vColumns - pole okreslajace liczbe
      * kolumn tablicy.
      */
-    //typeLoop vColumns;
+    typeLoop vColumns = 10;
+
+    /*
+     * typeData tabElements[vRows][vColumns] - tablica elementow.
+     */
+    typeData tabElements[vRows][vColumns];
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
-    //typeData vDrawingRange;
+    typeData vDrawingRange;
 
     /*
      * typeData vMinElement - najmniejszy element tablicy.
      */
-    //typeData vMinElement;
+    typeData vMinElement;
 
     /*
      * typeData vMaxElement - najwiekszy element tablicy.
      */
-    //typeData vMaxElement;
+    typeData vMaxElement;
 
 /********** PRIVATE: END **********/
-//};
+};
 
 /* cstatictwodimensiontable.hpp */
 /********** END_OF_FILE **********/

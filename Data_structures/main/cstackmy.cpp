@@ -6,8 +6,6 @@
 
 #include "cstackmy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

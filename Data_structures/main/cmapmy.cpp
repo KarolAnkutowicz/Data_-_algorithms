@@ -6,8 +6,6 @@
 
 #include "cmapmy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

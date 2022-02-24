@@ -28,7 +28,7 @@ public:
 
     /*
      * cElementListAndDeque *vNext - pole zawierajace
-     * wskaznik na nasteony element
+     * wskaznik na nastepny element
      */
     cElementListAndDeque* vNext;
 
@@ -43,6 +43,8 @@ public:
     cElementListAndDeque(typeData aValue)
     {
         vValue = aValue; // ustanowienie wartosci elementu
+        vPrevious = NULL; // ustanowienie wskaznika na poprzednik na NULL
+        vNext = NULL; // ustanowienie wskaznika na nastepnik na NULL
     }
 
     /*
@@ -146,7 +148,6 @@ public:
 
 /********** PUBLIC: END **********/
 
-
 /********** PRIVATE: BEGIN **********/
 
 private:
@@ -167,7 +168,7 @@ private:
  */
 class cElementMap
 {
-    /********** PUBLIC: BEGIN **********/
+/********** PUBLIC: BEGIN **********/
 
 public:
 
@@ -252,9 +253,9 @@ public:
         vValue = aValue;
     }
 
-    /********** PUBLIC: END **********/
+/********** PUBLIC: END **********/
 
-    /********** PRIVATE: BEGIN **********/
+/********** PRIVATE: BEGIN **********/
 
 private:
 
@@ -269,7 +270,7 @@ private:
      */
     typeKey vKey;
 
-    /********** PRIVATE: END **********/
+/********** PRIVATE: END **********/
 };
 
 /* celementmystructures.hpp */

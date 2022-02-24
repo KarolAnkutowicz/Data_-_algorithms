@@ -6,8 +6,6 @@
 
 #include "clisttemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

@@ -7,7 +7,7 @@
 #pragma once
 
 #include "constantsandtypes.hpp"
- //#include <array>
+#include <array>
 
 /*
  * cArrayOneDimension - klasa modelujaca tablica
@@ -18,6 +18,7 @@ class cArrayOneDimension
 /********** PUBLIC: BEGINNING **********/
 
 public:
+
     /*
      * cArrayOneDimension() - konstruktor wywolywany
      * bez argumentow.
@@ -37,7 +38,7 @@ public:
      * POST:
      * - utworzenie obiektu klasy cArrayOneDimension.
      */
-     //cArrayOneDimension(typeData aDrawingRange);
+     cArrayOneDimension(typeData aDrawingRange);
 
 
 
@@ -49,10 +50,10 @@ public:
      * POST:
      * - zwrocenie wartosci elementu (typ: typeData).
      */
-    /*inline typeData getElement(typeLoop aIndex)
+    inline typeData getElement(typeLoop aIndex)
     {
         return MyArray[aIndex];
-    }*/
+    }
 
     /*
      * typeLoop getLengthTable() - metoda zwracajaca dlugosc tablicy
@@ -61,10 +62,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola conLengthTable (typ: typeLoop).
      */
-    /*inline typeLoop getLengthTable()
+    inline typeLoop getLengthTable()
     {
         return conLengthArray;
-    }*/
+    }
 
     /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
@@ -74,10 +75,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vDrawingRange(typ: typeData).
      */
-    /*inline typeData getDrawingRange()
+    inline typeData getDrawingRange()
     {
         return vDrawingRange;
-    }*/
+    }
 
     /*
      * typeData getMinElement() - metoda zwracajaca najmniejszy
@@ -87,10 +88,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMinElement(typ: typeData).
      */
-    /*inline typeData getMinElement()
+    inline typeData getMinElement()
     {
         return vMinElement;
-    }*/
+    }
 
     /*
      * typeData getMaxElement() - metoda zwracajaca najwiekszy
@@ -100,10 +101,10 @@ public:
      * POST:
      * - zwrocenie wartosci pola vMaxElement(typ: typeData).
      */
-    /*inline typeData getMaxElement()
+    inline typeData getMaxElement()
     {
         return vMaxElement;
-    }*/
+    }
 
 
 
@@ -117,10 +118,10 @@ public:
      * POST:
      * - brak.
      */
-    /*void mReplaceElement(typeLoop aIndex, typeData aElement)
+    void mReplaceElement(typeLoop aIndex, typeData aElement)
     {
         MyArray[aIndex] = aElement;
-    }*/
+    }
 
     /*
      * void mClearElement() - metoda zerujaca wskazany element
@@ -130,10 +131,10 @@ public:
      * POST:
      * - brak.
      */
-    /*void mClearElement(typeLoop aIndex)
+    void mClearElement(typeLoop aIndex)
     {
         MyArray[aIndex] = 0;
-    }*/
+    }
 
 
 
@@ -144,7 +145,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mDrawElements();
+    void mDrawElements();
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -154,7 +155,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mFindMinElement();
+    void mFindMinElement();
 
     /*
      * void mFindMaxElement() - metoda znajdujaca najwiekszy
@@ -164,7 +165,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mFindMaxElement();
+    void mFindMaxElement();
 
 
 
@@ -176,7 +177,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mPrintElement(typeLoop aIndex);
+    void mPrintElement(typeLoop aIndex);
 
     /*
      * void mPrintArray() - metoda wypisujaca zawartosc tablicy.
@@ -185,41 +186,41 @@ public:
      * POST:
      * - brak.
      */
-    //void mPrintArray();
+    void mPrintArray();
 
 /********** PUBLIC: END **********/
 
 /********** PRIVATE: BEGINNING **********/
 
-//private:
+private:
         
     /*
      * array<typeData, vLengthArray> - struktura elementow
      * typu typeData.
      */
-    //array<typeData, vLengthArray> MyArray;
+    array<typeData, conLengthArray> MyArray;
 
     /*
      * const typeLoop conLengthArray - stala typu typeLoop
      * okreslajaca liczbe elementow struktury.
      */
-    //const typeLoop conLengthArray = 10;
+    const typeLoop conLengthArray = 10;
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
      * wylosowac (zakres od 0 do vDarwingRange).
      */
-    //typeData vDrawingRange;
+    typeData vDrawingRange;
 
     /*
      * typeData vMinElement - najmniejsza wartosc w tablicy.
      */
-    //typeData vMinElement;
+    typeData vMinElement;
 
     /*
      * typeData vMaxElement - najwieksza wartosc w tablicy
      */
-    //typeData vMaxElement;
+    typeData vMaxElement;
 
 /********** PRIVATE: END **********/
 };

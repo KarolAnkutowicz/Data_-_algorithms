@@ -6,8 +6,6 @@
 
 #include "cvectoronedimension.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

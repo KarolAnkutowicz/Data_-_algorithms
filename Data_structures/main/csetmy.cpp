@@ -6,8 +6,6 @@
 
 #include "csetmy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

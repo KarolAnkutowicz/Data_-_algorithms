@@ -6,8 +6,6 @@
 
 #include "cunorderedmapmy.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 cUnorderedMapMy::cUnorderedMapMy()

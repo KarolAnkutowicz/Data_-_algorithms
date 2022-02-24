@@ -27,8 +27,8 @@
 #include "csettemplate.hpp"
 #include "cstackmy.hpp"
 #include "cstacktemplate.hpp"
-//#include "cstaticonedimensiontable.hpp"
-//#include "cstatictwodimensiontable.hpp"
+#include "cstaticonedimensiontable.hpp"
+#include "cstatictwodimensiontable.hpp"
 #include "cunorderedmapmy.hpp"
 #include "cunorderedmaptemplate.hpp"
 #include "cunorderedsetmy.hpp"
@@ -47,6 +47,7 @@ class cDataHandling
 /********** PUBLIC: BEGINNING **********/
 
 public:
+
     /*
      * typeLoop vOption - zmienna wykorzystywanie do sterowania
      * w menu glownych oraz w menu dla poszczegolnych struktur.
@@ -92,7 +93,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mMenuStaticOneDimensionTable();
+    void mMenuStaticOneDimensionTable();
 
     /*
      * mMenuArrayOneDimension() - metoda obslugujaca
@@ -113,7 +114,7 @@ public:
      * POST:
      * - brak.
      */
-    //void mMenuStaticTwoDimensionTable();
+    void mMenuStaticTwoDimensionTable();
 
     /*
      * void mMenuArrayTwoDimension() - metoda obslugujaca

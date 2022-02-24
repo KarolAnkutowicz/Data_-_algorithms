@@ -6,8 +6,6 @@
 
 #include "cunorderedmaptemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 cUnorderedMapTemplate::cUnorderedMapTemplate()

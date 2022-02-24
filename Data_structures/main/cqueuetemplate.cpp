@@ -6,8 +6,6 @@
 
 #include "cqueuetemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*

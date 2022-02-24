@@ -6,8 +6,6 @@
 
 #include "cdequetemplate.hpp"
 
-using namespace std;
-
 /********** PUBLIC: BEGINNING **********/
 
 /*
