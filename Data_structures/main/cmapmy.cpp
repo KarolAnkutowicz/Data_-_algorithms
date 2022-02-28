@@ -152,7 +152,7 @@ bool cMapMy::mRemoveElement(typeKey aKey)
             }
             else
             {
-                typeLoop aIndex; // zmienna przechowujaca indeks szukanego elementu
+                typeLoop aIndex = 0; // zmienna przechowujaca indeks szukanego elementu
                 for (typeLoop i = 0; i < vSize; i++) // przechodzimy po wszystkich elementach
                     if (MapMy[i].getKey() == aKey) // porownujemy klucze
                         aIndex = i; // jesli znalezlismy poszukiwany klucz zapisujemy indeks elementu
@@ -200,16 +200,16 @@ void cMapMy::mDrawElements(typeLoop aSize)
 void cMapMy::mPrintElement(typeKey aKey)
 {
     if (vSize == 0) // sprawdzamy czy mapa zawiera cokolwiek
-        cout << "Mapa jest pusta!" << endl; // jesli nie to wypisujemy odpowiedni komunikat
+        std::cout << "Mapa jest pusta!" << std::endl; // jesli nie to wypisujemy odpowiedni komunikat
     else // jesli na mapie jest cokolwiek
     {
         if (mIfExist(aKey) == false) // sprawdzamy czy element o wskaznym kluczu istnieje
-            cout << "Element o wskazanym kluczu nie istnieje!" << endl; // jesli nie to wypisujemy odpowiedni komunikat
+            std::cout << "Element o wskazanym kluczu nie istnieje!" << std::endl; // jesli nie to wypisujemy odpowiedni komunikat
         else // jesli element o wskazanym kluczu istnieje
         {
             for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
                 if (MapMy[i].getKey() == aKey) // porownujemy klucze
-                    cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << endl; // wypisujemy wskazany element
+                    std::cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << std::endl; // wypisujemy wskazany element
         }
 
     }
@@ -221,11 +221,11 @@ void cMapMy::mPrintElement(typeKey aKey)
 void cMapMy::mPrintAllElements()
 {
     if (vSize == 0) // sprawdzamy czy mapa jest pusta
-        cout << "Mapa jest pusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
+        std::cout << "Mapa jest pusta!" << std::endl; // jesli tak to wypisujemy odpowiedni komunikat
     else // jesli na mapie jest cokolwiek
     {
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
-            cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << endl; // wypisujemy kolejny element
+            std::cout << "[" << MapMy[i].getKey() << "]=" << MapMy[i].getValue() << std::endl; // wypisujemy kolejny element
     }
 }
 

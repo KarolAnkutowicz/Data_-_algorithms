@@ -202,9 +202,9 @@ void cListMy::mDrawElements(typeLoop aSize)
 void cListMy::mPrintFirstElement()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
-        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
+        std::cout << "Lista jest pusta!" << std::endl; // wypisujemy odpowiedni komunikat
     else // jesli lista nie jest pusta
-        cout << vListMyBegin->vNext->getValue() << endl; // wypisujemy wartosc pierwszego elementu
+        std::cout << vListMyBegin->vNext->getValue() << std::endl; // wypisujemy wartosc pierwszego elementu
 }
 
 /*
@@ -213,9 +213,9 @@ void cListMy::mPrintFirstElement()
 void cListMy::mPrintLastElement()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
-        cout << "Lista jest pusta!" << endl; // wypisujemy odpowiedni komunikat
+        std::cout << "Lista jest pusta!" << std::endl; // wypisujemy odpowiedni komunikat
     else // jesli lista nie jest pusta
-        cout << vListMyEnd->vPrevious->getValue() << endl; // wypisujemy wartosc ostatniego elementu
+        std::cout << vListMyEnd->vPrevious->getValue() << std::endl; // wypisujemy wartosc ostatniego elementu
 }
 
 /*
@@ -224,7 +224,7 @@ void cListMy::mPrintLastElement()
 void cListMy::mPrintAllElements()
 {
     if (getListSize() == 0) // sprawdzamy czy lista jest pusta
-        cout << "Lista jest pusta!" << endl; // jesli tak to wypisujemy odpowiedni komunikat
+        std::cout << "Lista jest pusta!" << std::endl; // jesli tak to wypisujemy odpowiedni komunikat
     else
     {
         cElementListAndDeque* ElemAux; // deklarujemy wskaznik pomocniczy
@@ -233,7 +233,7 @@ void cListMy::mPrintAllElements()
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach listy
         {
             ElemAux = ElemAux->vNext; // wskaznik przypisujemy do nastepnika biezacego elementu
-            cout << ElemAux->getValue() << endl; // wypisanie wartosci biezacego elementu
+            std::cout << ElemAux->getValue() << std::endl; // wypisanie wartosci biezacego elementu
         }
     }
 }

@@ -14,6 +14,8 @@
 cVectorOneDimension::cVectorOneDimension()
 {
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    mFindMinElement();
+    mFindMaxElement();
 }
 
 /*
@@ -148,9 +150,9 @@ void cVectorOneDimension::mFindMaxElement()
 void cVectorOneDimension::mPrintElement()
 {
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
-        cout << VectorElements.back() << endl; // wypisujemy ostatni element
+        std::cout << VectorElements.back() << std::endl; // wypisujemy ostatni element
     else // wektor jest pusty
-        cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
+        std::cout << "    Wektor jest pusty!" << std::endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -161,12 +163,12 @@ void cVectorOneDimension::mPrintElement(typeLoop aIndex)
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
         if (aIndex >= VectorElements.size()) // sprawdzamy czy nie wychodzimy poza zakres wektora
-            cout << "    Brak elementu o wskazanym indeksie!" << endl;
+            std::cout << "    Brak elementu o wskazanym indeksie!" << std::endl;
         else // miescimy sie w zakresie wektora
-            cout << VectorElements.operator [](aIndex) << endl; // wypisujemy wskazany element
+            std::cout << VectorElements.operator [](aIndex) << std::endl; // wypisujemy wskazany element
     }
     else // wektor jest pusty
-        cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
+        std::cout << "    Wektor jest pusty!" << std::endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -177,11 +179,11 @@ void cVectorOneDimension::mPrintAllElements()
     if (!VectorElements.empty()) // sprawdzamy czy wektor nie jest pusty
     {
         for (typeLoop i = 0; i < VectorElements.size(); i++) // przechodzimhy przez wszystkie elementy wektora
-            cout << VectorElements.operator [](i) << " "; // wypisujemy wskazany element
-        cout << endl; // przejscie do nowej linii
+            std::cout << VectorElements.operator [](i) << " "; // wypisujemy wskazany element
+        std::cout << std::endl; // przejscie do nowej linii
     }
     else // wektor jest pusty
-        cout << "    Wektor jest pusty!" << endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
+        std::cout << "    Wektor jest pusty!" << std::endl; // jesli wektor jest pusty to zwracamy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/

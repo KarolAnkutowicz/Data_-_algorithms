@@ -82,9 +82,9 @@ void cStackTemplate::mDrawElements(typeLoop aSize)
 void cStackTemplate::mPrintElement()
 {
     if (!StackTemplate.empty()) // sprawdzamy czy stos nie jest pusty
-        cout << StackTemplate.top() << " "; //  jesli nie jest to wypisujemy element ze szczytu
+        std::cout << StackTemplate.top() << " "; //  jesli nie jest to wypisujemy element ze szczytu
     else //  jesli jest pusty
-        cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
+        std::cout << "    Stos jest pusty!" << std::endl; // wyswietlamy komunikat o tej sytuacji
 }
 
 /*
@@ -93,7 +93,7 @@ void cStackTemplate::mPrintElement()
 void cStackTemplate::mPrintAllElements()
 {
     if (StackTemplate.empty()) // sprawdzamy czy stos jest pusty
-        cout << "    Stos jest pusty!" << endl; // jesli tak to wypisujemy komunikat o tej sytuacji
+        std::cout << "    Stos jest pusty!" << std::endl; // jesli tak to wypisujemy komunikat o tej sytuacji
     else
     {
         while (!StackTemplate.empty())

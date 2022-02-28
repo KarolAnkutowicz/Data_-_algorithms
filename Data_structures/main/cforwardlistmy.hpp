@@ -54,15 +54,6 @@ public:
      */
     cForwardListMy(typeLoop aSize, typeData aDrawingRange);
 
-    /*
-     * ~cForwardListMy() - destruktor klasy cForwardListMy.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwalnianie zasobow przydzielanych dynamicznie.
-     */
-     ~cForwardListMy();
-
 
 
      /*

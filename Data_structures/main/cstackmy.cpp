@@ -143,9 +143,9 @@ void cStackMy::mCheckStackIsEmpty()
 void cStackMy::mPrintElement()
 {
     if (getStackIsEmpty() == false) // sprawdzamy czy stos nie jest pusty
-        cout << StackMy[vSize - 1] << " "; // jesli nie jest to wypisujemy element ze szczytu stosu
+        std::cout << StackMy[vSize - 1] << " "; // jesli nie jest to wypisujemy element ze szczytu stosu
     else // jesli stos jest pusty
-        cout << "    Stos jest pusty!" << endl; // wyswietlamy komunikat o tej sytuacji
+        std::cout << "    Stos jest pusty!" << std::endl; // wyswietlamy komunikat o tej sytuacji
 }
 
 /*
@@ -154,7 +154,7 @@ void cStackMy::mPrintElement()
 void cStackMy::mPrintAllElements()
 {
     if (getStackIsEmpty() == true)
-        cout << "    Stos jest pusty!" << endl; // wypisujemy elementy az do ostatniego
+        std::cout << "    Stos jest pusty!" << std::endl; // wypisujemy elementy az do ostatniego
     else
     {
         while (getStackIsEmpty() == false)

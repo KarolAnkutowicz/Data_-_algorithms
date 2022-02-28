@@ -92,9 +92,9 @@ void cQueueTemplate::mDrawElements(typeLoop aSize)
 void cQueueTemplate::mPrintFirstElement()
 {
     if (!QueueTemplate.empty()) // sprawdzamy czy kolejka nie jest pusta
-        cout << QueueTemplate.front() << endl; // wypisujemy pierwszy element
+        std::cout << QueueTemplate.front() << std::endl; // wypisujemy pierwszy element
     else // przypadek w ktorym kolejka jest pusta
-        cout << "    Kolejka jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -103,9 +103,9 @@ void cQueueTemplate::mPrintFirstElement()
 void cQueueTemplate::mPrintLastElement()
 {
     if (!QueueTemplate.empty()) // sprawdzamy czy kolejka nie jest pusta
-        cout << QueueTemplate.back() << endl; // wypisujemy pierwszy element
+        std::cout << QueueTemplate.back() << std::endl; // wypisujemy pierwszy element
     else // przypadek w ktorym kolejka jest pusta
-        cout << "    Kolejka jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -122,7 +122,7 @@ void cQueueTemplate::mPrintAllElements()
         }
     }
     else // przypadek w ktorym kolejka jest pusta
-        cout << "    Kolejka jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/

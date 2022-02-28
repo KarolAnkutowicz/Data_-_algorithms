@@ -32,7 +32,7 @@ cSetTemplate::cSetTemplate(typeLoop aSize, typeData aDrawingRange)
  */
 bool cSetTemplate::mRemoveElement(typeData aValue)
 {
-    for (set<int>::iterator it = SetTemplate.begin(); it != SetTemplate.end(); it++) // przejscie po wszystkich elememntach zbioru
+    for (std::set<int>::iterator it = SetTemplate.begin(); it != SetTemplate.end(); it++) // przejscie po wszystkich elememntach zbioru
     {
         if (*it == aValue) // sprawdzenie czy wartosc jest ta wskazana
         {
@@ -60,8 +60,8 @@ void cSetTemplate::mDrawElements(typeLoop aSize)
  */
 void cSetTemplate::mPrintAllElements()
 {
-    for (set<int>::iterator it = SetTemplate.begin(); it != SetTemplate.end(); it++) // przejscie po wszystkich elememntach zbioru
-        cout << *it << endl; // wypisanie elementu
+    for (std::set<int>::iterator it = SetTemplate.begin(); it != SetTemplate.end(); it++) // przejscie po wszystkich elememntach zbioru
+        std::cout << *it << std::endl; // wypisanie elementu
 }
 
 /********** PUBLIC: END **********/

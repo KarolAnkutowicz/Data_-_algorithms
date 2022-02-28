@@ -107,9 +107,9 @@ void cListTemplate::mDrawElements(typeLoop aSize)
 void cListTemplate::mPrintFirstElement()
 {
     if (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
-        cout << ListTemplate.front() << endl; // jesli nie to wypisujemy pierwszy element
+        std::cout << ListTemplate.front() <<std::endl; // jesli nie to wypisujemy pierwszy element
     else // jesli jest pusta
-        cout << "    Lista jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Lista jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -118,9 +118,9 @@ void cListTemplate::mPrintFirstElement()
 void cListTemplate::mPrintLastElement()
 {
     if (!ListTemplate.empty()) // sprawdzamy czy lista nie jest pusta
-        cout << ListTemplate.back() << endl; // jesli nie jest to wypisujemy ostatni element
+        std::cout << ListTemplate.back() << std::endl; // jesli nie jest to wypisujemy ostatni element
     else // jesli jest pusta
-        cout << "    Lista jest pusta!" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Lista jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -129,11 +129,11 @@ void cListTemplate::mPrintLastElement()
 void cListTemplate::mPrintAllElements()
 {
     if (ListTemplate.empty()) // sprawdzamy czy lista jest pusta
-        cout << "    Lista jest pusta" << endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Lista jest pusta" << std::endl; // wypisujemy komunikat o tej sytuacji
     else // jesli lista nie jest pusta
     {
-        for (list<typeData>::iterator it = ListTemplate.begin(); it != ListTemplate.end(); it++) // przejscie po wszystkich elementach
-            cout << *it << endl; // wypisanie wartosci wskazanego elementu
+        for (std::list<typeData>::iterator it = ListTemplate.begin(); it != ListTemplate.end(); it++) // przejscie po wszystkich elementach
+            std::cout << *it << std::endl; // wypisanie wartosci wskazanego elementu
     }
 }
 

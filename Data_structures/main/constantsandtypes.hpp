@@ -25,5 +25,17 @@ typedef unsigned short typeLoop;
  */
 typedef char typeKey;
 
+/*
+ * const typeLoop conRowsTable - stala okreslajaca
+ * liczbe wierszy w strukturach o stalym rozmiarze.
+ */
+const typeLoop conRowsTable = 10;
+
+/*
+ * const typeLoop conColumnsTable - stala okreslajaca
+ * liczbe kolumn w strukturach o stalym rozmiarze.
+ */
+const typeLoop conColumnsTable = 10;
+
 /* constantsandtypes.hpp */
 /********** END_OF_FILE **********/

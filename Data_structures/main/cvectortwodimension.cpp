@@ -24,7 +24,7 @@ cVectorTwoDimension::cVectorTwoDimension()
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aSize)
 {
     vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
-    vector <typeData>  Vector; // utworzenie nowego wektora
+    std::vector <typeData>  Vector; // utworzenie nowego wektora
     for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
         Vector.push_back(0); // dodanie elementu do nowego wektora
     VectorElements.push_back(Vector); // dodanie wektora do wektora wektorow
@@ -38,7 +38,7 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aSize)
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns)
 {
     vDrawingRange = 0; // ustanowienie maksymalnej wartosci w wektorze
-    vector <typeData>  Vector; // utworzenie nowego wektora
+    std::vector <typeData>  Vector; // utworzenie nowego wektora
     for (typeLoop i = 0; i < aRows; i++) // przejscie po wszystkich wektorach
     {
         for (typeLoop j = 0; j < aColumns; j++) // przejscie po wszystkich elementach w wektorze
@@ -55,7 +55,7 @@ cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns)
 cVectorTwoDimension::cVectorTwoDimension(typeLoop aRows, typeLoop aColumns, typeData aDrawingRange)
 {
     vDrawingRange = aDrawingRange; // ustanowienie maksymalnej wartosci w wektorze
-    vector <typeData>  Vector; // utworzenie nowego wektora
+    std::vector <typeData>  Vector; // utworzenie nowego wektora
     for (typeLoop i = 0; i < aRows; i++) // przejscie po wszystkich wektorach
     {
         for (typeLoop j = 0; j < aColumns; j++) // przejscie po wszystkich elementach w wektorze
@@ -143,7 +143,7 @@ void cVectorTwoDimension::mFindMaxElement()
  */
 void cVectorTwoDimension::mPrintElement(typeLoop aRows, typeLoop aColumns)
 {
-    cout << VectorElements[aRows][aColumns] << " "; // wypisanie zawartosci wskazanego elementu
+    std::cout << VectorElements[aRows][aColumns] << " "; // wypisanie zawartosci wskazanego elementu
 }
 
 /*
@@ -163,7 +163,7 @@ void cVectorTwoDimension::mPrintAllElements()
     for (typeLoop i = 0; i < VectorElements.size(); i++) // przejscie po wszystkich wektorach
     {
         mPrintVector(i); // wywolanie wypisania wskazanego wektora
-        cout << endl; // przejscie do nowej linii
+        std::cout << std::endl; // przejscie do nowej linii
     }
 }
 

@@ -43,18 +43,6 @@ public:
      */
     cStaticTwoDimensionTable(typeData aDrawingRange);
 
-    /*
-     * cStaticOneDimensionTable(typeData aDrawingRange) -
-     * konstruktor wywolywany z dwoma parametrami: zakresem
-     * losowania elementow oraz liczba wierszy tablicy.
-     * PRE:
-     * - podanie zakresu losowania elementow (typ: typeData);
-     * - podanie liczby wierszy tablicy (typ: typeLoop);
-     * POST:
-     * - utworzenie obiektu klasy cStaticOneDimensionTable.
-     */
-    cStaticTwoDimensionTable(typeData aDrawingRange, typeLoop aRows);
-
 
 
     /*
@@ -80,7 +68,7 @@ public:
      */
     inline typeLoop getRows()
     {
-        return vRows;
+        return conRowsTable;
     }
 
     /*
@@ -92,7 +80,7 @@ public:
      */
     inline typeLoop getColumns()
     {
-        return vColumns;
+        return conColumnsTable;
     }
 
     /*
@@ -225,24 +213,12 @@ public:
 
 /********** PRIVATE: BEGINNING **********/
 
-//private:
-
-    /*
-     * typeLoop vRows - pole okreslajace liczbe
-     * wierszy tablicy.
-     */
-    typeLoop vRows = 10;
-
-    /*
-     * typeLoop vColumns - pole okreslajace liczbe
-     * kolumn tablicy.
-     */
-    typeLoop vColumns = 10;
+private:
 
     /*
      * typeData tabElements[vRows][vColumns] - tablica elementow.
      */
-    typeData tabElements[vRows][vColumns];
+    typeData tabElements[conRowsTable][conColumnsTable];
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy

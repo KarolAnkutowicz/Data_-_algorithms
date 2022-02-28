@@ -198,7 +198,8 @@ private:
      * array<typeData, vLengthArray> - struktura elementow
      * typu typeData.
      */
-    array<typeData, conLengthArray> MyArray;
+    //std::array<typeData, conLengthArray> MyArray;
+    std::array<typeData, 10> MyArray;
 
     /*
      * const typeLoop conLengthArray - stala typu typeLoop

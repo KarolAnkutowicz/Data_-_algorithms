@@ -46,7 +46,7 @@ cMapTemplate::cMapTemplate(typeLoop aSize, typeData aDrawingRangeValue)
  */
 typeData cMapTemplate::getElement(typeKey aKey)
 {
-    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+    for (std::map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
     {
         if ((it->first) == aKey) // sprawdzenie czy znajdujemy poszukiwany klucz
             return MapTemplate[aKey]; // w przypadku znalezienia - zwracamy wskazany element
@@ -61,7 +61,7 @@ typeData cMapTemplate::getElement(typeKey aKey)
  */
 bool cMapTemplate::mRemoveElement(typeKey aKey)
 {
-    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+    for (std::map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
     {
         if ((it->first) == aKey) // sprawdzenie czy znajdujemy poszukiwany klucz
         {
@@ -91,8 +91,8 @@ void cMapTemplate::mDrawElements(typeLoop aSize)
  */
 void cMapTemplate::mPrintAllElements()
 {
-    for (map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
-        cout << "[" << it->first << "]=" << it->second << endl; // wypisanie kolejnego elementu
+    for (std::map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
+        std::cout << "[" << it->first << "]=" << it->second << std::endl; // wypisanie kolejnego elementu
 }
 
 /********** PUBLIC: END **********/

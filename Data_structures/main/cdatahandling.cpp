@@ -23,7 +23,8 @@ cDataHandling::cDataHandling()
  */
 void cDataHandling::mPrintMainMenu()
 {
-    cout << endl << "Wybierz opcje:" << endl // menu glowne
+    using std::endl;
+    std::cout << endl << "Wybierz opcje:" << endl // menu glowne
         << "TABLICE I WEKTORY:" << endl
         << "    (10) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
         << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
@@ -67,7 +68,7 @@ void cDataHandling::mMainMenu()
     do
     {
         mPrintMainMenu(); // wypisanie glownego menu
-        cin >> vOption; // wczytanie opcji
+        std::cin >> vOption; // wczytanie opcji
         switch (vOption) // wybor opcji
         {
         case 0: break; // wybor zakonczenia dzialana programu
@@ -104,11 +105,11 @@ void cDataHandling::mMainMenu()
         case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
         case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
         // OPERACJA DOMYSLNA
-        default: cout << "Nie ma takiej opcji!" << endl; mMainMenu(); break; // komunikat o braku opcji
+        default: std::cout << "Nie ma takiej opcji!" << std::endl; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
-            cout << "    Nacisnij dowolny klawisz..." << endl; // chwilowe "wstrzymanie" wyswietlonych wynikow
+            std::cout << "    Nacisnij dowolny klawisz..." << std::endl; // chwilowe "wstrzymanie" wyswietlonych wynikow
             //getch(); // wymuszenie nacisniecia dowolnego klawisza
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
@@ -121,14 +122,15 @@ void cDataHandling::mMainMenu()
  */
 void cDataHandling::mMenuStaticOneDimensionTable()
 {
+    using std::endl;
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    cout << "Okresl parametry tablicy:" << endl; // wczytywanie parametrow
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cout << "Okresl parametry tablicy:" << endl; // wczytywanie parametrow
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cStaticOneDimensionTable S(vDrawingRange); //utworzenie obiektu
-    cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "    Zawartosc tablicy: " << endl;
     S.mPrintTable(); // wypisanie zawartosci tablicy
-    cout << endl << "    Liczba elementow: " << S.getLengthTable() << endl // wypisanie rozmiaru tablicy
+    std::cout << endl << "    Liczba elementow: " << S.getLengthTable() << endl // wypisanie rozmiaru tablicy
         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
 }
@@ -146,17 +148,15 @@ void cDataHandling::mMenuArrayOneDimension()
  */
 void cDataHandling::mMenuStaticTwoDimensionTable()
 {
+    using std::endl;
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    typeLoop vRows; // zmienna okreslajaca liczbe wierszy tablicy
-    cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
-        << "    Liczba wierszy: ";
-    cin >> vRows; // wczytanie liczby wierszy
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
-    cStaticTwoDimensionTable S(vDrawingRange, vRows); //utworzenie obiektu
-    cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
+        << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cStaticTwoDimensionTable S(vDrawingRange); //utworzenie obiektu
+    std::cout << "    Zawartosc tablicy: " << endl;
     S.mPrintTable(); // wypisanie zawartosci tablicy
-    cout << endl << "    Liczba wierszy: " << S.getRows() << endl // wypisanie liczby wierszy
+    std::cout << endl << "    Liczba wierszy: " << S.getRows() << endl // wypisanie liczby wierszy
         << "    Liczba kolumn: " << S.getColumns() << endl // wypisanie liczby kolumn
         << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
         << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
@@ -178,26 +178,25 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
     typeLoop vLengthTable; // zmienna okreslajaca liczbe elementow tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:" << std::endl // wczytywanie parametrow
         << "    Liczba elementow: ";
-    cin >> vLengthTable; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vLengthTable; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); //utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << D.getLenthtTable() << endl; // wypisanie rozmiaru tablicy
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << D.getLenthtTable() << std::endl; // wypisanie rozmiaru tablicy
+    std::cout << "    Podaj nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
-    D.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    std::cout << "    Usuwamy ostatni element..." << std::endl;
     D.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "    Zawartosc tablicy: " << std::endl;
     D.mPrintTable(); // wypisanie zawartosci tablicy
-    cout << endl << "    Liczba elementow: " << D.getLenthtTable() << endl // wypisanie rozmiaru tablicy
-        << "    Minimum: " << D.getMinElement() << endl // wypisanie minimum tablicy
-        << "    Maximum: " << D.getMaxElement() << endl; // wypisanie maximum tablicy
+    std::cout << std::endl << "    Liczba elementow: " << D.getLenthtTable() << std::endl // wypisanie rozmiaru tablicy
+        << "    Minimum: " << D.getMinElement() << std::endl // wypisanie minimum tablicy
+        << "    Maximum: " << D.getMaxElement() << std::endl; // wypisanie maximum tablicy
 }
 
 /*
@@ -208,26 +207,26 @@ void cDataHandling::mMenuVectorOneDimension()
     typeLoop vLengthVector; // zmienna okreslajaca liczbe elementow wektora
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry wektora:" << endl // wczytywanie parametrow
+    std::cout << "Okresl parametry wektora:" << std::endl // wczytywanie parametrow
         << "    Liczba elementow: ";
-    cin >> vLengthVector; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vLengthVector; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl; // wypisanie rozmiaru wektora
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << V.getVectorSize() << std::endl; // wypisanie rozmiaru wektora
+    std::cout << "    Podaj nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     V.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     V.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    std::cout << "    Usuwamy ostatni element..." << std::endl;
     V.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << "    Zawartosc wektora: " << endl;
+    std::cout << "    Zawartosc wektora: " << std::endl;
     V.mPrintAllElements(); // wypisanie zawartosci wektora
-    cout << endl << "    Liczba elementow: " << V.getVectorSize() << endl // wypisanie rozmiaru wektora
-        << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora
-        << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora
+    std::cout << std::endl << "    Liczba elementow: " << V.getVectorSize() << std::endl // wypisanie rozmiaru wektora
+        << "    Minimum: " << V.getMinElement() << std::endl // wypisanie minimum wektora
+        << "    Maximum: " << V.getMaxElement() << std::endl; // wypisanie maximum wektora
 }
 
 /*
@@ -237,18 +236,18 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
 {
     typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:" << std::endl // wczytywanie parametrow
         << "    Liczba wierszy: ";
-    cin >> vRows; // wczytanie liczby wierszy;
-    cout << "    Liczba kolumn: ";
-    cin >> vColumns; // wczytanie liczby kolumn
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vRows; // wczytanie liczby wierszy;
+    std::cout << "    Liczba kolumn: ";
+    std::cin >> vColumns; // wczytanie liczby kolumn
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicTwoDimensionTable D(vRows, vColumns, vDrawingRange); // utworzenie obiektu
-    cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "    Zawartosc tablicy: " << std::endl;
     D.mPrintAllElements(); // wypisanie zawartosci tablicy
-    cout << "    Minimum: " << D.getMinElement() << endl // wypisanie minimum tablicy
-        << "    Maximum: " << D.getMaxElement() << endl; // wypisanie maximum tablicy
+    std::cout << "    Minimum: " << D.getMinElement() << std::endl // wypisanie minimum tablicy
+        << "    Maximum: " << D.getMaxElement() << std::endl; // wypisanie maximum tablicy
 }
 
 /*
@@ -258,18 +257,18 @@ void cDataHandling::mMenuVectorTwoDimension()
 {
     typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar wektora wektorow
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    cout << "Okresl parametry wektora:" << endl // wczytywanie parametrow
+    std::cout << "Okresl parametry wektora:" << std::endl // wczytywanie parametrow
         << "    Liczba wierszy: ";
-    cin >> vRows; // wczytanie liczby wierszy;
-    cout << "    Liczba kolumn: ";
-    cin >> vColumns; // wczytanie liczby kolumn
-    cout << "    Zakres liczb od 0 do...: ";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vRows; // wczytanie liczby wierszy;
+    std::cout << "    Liczba kolumn: ";
+    std::cin >> vColumns; // wczytanie liczby kolumn
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorTwoDimension V(vRows, vColumns, vDrawingRange); // utworzenie obiektu
-    cout << "    Zawartosc wektorow: " << endl;
+    std::cout << "    Zawartosc wektorow: " << std::endl;
     V.mPrintAllElements(); // wypisanie zawartosci wektorow
-    cout << "    Minimum: " << V.getMinElement() << endl // wypisanie minimum wektora wektorow
-        << "    Maximum: " << V.getMaxElement() << endl; // wypisanie maximum wektora wektorow
+    std::cout << "    Minimum: " << V.getMinElement() << std::endl // wypisanie minimum wektora wektorow
+        << "    Maximum: " << V.getMaxElement() << std::endl; // wypisanie maximum wektora wektorow
 }
 
 
@@ -282,11 +281,11 @@ void cDataHandling::mMenuForwardListMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow listy jednokierunkowej
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     //typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry listy jednokierunkowej" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry listy jednokierunkowej" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cForwardListMy F/*(vSize, vDrawingRange)*/; // utworzenie obiektu
     //cout << "    Podaj nowy element do dodania na koniec listy jednokierunkowej: ";
     //cin >> vElement; // wczytanie wartosci nowego elementu
@@ -298,8 +297,8 @@ void cDataHandling::mMenuForwardListMy()
     //F.mRemoveElementFromBegin(); // usuwanie pierwszego elementu
     //cout << "    Usuwamy element z konca..." << endl;
     //F.mRemoveElementFromEnd(); // usuwanie ostatniego elementu
-    cout << endl << "    Liczba elementow: " << F.getListSize() << endl; // wypisanie rozmiaru listy jednokierunkowej
-    cout << "    Zawartosc listy jednokierunkowej: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << F.getListSize() << std::endl; // wypisanie rozmiaru listy jednokierunkowej
+    std::cout << "    Zawartosc listy jednokierunkowej: " << std::endl;
     F.mPrintAllElements(); // wypisanie zawartosci listy jednokierunkowej
 }
 
@@ -319,25 +318,25 @@ void cDataHandling::mMenuListMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry listy" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry listy" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cListMy L(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
-    cout << "    Podaj nowy element do dodania na koniec listy: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
+    std::cout << "    Podaj nowy element do dodania na koniec listy: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
-    cout << "    Usuwamy pierwszy element..." << endl;
+    std::cout << "    Usuwamy pierwszy element..." << std::endl;
     L.mRemoveElementFromBegin(); // usuwanie pierwszego elementu
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
-    cout << "    Zawartosc listy: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
+    std::cout << "    Zawartosc listy: " << std::endl;
     L.mPrintAllElements(); // wypisanie zawartosci listy
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
 }
 
 /*
@@ -348,25 +347,25 @@ void cDataHandling::mMenuListTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow listy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry listy" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry listy" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cListTemplate L(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
-    cout << "    Podaj nowy element do dodania na koniec listy: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
+    std::cout << "    Podaj nowy element do dodania na koniec listy: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     L.mAddElementToEnd(vElement); ; // dodanie nowego elementu
-    cout << "    Usuwamy pierwszy element..." << endl;
+    std::cout << "    Usuwamy pierwszy element..." << std::endl;
     L.mRemoveElementFromBegin(); // usuwanie pierwszego elementu
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
-    cout << "    Zawartosc listy: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
+    std::cout << "    Zawartosc listy: " << std::endl;
     L.mPrintAllElements(); // wypisanie zawartosci listy
-    cout << endl << "    Liczba elementow: " << L.getListSize() << endl; // wypisanie rozmiaru listy
+    std::cout << std::endl << "    Liczba elementow: " << L.getListSize() << std::endl; // wypisanie rozmiaru listy
 }
 
 /*
@@ -377,25 +376,25 @@ void cDataHandling::mMenuQueueMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kolejki" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry kolejki" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cQueueMy Q(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
-    cout << "    Podaj nowy element do dodania do kolejki: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
+    std::cout << "    Podaj nowy element do dodania do kolejki: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     Q.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     Q.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
+    std::cout << "    Usuwamy element..." << std::endl;
     Q.mRemoveElement(); // usuniecie elementu z kolejki
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
-    cout << "    Zawartosc kolejki: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
+    std::cout << "    Zawartosc kolejki: " << std::endl;
     Q.mPrintAllElements(); // wypisanie zawartosci kolejki
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
 }
 
 /*
@@ -406,25 +405,25 @@ void cDataHandling::mMenuQueueTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kolejki" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry kolejki" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cQueueTemplate Q(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
-    cout << "    Podaj nowy element do dodania do kolejki: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
+    std::cout << "    Podaj nowy element do dodania do kolejki: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     Q.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do kolejki: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     Q.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
+    std::cout << "    Usuwamy element..." << std::endl;
     Q.mRemoveElement(); // usuniecie elementu z kolejki
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
-    cout << "    Zawartosc kolejki: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
+    std::cout << "    Zawartosc kolejki: " << std::endl;
     Q.mPrintAllElements(); // wypisanie zawartosci kolejki
-    cout << endl << "    Liczba elementow: " << Q.getQueueSize() << endl; // wypisanie rozmiaru kolejki
+    std::cout << std::endl << "    Liczba elementow: " << Q.getQueueSize() << std::endl; // wypisanie rozmiaru kolejki
 }
 
 /*
@@ -435,25 +434,25 @@ void cDataHandling::mMenuDequeMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwukierunkowej
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kolejki dwukierunkowej" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry kolejki dwukierunkowej" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDequeMy D(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
-    cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    std::cout << "    Usuwamy ostatni element..." << std::endl;
     D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwukierunkowej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
-    cout << "    Zawartosc kolejki dwukierunkowej: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << "    Zawartosc kolejki dwukierunkowej: " << std::endl;
     D.mPrintAllElements(); // wypisanie zawartosci kolejki dwukierunkowej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
 }
 
 /*
@@ -464,25 +463,25 @@ void cDataHandling::mMenuDequeTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow kolejki dwukierunkowej
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kolejki dwukierunkowej" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry kolejki dwukierunkowej" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDequeTemplate D(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
-    cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << "    Podaj nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania na koniec kolejki dwukierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy ostatni element..." << endl;
+    std::cout << "    Usuwamy ostatni element..." << std::endl;
     D.mRemoveElementFromEnd(); // usuniecie elementu z kolejki dwukierunkowej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
-    cout << "    Zawartosc kolejki dwukierunkowej: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << "    Zawartosc kolejki dwukierunkowej: " << std::endl;
     D.mPrintAllElements(); // wypisanie zawartosci kolejki dwukierunkowej
-    cout << endl << "    Liczba elementow: " << D.getDequeSize() << endl; // wypisanie rozmiaru kolejki dwukierunkowej
+    std::cout << std::endl << "    Liczba elementow: " << D.getDequeSize() << std::endl; // wypisanie rozmiaru kolejki dwukierunkowej
 }
 
 
@@ -495,24 +494,24 @@ void cDataHandling::mMenuStackMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry stosu" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cStackMy S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
+    std::cout << "    Usuwamy element..." << std::endl;
     S.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-    cout << "    Zawartosc stosu: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << S.getStackSize() << std::endl; // wypisanie rozmiaru stosu
+    std::cout << "    Zawartosc stosu: " << std::endl;
     S.mPrintAllElements(); // wypisanie zawartosci stosu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+    std::cout << std::endl << "    Liczba elementow: " << S.getStackSize() << std::endl; // wypisanie rozmiaru stosu
 }
 
 /*
@@ -523,24 +522,24 @@ void cDataHandling::mMenuStackTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow stosu
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry stosu" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry stosu" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres liczb od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cStackTemplate S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << "    Podaj nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element..." << endl;
+    std::cout << "    Usuwamy element..." << std::endl;
     S.mRemoveElement(); // usuwanie ostatniego elementu
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
-    cout << "    Zawartosc stosu: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << S.getStackSize() << std::endl; // wypisanie rozmiaru stosu
+    std::cout << "    Zawartosc stosu: " << std::endl;
     S.mPrintAllElements(); // wypisanie zawartosci wektora
-    cout << endl << "    Liczba elementow: " << S.getStackSize() << endl; // wypisanie rozmiaru stosu
+    std::cout << std::endl << "    Liczba elementow: " << S.getStackSize() << std::endl; // wypisanie rozmiaru stosu
 }
 
 /*
@@ -551,23 +550,23 @@ void cDataHandling::mMenuHeapBinary()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow kopca binarnego
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry kopca binarnego" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry kopca binarnego" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres wartosci od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cHeapBinary H(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << H.getHeapSize() << endl; // wypisanie rozmiaru kopca binarnego
-    cout << "    Podaj nowy element do dodania na koncu kopca binarnego: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << H.getHeapSize() << std::endl; // wypisanie rozmiaru kopca binarnego
+    std::cout << "    Podaj nowy element do dodania na koncu kopca binarnego: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     H.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania na koncu kopca binarnego: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania na koncu kopca binarnego: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     H.mAddElementToEnd(vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element z korzenia..." << endl;
+    std::cout << "    Usuwamy element z korzenia..." << std::endl;
     H.mRemoveRootHeap(); // usuniecie elementu z kopca binarnego
-    cout << endl << "    Liczba elementow: " << H.getHeapSize() << endl; // wypisanie rozmiaru kopca binarnego
-    cout << "    Zawartosc kopca binarnego: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << H.getHeapSize() << std::endl; // wypisanie rozmiaru kopca binarnego
+    std::cout << "    Zawartosc kopca binarnego: " << std::endl;
     H.mPrintAllElements(); // wypisanie zawartosci kopca binarnego
 }
 
@@ -581,23 +580,23 @@ void cDataHandling::mMenuMapMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow mapy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry mapy" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry mapy" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres wartosci od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cMapMy M(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
-    cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << M.getMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     M.mAddElement((char)(97 + vSize), vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     M.mAddElement((char)(98 + vSize), vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element z najmniejszym kluczem..." << endl;
+    std::cout << "    Usuwamy element z najmniejszym kluczem..." << std::endl;
     M.mRemoveElement((char)97); // usuniecie elementu z mapy
-    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
-    cout << "    Zawartosc mapy: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << M.getMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Zawartosc mapy: " << std::endl;
     M.mPrintAllElements(); // wypisanie zawartosci mapy
 }
 
@@ -609,23 +608,23 @@ void cDataHandling::mMenuMapTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow mapy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry mapy" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry mapy" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres wartosci od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cMapTemplate M(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
-    cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << M.getMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     M.mAddElement((char)(97 + vSize), vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     M.mAddElement((char)(98 + vSize), vElement); // dodanie nowego elementu
-    cout << "    Usuwamy element z najmniejszym kluczem..." << endl;
+    std::cout << "    Usuwamy element z najmniejszym kluczem..." << std::endl;
     M.mRemoveElement((char)97); // usuniecie elementu z mapy
-    cout << endl << "    Liczba elementow: " << M.getMapSize() << endl; // wypisanie rozmiaru mapy
-    cout << "    Zawartosc mapy: " << endl;
+    std::cout << std::endl << "    Liczba elementow: " << M.getMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Zawartosc mapy: " << std::endl;
     M.mPrintAllElements(); // wypisanie zawartosci mapy
 }
 
@@ -655,21 +654,21 @@ void cDataHandling::mMenuSetMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry zbioru" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry zbioru" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres wartosci od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cSetMy S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
-    cout << "    Podaj nowy element do dodania do zbioru: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Podaj nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << endl << "    Liczb elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
-    cout << "    Zawartosc zbioru: " << endl;
+    std::cout << std::endl << "    Liczb elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Zawartosc zbioru: " << std::endl;
     S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 
@@ -681,21 +680,21 @@ void cDataHandling::mMenuSetTemplate()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    cout << "Okresl parametry zbioru" << endl // wczytanie parametrow
+    std::cout << "Okresl parametry zbioru" << std::endl // wczytanie parametrow
         << "    Liczba elementow: ";
-    cin >> vSize; // wczytanie liczby elementow
-    cout << "    Zakres wartosci od 0 do...";
-    cin >> vDrawingRange; // wczytanie granicy zakresu
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cSetTemplate S(vSize, vDrawingRange); // utworzenie obiektu
-    cout << endl << "    Liczba elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
-    cout << "    Podaj nowy element do dodania do zbioru: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << std::endl << "    Liczba elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Podaj nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
-    cin >> vElement; // wczytanie wartosci nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
     S.mAddElement(vElement); // dodanie nowego elementu
-    cout << endl << "    Liczb elementow: " << S.getSetSize() << endl; // wypisanie rozmiaru zbioru
-    cout << "    Zawartosc zbioru: " << endl;
+    std::cout << std::endl << "    Liczb elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Zawartosc zbioru: " << std::endl;
     S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 

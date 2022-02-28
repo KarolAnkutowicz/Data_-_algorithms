@@ -66,6 +66,8 @@ void cArrayOneDimension::mPrintElement(typeLoop aIndex)
 void cArrayOneDimension::mPrintArray()
 {
 
+}
+
 
 
 /********** PUBLIC: END **********/

@@ -13,7 +13,6 @@
  */
 cStaticOneDimensionTable::cStaticOneDimensionTable()
 {
-    //vLengthTable = 10; // ustanowienie dlugosci tablicy
     vDrawingRange = 0; // ustanowienie zakresu losowania wartosci elementow
     mDrawElements(); // wywolanie losowania wartosci elementow
     mFindMinElement(); // znajdujemy element najmniejszy
@@ -25,7 +24,6 @@ cStaticOneDimensionTable::cStaticOneDimensionTable()
  */
 cStaticOneDimensionTable::cStaticOneDimensionTable(typeData aDrawingRange)
 {
-    //vLengthTable = 10; // ustanowienie dlugosci tablicy
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania wartosci elementow
     mDrawElements(); // wywolanie losowania wartosci elementow
     mFindMinElement(); // znajdujemy element najmniejszy
@@ -62,7 +60,7 @@ void cStaticOneDimensionTable::mClearElement(typeLoop aIndex)
 void cStaticOneDimensionTable::mDrawElements()
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
-    for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+    for (typeLoop i = 0; i < conColumnsTable; i++) // przejscie po wszystkich elementach
         tabElements[i] = (rand() % vDrawingRange); // zmiana wartosci wskazanego elementu
 }
 
@@ -72,7 +70,7 @@ void cStaticOneDimensionTable::mDrawElements()
 void cStaticOneDimensionTable::mFindMinElement()
 {
     vMinElement = tabElements[0]; // nadanie poczatkowej wartosci najmniejszej
-    for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich elementach z wyjatkiem pierwszego
+    for (typeLoop i = 1; i < conColumnsTable; i++) // przejscie po wszystkich elementach z wyjatkiem pierwszego
         if (tabElements[i] < vMinElement) // sprawdzenie czy nowy element jest mniejszy od aktualnego najmniejszego elementu
             vMinElement = tabElements[i]; // jezeli tak to ustanawiamy nowy element najmniejszy
 }
@@ -83,7 +81,7 @@ void cStaticOneDimensionTable::mFindMinElement()
 void cStaticOneDimensionTable::mFindMaxElement()
 {
     vMaxElement = tabElements[0]; // nadanie poczatkowej wartosci najwiekszej
-    for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich elementach z wyjatkiem pierwszego
+    for (typeLoop i = 1; i < conColumnsTable; i++) // przejscie po wszystkich elementach z wyjatkiem pierwszego
         if (tabElements[i] > vMaxElement) // sprawdzenie czy nowy element jest wiekszy od aktualnego najwiekszego elementu
             vMaxElement = tabElements[i]; // jezeli tak to ustanawiamy nowy najwiekszy element
 }
@@ -95,7 +93,7 @@ void cStaticOneDimensionTable::mFindMaxElement()
  */
 void cStaticOneDimensionTable::mPrintTable()
 {
-    for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+    for (typeLoop i = 0; i < conColumnsTable; i++) // przejscie po wszystkich elementach
         mPrintElement(i); // wywolanie wypisania wskazanego elementu
 }
 

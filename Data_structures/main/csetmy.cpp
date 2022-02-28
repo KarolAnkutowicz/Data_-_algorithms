@@ -150,11 +150,11 @@ void cSetMy::mDrawElements(typeLoop aSize)
 void cSetMy::mPrintAllElements()
 {
     if (vSize == 0) // sprawdzenie czy zbior jest pusty
-        cout << "Zbior jest pusty!" << endl; // jesli tak to wypisujemy informacje o tym
+        std::cout << "Zbior jest pusty!" << std::endl; // jesli tak to wypisujemy informacje o tym
     else // jesli w zbiorze jest cokolwiek
     {
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy po kolejnych elementach
-            cout << SetMy[i] << endl; // wypisujemy wskazany element
+            std::cout << SetMy[i] << std::endl; // wypisujemy wskazany element
     }
 }
 

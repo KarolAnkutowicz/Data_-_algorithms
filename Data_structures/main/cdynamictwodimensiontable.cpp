@@ -148,7 +148,7 @@ void cDynamicTwoDimensionTable::mFindMaxElement()
  */
 void cDynamicTwoDimensionTable::mPrintElement(typeLoop aRows, typeLoop aColumns)
 {
-    cout << tabElements[aRows * vColumns + aColumns] << " "; // wypisanie wartosci elementu
+    std::cout << tabElements[aRows * vColumns + aColumns] << " "; // wypisanie wartosci elementu
 }
 
 /*
@@ -168,7 +168,7 @@ void cDynamicTwoDimensionTable::mPrintAllElements()
     for (typeLoop i = 0; i < vRows; i++) // przejscie po wszystkich wektorach
     {
         mPrintVector(i); // wywolanie wypisania wektora
-        cout << endl; // przejscie do nowej linii
+        std::cout << std::endl; // przejscie do nowej linii
     }
 }
 

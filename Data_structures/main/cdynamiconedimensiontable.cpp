@@ -194,9 +194,9 @@ void cDynamicOneDimensionTable::mFindMaxElement()
 void cDynamicOneDimensionTable::mPrintElement()
 {
     if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
-        cout << tabElements[vLengthTable - 1] << endl; // wypisujemy ostatni element
+        std::cout << tabElements[vLengthTable - 1] << std::endl; // wypisujemy ostatni element
     else // Tablica jest pusta
-        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
+        std::cout << "    Tablica jest pusta!" << std::endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -207,12 +207,12 @@ void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
     if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
     {
         if (aIndex >= vLengthTable) // sprawdzamy czy nie wychodzimy poza zakres tablicy
-            cout << "    Brak elementu o wskazanym indeksie!" << endl;
+            std::cout << "    Brak elementu o wskazanym indeksie!" << std::endl;
         else // miescimy sie w zakresie tablicy
-            cout << tabElements[aIndex] << endl; // wypisujemy wskazany element
+            std::cout << tabElements[aIndex] << std::endl; // wypisujemy wskazany element
     }
     else // tablica jest pusta
-        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
+        std::cout << "    Tablica jest pusta!" << std::endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /*
@@ -223,11 +223,11 @@ void cDynamicOneDimensionTable::mPrintTable()
     if (getTableIsEmpty() == false) // sprawdzamy czy tablica nie jest pusta
     {
         for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
-            cout << tabElements[i] << " "; // wypisanie kolejnego elementu
-        cout << endl; // przejscie do nowej linii
+            std::cout << tabElements[i] << " "; // wypisanie kolejnego elementu
+        std::cout << std::endl; // przejscie do nowej linii
     }
     else // tablica jest pusta
-        cout << "    Tablica jest pusta!" << endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
+        std::cout << "    Tablica jest pusta!" << std::endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/

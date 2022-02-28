@@ -15,6 +15,8 @@ cForwardListMy::cForwardListMy()
 {
     vSize = 0; // ustanowienie rozmiaru listy jednokierunkowej
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    vFirst = NULL;
+    vLast = NULL;
 }
 
 /*
@@ -90,7 +92,6 @@ void cForwardListMy::mAddElementToBegin(typeData aElement)
         vFirst = &Element; // nowy element staje sie pierwszym elementem
     }
     vSize++; // zwiekszenie liczby elementow na liscie jednokierunkowej
-    cElementForwardListAndQueue Element(aElement);
     cElementForwardListAndQueue *El = &Element;
     El->vNext = vFirst;
     vFirst = El;
@@ -219,9 +220,9 @@ void cForwardListMy::mDrawElements(typeLoop aSize)
 void cForwardListMy::mPrintFirstElement()
 {
     if (!vSize) // sprawdzamy czy lista jest pusta
-        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+        std::cout << "    Lista jednokierunkowa jest pusta!" <<std::endl; // jesli tak to nie mamy co wyswietlac
     else // jesli na liscie jest cokolwiek
-        cout << vFirst->getValue() << endl; // wypisujemy wartosc pierwszego elementu
+        std::cout << vFirst->getValue() << std::endl; // wypisujemy wartosc pierwszego elementu
 }
 
 /*
@@ -230,9 +231,9 @@ void cForwardListMy::mPrintFirstElement()
 void cForwardListMy::mPrintLastElement()
 {
     if (!vSize) // sprawdzamy czy lista jest pusta
-        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+        std::cout << "    Lista jednokierunkowa jest pusta!" << std::endl; // jesli tak to nie mamy co wyswietlac
     else // jesli na liscie jest cokolwiek
-        cout << vLast->getValue() << endl; // wypisujemy wartosc ostatniego elementu
+        std::cout << vLast->getValue() << std::endl; // wypisujemy wartosc ostatniego elementu
 }
 
 /*
@@ -241,7 +242,7 @@ void cForwardListMy::mPrintLastElement()
 void cForwardListMy::mPrintAllElements()
 {
     if (!vSize) // sprawdzamy czy lista jest pusta
-        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+        std::cout << "    Lista jednokierunkowa jest pusta!" << std::endl; // jesli tak to nie mamy co wyswietlac
     else // jesli na liscie jest cokolwiek
     {
         cElementForwardListAndQueue ElementAux(0); // tworzymy element pomocniczy
@@ -249,21 +250,21 @@ void cForwardListMy::mPrintAllElements()
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
         {
             ElementAux.vNext = &ElementAux; // przechodzimy przez kolejne elementy az dojdziemy do tego ktory wskazuje na ostatni
-            cout << ElementAux.getValue() << endl; // wypisanie wartosci elementu
+            std::cout << ElementAux.getValue() << std::endl; // wypisanie wartosci elementu
         }
     }
-    cElementForwardListAndQueue *El;
-    if (!vFirst)
-        cout << "    Lista jednokierunkowa jest pusta!" << endl; // jesli tak to nie mamy co wyswietlac
+    //cElementForwardListAndQueue *El;
+    /*if (!vFirst)
+        std::cout << "    Lista jednokierunkowa jest pusta!" << std::endl; // jesli tak to nie mamy co wyswietlac
     else
     {
         El = vFirst;
         while (El)
         {
-            cout << El->getValue() << endl;
+            std::cout << El->getValue() << std::endl;
             El = El->vNext;
         }
-    }
+    }*/
 }
 
 /********** PUBLIC: END **********/

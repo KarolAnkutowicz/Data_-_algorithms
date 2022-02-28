@@ -67,7 +67,7 @@ public:
      */
     inline typeLoop getLengthTable()
     {
-        return vLengthTable;
+        return conColumnsTable;
     }
 
     /*
@@ -194,15 +194,9 @@ public:
 private:
 
     /*
-     * typeLoop vLengthTable - stala okreslajaca
-     * liczbe elementow tablicy.
-     */
-    typeLoop vLengthTable = 10;
-
-    /*
      * typeData tabElements - tablica elementow.
      */
-     typeData tabElements[vLengthTable];
+    typeData tabElements[conColumnsTable];
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
