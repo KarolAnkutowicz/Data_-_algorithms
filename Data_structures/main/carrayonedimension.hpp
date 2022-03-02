@@ -8,6 +8,7 @@
 
 #include "constantsandtypes.hpp"
 #include <array>
+#include <iostream>
 
 /*
  * cArrayOneDimension - klasa modelujaca tablica

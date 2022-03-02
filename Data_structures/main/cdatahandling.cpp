@@ -23,41 +23,40 @@ cDataHandling::cDataHandling()
  */
 void cDataHandling::mPrintMainMenu()
 {
-    using std::endl;
-    std::cout << endl << "Wybierz opcje:" << endl // menu glowne
-        << "TABLICE I WEKTORY:" << endl
-        << "    (10) - statyczna tablica jednowymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
-        << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        << "    (12) - statyczna tablica dwuwymiarowa" << endl // opcja dla statycznej tablicy jednowymiarowej
-        << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>" << endl // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
-        << "    (14) - dynamiczna tablica jednowymiarowa" << endl // opcja dla dynamicznej tablicy jednowymiarowej
-        << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-        << "    (16) - dynamiczna tablica dwuwymiarowa" << endl // opcja dla dynamicznej tablicy dwuwymiarowej
-        << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>" << endl // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-        << "LISTY i KOLEJKI:" << endl
-        << "    (20) - lista jednokierunkowa" << endl // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
-        << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>" << endl // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-        << "    (22) - lista dwukierunkowa" << endl // opcja dla listy  bez wykorzystania <list>
-        << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>" << endl // opcja dla listy z wykorzystaniem <list>
-        << "    (24) - kolejka jednokierunkowa" << endl // opcja dla kolejki bez wykorzystania szablonu <queue>
-        << "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>" << endl // opcja dla kolejki z wykorzystaniem szablonu <queue>
-        << "    (26) - kolejka dwukierunkowa" << endl // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
-        << "    (27) - kolejka dwukierunkowa z wykorzystaniem <deque>" << endl // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
-        << "STOSY I KOPCE:" << endl
-        << "    (30) - stos" << endl // opcja dla stosu bez wykorzystania <stack>
-        << "    (31) - stos z wykorzystaniem szablonu <stack>" << endl // opcja dla stosu z wykorzystaniem <stack>
-        << "    (32) - kopiec binarny" << endl // opcja dla kopca binarnego
-        << "MAPY:" << endl
-        << "    (40) - mapa" << endl // opcja dla mapy bez wykorzystania szablonu <map>
-        << "    (41) - mapa z wykorzystaniem szablonu <map>" << endl // opcja dla mapy z wykorzystaniem szablonu <map>
-        << "    (42) - mapa nieuporzadkowana" << endl // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-        << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>" << endl // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
-        << "ZBIORY:" << endl
-        << "    (50) - zbior" << endl // opcja dla zbioru bez wykorzystania szablonu <set>
-        << "    (51) - zbior z wykorzystaniem szablonu <set>" << endl // opcja dla zbioru z wykorzystaniem szablonu <set>
-        << "    (52) - zbior nieuporzadkowany" << endl // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
-        << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>" << endl // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
-        << endl << "(0) - zakonczenie dzialania programu" << endl; // opcja dla wyjscia z programu
+    std::cout << "\nWybierz opcje:\n" // menu glowne
+        << "TABLICE I WEKTORY:\n"
+        << "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+        << "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+        << "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
+        << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+        << "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
+        << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+        << "LISTY i KOLEJKI:\n"
+        << "    (20) - lista jednokierunkowa\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+        << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>\n" // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
+        << "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
+        << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
+        << "    (24) - kolejka jednokierunkowa\n" // opcja dla kolejki bez wykorzystania szablonu <queue>
+        << "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>\n" // opcja dla kolejki z wykorzystaniem szablonu <queue>
+        << "    (26) - kolejka dwukierunkowa\n" // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
+        << "    (27) - kolejka dwukierunkowa z wykorzystaniem <deque>\n" // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+        << "STOSY I KOPCE:\n"
+        << "    (30) - stos\n" // opcja dla stosu bez wykorzystania <stack>
+        << "    (31) - stos z wykorzystaniem szablonu <stack>\n" // opcja dla stosu z wykorzystaniem <stack>
+        << "    (32) - kopiec binarny\n" // opcja dla kopca binarnego
+        << "MAPY:\n"
+        << "    (40) - mapa\n" // opcja dla mapy bez wykorzystania szablonu <map>
+        << "    (41) - mapa z wykorzystaniem szablonu <map>\n" // opcja dla mapy z wykorzystaniem szablonu <map>
+        << "    (42) - mapa nieuporzadkowana\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+        << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+        << "ZBIORY:\n"
+        << "    (50) - zbior\n" // opcja dla zbioru bez wykorzystania szablonu <set>
+        << "    (51) - zbior z wykorzystaniem szablonu <set>\n" // opcja dla zbioru z wykorzystaniem szablonu <set>
+        << "    (52) - zbior nieuporzadkowany\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
+        << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
+        << "\n(0) - zakonczenie dzialania programu\n"; // opcja dla wyjscia z programu
 }
 
 /*
@@ -105,12 +104,12 @@ void cDataHandling::mMainMenu()
         case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
         case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
         // OPERACJA DOMYSLNA
-        default: std::cout << "Nie ma takiej opcji!" << std::endl; mMainMenu(); break; // komunikat o braku opcji
+        default: std::cout << "Nie ma takiej opcji!\n"; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
-            std::cout << "    Nacisnij dowolny klawisz..." << std::endl; // chwilowe "wstrzymanie" wyswietlonych wynikow
-            //getch(); // wymuszenie nacisniecia dowolnego klawisza
+            std::cout << "    Czy kontynuowac? (Wpisz cokolwiek i zatwierdz klawiszem Enter)\n"; // chwilowe "wstrzymanie" wyswietlonych wynikow
+            std::cin >> vOption; // wczytanie nowej opcji
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
 }
@@ -122,17 +121,16 @@ void cDataHandling::mMainMenu()
  */
 void cDataHandling::mMenuStaticOneDimensionTable()
 {
-    using std::endl;
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    std::cout << "Okresl parametry tablicy:" << endl; // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:\n"; // wczytywanie parametrow
     std::cout << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cStaticOneDimensionTable S(vDrawingRange); //utworzenie obiektu
-    std::cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "    Zawartosc tablicy:\n";
     S.mPrintTable(); // wypisanie zawartosci tablicy
-    std::cout << endl << "    Liczba elementow: " << S.getLengthTable() << endl // wypisanie rozmiaru tablicy
-        << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
-        << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
+    std::cout << "\n    Liczba elementow: " << S.getLengthTable() // wypisanie rozmiaru tablicy
+        << "\n    Najmniejszy element: " << S.getMinElement() // wypisanie najmniejszego elementu tablicy
+        << "\n    Najwiekszy element: " << S.getMaxElement() << "\n"; // wypisanie najwiekszego elementu tablicy
 }
 
 /*
@@ -140,7 +138,15 @@ void cDataHandling::mMenuStaticOneDimensionTable()
  */
 void cDataHandling::mMenuArrayOneDimension()
 {
-    //
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    std::cout << "Okresl parametry tablicy:" << "\n"; // wczytywanie parametrow
+    std::cout << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cArrayOneDimension A(vDrawingRange); // utworzenie obiektu
+    A.mPrintArray(); // wypisanie zawartosci tablicy
+    std::cout << "\n    Liczba elementow: " << A.getLengthTable() // wypisanie rozmiaru tablicy
+        << "\n    Najmniejszy element: " << A.getMinElement() // wypisanie najmniejszego elementu tablicy
+        << "\n    Najwiekszy element: " << A.getMaxElement() << "\n"; // wypisanie najwiekszego elementu tablicy
 }
 
 /*
