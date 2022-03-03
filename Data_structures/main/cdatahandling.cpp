@@ -154,18 +154,17 @@ void cDataHandling::mMenuArrayOneDimension()
  */
 void cDataHandling::mMenuStaticTwoDimensionTable()
 {
-    using std::endl;
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    std::cout << "Okresl parametry tablicy:" << endl // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:\n" // wczytywanie parametrow
         << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cStaticTwoDimensionTable S(vDrawingRange); //utworzenie obiektu
-    std::cout << "    Zawartosc tablicy: " << endl;
+    std::cout << "    Zawartosc tablicy: \n";
     S.mPrintTable(); // wypisanie zawartosci tablicy
-    std::cout << endl << "    Liczba wierszy: " << S.getRows() << endl // wypisanie liczby wierszy
-        << "    Liczba kolumn: " << S.getColumns() << endl // wypisanie liczby kolumn
-        << "    Najmniejszy element: " << S.getMinElement() << endl // wypisanie najmniejszego elementu tablicy
-        << "    Najwiekszy element: " << S.getMaxElement() << endl; // wypisanie najwiekszego elementu tablicy
+    std::cout << "\n    Liczba wierszy: " << S.getRows() << "\n" // wypisanie liczby wierszy
+        << "    Liczba kolumn: " << S.getColumns() << "\n" // wypisanie liczby kolumn
+        << "    Najmniejszy element: " << S.getMinElement() << "\n" // wypisanie najmniejszego elementu tablicy
+        << "    Najwiekszy element: " << S.getMaxElement() << "\n"; // wypisanie najwiekszego elementu tablicy
 }
 
 /*
@@ -173,7 +172,17 @@ void cDataHandling::mMenuStaticTwoDimensionTable()
  */
 void cDataHandling::mMenuArrayTwoDimension()
 {
-    //
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    std::cout << "Okresl parametry tablicy:\n" // wczytywanie parametrow
+        << "    Zakres liczb od 0 do...: ";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cArrayTwoDimension A(vDrawingRange); //utworzenie obiektu
+    std::cout << "    Zawartosc tablicy: " << "\n";
+    A.mPrintArray(); // wypisanie zawartosci tablicy
+    std::cout << "\n    Liczba wierszy: " << A.getRows() << "\n" // wypisanie liczby wierszy
+        << "    Liczba kolumn: " << A.getColumns() << "\n" // wypisanie liczby kolumn
+        << "    Najmniejszy element: " << A.getMinElement() << "\n" // wypisanie najmniejszego elementu tablicy
+        << "    Najwiekszy element: " << A.getMaxElement() << "\n"; // wypisanie najwiekszego elementu tablicy
 }
 
 /*

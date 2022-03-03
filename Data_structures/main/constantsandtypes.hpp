@@ -25,6 +25,8 @@ typedef unsigned short typeLoop;
  */
 typedef char typeKey;
 
+
+
 /*
  * const typeLoop conRowsTable - stala okreslajaca
  * liczbe wierszy w strukturach o stalym rozmiarze.

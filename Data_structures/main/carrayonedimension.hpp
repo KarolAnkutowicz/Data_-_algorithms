@@ -125,8 +125,8 @@ public:
     }
 
     /*
-     * void mClearElement() - metoda zerujaca wskazany element
-     * tablicy.
+     * void mClearElement(typeLoop aIndex) - metoda zerujaca
+     * wskazany element tablicy.
      * PRE:
      * - podanie indeksu (typ: typeLoop);
      * POST:
