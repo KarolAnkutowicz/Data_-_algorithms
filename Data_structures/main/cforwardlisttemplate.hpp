@@ -65,7 +65,10 @@ public:
      * - zwrocenie pierwszego elementu z listy
      * jednokierunkowej (typ: typeData).
      */
-    typeData getFirstElement();
+    inline typeData getFirstElement()
+    {
+        return ForwardListTemplate.front();
+    }
 
     /*
      * typeData getLastElement() - metoda zwracajaca
@@ -98,7 +101,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getListIsEmpty() - metoda zawracajaca
@@ -109,7 +115,10 @@ public:
      * - zwrocenie informacji o tym czy lista jednokierunkowa
      * jest pusta (typ: bool).
      */
-    bool getListIsEmpty();
+    inline bool getListIsEmpty()
+    {
+        return ForwardListTemplate.empty();
+    }
 
 
 
@@ -121,7 +130,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElementToBegin(typeData aElement);
+    inline void mAddElementToBegin(typeData aElement)
+    {
+        ForwardListTemplate.push_front(aElement);
+    }
 
     /*
      * void mAddElementToEnd(typeData aElement) - metoda
