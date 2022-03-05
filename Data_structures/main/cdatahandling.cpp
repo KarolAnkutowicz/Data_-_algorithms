@@ -193,25 +193,25 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
     typeLoop vLengthTable; // zmienna okreslajaca liczbe elementow tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    std::cout << "Okresl parametry tablicy:" << std::endl // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:\n" // wczytywanie parametrow
         << "    Liczba elementow: ";
     std::cin >> vLengthTable; // wczytanie liczby elementow
     std::cout << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicOneDimensionTable D(vLengthTable, vDrawingRange); //utworzenie obiektu
-    std::cout << std::endl << "    Liczba elementow: " << D.getLenthtTable() << std::endl; // wypisanie rozmiaru tablicy
+    std::cout << "\n    Liczba elementow: " << D.getLenthtTable() << "\n"; // wypisanie rozmiaru tablicy
     std::cout << "    Podaj nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
     std::cout << "    Podaj jeszcze jeden nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElement(vElement); // dodanie nowego elementu
-    std::cout << "    Usuwamy ostatni element..." << std::endl;
+    std::cout << "    Usuwamy ostatni element...\n";
     D.mRemoveElement(); // usuwanie ostatniego elementu
-    std::cout << "    Zawartosc tablicy: " << std::endl;
+    std::cout << "    Zawartosc tablicy: \n";
     D.mPrintTable(); // wypisanie zawartosci tablicy
-    std::cout << std::endl << "    Liczba elementow: " << D.getLenthtTable() << std::endl // wypisanie rozmiaru tablicy
-        << "    Minimum: " << D.getMinElement() << std::endl // wypisanie minimum tablicy
-        << "    Maximum: " << D.getMaxElement() << std::endl; // wypisanie maximum tablicy
+    std::cout << "\n    Liczba elementow: " << D.getLenthtTable() << "\n" // wypisanie rozmiaru tablicy
+        << "    Minimum: " << D.getMinElement() << "\n" // wypisanie minimum tablicy
+        << "    Maximum: " << D.getMaxElement() << "\n"; // wypisanie maximum tablicy
 }
 
 /*
@@ -222,26 +222,26 @@ void cDataHandling::mMenuVectorOneDimension()
     typeLoop vLengthVector; // zmienna okreslajaca liczbe elementow wektora
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    std::cout << "Okresl parametry wektora:" << std::endl // wczytywanie parametrow
+    std::cout << "Okresl parametry wektora:\n" // wczytywanie parametrow
         << "    Liczba elementow: ";
     std::cin >> vLengthVector; // wczytanie liczby elementow
     std::cout << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorOneDimension V(vLengthVector, vDrawingRange); //utworzenie obiektu
-    std::cout << std::endl << "    Liczba elementow: " << V.getVectorSize() << std::endl; // wypisanie rozmiaru wektora
+    std::cout << "\n    Liczba elementow: " << V.getVectorSize() << "\n"; // wypisanie rozmiaru wektora
     std::cout << "    Podaj nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
     V.mAddElement(vElement); // dodanie nowego elementu
     std::cout << "    Podaj jeszcze jeden nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
     V.mAddElement(vElement); // dodanie nowego elementu
-    std::cout << "    Usuwamy ostatni element..." << std::endl;
+    std::cout << "    Usuwamy ostatni element...\n";
     V.mRemoveElement(); // usuwanie ostatniego elementu
-    std::cout << "    Zawartosc wektora: " << std::endl;
+    std::cout << "    Zawartosc wektora:\n";
     V.mPrintAllElements(); // wypisanie zawartosci wektora
-    std::cout << std::endl << "    Liczba elementow: " << V.getVectorSize() << std::endl // wypisanie rozmiaru wektora
-        << "    Minimum: " << V.getMinElement() << std::endl // wypisanie minimum wektora
-        << "    Maximum: " << V.getMaxElement() << std::endl; // wypisanie maximum wektora
+    std::cout << "\n    Liczba elementow: " << V.getVectorSize() << "\n" // wypisanie rozmiaru wektora
+        << "    Minimum: " << V.getMinElement() << "\n" // wypisanie minimum wektora
+        << "    Maximum: " << V.getMaxElement() << "\n"; // wypisanie maximum wektora
 }
 
 /*
@@ -251,7 +251,7 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
 {
     typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar tablicy
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    std::cout << "Okresl parametry tablicy:" << std::endl // wczytywanie parametrow
+    std::cout << "Okresl parametry tablicy:\n" // wczytywanie parametrow
         << "    Liczba wierszy: ";
     std::cin >> vRows; // wczytanie liczby wierszy;
     std::cout << "    Liczba kolumn: ";
@@ -259,10 +259,10 @@ void cDataHandling::mMenuDynamicTwoDimensionTable()
     std::cout << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cDynamicTwoDimensionTable D(vRows, vColumns, vDrawingRange); // utworzenie obiektu
-    std::cout << "    Zawartosc tablicy: " << std::endl;
+    std::cout << "    Zawartosc tablicy:\n";
     D.mPrintAllElements(); // wypisanie zawartosci tablicy
-    std::cout << "    Minimum: " << D.getMinElement() << std::endl // wypisanie minimum tablicy
-        << "    Maximum: " << D.getMaxElement() << std::endl; // wypisanie maximum tablicy
+    std::cout << "    Minimum: " << D.getMinElement() << "\n" // wypisanie minimum tablicy
+        << "    Maximum: " << D.getMaxElement() << "\n"; // wypisanie maximum tablicy
 }
 
 /*
@@ -272,7 +272,7 @@ void cDataHandling::mMenuVectorTwoDimension()
 {
     typeLoop vRows, vColumns; // zmienne okreslajaca rozmiar wektora wektorow
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    std::cout << "Okresl parametry wektora:" << std::endl // wczytywanie parametrow
+    std::cout << "Okresl parametry wektora:\n" // wczytywanie parametrow
         << "    Liczba wierszy: ";
     std::cin >> vRows; // wczytanie liczby wierszy;
     std::cout << "    Liczba kolumn: ";
@@ -280,10 +280,10 @@ void cDataHandling::mMenuVectorTwoDimension()
     std::cout << "    Zakres liczb od 0 do...: ";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cVectorTwoDimension V(vRows, vColumns, vDrawingRange); // utworzenie obiektu
-    std::cout << "    Zawartosc wektorow: " << std::endl;
+    std::cout << "    Zawartosc wektorow:\n";
     V.mPrintAllElements(); // wypisanie zawartosci wektorow
-    std::cout << "    Minimum: " << V.getMinElement() << std::endl // wypisanie minimum wektora wektorow
-        << "    Maximum: " << V.getMaxElement() << std::endl; // wypisanie maximum wektora wektorow
+    std::cout << "    Minimum: " << V.getMinElement() << "\n" // wypisanie minimum wektora wektorow
+        << "    Maximum: " << V.getMaxElement() << "\n"; // wypisanie maximum wektora wektorow
 }
 
 
@@ -296,24 +296,24 @@ void cDataHandling::mMenuForwardListMy()
     typeLoop vSize; // zmienna okreslajaca liczbe elementow listy jednokierunkowej
     typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
     //typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    std::cout << "Okresl parametry listy jednokierunkowej" << std::endl // wczytanie parametrow
+    std::cout << "Okresl parametry listy jednokierunkowej\n" // wczytanie parametrow
         << "    Liczba elementow: ";
     std::cin >> vSize; // wczytanie liczby elementow
     std::cout << "    Zakres liczb od 0 do...";
     std::cin >> vDrawingRange; // wczytanie granicy zakresu
     cForwardListMy F/*(vSize, vDrawingRange)*/; // utworzenie obiektu
-    //cout << "    Podaj nowy element do dodania na koniec listy jednokierunkowej: ";
-    //cin >> vElement; // wczytanie wartosci nowego elementu
+    //std::cout << "    Podaj nowy element do dodania na koniec listy jednokierunkowej: ";
+    //std::cin >> vElement; // wczytanie wartosci nowego elementu
     //F.mAddElementToEnd(vElement); // dodanie nowego elementu
-    //cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy jednokierunkowej: ";
-    //cin >> vElement; // wczytanie wartosci nowego elementu
+    //std::cout << "    Podaj jeszcze jeden nowy element do dodania na koniec listy jednokierunkowej: ";
+    //std::cin >> vElement; // wczytanie wartosci nowego elementu
     //F.mAddElementToEnd(vElement); // dodanie nowego elementu
-    //cout << "    Usuwamy element z poczatku..." << endl;
+    //std::cout << "    Usuwamy element z poczatku...\n";
     //F.mRemoveElementFromBegin(); // usuwanie pierwszego elementu
-    //cout << "    Usuwamy element z konca..." << endl;
+    //std::cout << "    Usuwamy element z konca...\n";
     //F.mRemoveElementFromEnd(); // usuwanie ostatniego elementu
-    std::cout << std::endl << "    Liczba elementow: " << F.getListSize() << std::endl; // wypisanie rozmiaru listy jednokierunkowej
-    std::cout << "    Zawartosc listy jednokierunkowej: " << std::endl;
+    std::cout << "\n    Liczba elementow: " << F.getListSize() << "\n"; // wypisanie rozmiaru listy jednokierunkowej
+    std::cout << "    Zawartosc listy jednokierunkowej:\n";
     F.mPrintAllElements(); // wypisanie zawartosci listy jednokierunkowej
 }
 
