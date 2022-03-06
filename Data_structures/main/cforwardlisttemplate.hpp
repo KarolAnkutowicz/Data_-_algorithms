@@ -8,6 +8,7 @@
 
 #include "constantsandtypes.hpp"
 #include <forward_list>
+#include <iostream>
 
 /*
  * cForwardListTemplate - klasa modelujaca liste
@@ -71,17 +72,6 @@ public:
     }
 
     /*
-     * typeData getLastElement() - metoda zwracajaca
-     * ostatni element z listy jednokierunkowej.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie ostatniego elementu z listy
-     * jednokierunkowej (typ: typeData).
-     */
-    typeData getLastElement();
-
-    /*
      * typeLoop getListSize() - zwrocenie rozmiaru listy
      * jednokierunkowej.
      * PRE:
@@ -90,7 +80,10 @@ public:
      * - zwrocenie rozmiaru listy jednokierunkowej
      * (typ: typeLoop).
      */
-    typeLoop getListSize();
+    inline typeLoop getListSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -130,20 +123,7 @@ public:
      * POST:
      * - brak.
      */
-    inline void mAddElementToBegin(typeData aElement)
-    {
-        ForwardListTemplate.push_front(aElement);
-    }
-
-    /*
-     * void mAddElementToEnd(typeData aElement) - metoda
-     * dopisujaca element na samym koncu listy jednokierunkowej.
-     * PRE:
-     * - podanie wartosci elementu (typ: typeData);
-     * POST:
-     * - brak.
-     */
-    void mAddElementToEnd(typeData aElement);
+    void mAddElementToBegin(typeData aElement);
 
     /*
      * bool mRemoveElementFromBegin() - metoda usuwajaca
@@ -156,18 +136,6 @@ public:
      * sie udalo (typ: bool).
      */
     bool mRemoveElementFromBegin();
-
-    /*
-     * bool mRemoveElementFromEnd() - metoda usuwajaca
-     * element z konca listy jednokierunkowej (o ile
-     * lista nie jest pusta!).
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie informacji o tym czy usuniecie elementu
-     * sie udalo (typ: bool).
-     */
-    bool mRemoveElementFromEnd();
 
     /*
      * void mDrawElements(typeLoop aSize) - metoda losujaca
@@ -191,17 +159,6 @@ public:
      * - brak.
      */
     void mPrintFirstElement();
-
-    /*
-     * void mPrintLastElement() - metoda wyswietlajaca
-     * ostatni element listy jednokierunkowej (o ile
-     * lista nie jest pusta!).
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mPrintLastElement();
 
     /*
      * void mPrintAllElements() - metoda wyswietlajaca
@@ -231,6 +188,12 @@ private:
      * losowania elementow listy.
      */
     typeData vDrawingRange;
+
+    /*
+     * typeLoop vSize - pole przechowujace liczbe elementow
+     * listy jednokierunkowej.
+     */
+    typeLoop vSize;
 
 /********** PRIVATE: END **********/
 };
