@@ -1,7 +1,7 @@
 /********** BEGIN_OF_FILE **********/
 /*
  * author: Karol Ankutowicz
- * file: cgraphhandling.h
+ * file: cgraphhandling.hpp
  */
 
 #pragma once
@@ -27,5 +27,5 @@ public:
 /********** PRIVATE: END **********/
 };
 
-/* cgraphhandling.h */
+/* cgraphhandling.hpp */
 /********** END_OF_FILE **********/
