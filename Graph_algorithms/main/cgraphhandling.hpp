@@ -16,6 +16,13 @@ class cGraphHandling
 
 public:
 
+    /*
+     * cGraphHandling() - konstruktor wywolywany bez parametrow.
+     * PRE:
+     * - brak;
+     * POST:
+     * - utworzenie obiektu klasy cGraphHandling.
+     */
     cGraphHandling();
 
 /********** PUBLIC: END **********/

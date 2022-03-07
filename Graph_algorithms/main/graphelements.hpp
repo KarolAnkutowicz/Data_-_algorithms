@@ -24,15 +24,5 @@ class cEdge
 
 };
 
-
-
-/*
- * cMatrix - klasa modelujaca macierz wag
- */
-class cMatrix
-{
-
-};
-
  /* graphelements.hpp */
  /********** END_OF_FILE **********/
