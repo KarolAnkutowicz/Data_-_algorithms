@@ -108,6 +108,7 @@ void cDynamicOneDimensionTable::mAddElement(typeData aElement)
     for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach tablicy
         tabElements[i] = tabElementsAux[i]; // skopiowanie kolejnych elementow
     delete[]tabElementsAux; // zwalnianie zasobow przydzielanych dynamicznie
+    mPrintTable();
     mCheckTableIsEmpty(); // wywolanie sprawdzenia czy tablica jest pusta
 }
 
@@ -118,6 +119,7 @@ bool cDynamicOneDimensionTable::mRemoveElement()
 {
     if (vTableIsEmpty == true) // sprawdzamy czy tablica jest pusta
     {
+        mPrintTable();
         return false; // jesli tak to nie mamhy co usuwac
     }
     else // jesli tablica nie jest pusta
@@ -129,10 +131,11 @@ bool cDynamicOneDimensionTable::mRemoveElement()
             tabElementsAux[i] = tabElements[i]; // kopiujemy elementy do tablicy pomocniczej
         delete[] tabElements; // zwolnienie zasobow przydzielanych dynamicznie
         tabElements = new typeData[vLengthTable]; // utworzenie nowej tablicy elementow
-        for (typeLoop i = 0; i < (vLengthTable - 1); i++) // przejscie po wszystkich elementach tablicy
+        for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach tablicy
             tabElements[i] = tabElementsAux[i]; // skopiowanie kolejnych elementow
         delete[]tabElementsAux; // zwalnianie zasobow przydzielanych dynamicznie
         mCheckTableIsEmpty(); // wywolanie sprawdzenia czy tablica jest pusta
+        mPrintTable();
         return true;
     }
 }
@@ -224,10 +227,10 @@ void cDynamicOneDimensionTable::mPrintTable()
     {
         for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
             std::cout << tabElements[i] << " "; // wypisanie kolejnego elementu
-        std::cout << std::endl; // przejscie do nowej linii
+        std::cout << "\n"; // przejscie do nowej linii
     }
     else // tablica jest pusta
-        std::cout << "    Tablica jest pusta!" << std::endl; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
+        std::cout << "    Tablica jest pusta!\n"; // jesli tablica jest pusta to zwracamy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/

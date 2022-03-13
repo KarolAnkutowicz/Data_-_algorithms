@@ -95,6 +95,7 @@ void cStaticOneDimensionTable::mPrintTable()
 {
     for (typeLoop i = 0; i < conColumnsTable; i++) // przejscie po wszystkich elementach
         mPrintElement(i); // wywolanie wypisania wskazanego elementu
+    std::cout << "\n"; // przejscie do nowej linii
 }
 
 /********** PUBLIC: END **********/

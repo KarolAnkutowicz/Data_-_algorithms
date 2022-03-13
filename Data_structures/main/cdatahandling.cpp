@@ -25,19 +25,19 @@ void cDataHandling::mPrintMainMenu()
 {
     std::cout << "\nWybierz opcje:\n" // menu glowne
         << "TABLICE I WEKTORY:\n"
-        << "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
-        << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        << "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
-        << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+        //<< "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        //<< "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+        //<< "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        //<< "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
         << "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
-        << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-        << "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
-        << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+        //<< "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+        //<< "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
+        //<< "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
         << "LISTY i KOLEJKI:\n"
         << "    (20) - lista jednokierunkowa\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
         << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>\n" // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-        << "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
-        << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
+        //<< "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
+        //<< "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
         << "    (24) - kolejka jednokierunkowa\n" // opcja dla kolejki bez wykorzystania szablonu <queue>
         << "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>\n" // opcja dla kolejki z wykorzystaniem szablonu <queue>
         << "    (26) - kolejka dwukierunkowa\n" // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
@@ -72,19 +72,19 @@ void cDataHandling::mMainMenu()
         {
         case 0: break; // wybor zakonczenia dzialana programu
         // TABLICE I WEKTORY
-        case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
-        case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
-        case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
+        //case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
+        //case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+        //case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
+        //case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
         case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-        case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-        case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-        case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+        //case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+        //case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+        //case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
         // LISTY I KOLEJKI
         case 20: mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
         case 21: mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
-        case 22: mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-        case 23: mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+        //case 22: mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+        //case 23: mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
         case 24: mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
         case 25: mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
         case 26: mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>

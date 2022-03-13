@@ -175,7 +175,7 @@ public:
      */
     inline void mPrintElement(typeLoop aIndex)
     {
-        std::cout << tabElements[aIndex] << std::endl;
+        std::cout << tabElements[aIndex] << " ";
     }
 
     /*
