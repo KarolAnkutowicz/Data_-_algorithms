@@ -92,7 +92,7 @@ void cMapTemplate::mDrawElements(typeLoop aSize)
 void cMapTemplate::mPrintAllElements()
 {
     for (std::map<typeKey, typeData>::iterator it = MapTemplate.begin(); it != MapTemplate.end(); it++) // przejscie po wszystkich elementach mapy
-        std::cout << "[" << it->first << "]=" << it->second << std::endl; // wypisanie kolejnego elementu
+        std::cout << "[" << it->first << "]=" << it->second << "\n"; // wypisanie kolejnego elementu
 }
 
 /********** PUBLIC: END **********/

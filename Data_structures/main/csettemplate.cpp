@@ -61,7 +61,8 @@ void cSetTemplate::mDrawElements(typeLoop aSize)
 void cSetTemplate::mPrintAllElements()
 {
     for (std::set<int>::iterator it = SetTemplate.begin(); it != SetTemplate.end(); it++) // przejscie po wszystkich elememntach zbioru
-        std::cout << *it << std::endl; // wypisanie elementu
+        std::cout << *it << " "; // wypisanie elementu
+    std::cout << "\n"; // przejscie do nowej linii
 }
 
 /********** PUBLIC: END **********/

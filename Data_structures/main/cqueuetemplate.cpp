@@ -67,7 +67,7 @@ bool cQueueTemplate::mRemoveElement()
 {
     if (!QueueTemplate.empty()) // sprawdzamy czy kolejka nie jest pusta
     {
-        QueueTemplate.pop(); // usuwamy ostatni element
+        QueueTemplate.pop(); // usuwamy pierwszy element
         return true; // zwracamy wartosc logiczna
     }
     else // przypadek w ktorym kolejka jest pusta
@@ -92,9 +92,9 @@ void cQueueTemplate::mDrawElements(typeLoop aSize)
 void cQueueTemplate::mPrintFirstElement()
 {
     if (!QueueTemplate.empty()) // sprawdzamy czy kolejka nie jest pusta
-        std::cout << QueueTemplate.front() << std::endl; // wypisujemy pierwszy element
+        std::cout << QueueTemplate.front() << " "; // wypisujemy pierwszy element
     else // przypadek w ktorym kolejka jest pusta
-        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -103,9 +103,9 @@ void cQueueTemplate::mPrintFirstElement()
 void cQueueTemplate::mPrintLastElement()
 {
     if (!QueueTemplate.empty()) // sprawdzamy czy kolejka nie jest pusta
-        std::cout << QueueTemplate.back() << std::endl; // wypisujemy pierwszy element
+        std::cout << QueueTemplate.back() << " "; // wypisujemy pierwszy element
     else // przypadek w ktorym kolejka jest pusta
-        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -117,12 +117,14 @@ void cQueueTemplate::mPrintAllElements()
     {
         while (!QueueTemplate.empty()) // dopoki kolejka nie jest pusta
         {
-            mPrintFirstElement(); // wypisujemy ostatni element
-            mRemoveElement(); // usuwamy ostatni element dajac dostep do wczesniejszego
+            mPrintFirstElement(); // wypisujemy pierwszy element
+            mRemoveElement(); // usuwamy pierwszy element dajac dostep do wczesniejszego
         }
+        std::cout << "\n"; // przejscie do nowej linii
+
     }
     else // przypadek w ktorym kolejka jest pusta
-        std::cout << "    Kolejka jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
 }
 
 /********** PUBLIC: END **********/

@@ -134,9 +134,9 @@ void cQueueMy::mDrawElements(typeLoop aSize)
 void cQueueMy::mPrintFirstElement()
 {
     if (vSize == 0) // sprawdzenie czy kolejka jest pusta
-        std::cout << "Kolejka jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+        std::cout << "Kolejka jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
-        std::cout << QueueMy[0] << std::endl; // wypisujemy wartosc pierwszego elementu kolejki
+        std::cout << QueueMy[0] << " "; // wypisujemy wartosc pierwszego elementu kolejki
 }
 
 /*
@@ -145,9 +145,9 @@ void cQueueMy::mPrintFirstElement()
 void cQueueMy::mPrintLastElement()
 {
     if (vSize == 0) // sprawdzenie czy kolejka jest pusta
-        std::cout << "Kolejka jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+        std::cout << "Kolejka jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
-        std::cout << QueueMy[vSize - 1] << std::endl; // wypisujemy wartosc ostatniego elementu kolejki
+        std::cout << QueueMy[vSize - 1] << " "; // wypisujemy wartosc ostatniego elementu kolejki
 }
 
 /*
@@ -156,11 +156,12 @@ void cQueueMy::mPrintLastElement()
 void cQueueMy::mPrintAllElements()
 {
     if (vSize == 0) // sprawdzenie czy kolejka jest pusta
-        std::cout << "Kolejka jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+        std::cout << "Kolejka jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce
     {
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach kolejki
-            std::cout << QueueMy[i] << std::endl; // wypisanie wskazanego elementu
+            std::cout << QueueMy[i] << " "; // wypisanie wskazanego elementu
+        std::cout << "\n"; // przejscie do nowej linii
     }
 }
 

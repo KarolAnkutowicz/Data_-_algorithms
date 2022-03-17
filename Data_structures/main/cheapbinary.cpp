@@ -392,9 +392,9 @@ void cHeapBinary::mDrawElements(typeLoop aSize)
 void cHeapBinary::mPrintRootHeap()
 {
     if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
-        std::cout << HeapBinary[0] << std::endl; // jesli nie jest to wypisujemy zawartosc korzenia
+        std::cout << HeapBinary[0] << " "; // jesli nie jest to wypisujemy zawartosc korzenia
     else // jesli kopiec binarny jest pusty
-        std::cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
+        std::cout << "Kopiec binarny jest pusty!\n"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /*
@@ -403,9 +403,9 @@ void cHeapBinary::mPrintRootHeap()
 void cHeapBinary::mPrintLastElement()
 {
     if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
-        std::cout << HeapBinary[vSize - 1]; // jesli nie jest to wypisujemy ostatni element
+        std::cout << HeapBinary[vSize - 1] << " "; // jesli nie jest to wypisujemy ostatni element
     else // jesli kopiec binarny jest pusty
-        std::cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
+        std::cout << "Kopiec binarny jest pusty!\n"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /*
@@ -416,10 +416,10 @@ void cHeapBinary::mPrintAllElements()
     if (vSize != 0) // sprawdzenie czy kopiec binarny nie jest pusty
     {
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach
-            std::cout << HeapBinary[i] << std::endl; // wypisanie kolejnych elementow
+            std::cout << HeapBinary[i] << " "; // wypisanie kolejnych elementow
     }
     else // jesli kopiec binarny jest pusty
-        std::cout << "Kopiec binarny jest pusty!"; // wowczas wypisujemy odpowiedni komunikat
+        std::cout << "Kopiec binarny jest pusty!\n"; // wowczas wypisujemy odpowiedni komunikat
 }
 
 /********** PUBLIC: END **********/

@@ -175,9 +175,9 @@ void cDequeMy::mDrawElements(typeLoop aSize)
 void cDequeMy::mPrintFirstElement()
 {
     if (vSize == 0) // sprawdzenie czy kolejka dwukierunkowa jest pusta
-        std::cout << "Kolejka dwukierunkowa jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+        std::cout << "Kolejka dwukierunkowa jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce dwukierunkowej
-        std::cout << DequeMy[0] << std::endl; // wypisujemy wartosc pierwszego elementu kolejki dwukierunkowej
+        std::cout << DequeMy[0] << " "; // wypisujemy wartosc pierwszego elementu kolejki dwukierunkowej
 }
 
 /*
@@ -186,9 +186,9 @@ void cDequeMy::mPrintFirstElement()
 void cDequeMy::mPrintLastElement()
 {
     if (vSize == 0) // sprawdzenie czy kolejka dwukierunkowa jest pusta
-       std::cout << "Kolejka dwukierunkowa jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+       std::cout << "Kolejka dwukierunkowa jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce dwukierunkowej
-        std::cout << DequeMy[vSize - 1] << std::endl; // wypisujemy wartosc ostatniego elementu kolejki dwukierunkowej
+        std::cout << DequeMy[vSize - 1] << " "; // wypisujemy wartosc ostatniego elementu kolejki dwukierunkowej
 }
 
 /*
@@ -197,11 +197,12 @@ void cDequeMy::mPrintLastElement()
 void cDequeMy::mPrintAllElements()
 {
     if (vSize == 0) // sprawdzenie czy kolejka dwukierunkowa jest pusta
-        std::cout << "Kolejka dwukierunkowa jest pusta!" << std::endl; // wypisanie odpowiedniego komunikatu
+        std::cout << "Kolejka dwukierunkowa jest pusta!\n"; // wypisanie odpowiedniego komunikatu
     else // w przypadku jesli cokolwiek jest w kolejce dwukierunkowej
     {
         for (typeLoop i = 0; i < vSize; i++) // przejscie po wszystkich elementach kolejki dwukierunkowej
-            std::cout << DequeMy[i] << std::endl; // wypisanie wskazanego elementu
+            std::cout << DequeMy[i] << " "; // wypisanie wskazanego elementu
+        std::cout << "\n"; // przejscie do nowej linii
     }
 }
 

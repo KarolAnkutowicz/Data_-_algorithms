@@ -108,9 +108,9 @@ void cDequeTemplate::mDrawElements(typeLoop aSize)
 void cDequeTemplate::mPrintFirstElement()
 {
     if (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
-        std::cout << DequeTemplate.front() << std::endl; // jesli nie to wypisujemy pierwszy element kolejki dwukierunkowej
+        std::cout << DequeTemplate.front() << " "; // jesli nie to wypisujemy pierwszy element kolejki dwukierunkowej
     else // jesli kolejka dwustronna jest pusta
-        std::cout << "    Kolejka dwustronna jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka dwustronna jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -119,9 +119,9 @@ void cDequeTemplate::mPrintFirstElement()
 void cDequeTemplate::mPrintLastElement()
 {
     if (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
-        std::cout << DequeTemplate.back() << std::endl; // jesli nie to wypisujemy ostatni element kolejki dwukierunkowej
+        std::cout << DequeTemplate.back() << " "; // jesli nie to wypisujemy ostatni element kolejki dwukierunkowej
     else // jesli kolejka dwustronna jest pusta
-        std::cout << "    Kolejka dwustronna jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka dwustronna jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
 }
 
 /*
@@ -130,7 +130,7 @@ void cDequeTemplate::mPrintLastElement()
 void cDequeTemplate::mPrintAllElements()
 {
     if (DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna jest pusta
-        std::cout << "    Kolejka dwustronna jest pusta!" << std::endl; // wypisujemy komunikat o tej sytuacji
+        std::cout << "    Kolejka dwustronna jest pusta!\n"; // wypisujemy komunikat o tej sytuacji
     else // jesli kolejka dwustronna nie jest pusta
     {
         while (!DequeTemplate.empty()) // sprawdzamy czy kolejka dwustronna nie jest pusta
@@ -138,6 +138,7 @@ void cDequeTemplate::mPrintAllElements()
             mPrintFirstElement(); // wypisujemy element z poczatku kolejki dwustronnej
             mRemoveElementFromBegin(); // usuwamy element dajac dostep do kolejnego
         }
+        std::cout << "\n"; // przejscie do nowej linii
     }
 }
 
