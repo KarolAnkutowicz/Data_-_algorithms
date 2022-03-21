@@ -98,19 +98,6 @@ public:
     }
 
     /*
-     * bool getTableIsEmpty() - metoda zwracajaca informacje
-     * o tym czy tablica jest pusta.
-     * PRE:
-     * - brak;
-     * POST:
-     * - zwrocenie wartosci pola vTableIsEmpty(typ: typeData).
-     */
-    inline bool getTableIsEmpty()
-    {
-        return vTableIsEmpty;
-    }
-
-    /*
      * typeData getDrawingRange() - metoda zwracajaca maksymalny
      * zakres losowania elementow tablicy.
      * PRE:
@@ -174,23 +161,13 @@ public:
 
 
     /*
-     * void mDrawElements() - metoda losujaca elementy tablicy.
+     * void mDrawElements(typeLoop aSize) - metoda losujaca elementy tablicy.
      * PRE:
-     * - brak;
+     * - podanie liczby elementow (typ typeLoop);
      * POST:
      * - brak.
      */
-    void mDrawElements();
-
-    /*
-     * void mCheckTableIsEmpty() - metoda sprawdzajaca
-     * czy tablica jest pusta.
-     * PRE:
-     * - brak;
-     * POST:
-     * - brak.
-     */
-    void mCheckTableIsEmpty();
+    void mDrawElements(typeLoop aSize);
 
     /*
      * void mFindMinElement() - metoda znajdujaca najmniejszy
@@ -258,12 +235,6 @@ private:
      * typeLoop vLengthTable - liczba elementow tablicy.
      */
     typeLoop vLengthTable;
-
-    /*
-     * bool vTableIsEmpty - pole okreslajace czy tablica
-     * jest pusta.
-     */
-    bool vTableIsEmpty;
 
     /*
      * typeData vDrawingRange - maksymalna liczba jaka mozemy
