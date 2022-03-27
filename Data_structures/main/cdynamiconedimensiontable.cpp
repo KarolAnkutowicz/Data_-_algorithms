@@ -135,7 +135,9 @@ bool cDynamicOneDimensionTable::mRemoveElement()
  */
 void cDynamicOneDimensionTable::mDrawElements(typeLoop aSize)
 {
-
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu na koniec tablicy
 }
 
 /*
@@ -143,7 +145,15 @@ void cDynamicOneDimensionTable::mDrawElements(typeLoop aSize)
  */
 void cDynamicOneDimensionTable::mFindMinElement()
 {
-
+    if (vLengthTable == 0) // sprawdzenie czy w tablicy jest cokolwiek
+        vMinElement = NULL; // jesli nie to nie ma najmniejszego elementu
+    else // jesli w tablicy jest cokolwiek
+    {
+        vMinElement = tabElements[0]; // ustanowienie najmniejszego elementu na pierwszy element tablicy
+        for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+            if (tabElements[i] < vMinElement) // sprawdzenie czy element z tablicy jest mniejszy niz aktualny najmniejszy element
+                vMinElement = tabElements[i]; // jesli tak to ustanawiamy nowy najmniejszy element
+    }
 }
 
 /*
@@ -151,7 +161,15 @@ void cDynamicOneDimensionTable::mFindMinElement()
  */
 void cDynamicOneDimensionTable::mFindMaxElement()
 {
-
+    if (vLengthTable == 0) // sprawdzenie czy w tablicy jest cokolwiek
+        vMinElement = NULL; // jesli nie to nie ma najwiekszego elementu
+    else // jesli w tablicy jest cokolwiek
+    {
+        vMaxElement = tabElements[0]; // ustanowienie najwiekszego elementu na pierwszy element tablicy
+        for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+            if (tabElements[i] > vMaxElement) // sprawdzenie czy element z tablicy jest wiekszy niz aktualny najwiekszy element
+                vMaxElement = tabElements[i]; // jesli tak to ustanawiamy nowy najwiekszy element
+    }
 }
 
 
