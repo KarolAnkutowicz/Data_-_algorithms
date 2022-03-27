@@ -13,7 +13,12 @@
  */
 cDynamicOneDimensionTable::cDynamicOneDimensionTable()
 {
-
+    tabElements = new typeData[1]; // utworzenie tablicy elementow
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    tabElements[0] = NULL; // nadanie wartosci potencjalnemu elementowi tablicy
+    vLengthTable = 0; // ustanowienie rozmiaru tablicy
+    mFindMinElement(); // wywolanie wyszukania najmniejszego elementu
+    mFindMaxElement(); // wywolanie wyszukania najwiekszego elementu
 }
 
 /*
@@ -21,7 +26,11 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable()
  */
 cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
 {
-
+    tabElements = new typeData[aLengthTable]; // utworzenie tablicy elementow
+    vDrawingRange = 0; // ustanowienie zakresu losowania elementow
+    mDrawElements(aLengthTable); // wywolanie metody losujacej dodawane elementy
+    mFindMinElement(); // wywolanie wyszukania najmniejszego elementu
+    mFindMaxElement(); // wywolanie wyszukania najwiekszego elementu
 }
 
 /*
@@ -29,7 +38,11 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable)
  */
 cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, typeData aDrawingRange)
 {
-
+    tabElements = new typeData[aLengthTable]; // utworzenie tablicy elementow
+    vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
+    mDrawElements(aLengthTable); // wywolanie metody losujacej dodawane elementy
+    mFindMinElement(); // wywolanie wyszukania najmniejszego elementu
+    mFindMaxElement(); // wywolanie wyszukania najwiekszego elementu
 }
 
 /*
@@ -37,7 +50,7 @@ cDynamicOneDimensionTable::cDynamicOneDimensionTable(typeLoop aLengthTable, type
  */
 cDynamicOneDimensionTable::~cDynamicOneDimensionTable()
 {
-
+    delete[]tabElements; // zwalnianie zasobow przydzielanych dynamicznie
 }
 
 
