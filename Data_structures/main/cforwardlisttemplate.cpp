@@ -40,24 +40,25 @@ cForwardListTemplate::cForwardListTemplate(typeLoop aSize, typeData aDrawingRang
 
 
 /*
- * void mAddElementToBegin(typeData aElement)
+ * void mAddElement(typeData aElement)
  */
-void cForwardListTemplate::mAddElementToBegin(typeData aElement)
+void cForwardListTemplate::mAddElement(typeData aElement)
 {
 	ForwardListTemplate.push_front(aElement); // dodanie elementu na poczatek listy jednokierunkowej
 	vSize++; // zwiekszenie rozmiaru listy jednokierunkowej
 }
 
 /*
- * bool mRemoveElementFromBegin()
+ * bool mRemoveElement()
  */
-bool cForwardListTemplate::mRemoveElementFromBegin()
+bool cForwardListTemplate::mRemoveElement()
 {
 	if (getListIsEmpty() == true) // jesli lista jest pusta
 		return false; // to nie mamy co usuwac
 	else // jesli na liscie jest cokolwiek
 	{
 		ForwardListTemplate.pop_front(); // usuniecie elementu z poczatku listy
+		vSize--; // zmniejszenie rozmiaru listy jednokierunkowej
 		return true; // zwrocenie informacji o powodzeniu usuniecia elementu
 	}
 }
@@ -69,7 +70,7 @@ void cForwardListTemplate::mDrawElements(typeLoop aSize)
 {
 	srand(time_t(NULL)); // ustanowienie zmiennej losowej
 	for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
-		mAddElementToBegin(rand() % vDrawingRange); // dodanie nowego elementu
+		mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
@@ -90,6 +91,14 @@ void cForwardListTemplate::mPrintFirstElement()
  */
 void cForwardListTemplate::mPrintAllElements()
 {
+	if (getListIsEmpty() == true) // jesli lista jest pusta
+		std::cout << "Lista jest pusta!\n"; // wypisanie odpowiedniego komunikatu
+	else // jesli na liscie jest cokolwiek
+	{
+		for (typeData& x : ForwardListTemplate) // przejscie po wszystkich elementach
+			std::cout << x << " "; // wypisanie kolejnego elementu
+		std::cout << "\n"; // przejscie do nowej linii po wypisaniu zawartosci listy jednokierunkowej
+	}
 }
 
 /********** PUBLIC: END **********/

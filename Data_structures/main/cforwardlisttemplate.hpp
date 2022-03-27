@@ -116,26 +116,25 @@ public:
 
 
     /*
-     * void mAddElementToBegin(typeData aElement) - metoda
-     * dopisujaca element na sam poczatek listy jednokierunkowej.
+     * void mAddElement(typeData aElement) - metoda dopisujaca
+     * element na sam poczatek listy jednokierunkowej.
      * PRE:
      * - podanie wartosci elementu (typ: typeData);
      * POST:
      * - brak.
      */
-    void mAddElementToBegin(typeData aElement);
+    void mAddElement(typeData aElement);
 
     /*
-     * bool mRemoveElementFromBegin() - metoda usuwajaca
-     * element z poczatku listy jednokierunkowej (o ile
-     * lista nie jest pusta!).
+     * bool mRemoveElement() - metoda usuwajaca element z poczatku
+     * listy jednokierunkowej (o ile lista nie jest pusta!).
      * PRE:
      * - brak;
      * POST:
      * - zwrocenie informacji o tym czy usuniecie elementu
      * sie udalo (typ: bool).
      */
-    bool mRemoveElementFromBegin();
+    bool mRemoveElement();
 
     /*
      * void mDrawElements(typeLoop aSize) - metoda losujaca

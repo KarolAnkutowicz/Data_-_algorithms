@@ -24,12 +24,12 @@ cDataHandling::cDataHandling()
 void cDataHandling::mPrintMainMenu()
 {
     std::cout << "\nWybierz opcje:\n" // menu glowne
-        << "TABLICE I WEKTORY:\n"
+        //<< "TABLICE I WEKTORY:\n"
         //<< "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
         //<< "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
         //<< "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
         //<< "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
-        << "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
+        //<< "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
         //<< "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
         //<< "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
         //<< "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
@@ -76,7 +76,7 @@ void cDataHandling::mMainMenu()
         //case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
         //case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
         //case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
-        case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
+        //case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
         //case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
         //case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
         //case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
@@ -323,7 +323,26 @@ void cDataHandling::mMenuForwardListMy()
  */
 void cDataHandling::mMenuForwardListTemplate()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow listy jednokierunkowej
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    std::cout << "Okresl parametry listy jednokierunkowej\n" // wczytanie parametrow
+        << "    Liczba elementow: ";
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres liczb od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cForwardListTemplate F(vSize, vDrawingRange); // utworzenie obiektu
+    std::cout << "    Podaj nowy element do dodania do listy jednokierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    F.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do listy jednokierunkowej: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    F.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << "    Usuwamy element z poczatku...\n";
+    F.mRemoveElement(); // usuwanie pierwszego elementu
+    std::cout << "\n    Liczba elementow: " << F.getListSize() << "\n"; // wypisanie rozmiaru listy jednokierunkowej
+    std::cout << "    Zawartosc listy jednokierunkowej:\n";
+    F.mPrintAllElements(); // wypisanie zawartosci listy jednokierunkowej
 }
 
 /*
