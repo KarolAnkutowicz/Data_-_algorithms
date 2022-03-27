@@ -202,6 +202,7 @@ void cDataHandling::mMenuDynamicOneDimensionTable()
     std::cout << "\n    Liczba elementow: " << D.getLenthtTable() << "\n"; // wypisanie rozmiaru tablicy
     std::cout << "    Podaj nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
+    D.mAddElement(vElement); // dodanie nowego elementu
     std::cout << "    Podaj jeszcze jeden nowy element: ";
     std::cin >> vElement; // wczytanie wartosci nowego elementu
     D.mAddElement(vElement); // dodanie nowego elementu
