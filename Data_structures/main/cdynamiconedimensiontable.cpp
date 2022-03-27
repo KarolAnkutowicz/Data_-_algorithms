@@ -179,7 +179,10 @@ void cDynamicOneDimensionTable::mFindMaxElement()
  */
 void cDynamicOneDimensionTable::mPrintElement()
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!/n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+        std::cout << tabElements[vLengthTable - 1]; // wypisujemy ostatni element
 }
 
 /*
@@ -187,7 +190,15 @@ void cDynamicOneDimensionTable::mPrintElement()
  */
 void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!/n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+    {
+        if (aIndex > vLengthTable) // sprawdzamy czy nie wychodzimy poza zakres tablicy
+            std::cout << "Brak elementu o wskazanym indeksie!/n"; // jesli tak to wypisujemy odpowiedni komunikat
+        else // jesli indeks jest prawidlowy
+            std::cout << tabElements[vLengthTable - 1]; // wypisujemy ostatni element
+    }
 }
 
 /*
@@ -195,7 +206,14 @@ void cDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
  */
 void cDynamicOneDimensionTable::mPrintTable()
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!/n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+    {
+        for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+            std::cout << tabElements[i] << " "; // wypisanie wartosci kolejnego elementu
+        std::cout << "/n"; // przejscie do nowej linii po wypisaniu calej zawartosci tablicy
+    }
 }
 
 

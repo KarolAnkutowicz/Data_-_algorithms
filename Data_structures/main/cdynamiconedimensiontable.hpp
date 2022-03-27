@@ -192,8 +192,8 @@ public:
 
 
     /*
-     * void mPrintElement() - metoda wypisujaca ostatni element
-     * tablicy (o ile tablica nie jest pusta!).
+     * void mPrintElement() - metoda wypisujaca domyslnie ostatni
+     * element tablicy (o ile tablica nie jest pusta!).
      * PRE:
      * - brak;
      * POST:
