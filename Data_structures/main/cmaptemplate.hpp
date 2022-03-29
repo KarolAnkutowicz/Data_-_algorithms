@@ -34,7 +34,7 @@ public:
      * cMapTemplate(typeLoop aSize) - konstruktor wywolywany
      * z jednym argumentem - liczba elementow
      * PRE:
-     * - podanie liczby elementow (typ: typeLoop;
+     * - podanie liczby elementow (typ: typeLoop);
      * POST:
      * - utworzenie obiektu klasy cMapTemplate.
      */
@@ -42,10 +42,10 @@ public:
 
     /*
      * cMapTemplate(typeLoop aSize) - konstruktor wywolywany
-     * z dwoma argumentem - liczba elementow oraz zakresem
+     * z dwoma argumentami - liczba elementow oraz zakresem
      * losowanie wartosci elementow.
      * PRE:
-     * - podanie liczby elementow (typ: typeLoop;
+     * - podanie liczby elementow (typ: typeLoop);
      * - podanie zakresu losowania elementow (typ: typeData);
      * POST:
      * - utworzenie obiektu klasy cMapTemplate.
@@ -85,9 +85,9 @@ public:
      * - brak;
      * POST:
      * - zwrocenie wartosci pola vDrawingRangeValue
-     * (typ: typeLoop).
+     * (typ: typeData).
      */
-    inline typeLoop getDrawingRangeValue()
+    inline typeData getDrawingRangeValue()
     {
         return vDrawingRangeValue;
     }
