@@ -13,9 +13,10 @@
  */
 cForwardListMy::cForwardListMy()
 {
+    vFirst = new cElementForwardListAndQueue(NULL); // inicjalizacja wskaznika na poczatek listy
+    vFirst->vNext = NULL; // nie istnieje nastepny element
     vSize = 0; // ustanowienie rozmiaru listy jednokierunkowej
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
-    vFirst = NULL; // ustanowienie wskaznika na pierwszy element na NULL;
 }
 
 /*
@@ -23,9 +24,12 @@ cForwardListMy::cForwardListMy()
  */
 cForwardListMy::cForwardListMy(typeLoop aSize)
 {
+    vFirst = new cElementForwardListAndQueue(NULL); // inicjalizacja wskaznika na poczatek listy
+    vFirst->vNext = NULL; // nie istnieje nastepny element
+    vSize = 0; // ustanowienie rozmiaru listy jednokierunkowej
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
     for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
-        mAddElementToBegin(0); // dodanie nowego elementu
+        mAddElement(0); // dodanie nowego elementu
 }
 
 /*
@@ -33,8 +37,19 @@ cForwardListMy::cForwardListMy(typeLoop aSize)
  */
 cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
 {
+    vFirst = new cElementForwardListAndQueue(NULL); // inicjalizacja wskaznika na poczatek listy
+    vFirst->vNext = NULL; // nie istnieje nastepny element
+    vSize = 0; // ustanowienie rozmiaru listy jednokierunkowej
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie metody losujacej elementy
+}
+
+/*
+ * ~cForwardListMy().
+ */
+cForwardListMy::~cForwardListMy()
+{
+    delete vFirst; // zwalnianie wskaznika na poczatek listy
 }
 
 
@@ -44,78 +59,59 @@ cForwardListMy::cForwardListMy(typeLoop aSize, typeData aDrawingRange)
  */
  typeData cForwardListMy::getFirstElement()
  {
-     if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
-         return vFirst->getValue(); // jesli nie jest to zwracamy wartosc pierwszego elementu
-     else // jesli lista jednokierunkowa kest pusta...
+     if (getListIsEmpty() == true) // sprawdzenie czy lista jednokierunkowa jest pusta
          return NULL; // ...wowczas nie mamy co zwracac
+     else // jesli na liscie jednokierunkowej jest cokolwiek
+         return vFirst->getValue(); // wartosc pierwszego elementu
  }
 
-  /*
-   * bool getListIsEmpty()
-   */
-   bool cForwardListMy::getListIsEmpty()
-   {
-       if (!vSize) // sprawdzenie czy lista jednokierunkowa nie zawiera zadnego elementu
-           return true; // jesli tak to zwracamy informacje o tym
-       else // jesli na liscie jest jakikolwiek element
-           return false; // zwracamy informacje ze lista jednokierunkowa nie jest pusta
-   }
+ /*
+  * bool getListIsEmpty()
+  */
+ bool cForwardListMy::getListIsEmpty()
+ {
+     if (!vSize) // sprawdzenie czy lista jednokierunkowa nie zawiera zadnego elementu
+         return true; // jesli tak to zwracamy informacje o tym
+     else // jesli na liscie jest jakikolwiek element
+         return false; // zwracamy informacje ze lista jednokierunkowa nie jest pusta
+ }
 
 
 
-   /*
-    * void mAddElementToBegin(typeData aElement)
-    */
-void cForwardListMy::mAddElementToBegin(typeData aElement)
+/*
+ * void mAddElement(typeData aElement)
+ */
+void cForwardListMy::mAddElement(typeData aElement)
 {
-    cElementForwardListAndQueue Element(aElement); // utworzenie nowego elementu ze wskazana wartoscia
-    if (!vSize) // sprawdzenie czy lista jednokierunkowa nie jest pusta
-        vFirst = &Element; // ustanowienie wskaznika na pierwszy (jedyny) element
-    else // lista nie jest pusta
+    cElementForwardListAndQueue *Elem; // tworzymy nowy wskaznik
+    Elem = new cElementForwardListAndQueue(aElement); // wskazujemy na nowoutworzony obiekt
+    if (getListIsEmpty() == true) // sprawdzenie czy lista jest pusta
+        vFirst = Elem; // jesli tak to nowy element jest jedynym
+    else // jesli na liscie juz cos jest
     {
-        Element.vNext = vFirst; // nowy element wskazuje jako nastepnik dotychczasowy pierwszy element
-        vFirst = &Element; // nowy element staje sie pierwszym elementem
+        Elem->vNext = vFirst; // nowy element wskazuje na nastepnik dotychczasowy pierwszy element
+        vFirst = Elem; // poczatek listy wskazuje na nowy element
     }
-    vSize++; // zwiekszenie liczby elementow na liscie jednokierunkowej
-    cElementForwardListAndQueue *El = &Element;
-    El->vNext = vFirst;
-    vFirst = El;
-    vSize++;
+    vSize++; // zwiekszamy rozmiar listy
+    mPrintAllElements();
 }
 
 /*
  * bool mRemoveElementFromBegin()
  */
-bool cForwardListMy::mRemoveElementFromBegin()
+bool cForwardListMy::mRemoveElement()
 {
-    if (!vSize) // sprawdzamy czy lista jest pusta
-         return false; // jesli tak to nie mamy co usuwac
-    else // jesli na liscie jest cokolwiek
+    if (getListIsEmpty() == true) // sprawdzamy czy lista jest pusta
+        return false; // jesli tak to nie mamy co usuwac
+    else // jesli na liscie cos jest
     {
-        if (vSize == 1) // sprawdzamy czy mamy tylko jeden element na liscie
-            vFirst = NULL; // jesli tak to lista jednokierunkowa nie ma juz zadnego elementu na poczatku...
-        else // na liscie jest wiecej niz jeden element
-        {
-            cElementForwardListAndQueue ElementAux(0); // utworzenie elementu pomocniczego
-            ElementAux.vNext = vFirst->vNext; // element pomocniczy wskazuje jako nastepnik ten sam element co pierwszy
-            vFirst = ElementAux.vNext; // pierwszym elementem zostaje nastepnik elementu pomocniczego
-            ElementAux.vNext = NULL; // element pomocniczy juz nie jest nam potrzebny
-        }
-        vSize--; // zmniejszenie liczby elementow na liscie jednokierunkowej
-        return true; // zwrocenie informacji o powodzeniu usuniecia elementu
+        if (vSize == 1) // jesli na liscie jest tylko jeden element
+            vFirst = NULL; // na liscie nie ma juz zadnego elementu
+        else // jesli na liscie jest wiecej elementow
+            vFirst = vFirst->vNext; // pierwszym elementem zostaje ten na ktory dotychczasowy pierwszy element wskazywal
+        vSize--; // zmniejszamy rozmiar listy
+        return true; // zwracamy informacje o powodzeniu usuniecia elementu
     }
-    if (vFirst)
-    {
-        cElementForwardListAndQueue Element(0);
-        cElementForwardListAndQueue *El = &Element;
-        El = vFirst;
-        vFirst = vFirst->vNext;
-        if (!vFirst)
-        vSize--;
-        return true;
-    }
-    else
-        return false;
 }
 
 /*
@@ -125,7 +121,7 @@ void cForwardListMy::mDrawElements(typeLoop aSize)
 {
     srand(time_t(NULL)); // ustanowienie zmiennej losowej
     for (typeLoop i = 0; i < aSize; i++) // sprawdzanie liczby dodanych elementow
-        mAddElementToBegin(rand() % vDrawingRange); // dodanie nowego elementu
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu
 }
 
 
@@ -150,26 +146,16 @@ void cForwardListMy::mPrintAllElements()
         std::cout << "    Lista jednokierunkowa jest pusta!" << std::endl; // jesli tak to nie mamy co wyswietlac
     else // jesli na liscie jest cokolwiek
     {
-        cElementForwardListAndQueue ElementAux(0); // tworzymy element pomocniczy
-        ElementAux.vNext = vFirst; // jako nastepnik element pomoczniczego ustanawiamy pierwszy element listy jednokierunkowej
+        cElementForwardListAndQueue* Elem;
+        Elem = new cElementForwardListAndQueue(NULL); // tworzymy element pomocniczy
+        Elem = vFirst; // jako nastepnik element pomoczniczego ustanawiamy pierwszy element listy jednokierunkowej
         for (typeLoop i = 0; i < vSize; i++) // przechodzimy przez wszystkie elementy
         {
-            ElementAux.vNext = &ElementAux; // przechodzimy przez kolejne elementy az dojdziemy do tego ktory wskazuje na ostatni
-            std::cout << ElementAux.getValue() << std::endl; // wypisanie wartosci elementu
+            Elem = Elem->vNext; // przechodzimy przez kolejne elementy az dojdziemy do tego ktory wskazuje na ostatni
+            std::cout << Elem->getValue() << " "; // wypisanie wartosci elementu
         }
+        std::cout << "\n"; // przejscie do nowej linii po wypisaniu zawartosci listy jednokierunkowej
     }
-    //cElementForwardListAndQueue *El;
-    /*if (!vFirst)
-        std::cout << "    Lista jednokierunkowa jest pusta!" << std::endl; // jesli tak to nie mamy co wyswietlac
-    else
-    {
-        El = vFirst;
-        while (El)
-        {
-            std::cout << El->getValue() << std::endl;
-            El = El->vNext;
-        }
-    }*/
 }
 
 /********** PUBLIC: END **********/

@@ -13,8 +13,8 @@
  */
 cListMy::cListMy()
 {
-    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
-    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek listy
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec listy
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
     vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
     vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
@@ -28,8 +28,8 @@ cListMy::cListMy()
  */
 cListMy::cListMy(typeLoop aSize)
 {
-    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
-    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek listy
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec listy
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
     vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
     vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
@@ -45,8 +45,8 @@ cListMy::cListMy(typeLoop aSize)
  */
 cListMy::cListMy(typeLoop aSize, typeData aDrawingRange)
 {
-    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek kolejki
-    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec kolejki
+    vListMyBegin = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na poczatek listy
+    vListMyEnd = new cElementListAndDeque(NULL); // inicjalizacja wskaznika na koniec listy
     vListMyBegin->vPrevious = NULL; // nie istnieje nic przed poczatkiem listy
     vListMyBegin->vNext = vListMyEnd; // lista ma tylko poczatek i koniec
     vListMyEnd->vPrevious = vListMyBegin; // lista ma tylko poczatek i koniec
