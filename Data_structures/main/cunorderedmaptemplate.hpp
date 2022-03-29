@@ -72,7 +72,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru mapy (typ: size_t).
      */
-    size_t getUnorderedMapSize();
+    inline size_t getUnorderedMapSize()
+    {
+        return UnorderedMapTemplate.size();
+    }
 
     /*
      * typeData getDrawingRangeValue() - metoda zwracajaca
@@ -83,7 +86,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRangeValue
      * (typ: typeData).
      */
-    typeData getDrawingRangeValue();
+    inline typeData getDrawingRangeValue()
+    {
+        return vDrawingRangeValue;
+    }
 
     /*
      * bool getMapIsEmpty() - metoda zawracajaca
@@ -94,7 +100,10 @@ public:
      * - zwrocenie informacji o tym czy mapa jest pusta
      * (typ: bool).
      */
-    bool getUnorderedMapIsEmpty();
+    inline bool getUnorderedMapIsEmpty()
+    {
+        return UnorderedMapTemplate.empty();
+    }
 
 
 
@@ -107,7 +116,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeKey aKey, typeData aValue);
+    inline void mAddElement(typeKey aKey, typeData aValue)
+    {
+        UnorderedMapTemplate[aKey] = aValue;
+    }
 
     /*
      * bool mRemoveElement(typeKey aKey) - metoda usuwajaca
