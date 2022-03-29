@@ -7,6 +7,7 @@
 #pragma once
 
 #include "constantsandtypes.hpp"
+#include <iostream>
 #include <unordered_map>
 
 /*
