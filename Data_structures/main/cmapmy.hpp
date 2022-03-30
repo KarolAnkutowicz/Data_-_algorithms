@@ -178,7 +178,7 @@ public:
 private:
 
     /*
-     * map <typeKey, typeData> MapTemplate - mapa
+     * cElementMap* MapMy - wskaznik to mapy
      * elementow o kluczu typu "typeKey" i wartosciach
      * typu "typeData".
      */
