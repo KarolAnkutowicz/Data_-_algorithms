@@ -82,7 +82,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru mapy (typ: typeLoop).
      */
-    typeLoop getMapSize();
+    inline typeLoop getMapSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -93,7 +96,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRangeValue
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
 
 

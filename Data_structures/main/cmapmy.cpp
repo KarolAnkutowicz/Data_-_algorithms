@@ -14,7 +14,7 @@
 cMapMy::cMapMy()
 {
     MapMy = new cElementMap[1]; // utworzenie nowej mapy
-    vSize = 1; // ustanowienie rozmiaru mapy
+    vSize = 0; // ustanowienie rozmiaru mapy
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
     MapMy[0] = cElementMap('a', 0); // dodanie nowego elementu do mapy
 }
@@ -24,8 +24,8 @@ cMapMy::cMapMy()
  */
 cMapMy::cMapMy(typeLoop aSize)
 {
-    MapMy = new cElementMap[aSize]; // utworzenie nowej mapy
-    vSize = aSize; // ustanowienie rozmiaru mapy
+    MapMy = new cElementMap[1]; // utworzenie nowej mapy
+    vSize = 0; // ustanowienie rozmiaru mapy
     vDrawingRange = 0; // ustanowienie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
@@ -35,8 +35,8 @@ cMapMy::cMapMy(typeLoop aSize)
  */
 cMapMy::cMapMy(typeLoop aSize, typeData aDrawingRange)
 {
-    MapMy = new cElementMap[aSize]; // utworzenie nowej mapy
-    vSize = aSize; // ustanowienie rozmiaru mapy
+    MapMy = new cElementMap[1]; // utworzenie nowej mapy
+    vSize = 0; // ustanowienie rozmiaru mapy
     vDrawingRange = aDrawingRange; // ustanowienie zakresu losowania elementow
     mDrawElements(aSize); // wywolanie metody losujacej elementy
 }
@@ -186,8 +186,7 @@ void cMapMy::mDrawElements(typeLoop aSize)
         for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
         {
             vChar = 97 + i; // tworzenie klucza przed jego rzutowaniem
-            MapMy[i].setKey((char)vChar); // nadanie klucza elementowi
-            MapMy[i].setValue(rand() % vDrawingRange); // wylosowanie i przypisanie wartosci elementu
+            mAddElement((char)vChar, rand() % vDrawingRange); // wylosowanie i przypisanie wartosci elementu
         }
     }
 }
@@ -211,7 +210,6 @@ void cMapMy::mPrintElement(typeKey aKey)
                 if (MapMy[i].getKey() == aKey) // porownujemy klucze
                     std::cout << "[" << (char)MapMy[i].getKey() << "]=" << MapMy[i].getValue() << "\n"; // wypisujemy wskazany element
         }
-
     }
 }
 
