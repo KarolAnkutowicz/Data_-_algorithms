@@ -666,7 +666,27 @@ void cDataHandling::mMenuMapTemplate()
  */
 void cDataHandling::mMenuUnorderedMapMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow mapy
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    std::cout << "Okresl parametry mapy" << std::endl // wczytanie parametrow
+        << "    Liczba elementow: ";
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cUnorderedMapMy M(vSize, vDrawingRange); // utworzenie obiektu
+    std::cout << std::endl << "    Liczba elementow: " << M.getUnorderedMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Podaj nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(97 + vSize), vElement); // dodanie nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do mapy (klucz domyslny): ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    M.mAddElement((char)(98 + vSize), vElement); // dodanie nowego elementu
+    std::cout << "    Usuwamy element z najmniejszym kluczem..." << std::endl;
+    M.mRemoveElement((char)97); // usuniecie elementu z mapy
+    std::cout << std::endl << "    Liczba elementow: " << M.getUnorderedMapSize() << std::endl; // wypisanie rozmiaru mapy
+    std::cout << "    Zawartosc mapy: " << std::endl;
+    M.mPrintAllElements(); // wypisanie zawartosci mapy
 }
 
 /*

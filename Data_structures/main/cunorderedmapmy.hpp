@@ -75,14 +75,14 @@ public:
     typeData getElement(typeKey aKey);
 
     /*
-     * typeLoop getMapSize() - metoda zwracajaca rozmiar
+     * typeLoop getUnorderedMapSize() - metoda zwracajaca rozmiar
      * mapy.
      * PRE:
      * - brak;
      * POST:
      * - zwrocenie rozmiaru mapy (typ: typeLoop).
      */
-    inline typeLoop getMapSize()
+    inline typeLoop getUnorderedMapSize()
     {
         return vSize;
     }
