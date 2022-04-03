@@ -784,7 +784,25 @@ void cDataHandling::mMenuUnorderedSetMy()
  */
 void cDataHandling::mMenuUnorderedSetTemplate()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    std::cout << "Okresl parametry zbioru" << std::endl // wczytanie parametrow
+        << "    Liczba elementow: ";
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cUnorderedSetTemplate S(vSize, vDrawingRange); // utworzenie obiektu
+    std::cout << std::endl << "    Liczba elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Podaj nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << std::endl << "    Liczb elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Zawartosc zbioru: " << std::endl;
+    S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 
 /********** PUBLIC: END **********/
