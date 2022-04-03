@@ -51,7 +51,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru zbioru (typ: size_t).
      */
-    size_t getSetSize();
+    inline size_t getSetSize()
+    {
+        return UnorderedSetTemplate.size();
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -62,7 +65,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool getSetIsEmpty() - metoda zawracajaca
@@ -73,7 +79,10 @@ public:
      * - zwrocenie informacji o tym czy zbior jest pusty
      * (typ: bool).
      */
-    bool getSetIsEmpty();
+    inline bool getSetIsEmpty()
+    {
+        return UnorderedSetTemplate.empty();
+    }
 
 
 
@@ -85,7 +94,10 @@ public:
      * POST:
      * - brak.
      */
-    void mAddElement(typeData aValue);
+    inline void mAddElement(typeData aValue)
+    {
+        UnorderedSetTemplate.insert(aValue);
+    }
 
     /*
      * bool mRemoveElement(typeData aValue) - metoda usuwajaca
