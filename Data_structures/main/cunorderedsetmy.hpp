@@ -60,7 +60,10 @@ public:
      * POST:
      * - zwrocenie rozmiaru zbioru (typ: typeLoop).
      */
-    typeLoop getSetSize();
+    inline typeLoop getSetSize()
+    {
+        return vSize;
+    }
 
     /*
      * typeLoop getDrawingRange() - metoda zwracajaca
@@ -71,7 +74,10 @@ public:
      * - zwrocenie wartosci pola vDrawingRange
      * (typ: typeLoop).
      */
-    typeLoop getDrawingRange();
+    inline typeLoop getDrawingRange()
+    {
+        return vDrawingRange;
+    }
 
     /*
      * bool mIfExist(typeData aValue) - metoda sprawdzajaca
