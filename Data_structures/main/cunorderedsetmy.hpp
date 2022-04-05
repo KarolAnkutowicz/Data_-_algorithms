@@ -21,7 +21,7 @@ class cUnorderedSetMy
 public:
 
     /*
-     * cSetMy() - konstruktor wywolywany bez argumentow
+     * cUnorderedSetMy() - konstruktor wywolywany bez argumentow
      * PRE:
      * - brak;
      * POST:
@@ -30,9 +30,9 @@ public:
     cUnorderedSetMy();
 
     /*
-     * cUnorderedSetMy(typeLoop aSize) - konstruktor wywolywany
-     * z dwoma argumentem - liczba elementow oraz zakresem
-     * losowanie wartosci elementow.
+     * cUnorderedSetMy(typeLoop aSize, typeData aDrawingRange) -
+     * konstruktor wywolywany z dwoma argumentami - liczba
+     * elementow oraz zakresem losowanie wartosci elementow.
      * PRE:
      * - podanie liczby elementow (typ: typeLoop);
      * - podanie zakresu losowania elementow (typ: typeData);
@@ -135,7 +135,6 @@ public:
      * - brak.
      */
     void mPrintAllElements();
-
 
 /********** PUBLIC: END **********/
 
