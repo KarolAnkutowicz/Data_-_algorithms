@@ -50,12 +50,12 @@ void cDataHandling::mPrintMainMenu()
         //<< "    (40) - mapa\n" // opcja dla mapy bez wykorzystania szablonu <map>
         //<< "    (41) - mapa z wykorzystaniem szablonu <map>\n" // opcja dla mapy z wykorzystaniem szablonu <map>
         << "    (42) - mapa nieuporzadkowana\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-        << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+        //<< "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         << "ZBIORY:\n"
         //<< "    (50) - zbior\n" // opcja dla zbioru bez wykorzystania szablonu <set>
         //<< "    (51) - zbior z wykorzystaniem szablonu <set>\n" // opcja dla zbioru z wykorzystaniem szablonu <set>
         << "    (52) - zbior nieuporzadkowany\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
-        << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
+        //<< "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
         << "\n(0) - zakonczenie dzialania programu\n"; // opcja dla wyjscia z programu
 }
 
@@ -97,12 +97,12 @@ void cDataHandling::mMainMenu()
         //case 40: mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
         //case 41: mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
         case 42: mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-        case 43: mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+       // case 43: mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         // ZBIORY
         //case 50: mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
         //case 51: mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
         case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
-        case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
+        //case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
         // OPERACJA DOMYSLNA
         default: std::cout << "Nie ma takiej opcji!\n"; mMainMenu(); break; // komunikat o braku opcji
         }
@@ -776,7 +776,25 @@ void cDataHandling::mMenuSetTemplate()
  */
 void cDataHandling::mMenuUnorderedSetMy()
 {
-    //
+    typeLoop vSize; // zmienna okreslajaca liczbe elementow zbioru
+    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
+    typeData vElement; // zmienna wykorzystywana do dodawania elementow
+    std::cout << "Okresl parametry zbioru" << std::endl // wczytanie parametrow
+        << "    Liczba elementow: ";
+    std::cin >> vSize; // wczytanie liczby elementow
+    std::cout << "    Zakres wartosci od 0 do...";
+    std::cin >> vDrawingRange; // wczytanie granicy zakresu
+    cUnorderedSetMy S(vSize, vDrawingRange); // utworzenie obiektu
+    std::cout << std::endl << "    Liczba elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Podaj nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << "    Podaj jeszcze jeden nowy element do dodania do zbioru: ";
+    std::cin >> vElement; // wczytanie wartosci nowego elementu
+    S.mAddElement(vElement); // dodanie nowego elementu
+    std::cout << std::endl << "    Liczb elementow: " << S.getSetSize() << std::endl; // wypisanie rozmiaru zbioru
+    std::cout << "    Zawartosc zbioru: " << std::endl;
+    S.mPrintAllElements(); // wypisanie zawartosci zbioru
 }
 
 /*
