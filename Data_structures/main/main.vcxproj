@@ -161,6 +161,7 @@
     <ClCompile Include="cstacktemplate.cpp" />
     <ClCompile Include="cstaticonedimensiontable.cpp" />
     <ClCompile Include="cstatictwodimensiontable.cpp" />
+    <ClCompile Include="cuniquedynamiconedimensiontable.cpp" />
     <ClCompile Include="cunorderedmapmy.cpp" />
     <ClCompile Include="cunorderedmaptemplate.cpp" />
     <ClCompile Include="cunorderedsetmy.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="cstacktemplate.hpp" />
     <ClInclude Include="cstaticonedimensiontable.hpp" />
     <ClInclude Include="cstatictwodimensiontable.hpp" />
+    <ClInclude Include="cuniquedynamiconedimensiontable.hpp" />
     <ClInclude Include="cunorderedmapmy.hpp" />
     <ClInclude Include="cunorderedmaptemplate.hpp" />
     <ClInclude Include="cunorderedsetmy.hpp" />

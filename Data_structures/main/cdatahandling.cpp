@@ -24,38 +24,38 @@ cDataHandling::cDataHandling()
 void cDataHandling::mPrintMainMenu()
 {
     std::cout << "\nWybierz opcje:\n" // menu glowne
-        //<< "TABLICE I WEKTORY:\n"
-        //<< "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
-        //<< "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        //<< "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
-        //<< "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
-        //<< "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
-        //<< "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-        //<< "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
-        //<< "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+        << "TABLICE I WEKTORY:\n"
+        << "    (10) - statyczna tablica jednowymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        << "    (11) - statyczna tablica jednowymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+        << "    (12) - statyczna tablica dwuwymiarowa\n" // opcja dla statycznej tablicy jednowymiarowej
+        << "    (13) - statyczna tablica dwuwymiarowa z wykorzystaniem <array>\n" // opcja dla dynamicznej tablicy dwywymiarowej z wykorzystaniem szablonu <array>
+        << "    (14) - dynamiczna tablica jednowymiarowa\n" // opcja dla dynamicznej tablicy jednowymiarowej
+        << "    (15) - dynamiczna tablica jednowymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+        << "    (16) - dynamiczna tablica dwuwymiarowa\n" // opcja dla dynamicznej tablicy dwuwymiarowej
+        << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
         << "LISTY i KOLEJKI:\n"
-        << "    (20) - lista jednokierunkowa\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
-        //<< "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>\n" // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
-        //<< "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
-        //<< "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
-        //<< "    (24) - kolejka jednokierunkowa\n" // opcja dla kolejki bez wykorzystania szablonu <queue>
-        //<< "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>\n" // opcja dla kolejki z wykorzystaniem szablonu <queue>
-        //<< "    (26) - kolejka dwukierunkowa\n" // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
-        //<< "    (27) - kolejka dwukierunkowa z wykorzystaniem <deque>\n" // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
+        << "    (20) - lista jednokierunkowa (problemy)\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+        << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>\n" // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
+        << "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
+        << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
+        << "    (24) - kolejka jednokierunkowa\n" // opcja dla kolejki bez wykorzystania szablonu <queue>
+        << "    (25) - kolejka jednokierunkowa z wykorzystaniem szablonu <queue>\n" // opcja dla kolejki z wykorzystaniem szablonu <queue>
+        << "    (26) - kolejka dwukierunkowa\n" // opcja dla kolejki dwukierunkowej bez wykorzystania szablonu <deque>
+        << "    (27) - kolejka dwukierunkowa z wykorzystaniem <deque>\n" // opcja dla kolejki dwukierunkowej z wykorzystaniem szablonu <deque>
         << "STOSY I KOPCE:\n"
-        //<< "    (30) - stos\n" // opcja dla stosu bez wykorzystania <stack>
-        //<< "    (31) - stos z wykorzystaniem szablonu <stack>\n" // opcja dla stosu z wykorzystaniem <stack>
-        << "    (32) - kopiec binarny\n" // opcja dla kopca binarnego
+        << "    (30) - stos\n" // opcja dla stosu bez wykorzystania <stack>
+        << "    (31) - stos z wykorzystaniem szablonu <stack>\n" // opcja dla stosu z wykorzystaniem <stack>
+        << "    (32) - kopiec binarny (problemy)\n" // opcja dla kopca binarnego
         << "MAPY:\n"
-        //<< "    (40) - mapa\n" // opcja dla mapy bez wykorzystania szablonu <map>
-        //<< "    (41) - mapa z wykorzystaniem szablonu <map>\n" // opcja dla mapy z wykorzystaniem szablonu <map>
-        << "    (42) - mapa nieuporzadkowana\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-        //<< "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+        << "    (40) - mapa\n" // opcja dla mapy bez wykorzystania szablonu <map>
+        << "    (41) - mapa z wykorzystaniem szablonu <map>\n" // opcja dla mapy z wykorzystaniem szablonu <map>
+        << "    (42) - mapa nieuporzadkowana (problemy)\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+        << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         << "ZBIORY:\n"
-        //<< "    (50) - zbior\n" // opcja dla zbioru bez wykorzystania szablonu <set>
-        //<< "    (51) - zbior z wykorzystaniem szablonu <set>\n" // opcja dla zbioru z wykorzystaniem szablonu <set>
-        << "    (52) - zbior nieuporzadkowany\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
-        //<< "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
+        << "    (50) - zbior\n" // opcja dla zbioru bez wykorzystania szablonu <set>
+        << "    (51) - zbior z wykorzystaniem szablonu <set>\n" // opcja dla zbioru z wykorzystaniem szablonu <set>
+        << "    (52) - zbior nieuporzadkowany (problemy)\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
+        << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
         << "\n(0) - zakonczenie dzialania programu\n"; // opcja dla wyjscia z programu
 }
 
@@ -72,37 +72,37 @@ void cDataHandling::mMainMenu()
         {
         case 0: break; // wybor zakonczenia dzialana programu
         // TABLICE I WEKTORY
-        //case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
-        //case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
-        //case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
-        //case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
-        //case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
-        //case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
-        //case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
-        //case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
+        case 10: mMenuStaticOneDimensionTable(); break; // wybor dzialan na statycznej tablicy jednowymiarowej
+        case 11: mMenuArrayOneDimension(); break; // wyborz dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <array>
+        case 12: mMenuStaticTwoDimensionTable(); break; // wybor dzialan dla statycznej tablicy dwuwymiarowej
+        case 13: mMenuArrayTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <array>
+        case 14: mMenuDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej
+        case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
+        case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
+        case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
         // LISTY I KOLEJKI
         case 20: mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
-        //case 21: mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
-        //case 22: mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
-        //case 23: mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
-        //case 24: mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
-        //case 25: mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
-        //case 26: mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
-        //case 27: mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
+        case 21: mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
+        case 22: mMenuListMy(); break; // wybor dzialan na liscie bez wykorzystania szablonu <list>
+        case 23: mMenuListTemplate(); break; // wybor dzialan na liscie z wykorzystaniem szablonu <list>
+        case 24: mMenuQueueMy(); break; // wybor dzialan na kolejce bez wykorzystania szablonu <queue>
+        case 25: mMenuQueueTemplate(); break; // wybor dzialan na kolejce z wykorzystaniem szablonu <queue>
+        case 26: mMenuDequeMy(); break; // wybor dzialan na kolejce dwustronnej bez wykorzystania szablonu <deque>
+        case 27: mMenuDequeTemplate(); break; // wybor dzialan na kolejce dwustronnej z wykorzystaniem szablonu <deque>
         // STOSY I KOPCE
-        //case 30: mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
-        //case 31: mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
+        case 30: mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
+        case 31: mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
         case 32: mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
         // MAPY
-        //case 40: mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
-        //case 41: mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
+        case 40: mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
+        case 41: mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
         case 42: mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
-       // case 43: mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
+        case 43: mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         // ZBIORY
-        //case 50: mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
-        //case 51: mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
+        case 50: mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
+        case 51: mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
         case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
-        //case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
+        case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
         // OPERACJA DOMYSLNA
         default: std::cout << "Nie ma takiej opcji!\n"; mMainMenu(); break; // komunikat o braku opcji
         }
