@@ -57,6 +57,10 @@ cUniqueDynamicOneDimensionTable::cUniqueDynamicOneDimensionTable(typeLoop aLengt
  */
 typeData cUniqueDynamicOneDimensionTable::getElement()
 {
+    if (vLengthTable == 0) // jesli tablica jest pusta
+        return NULL; // wowczas nie mamy co zwracac
+    else // jesli tablica nie jest pusta
+        return tabElements[vLengthTable - 1]; // domyslnie zwracamy ostatni element
 
 }
 
@@ -65,6 +69,15 @@ typeData cUniqueDynamicOneDimensionTable::getElement()
  */
 typeData cUniqueDynamicOneDimensionTable::getElement(typeLoop aIndex)
 {
+    if (vLengthTable == 0) // jesli tablica jest pusta
+        return NULL; // wowczas nie mamy co zwracac
+    else // jesli w tablicy jest cokolwiek
+    {
+        if (aIndex > vLengthTable) // jesli indeks jest wiekszy niz rozmiar tablicy
+            return NULL; // wowczas nie mamy co zwracac
+        else // jesli indeks jest prawidlowa
+            return tabElements[aIndex]; // zwrocenie wartosci wskazanego elementu
+    }
 
 }
 
