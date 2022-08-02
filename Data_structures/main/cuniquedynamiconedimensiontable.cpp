@@ -88,6 +88,22 @@ typeData cUniqueDynamicOneDimensionTable::getElement(typeLoop aIndex)
  */
 void cUniqueDynamicOneDimensionTable::mAddElement(typeData aElement)
 {
+    if (vLengthTable == 0) // jesli tablica jest pusta
+    {
+        vLengthTable++; // zwiekszenie rozmiaru tablicy
+        tabElements[0] = aElement; // wstawienie elementu
+    }
+    else // jesli w tablicy juz cos jest
+    {
+        std::unique_ptr<typeData[]> tabElementsAux{ new typeData[vLengthTable] }; // utworzenie tablicy pomocniczej
+        for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+            tabElementsAux[i] = std::move(tabElements[i]); // przenoszenie kolejnych elementow
+        vLengthTable++; // zwiekszenie rozmiaru tablicy
+        std::unique_ptr<typeData[]> tabElements{ new typeData[vLengthTable] }; // utworzenie nowej tablicy elementow
+        for (typeLoop i = 0; i < (vLengthTable - 1); i++) // przejscie po wszystkich elementach z wyjatkiem ostatniego
+            tabElements[i] = std::move(tabElementsAux[i]); // przenoszenie kolejnych elementow
+        tabElements[vLengthTable - 1] = aElement; // dopisanie nowego elementu w wolne miejsce
+    }
 
 }
 
@@ -96,7 +112,27 @@ void cUniqueDynamicOneDimensionTable::mAddElement(typeData aElement)
  */
 bool cUniqueDynamicOneDimensionTable::mRemoveElement()
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablica jest pusta
+        return false; // jesli tak to nie mamy co usuwac
+    else // jesli w tablicy jest cokolwiek
+    {
+        if (vLengthTable == 1) // jesli rozmiar tablicy jest rowny 1
+        {
+            vLengthTable--; // zmniejszenie rozmiaru tablicy
+            tabElements[0] = NULL; // wyzerowanie jedynego elementu
+        }
+        else // jesli rozmiar tablicy jest wiekszy niz 1
+        {
+            vLengthTable--; // zmniejszenie rozmiaru tablicy
+            std::unique_ptr<typeData[]> tabElementsAux{ new typeData[vLengthTable] }; // utworzenie tablicy pomocniczej
+            for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+                tabElementsAux[i] = std::move(tabElements[i]); // przenoszenie kolejnych elementow
+            std::unique_ptr<typeData[]> tabElements{ new typeData[vLengthTable] }; // utworzenie nowej tablicy elementow
+            for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+                tabElements[i] = std::move(tabElementsAux[i]); // przenoszenie kolejnych elementow
+        }
+        return true; // zwrocenie informacji o powodzeniu usuniecia elementu
+    }
 }
 
 
