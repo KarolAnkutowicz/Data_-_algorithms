@@ -142,6 +142,9 @@ bool cUniqueDynamicOneDimensionTable::mRemoveElement()
  */
 void cUniqueDynamicOneDimensionTable::mDrawElements(typeLoop aSize)
 {
+    srand(time_t(NULL)); // ustanowienie zmiennej losowej
+    for (typeLoop i = 0; i < aSize; i++) // przejscie po wszystkich elementach
+        mAddElement(rand() % vDrawingRange); // dodanie nowego elementu na koniec tablicy
 
 }
 
@@ -150,6 +153,15 @@ void cUniqueDynamicOneDimensionTable::mDrawElements(typeLoop aSize)
  */
 void cUniqueDynamicOneDimensionTable::mFindMinElement()
 {
+    if (vLengthTable == 0) // sprawdzenie czy w tablicy jest cokolwiek
+        vMinElement = NULL; // jesli nie to nie ma najmniejszego elementu
+    else // jesli w tablicy jest cokolwiek
+    {
+        vMinElement = tabElements[0]; // ustanowienie najmniejszego elementu na pierwszy element tablicy
+        for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+            if (tabElements[i] < vMinElement) // sprawdzenie czy element z tablicy jest mniejszy niz aktualny najmniejszy element
+                vMinElement = tabElements[i]; // jesli tak to ustanawiamy nowy najmniejszy element
+    }
 
 }
 
@@ -158,6 +170,15 @@ void cUniqueDynamicOneDimensionTable::mFindMinElement()
  */
 void cUniqueDynamicOneDimensionTable::mFindMaxElement()
 {
+    if (vLengthTable == 0) // sprawdzenie czy w tablicy jest cokolwiek
+        vMinElement = NULL; // jesli nie to nie ma najwiekszego elementu
+    else // jesli w tablicy jest cokolwiek
+    {
+        vMaxElement = tabElements[0]; // ustanowienie najwiekszego elementu na pierwszy element tablicy
+        for (typeLoop i = 1; i < vLengthTable; i++) // przejscie po wszystkich pozostalych elementach
+            if (tabElements[i] > vMaxElement) // sprawdzenie czy element z tablicy jest wiekszy niz aktualny najwiekszy element
+                vMaxElement = tabElements[i]; // jesli tak to ustanawiamy nowy najwiekszy element
+    }
 
 }
 
@@ -168,7 +189,10 @@ void cUniqueDynamicOneDimensionTable::mFindMaxElement()
  */
 void cUniqueDynamicOneDimensionTable::mPrintElement()
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!\n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+        std::cout << tabElements[vLengthTable - 1]; // wypisujemy ostatni element
 }
 
 /*
@@ -176,7 +200,15 @@ void cUniqueDynamicOneDimensionTable::mPrintElement()
  */
 void cUniqueDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!\n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+    {
+        if (aIndex > vLengthTable) // sprawdzamy czy nie wychodzimy poza zakres tablicy
+            std::cout << "Brak elementu o wskazanym indeksie!\n"; // jesli tak to wypisujemy odpowiedni komunikat
+        else // jesli indeks jest prawidlowy
+            std::cout << tabElements[vLengthTable - 1]; // wypisujemy ostatni element
+    }
 }
 
 /*
@@ -184,7 +216,14 @@ void cUniqueDynamicOneDimensionTable::mPrintElement(typeLoop aIndex)
  */
 void cUniqueDynamicOneDimensionTable::mPrintTable()
 {
-
+    if (vLengthTable == 0) // sprawdzamy czy tablic jest pusta
+        std::cout << "Tablica jest pusta!\n"; // jesli tak to wypisujemy odpowiedni komunikat
+    else // jesli w tablicy jest cokolwiek
+    {
+        for (typeLoop i = 0; i < vLengthTable; i++) // przejscie po wszystkich elementach
+            std::cout << tabElements[i] << " "; // wypisanie wartosci kolejnego elementu
+        std::cout << "\n"; // przejscie do nowej linii po wypisaniu calej zawartosci tablicy
+    }
 }
 
 
