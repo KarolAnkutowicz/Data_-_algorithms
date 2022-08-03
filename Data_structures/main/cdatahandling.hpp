@@ -29,6 +29,7 @@
 #include "cstacktemplate.hpp"
 #include "cstaticonedimensiontable.hpp"
 #include "cstatictwodimensiontable.hpp"
+#include "cuniquedynamiconedimensiontable.hpp"
 #include "cunorderedmapmy.hpp"
 #include "cunorderedmaptemplate.hpp"
 #include "cunorderedsetmy.hpp"
@@ -168,6 +169,17 @@ public:
      * - brak.
      */
     void mMenuVectorTwoDimension();
+
+    /*
+     * void mMenuUniqueDynamicOneDimensionTable() - metoda obslugujaca
+     * dynamiczna tablice jednowymiarowa wykorzystujaca inteligentny
+     * wskaznik std::unique_ptr<T[]>.
+     * PRE:
+     * - brak;
+     * POST:
+     * - brak.
+     */
+    void mMenuUniqueDynamicOneDimensionTable();
 
 
 
