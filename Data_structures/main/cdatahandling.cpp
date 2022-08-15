@@ -81,7 +81,6 @@ void cDataHandling::mMainMenu()
         case 15: mMenuVectorOneDimension(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem szablonu <vector>
         case 16: mMenuDynamicTwoDimensionTable(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej
         case 17: mMenuVectorTwoDimension(); break; // wybor dzialan na dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
-        case 18: mMenuUniqueDynamicOneDimensionTable(); break; // wybor dzialan na dynamicznej tablicy jednowymiarowej z wykorzystaniem inteligentnego wskaznika
         // LISTY I KOLEJKI
         case 20: mMenuForwardListMy(); break; // wybor dzialan na liscie jednokierunkowej bez wykorzystania szablonu <forward_list>
         case 21: mMenuForwardListTemplate(); break; // wybor dzialan na liscie jednokierunkowej z wykorzystaniem szablonu <forward_list>
@@ -288,38 +287,6 @@ void cDataHandling::mMenuVectorTwoDimension()
     std::cout << "    Minimum: " << V.getMinElement() << "\n" // wypisanie minimum wektora wektorow
         << "    Maximum: " << V.getMaxElement() << "\n"; // wypisanie maximum wektora wektorow
 }
-
-/*
- * void mMenuUniqueDynamicOneDimensionTable()
- */
-void cDataHandling::mMenuUniqueDynamicOneDimensionTable()
-{
-    typeLoop vLengthTable; // zmienna okreslajaca liczbe elementow tablicy
-    typeData vDrawingRange; // zmienna okreslajaca zakres losowania elementow
-    typeData vElement; // zmienna wykorzystywana do dodawania elementow
-    std::cout << "Okresl parametry tablicy:\n" // wczytywanie parametrow
-        << "    Liczba elementow: ";
-    std::cin >> vLengthTable; // wczytanie liczby elementow
-    std::cout << "    Zakres liczb od 0 do...: ";
-    std::cin >> vDrawingRange; // wczytanie granicy zakresu
-    cUniqueDynamicOneDimensionTable U(vLengthTable, vDrawingRange); //utworzenie obiektu
-    std::cout << "\n    Liczba elementow: " << U.getLenthtTable() << "\n"; // wypisanie rozmiaru tablicy
-    std::cout << "    Podaj nowy element: ";
-    std::cin >> vElement; // wczytanie wartosci nowego elementu
-    U.mAddElement(vElement); // dodanie nowego elementu
-    std::cout << "    Podaj jeszcze jeden nowy element: ";
-    std::cin >> vElement; // wczytanie wartosci nowego elementu
-    U.mAddElement(vElement); // dodanie nowego elementu
-    std::cout << "    Usuwamy ostatni element...\n";
-    U.mRemoveElement(); // usuwanie ostatniego elementu
-    std::cout << "    Zawartosc tablicy: \n";
-    U.mPrintTable(); // wypisanie zawartosci tablicy
-    std::cout << "\n    Liczba elementow: " << U.getLenthtTable() << "\n" // wypisanie rozmiaru tablicy
-        << "    Minimum: " << U.getMinElement() << "\n" // wypisanie minimum tablicy
-        << "    Maximum: " << U.getMaxElement() << "\n"; // wypisanie maximum tablicy
-
-}
-
 
 
 
