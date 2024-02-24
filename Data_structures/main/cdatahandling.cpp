@@ -35,7 +35,8 @@ void cDataHandling::mPrintMainMenu()
         << "    (17) - dynamiczna tablica dwuwymiarowa z wykorzystaniem <vector>\n" // opcja dla dynamicznej tablicy dwuwymiarowej z wykorzystaniem szablonu <vector>
         << "    (18) - dynamiczna tablica jednowymiarowa oparta na inteligentnym wskazniku\n" // opcja dla dynamicznej tablicy jednowymiarowej z wykorzystaniem inteligentnego wskaznika
         << "LISTY i KOLEJKI:\n"
-        << "    (20) - lista jednokierunkowa (problemy)\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
+        // << "    (20) - lista jednokierunkowa (problemy)\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list> // TODO: naprawiæ listê jednokierunkow¹
+        << "           lista jednokierunkowa\n" // opcja dla listy jednokierunkowej bez wykorzystania szablonu <forward_list>
         << "    (21) - lista jednokierunkowa z wykorzystaniem <forward_list>\n" // opcja dla listy jednokierunkowej z wykorzystaniem szablonu <forward_list>
         << "    (22) - lista dwukierunkowa\n" // opcja dla listy  bez wykorzystania <list>
         << "    (23) - lista dwukierunkowa z wykorzystaniem szablonu <list>\n" // opcja dla listy z wykorzystaniem <list>
@@ -46,16 +47,19 @@ void cDataHandling::mPrintMainMenu()
         << "STOSY I KOPCE:\n"
         << "    (30) - stos\n" // opcja dla stosu bez wykorzystania <stack>
         << "    (31) - stos z wykorzystaniem szablonu <stack>\n" // opcja dla stosu z wykorzystaniem <stack>
-        << "    (32) - kopiec binarny (problemy)\n" // opcja dla kopca binarnego
+        // << "    (32) - kopiec binarny (problemy)\n" // opcja dla kopca binarnego // TODO: naprawiæ kopiec binarny
+        << "           kopiec binarny\n" // opcja dla kopca binarnego
         << "MAPY:\n"
         << "    (40) - mapa\n" // opcja dla mapy bez wykorzystania szablonu <map>
         << "    (41) - mapa z wykorzystaniem szablonu <map>\n" // opcja dla mapy z wykorzystaniem szablonu <map>
-        << "    (42) - mapa nieuporzadkowana (problemy)\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+        // << "    (42) - mapa nieuporzadkowana (problemy)\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map> // TODO: naprawiæ mapê nieuporz¹dkowan¹
+        << "           mapa nieuporzadkowana\n" // opcja dla mapy nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
         << "    (43) - mapa nieuporzadkowana z wykorzystaniem szablonu <unordered_map>\n" // opcja dla mapy nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         << "ZBIORY:\n"
         << "    (50) - zbior\n" // opcja dla zbioru bez wykorzystania szablonu <set>
         << "    (51) - zbior z wykorzystaniem szablonu <set>\n" // opcja dla zbioru z wykorzystaniem szablonu <set>
-        << "    (52) - zbior nieuporzadkowany (problemy)\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
+        // << "    (52) - zbior nieuporzadkowany (problemy)\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set> // TODO: naprawiæ zbiór nieuporz¹dkowany
+        << "           zbior nieuporzadkowany\n" // opcja dla nieuporzadkowanego zbioru bez wykorzystania szablonu <unordered_set>
         << "    (53) - zbior nieuporzadkowany z wykorzystaniem szablonu <unordered_set>\n" // opcja dla nieuporzadkowanego zbioru z wykorzystaniem szablonu <unordered_set>
         << "\n(0) - zakonczenie dzialania programu\n"; // opcja dla wyjscia z programu
 }
@@ -93,23 +97,23 @@ void cDataHandling::mMainMenu()
         // STOSY I KOPCE
         case 30: mMenuStackMy(); break; // wybor dzialan na stosie bez wykorzystania szablonu <stack>
         case 31: mMenuStackTemplate(); break; // wybor dzialan na stosie z wykorzystaniem szablonu <stack>
-        case 32: mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
+        // case 32: mMenuHeapBinary(); break; // wybor dzialan na kopcu binarnym
         // MAPY
         case 40: mMenuMapMy(); break; // wybor dzialan na mapie bez wykorzystania szablonu <map>
         case 41: mMenuMapTemplate(); break; // wybor dzialan na mapie z wykorzystaniem szablonu <map>
-        case 42: mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
+        // case 42: mMenuUnorderedMapMy(); break; // wybor dzialan na mapie nieuporzadkowanej bez wykorzystania szablonu <unordered_map>
         case 43: mMenuUnorderedMapTemplate(); break; // wybor dzialan na mapie nieuporzadkowanej z wykorzystaniem szablonu <unordered_map>
         // ZBIORY
         case 50: mMenuSetMy(); break; // wybor dzialan na zbiorze bez wykorzystania szablonu <set>
         case 51: mMenuSetTemplate(); break; // wybor dzialan na zbiorze z wykorzystaniem szablonu <set>
-        case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
+        // case 52: mMenuUnorderedSetMy(); break; // wybor dzialan na zbiorze nieuporzadkowanym bez wykorzystania szablonu <unordered_set>
         case 53: mMenuUnorderedSetTemplate(); break; // wybor dzialan na zbiorze nieuporzadkowanym z wykorzystaniem szablonu <unordered_set>
         // OPERACJA DOMYSLNA
         default: std::cout << "Nie ma takiej opcji!\n"; mMainMenu(); break; // komunikat o braku opcji
         }
         if (vOption != 0) // dodatkowe przejscie do kolejnego wyboru menu po dzialaniu jednej ze struktur
         {
-            std::cout << "    Czy kontynuowac? (Wpisz cokolwiek i zatwierdz klawiszem Enter)\n"; // chwilowe "wstrzymanie" wyswietlonych wynikow
+            std::cout << "    Czy kontynuowac? (Jeœli tak - wpisz liczbê ró¿n¹ od zera i zatwierdŸ klawiszem Enter)\n"; // chwilowe "wstrzymanie" wyswietlonych wynikow
             std::cin >> vOption; // wczytanie nowej opcji
         }
     } while (vOption != 0); // sprawdzenie czy nie chcemy wyjsc z programu
